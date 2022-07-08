@@ -52,6 +52,19 @@ public class DWRItemSelector {
     public String select(String setLabel, String[] ids, boolean on) throws Exception {
         WebContext ctx = WebContextFactory.get();
         HttpServletRequest req = ctx.getHttpServletRequest();
+        return select(req, setLabel, ids, on);
+    }
+
+    /**
+     * Update RHNset
+     * @param req
+     * @param setLabel
+     * @param ids
+     * @param on
+     * @return counter content
+     * @throws Exception
+     */
+    public String select(HttpServletRequest req, String setLabel, String[] ids, boolean on) throws Exception {
         User user = new RequestContext(req).getCurrentUser();
         Integer size = updateSetFromRequest(req, setLabel, ids, on, user);
         if (size == null) {

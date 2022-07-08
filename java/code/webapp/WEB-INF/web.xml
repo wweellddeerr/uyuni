@@ -255,6 +255,11 @@
   <!--
       AJAX servlet
    -->
+  <servlet>
+    <servlet-name>dwr-suma</servlet-name>
+    <servlet-class>com.redhat.rhn.frontend.servlets.DwrSumaServlet</servlet-class>
+  </servlet>
+
    <servlet>
      <servlet-name>dwr</servlet-name>
      <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
@@ -307,6 +312,11 @@
   <servlet-mapping>
     <servlet-name>dwr</servlet-name>
     <url-pattern>/dwr/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>dwr-suma</servlet-name>
+    <url-pattern>/dwr-suma/*</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>

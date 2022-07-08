@@ -187,11 +187,31 @@ function process_single_checkbox(cboxes, checkall) {
 }
 
 function update_server_set(variable, set_label, checked, values) {
-    DWRItemSelector.select(set_label, values, checked, makeAjaxHandler(pageResponse));
+    update_server_set_jquery(set_label, checked, values)
+    //DWRItemSelector.select(set_label, values, checked, makeAjaxHandler(pageResponse));
+}
+
+function update_server_set_jquery(set_label, checked, values) {
+  jQuery.ajax({
+    type: 'POST',
+    url: '/rhn/dwr-suma',
+    processData: false,
+    data: JSON.stringify({
+      set_label,
+      values,
+      checked
+    }),
+    contentType: false,
+    success: pageResponse,
+    error: function(request, status, error) {
+      console.log(request.responseText, status, error)
+    }
+  })
 }
 
 function pageResponse(data) {
     var resp = eval(data);
+    console.log(resp)
     if (typeof(resp['header']) != 'undefined') {
             dwr.util.setValue("header_selcount", resp.header, {escapeHtml: false});
     }
