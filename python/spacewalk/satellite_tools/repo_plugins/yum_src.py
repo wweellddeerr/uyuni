@@ -526,6 +526,7 @@ class ContentSource:
             urlgrabber.urlgrab(url, mirrorlist_path, **urlgrabber_opts)
         except Exception as exc:
             # no mirror list found continue without
+            self.error_msg("Could not acess mirrorlist URL: {}".format(exc))
             return returnlist
 
         def _replace_and_check_url(url_list):
