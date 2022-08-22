@@ -43,6 +43,7 @@ import com.google.gson.GsonBuilder;
 import org.apache.commons.collections.ListUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.SessionFactory;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.SafeConstructor;
 import org.yaml.snakeyaml.error.YAMLException;
@@ -613,6 +614,7 @@ public class FormulaFactory {
 
         for (String f : deletedFormulas) {
             group.getPillarByCategory(PREFIX + f).ifPresent(pillar -> group.getPillars().remove(pillar));
+            HibernateFactory.getSession().flush();
         }
 
         // Save selected Formulas
