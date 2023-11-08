@@ -31,6 +31,7 @@ import RecurringActions from "./recurring";
 import Salt from "./salt";
 import Shared from "./shared";
 import Highstate from "./state";
+import Swagger from "./swagger";
 import Systems from "./systems";
 import Virtualization from "./virtualization";
 import Visualization from "./visualization";
@@ -54,6 +55,7 @@ const pages = {
   ...Proxy,
   ...Salt,
   ...Shared,
+  ...Swagger,
   ...Systems,
   ...Virtualization,
   ...Visualization,

@@ -569,6 +569,13 @@
     <delete dir="${report.dir}/apidocs/${template.dir}/handlers/" />
   </target>
 
+  <target name="apidoc-swagger" description="Generate swagger doc from the API">
+    <property name="doclet.class" value="swagger.SwaggerDoclet" />
+    <property name="template.dir" value="swagger" />
+    <property name="apidoc.output" value="${frontend.src.dir}/manager/swagger/" />
+    <antcall target="apidoc" />
+  </target>
+
   <target name="apidoc-validate" description="Validate the API documentation" depends="apidoc-docbook">
       <exec executable="/usr/bin/xmllint" failonerror="true">
           <arg value="--xinclude"/>

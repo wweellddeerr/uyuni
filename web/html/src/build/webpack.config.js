@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const LicenseCheckerWebpackPlugin = require("license-checker-webpack-plugin");
 const webpackAlias = require("./webpack.alias");
+const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 
@@ -12,7 +13,7 @@ module.exports = (env, argv) => {
   const isProductionMode = argv && argv.mode !== "development";
   const measurePerformance = env.MEASURE_PERFORMANCE === "true";
 
-  let pluginsInUse = [];
+  let pluginsInUse = [new webpack.ProvidePlugin({ Buffer: ["buffer", "Buffer"] })];
 
   if (measurePerformance) {
     pluginsInUse.push(new SpeedMeasurePlugin());
