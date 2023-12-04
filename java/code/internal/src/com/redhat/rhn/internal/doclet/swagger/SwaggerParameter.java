@@ -18,10 +18,11 @@ public class SwaggerParameter {
     boolean required;
     boolean explode;
     String format;
+    Map<String, Object> schema;
     @SerializedName("default")
     String defaultValue;
 
-    SwaggerParamSchema schema;
+    SwaggerParamSchema param_schema;
 
     Map<String, Object> items;
 
@@ -88,6 +89,13 @@ public class SwaggerParameter {
                 this.format = "int64";
                 break;
         }
+
+        if (this.in.equals("body")) {
+            Map<String, Object> body_schema = new HashMap<>();
+            body_schema.put("$ref", "#/definitions/" + this.name);
+            this.schema = body_schema;
+        }
+
     }
 
     public static Optional<SwaggerParameter> parseParam(String param) {
@@ -117,13 +125,17 @@ public class SwaggerParameter {
             return Optional.empty();
         }
 
-        String structName = paramValue.split("#struct_begin\\(\"")[1].split("\"\\)")[0];
+        String structName = paramValue.split("#struct_begin\\(\"")[1].split("\"\\)")[0].split("\",")[0];
 
         String propsStr = paramValue.split("#struct_begin")[1].split("#struct_end")[0].trim();
         String[] propsRaw = propsStr.split("(#prop_desc|#prop)");
 
         Map<String, Map<String, String>> properties = new HashMap<>();
         for (String propRaw : propsRaw) {
+            if (propRaw.contains(structName)) {
+                continue;
+            }
+
             if (!propRaw.contains(",")) {
                 continue;
             }
@@ -261,7 +273,7 @@ public class SwaggerParameter {
     public String toString() {
         return "name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", type=" + schema.type +
+                ", type=" + param_schema.type +
                 ", format='" + format + '\'';
     }
 }
