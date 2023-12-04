@@ -125,13 +125,17 @@ public class SwaggerParameter {
             return Optional.empty();
         }
 
-        String structName = paramValue.split("#struct_begin\\(\"")[1].split("\"\\)")[0];
+        String structName = paramValue.split("#struct_begin\\(\"")[1].split("\"\\)")[0].split("\",")[0];
 
         String propsStr = paramValue.split("#struct_begin")[1].split("#struct_end")[0].trim();
         String[] propsRaw = propsStr.split("(#prop_desc|#prop)");
 
         Map<String, Map<String, String>> properties = new HashMap<>();
         for (String propRaw : propsRaw) {
+            if (propRaw.contains(structName)) {
+                continue;
+            }
+
             if (!propRaw.contains(",")) {
                 continue;
             }
