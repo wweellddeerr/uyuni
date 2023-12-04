@@ -16,6 +16,7 @@ public class SwaggerSpec {
     private String basePath;
     private Map<String, String> info;
     private List<SwaggerTag> tags = new ArrayList<>();
+    Map<Object,Object> definitions = new HashMap<>();
     Map<String, Map<String, SwaggerOperation>> paths = new HashMap<>();
 
     public SwaggerSpec(String productName) {

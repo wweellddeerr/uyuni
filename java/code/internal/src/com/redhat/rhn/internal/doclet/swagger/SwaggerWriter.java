@@ -57,6 +57,15 @@ public class SwaggerWriter extends DocWriter {
                         .filter(Optional::isPresent)
                         .map(Optional::get)
                         .collect(Collectors.toList());
+                for (var param : parameters.stream()
+                        .filter(p -> p.in.equals("body"))
+                        .collect(Collectors.toList())) {
+                    var body_properties = new HashMap<>();
+                    body_properties.put("properties", param.properties);
+                    swagger.definitions.put(param.name, body_properties);
+                    param.properties = null;
+                    param.name = null;
+                }               
                 var operation = new SwaggerOperation(call.getDoc(), handler.getName(), parameters);
                 swagger.paths.put(path, Map.of(method, operation));
             }
