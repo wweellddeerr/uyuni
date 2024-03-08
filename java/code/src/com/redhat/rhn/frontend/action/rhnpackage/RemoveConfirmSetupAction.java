@@ -57,6 +57,8 @@ public class RemoveConfirmSetupAction extends BaseSystemPackagesConfirmAction {
     protected PackageAction schedulePackageAction(ActionForm formIn,
         RequestContext context, List<Map<String, Long>> pkgs, Date earliest,
         ActionChain actionChain) throws TaskomaticApiException {
+        // cada pkg na lista é um map contendo:
+        // name: name_id, evr: evr_id, arch: arch_id
         return ActionChainManager.schedulePackageRemoval(context.getCurrentUser(),
             context.lookupAndBindServer(), pkgs, earliest, actionChain);
     }

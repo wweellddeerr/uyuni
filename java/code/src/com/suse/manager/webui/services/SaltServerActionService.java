@@ -43,6 +43,8 @@ import com.redhat.rhn.domain.action.ActionChainFactory;
 import com.redhat.rhn.domain.action.ActionFactory;
 import com.redhat.rhn.domain.action.ActionStatus;
 import com.redhat.rhn.domain.action.ActionType;
+import com.redhat.rhn.domain.action.appstream.AppStreamAction;
+import com.redhat.rhn.domain.action.appstream.AppStreamActionDetails;
 import com.redhat.rhn.domain.action.channel.SubscribeChannelsAction;
 import com.redhat.rhn.domain.action.channel.SubscribeChannelsActionDetails;
 import com.redhat.rhn.domain.action.config.ConfigAction;
@@ -240,6 +242,9 @@ public class SaltServerActionService {
     private static final String SYSTEM_REBOOT = "system.reboot";
     private static final String KICKSTART_INITIATE = "bootloader.autoinstall";
     private static final String ANSIBLE_RUNPLAYBOOK = "ansible.runplaybook";
+    public static final String APPSTREAMS_CHANGE = "appstreams.change";
+    public static final String PARAM_APPSTREAMS_ENABLE = "param_appstreams_enable";
+    public static final String PARAM_APPSTREAMS_DISABLE = "param_appstreams_disable";
 
     /** SLS pillar parameter name for the list of update stack patch names. */
     public static final String PARAM_UPDATE_STACK_PATCHES = "param_update_stack_patches";
@@ -313,6 +318,9 @@ public class SaltServerActionService {
         }
         else if (ActionFactory.TYPE_PACKAGES_REFRESH_LIST.equals(actionType)) {
             return packagesRefreshListAction(minions);
+        }
+        else if (ActionFactory.TYPE_APPSTREAM_CHANGE.equals(actionType)) {
+            return appStreamAction(minions, (AppStreamAction) actionIn);
         }
         else if (ActionFactory.TYPE_HARDWARE_REFRESH_LIST.equals(actionType)) {
             return hardwareRefreshListAction(minions);
@@ -1230,6 +1238,34 @@ public class SaltServerActionService {
         ret.put(State.apply(Arrays.asList(PACKAGES_PKGREMOVE),
                 Optional.of(params)), minionSummaries);
         return ret;
+    }
+
+    private Map<LocalCall<?>, List<MinionSummary>> appStreamAction(
+            List<MinionSummary> minionSummaries, AppStreamAction action) {
+        Map<LocalCall<?>, List<MinionSummary>> ret = new HashMap<>();
+
+        Map<Boolean, Set<AppStreamActionDetails>> details = action.getDetails().stream()
+                .collect(Collectors.partitioningBy(AppStreamActionDetails::isEnable,
+                        Collectors.toSet()));
+
+        var enableParams = toParams(details.get(true));
+        var disableParams = details.get(false).stream().map(AppStreamActionDetails::getModuleName).collect(toList());
+
+        Optional<Map<String, Object>> params = Optional.of(Map.of(
+            PARAM_APPSTREAMS_ENABLE, enableParams,
+            PARAM_APPSTREAMS_DISABLE, disableParams
+        ));
+        ret.put(State.apply(List.of(APPSTREAMS_CHANGE), params), minionSummaries);
+        return ret;
+    }
+
+    public List<List<String>> toParams(Set<AppStreamActionDetails> details) {
+        return details.stream().map(d -> {
+            if (d.getStream() == null) {
+                return singletonList(d.getModuleName());
+            }
+            return Arrays.asList(d.getModuleName(), d.getStream());
+        }).collect(toList());
     }
 
     private Map<LocalCall<?>, List<MinionSummary>> packagesRefreshListAction(

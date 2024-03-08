@@ -26,6 +26,7 @@ import com.redhat.rhn.common.db.datasource.DataResult;
 import com.redhat.rhn.common.db.datasource.ModeFactory;
 import com.redhat.rhn.common.db.datasource.SelectMode;
 import com.redhat.rhn.common.db.datasource.WriteMode;
+import com.redhat.rhn.common.hibernate.HibernateFactory;
 import com.redhat.rhn.common.hibernate.LookupException;
 import com.redhat.rhn.common.localization.LocalizationService;
 import com.redhat.rhn.domain.action.Action;
@@ -54,6 +55,7 @@ import com.redhat.rhn.domain.action.scap.ScapActionDetails;
 import com.redhat.rhn.domain.action.script.ScriptActionDetails;
 import com.redhat.rhn.domain.action.script.ScriptRunAction;
 import com.redhat.rhn.domain.action.server.ServerAction;
+import com.redhat.rhn.domain.appstreams.AppStream;
 import com.redhat.rhn.domain.common.FileList;
 import com.redhat.rhn.domain.config.ConfigChannel;
 import com.redhat.rhn.domain.config.ConfigFileName;
@@ -2025,6 +2027,28 @@ public class ActionManager extends BaseManager {
                 .executeUpdates(paramList);
     }
         }
+    /**
+     * Adds package details to some Actions
+     * @param actions the actions
+     * @param appStreams A list of appstreams.
+     */
+    public static void addAppStreamActionDetails(Collection<Action> actions, Set<String> appStreams) {
+        List<Map<String, Object>> paramList =
+            actions.stream().flatMap(
+                action -> appStreams.stream()
+                    .map(appStream -> {
+                        return Map.of(
+                                "action_id", (Object) action.getId(),
+                                // TODO: improve this code
+                                "module_name", appStream.split(":")[0],
+                                "stream", appStream.split(":")[1]
+                        );
+                    }
+                    )).collect(toList());
+
+        ModeFactory.getWriteMode("Action_queries", "insert_appstream_action_details")
+                .executeUpdates(paramList);
+    }
 
     /**
      * Returns the pkg_parameter parameter to the schedule_action queries in

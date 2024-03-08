@@ -530,14 +530,13 @@ PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
                         outer-join="false" cascade="all" property-ref="parentAction"/>
         </subclass>
 
-        <subclass name="com.redhat.rhn.domain.action.virtualization.VirtualizationMigrateGuestAction"
-                  discriminator-value="522" lazy="true">
-            <join table="rhnActionVirtMigrate">
-                <key column="action_id"/>
-                <property name="uuid"/>
-                <property name="primitive"/>
-                <property name="target"/>
-            </join>
+        <subclass name="com.redhat.rhn.domain.action.appstream.AppStreamAction"
+                  lazy="true" discriminator-value="523">
+
+            <set cascade="all" inverse="true" name="details" >
+                <key column="action_id" />
+                <one-to-many class="com.redhat.rhn.domain.action.appstream.AppStreamActionDetails" />
+            </set>
         </subclass>
 
     </class>

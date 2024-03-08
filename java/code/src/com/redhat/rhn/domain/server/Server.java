@@ -137,6 +137,7 @@ public class Server extends BaseDomainHelper implements Identifiable {
     private boolean payg;
     private MaintenanceSchedule maintenanceSchedule;
     private Boolean hasConfigFeature;
+    private Set<ServerModule> modules = new HashSet<>();
 
     public static final String VALID_CNAMES = "valid_cnames_";
 
@@ -2460,6 +2461,25 @@ public class Server extends BaseDomainHelper implements Identifiable {
      */
     public void setOsFamily(String osFamilyIn) {
         this.osFamily = osFamilyIn;
+    }
+
+    public Set<ServerModule> getModules() {
+        return modules;
+    }
+
+    public void setModules(Set<ServerModule> modulesIn) {
+        modules = modulesIn;
+    }
+
+    /**
+     * Checks if a specific module with a given stream is enabled on the system.
+     *
+     * @param module The name of the module to check.
+     * @param stream The stream associated with the module to check.
+     * @return {@code true} if the module with the specified stream is enabled, {@code false} otherwise.
+     */
+    public boolean hasAppStreamModuleEnabled(String module, String stream) {
+        return getModules().stream().anyMatch(it -> it.getAppStream().getName().equals(module) && it.getAppStream().getStream().equals(stream));
     }
 
 }

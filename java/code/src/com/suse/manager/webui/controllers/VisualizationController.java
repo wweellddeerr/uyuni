@@ -75,7 +75,7 @@ public class VisualizationController {
                 "/rhn/manager/api/visualization/virtualization-hierarchy/data");
         data.put("view", "virtualization-hierarchy");
         request.attribute("legends", "visualization");
-        return new ModelAndView(data, "templates/visualization/hierarchy.jade");
+        return new ModelAndView(data, "templates/visualization/appstreams.jade");
     }
 
     /**
@@ -105,7 +105,7 @@ public class VisualizationController {
         data.put("endpoint", "/rhn/manager/api/visualization/proxy-hierarchy/data");
         data.put("view", "proxy-hierarchy");
         request.attribute("legends", "visualization");
-        return new ModelAndView(data, "templates/visualization/hierarchy.jade");
+        return new ModelAndView(data, "templates/visualization/appstreams.jade");
     }
 
     /**
@@ -136,7 +136,7 @@ public class VisualizationController {
                 "systems-with-managed-groups/data");
         data.put("view", "grouping");
         request.attribute("legends", "visualization");
-        return new ModelAndView(data, "templates/visualization/hierarchy.jade");
+        return new ModelAndView(data, "templates/visualization/appstreams.jade");
     }
 
     /**

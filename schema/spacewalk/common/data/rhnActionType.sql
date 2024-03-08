@@ -88,5 +88,7 @@ insert into rhnActionType values (519, 'virt.network_state', 'Change a virtual n
 insert into rhnActionType values (520, 'virt.network_create', 'Creates a virtual network', 'N', 'N', 'N');
 insert into rhnActionType values (521, 'ansible.playbook', 'Execute an Ansible playbook', 'N', 'N', 'N');
 insert into rhnActionType values (522, 'virt.guest_migrate', 'Migrate a virtual domain', 'N', 'N', 'N');
+insert into rhnActionType values (523, 'appstream.enable', 'Enable AppStreams in a system', 'N', 'N', 'N');
+insert into rhnActionType values (524, 'appstream.disable', 'Disable AppStreams in a system', 'N', 'N', 'N');
 commit;
 

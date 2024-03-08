@@ -273,6 +273,13 @@ VALUES (sequence_nextval('rhn_act_p_id_seq'), :action_id, :pkg_parameter, :name_
   </query>
 </write-mode>
 
+<write-mode name="insert_appstream_action_details">
+  <query params="action_id, module_name, stream">
+    INSERT INTO suseActionAppstream (id, action_id, module_name, stream)
+    VALUES (sequence_nextval('suse_act_appstream_id_seq'), :action_id, :module_name, :stream)
+  </query>
+</write-mode>
+
 <!-- this is so WRONG -->
 <write-mode name="insert_package_delta_element">
   <query params="delta_id, operation, n, e, v, r, a">
