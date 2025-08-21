@@ -17350,7 +17350,7 @@ Tingueu en compte que si un sistema determinat anul·la un fitxer donat, o el t�
         <target state="translated">Versió actual</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/</context>
-          <context context-type="paramnotes"/>
+          <context context-type="paramnotes"></context>
         </context-group>
       </trans-unit>
       <trans-unit id="deploy.jsp.lastmodified-header" xml:space="preserve">
@@ -17358,7 +17358,7 @@ Tingueu en compte que si un sistema determinat anul·la un fitxer donat, o el t�
         <target state="translated">Última modificació</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/</context>
-          <context context-type="paramnotes"/>
+          <context context-type="paramnotes"></context>
         </context-group>
       </trans-unit>
       <trans-unit id="configsystemfilter.name" xml:space="preserve">
@@ -17387,7 +17387,7 @@ Tingueu en compte que si un sistema determinat anul·la un fitxer donat, o el t�
         <target state="translated">No hi ha sistemes desplegables subscrits a aquest canal</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/</context>
-          <context context-type="paramnotes"/>
+          <context context-type="paramnotes"></context>
         </context-group>
       </trans-unit>
       <trans-unit id="deploy.jsp.actions-header" xml:space="preserve">
@@ -17395,7 +17395,7 @@ Tingueu en compte que si un sistema determinat anul·la un fitxer donat, o el t�
         <target state="translated">Accions</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/</context>
-          <context context-type="paramnotes"/>
+          <context context-type="paramnotes"></context>
         </context-group>
       </trans-unit>
       <trans-unit id="deploy.jsp.filepath-header" xml:space="preserve">
@@ -17403,7 +17403,7 @@ Tingueu en compte que si un sistema determinat anul·la un fitxer donat, o el t�
         <target state="translated">Nom del fitxer</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/</context>
-          <context context-type="paramnotes"/>
+          <context context-type="paramnotes"></context>
         </context-group>
       </trans-unit>
       <trans-unit id="deploy.jsp.deployallbutton" xml:space="preserve">
@@ -17411,7 +17411,7 @@ Tingueu en compte que si un sistema determinat anul·la un fitxer donat, o el t�
         <target state="translated">Desplega tots els fitxers</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/</context>
-          <context context-type="paramnotes"/>
+          <context context-type="paramnotes"></context>
         </context-group>
       </trans-unit>
       <trans-unit id="deploy.jsp.deployselectedbutton" xml:space="preserve">
@@ -17419,7 +17419,7 @@ Tingueu en compte que si un sistema determinat anul·la un fitxer donat, o el t�
         <target state="translated">Desplega els fitxers seleccionats</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/</context>
-          <context context-type="paramnotes"/>
+          <context context-type="paramnotes"></context>
         </context-group>
       </trans-unit>
       <trans-unit id="deploy.jsp.h2" xml:space="preserve">
@@ -17427,14 +17427,14 @@ Tingueu en compte que si un sistema determinat anul·la un fitxer donat, o el t�
         <target state="translated">Desplegar fitxers de configuració</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/</context>
-          <context context-type="paramnotes"/>
+          <context context-type="paramnotes"></context>
         </context-group>
       </trans-unit>
       <trans-unit id="deploy.jsp.description" xml:space="preserve">
         <source>You may select the files you wish to deploy from the list below.  You will then be asked to select the systems to deploy them to.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/</context>
-          <context context-type="paramnotes"/>
+          <context context-type="paramnotes"></context>
         </context-group>
         <target state="translated">Podeu seleccionar els fitxers que voleu desplegar de la llista següent.  A continuació, se us demanarà que seleccioneu els sistemes per a desplegar-los.</target>
       </trans-unit>
@@ -17443,7 +17443,7 @@ Tingueu en compte que si un sistema determinat anul·la un fitxer donat, o el t�
         <target state="translated">Nom del fitxer</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/</context>
-          <context context-type="paramnotes"/>
+          <context context-type="paramnotes"></context>
         </context-group>
       </trans-unit>
       <trans-unit id="deploysystems.jsp.deployconfirmbutton" xml:space="preserve">
@@ -17451,7 +17451,7 @@ Tingueu en compte que si un sistema determinat anul·la un fitxer donat, o el t�
         <target state="translated">Confirma i desplega als sistemes seleccionats</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/</context>
-          <context context-type="paramnotes"/>
+          <context context-type="paramnotes"></context>
         </context-group>
       </trans-unit>
       <trans-unit id="deploysystems.jsp.h2" xml:space="preserve">
@@ -17459,7 +17459,7 @@ Tingueu en compte que si un sistema determinat anul·la un fitxer donat, o el t�
         <target state="translated">Desplegar fitxers de configuració: Seleccioneu sistemes per al desplegament</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/</context>
-          <context context-type="paramnotes"/>
+          <context context-type="paramnotes"></context>
         </context-group>
       </trans-unit>
       <trans-unit id="deploysystems.jsp.note" xml:space="preserve">
@@ -17467,7 +17467,7 @@ Tingueu en compte que si un sistema determinat anul·la un fitxer donat, o el t�
         <target state="translated">Seleccioneu els sistemes als quals voleu desplegar els fitxers seleccionats.</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/</context>
-          <context context-type="paramnotes"/>
+          <context context-type="paramnotes"></context>
         </context-group>
       </trans-unit>
       <trans-unit id="deploysystems.jsp.warning" xml:space="preserve">
@@ -17475,7 +17475,7 @@ Tingueu en compte que si un sistema determinat anul·la un fitxer donat, o el t�
         <target state="translated">Lt;stronggt;Warning:lt;/stronggt; Tingueu en compte que si algun dels fitxers que esteu intentant desplegar des del canal de configuració {0} són anul·lats o superats per un fitxer amb el mateix nom en un canal de més alt rang al qual està subscrit qualsevol sistema en particular, llavors la versió de més alt rang del fitxer es desplegarà en aquest sistema, en lloc de la versió del canal de configuració {0}.</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/</context>
-          <context context-type="paramnotes"/>
+          <context context-type="paramnotes"></context>
         </context-group>
       </trans-unit>
       <!-- deployrevision.jsp -->
@@ -21113,7 +21113,7 @@ qualsevol d'aquestes revisions.  Estàs segur que vols fer-ho?</target>
       </trans-unit>
       <trans-unit id="ssm.operations.provisioning.remotecommand.form.queue.succeed" xml:space="preserve">
         <source>Task "{0}" has been successfully added to Action Chain &lt;a href="/rhn/schedule/ActionChain.do?id={1}"&gt;{2}&lt;/a&gt;.</source>
-        <target state="needs-adaptation">La tasca "{0}" s'ha afegit correctament a la cadena d'acció {1}.</target>
+        <target state="translated">La tasca {0} s'ha afegit correctament a la cadena d'accions &lt;a href="/rhn/schedule/ActionChain.do?id={1}"&gt;{2}&lt;/a&gt;.</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/ssm/kickstart/KickstartableSystems.do</context>
         </context-group>
@@ -27308,7 +27308,7 @@ canal indicat.</target>
       </trans-unit>
       <trans-unit id="schedule.delete.jsp.introparagraph" xml:space="preserve">
         <source>Are you sure you want to disable the schedule? Associated bunch won't get scheduled any more. This can have a huge impact on @@PRODUCT_NAME@@ functionality. Proceed only if you know what you're doing.</source>
-        <target state="needs-adaptation">Segur que voleu suprimir la programació? El grup associat ja no es programarà més. Això pot tenir un gran impacte en la funcionalitat de @@PRODUCT_NAME@@. Procediu només si sabeu el que feu.</target>
+        <target state="translated">Segur que voleu inhabilitar la planificació? El grup associat ja no es programarà. Això pot tenir un gran impacte en la funcionalitat de @@PRODUCT_NAME@@. Continueu només si sabeu què feu.</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/DeleteSchedule.do</context>
         </context-group>
@@ -27350,7 +27350,7 @@ canal indicat.</target>
       </trans-unit>
       <trans-unit id="toolbar.delete.schedule" xml:space="preserve">
         <source>disable schedule</source>
-        <target state="needs-adaptation">suprimeix la planificació</target>
+        <target state="translated">inhabilita la planificació</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/ScheduleDetail.do</context>
         </context-group>
@@ -27430,7 +27430,7 @@ canal indicat.</target>
       </trans-unit>
       <trans-unit id="schedule.delete.jsp.deleteschedule" xml:space="preserve">
         <source>Disable Schedule</source>
-        <target state="needs-adaptation">Suprimeix la planificació</target>
+        <target state="translated">Inhabilita la planificació</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/DeleteSchedule.do</context>
         </context-group>
@@ -29824,46 +29824,46 @@ lt;/pgt;
           També podeu &lt;a href="{0}"&gt;tancar la sessió&lt;/a&gt; o &lt;a href="javascript:history.back()"&gt;tornar&lt;/a&gt; a la pàgina anterior.
         </target>
       </trans-unit>
-    <trans-unit id="userdetails.jsp.adminroles" xml:space="preserve">
+      <trans-unit id="userdetails.jsp.adminroles" xml:space="preserve">
         <source>Administrative Roles</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/UserDetails</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Rols administratius</target>
+      </trans-unit>
       <trans-unit id="schedule.edit.jsp.activateschedule" xml:space="preserve">
         <source>Activate Schedule</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/ScheduleDetail.do</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Activa la planificació</target>
+      </trans-unit>
       <trans-unit id="actionchain.jsp.distupgrade.upgrade" xml:space="preserve">
         <source>Migrate the installed product on</source>
-            <context-group name="ctx">
+        <context-group name="ctx">
           <context context-type="sourcefile">/rhn/schedule/ActionChain</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Migra el producte instal·lat a</target>
+      </trans-unit>
       <trans-unit id="ssm.overview.product_migration" xml:space="preserve">
-            <source>Product Migration</source>
-        <target state="new"/>
-  </trans-unit>
-        <trans-unit id="ssm.overview.product_migration.migrate" xml:space="preserve">
-            <source>&lt;a href="/rhn/manager/systems/ssm/product-migration"&gt;Migrate the products&lt;/a&gt; installed on the selected systems</source>
-        <target state="new"/>
-  </trans-unit>
-        <trans-unit id="bunch.jsp.description.compare-task-bunch" xml:space="preserve">
+        <source>Product Migration</source>
+        <target state="translated">Migració de producte</target>
+      </trans-unit>
+      <trans-unit id="ssm.overview.product_migration.migrate" xml:space="preserve">
+        <source>&lt;a href="/rhn/manager/systems/ssm/product-migration"&gt;Migrate the products&lt;/a&gt; installed on the selected systems</source>
+        <target state="translated">&lt;a href="/rhn/manager/systems/ssm/product-migration"&gt;Migra els productes&lt;/a&gt; instal·lats als sistemes seleccionats</target>
+      </trans-unit>
+      <trans-unit id="bunch.jsp.description.compare-task-bunch" xml:space="preserve">
         <source>Schedules a generic comparison task</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/BunchDetail.do</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Planifica una tasca de comparació genèrica</target>
+      </trans-unit>
       <trans-unit id="task.status.compare-task-files" xml:space="preserve">
         <source>Compare Task</source>
-      <target state="new"/>
-  </trans-unit>
-      </body>
+        <target state="translated">Tasca de comparació</target>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
