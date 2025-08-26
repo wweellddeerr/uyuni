@@ -64,7 +64,6 @@ export function SearchPanel(props: SearchPanelProps) {
             <button className="btn-link" onClick={props.onClear}>
               {t("Clear")}
             </button>
-            &nbsp;/&nbsp;
           </span>
         )}
         {props.selectable && (
