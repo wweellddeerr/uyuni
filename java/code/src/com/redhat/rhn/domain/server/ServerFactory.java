@@ -61,7 +61,6 @@ import org.hibernate.query.Query;
 import org.hibernate.type.StandardBasicTypes;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
@@ -368,16 +367,28 @@ public class ServerFactory extends HibernateFactory {
      * @param serverGroup The group to add the servers to
      */
     public static void addServersToGroup(Collection<Server> servers, ServerGroup serverGroup) {
-        List<Long> serverIdsToAdd = servers.stream().filter(s -> s.getOrgId().equals(serverGroup.getOrgId()))
-                .map(Server::getId).collect(Collectors.toList());
+        List<Long> serverIdsToAdd = servers.stream()
+                .filter(s -> s.getOrgId().equals(serverGroup.getOrgId()))
+                .map(Server::getId).toList();
 
+        if (serverIdsToAdd.size() != servers.size()) {
+            String incompatible = servers.stream()
+                    .filter(s -> !s.getOrgId().equals(serverGroup.getOrgId()))
+                    .map(Server::getName)
+                    .collect(Collectors.joining(", "));
+
+            LOG.error("Unable to set group '{}' for systems in different organization: {}",
+                    serverGroup.getName(), incompatible);
+        }
         boolean serversUpdated = insertServersToGroup(serverIdsToAdd, serverGroup.getId());
 
         if (serversUpdated) {
-            servers.stream().forEach(s -> {
-                s.addGroup(serverGroup);
-                SystemManager.updateSystemOverview(s);
-            });
+            servers.stream()
+                    .filter(s -> s.getOrgId().equals(serverGroup.getOrgId()))
+                    .forEach(s -> {
+                        s.addGroup(serverGroup);
+                        SystemManager.updateSystemOverview(s);
+                    });
             if (serverGroup.isManaged()) {
                 updatePermissionsForServerGroup(serverGroup.getId());
             }
@@ -424,7 +435,7 @@ public class ServerFactory extends HibernateFactory {
      * @param serverGroupIn The group to add the server to
      */
     public static void addServerToGroup(Server serverIn, ServerGroup serverGroupIn) {
-        addServersToGroup(Arrays.asList(serverIn), serverGroupIn);
+        addServersToGroup(Collections.singletonList(serverIn), serverGroupIn);
     }
 
     /**
@@ -451,16 +462,19 @@ public class ServerFactory extends HibernateFactory {
      * @param serverGroup The group to remove the servers from
      */
     public static void removeServersFromGroup(Collection<Server> servers, ServerGroup serverGroup) {
-        List<Long> serverIdsToAdd = servers.stream().filter(s -> s.getOrgId().equals(serverGroup.getOrgId()))
-                .map(Server::getId).collect(Collectors.toList());
+        List<Long> serverIdsToAdd = servers.stream()
+                .filter(s -> s.getOrgId().equals(serverGroup.getOrgId()))
+                .map(Server::getId).toList();
 
         boolean serversUpdated = removeServersFromGroup(serverIdsToAdd, serverGroup.getId());
 
         if (serversUpdated) {
-            servers.stream().forEach(s -> {
-                s.removeGroup(serverGroup);
-                SystemManager.updateSystemOverview(s);
-            });
+            servers.stream()
+                    .filter(s -> s.getOrgId().equals(serverGroup.getOrgId()))
+                    .forEach(s -> {
+                        s.removeGroup(serverGroup);
+                        SystemManager.updateSystemOverview(s);
+                    });
             if (serverGroup.isManaged()) {
                 updatePermissionsForServerGroup(serverGroup.getId());
             }
@@ -491,7 +505,7 @@ public class ServerFactory extends HibernateFactory {
      * @param serverGroupIn The group to remove the server from
      */
     public static void removeServerFromGroup(Server serverIn, ServerGroup serverGroupIn) {
-        removeServersFromGroup(Arrays.asList(serverIn), serverGroupIn);
+        removeServersFromGroup(Collections.singletonList(serverIn), serverGroupIn);
     }
 
     /**
