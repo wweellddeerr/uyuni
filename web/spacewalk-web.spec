@@ -108,8 +108,6 @@ Obsoletes:      spacewalk-grail < %{version}
 Obsoletes:      spacewalk-pxt < %{version}
 Obsoletes:      spacewalk-sniglets < %{version}
 Provides:       rhn-base = 5.3.0
-%if 0%{?suse_version}
-Requires:       susemanager-frontend-libs
 %if 0%{?suse_version} >= 1500
 Requires:       python3-PyJWT
 Requires:       python3-numpy
