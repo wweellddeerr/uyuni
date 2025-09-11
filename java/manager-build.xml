@@ -164,9 +164,9 @@
     </target>
 
     <target name="clean-ivy" description="Cleans up all ivy related files">
-        <delete dir="${basedir}/buildconf/ivy/repository/suse" />
+        <delete dir="${basedir}/buildconf/ivy/repository/manager-51" />
         <delete dir="${basedir}/.obs-to-maven-cache" />
-        <delete dir="${user.home}/.ivy2/cache/suse" />
+        <delete dir="${user.home}/.ivy2/cache/manager-51" />
     </target>
 
     <target name="maybe-clean" unless="build.incremental.compile">
