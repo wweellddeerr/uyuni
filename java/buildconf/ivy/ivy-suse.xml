@@ -10,7 +10,7 @@
         <dependency org="manager-51" name="c3p0" rev="0.9.5.5" />
         <dependency org="manager-51" name="cglib" rev="3.3.0" />
         <dependency org="manager-51" name="classmate" rev="1.5.1" />
-        <dependency org="manager-51" name="javax.mail" rev="1.5.2" />
+        <dependency org="manager-51" name="javax.mail" rev="1.6.2" />
         <dependency org="manager-51" name="client" rev="2.1" />
         <dependency org="manager-51" name="common" rev="2.1" />
         <dependency org="manager-51" name="stringprep" rev="1.1" />
