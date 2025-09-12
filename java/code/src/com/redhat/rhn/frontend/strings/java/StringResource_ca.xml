@@ -11002,7 +11002,7 @@ lt;stronggt;Note:lt;/stronggt; La documentació addicional sobre l'ús de l'ISO 
       </trans-unit>
       <trans-unit id="cveaudit.notfound" xml:space="preserve">
         <source>The specified CVE number was not found in our database.</source>
-        <target state="translated">No s'ha trobat el número de CVE especificat a la nostra base de dades.</target>
+        <target state="translated">No s'ha trobat el número CVE especificat a la base de dades.</target>
       </trans-unit>
       <trans-unit id="bootstrap.minion.error.salt.unexpected" xml:space="preserve">
         <source>Error during applying the bootstrap state. Check the server logs.</source>
@@ -11418,7 +11418,7 @@ Per a esmenar aquesta situació, afegiu credencials SCC lt;a href""/rhn/admin/se
       </trans-unit>
       <trans-unit id="coco.environment.kvm_amd_epyc_milan.description" xml:space="preserve">
         <source>KVM on AMD Epyc Processor, third generation (milan)</source>
-        <target state="needs-adaptation">KVM en processador d'Epyc AMD, segona generació (milà)</target>
+        <target state="translated">KVM en processador AMD Epyc, tercera generació (Milà)</target>
       </trans-unit>
       <trans-unit id="coco.environment.kvm_amd_epyc_milan.label" xml:space="preserve">
         <source>KVM on AMD Epyc - Milan</source>
@@ -11426,7 +11426,7 @@ Per a esmenar aquesta situació, afegiu credencials SCC lt;a href""/rhn/admin/se
       </trans-unit>
       <trans-unit id="coco.environment.kvm_amd_epyc_genoa.description" xml:space="preserve">
         <source>KVM on AMD Epyc Processor, fourth generation (genoa)</source>
-        <target state="needs-adaptation">KVM en processador Epyc AMD, tercera generació (genoa)</target>
+        <target state="translated">KVM en processador Epyc AMD, tercera generació (genoa)</target>
       </trans-unit>
       <trans-unit id="coco.environment.kvm_amd_epyc_genoa.label" xml:space="preserve">
         <source>KVM on AMD Epyc - Genoa</source>
@@ -11862,7 +11862,7 @@ Per a esmenar aquesta situació, afegiu credencials SCC lt;a href""/rhn/admin/se
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/schedule/ActionDetails.do</context>
         </context-group>
-        <target state="translated">Obteniu i pugeu dades de suport</target>
+        <target state="translated">Obtenir i pujar dades de suport</target>
       </trans-unit>
       <trans-unit id="message.scheduleactivated" xml:space="preserve">
         <source>Schedule &lt;strong&gt;{0}&lt;/strong&gt; activated.</source>
@@ -11874,7 +11874,7 @@ Per a esmenar aquesta situació, afegiu credencials SCC lt;a href""/rhn/admin/se
       </trans-unit>
       <trans-unit id="bunch.jsp.description.errata-advisory-map-sync-bunch" xml:space="preserve">
         <source>Update SUSE errata advisory map to retrieve announcement ids and advisor URLs</source>
-        <target state="translated">Actualitza el mapa de consells sobre errors de SUSE per recuperar els identificadors d'anuncis i els URL de l'assessorament</target>
+        <target state="translated">Actualitza el mapa d'assessors d'errors de SUSE per recuperar els identificadors d'anuncis i els URL dels assessors.</target>
       </trans-unit>
       <trans-unit id="supportdata.uploadGeoType.eu" xml:space="preserve">
         <source>EU</source>
@@ -11894,96 +11894,96 @@ Per a esmenar aquesta situació, afegiu credencials SCC lt;a href""/rhn/admin/se
       </trans-unit>
       <trans-unit id="system.details.support.unable_to_schedule" xml:space="preserve">
         <source>Unexpected error while scheduling the generation of the support data. Please check the server logs for detailed information.</source>
-        <target state="translated">S'ha produït un error inesperat en programar la generació de les dades de suport. Consulteu els registres del servidor per obtenir informació detallada.</target>
+        <target state="translated">S'ha produït un error inesperat en programar la generació de les dades de suport. Consulteu els registres del servidor per obtenir-ne informació detallada.</target>
       </trans-unit>
       <trans-unit id="system.details.support.unable_to_upload" xml:space="preserve">
         <source>Unable to gather and upload the support data. Please check the server logs for detailed information.</source>
-        <target state="translated">No es poden recopilar i carregar les dades de suport. Consulteu els registres del servidor per obtenir informació detallada.</target>
+        <target state="translated">No s'han pogut recopilar i carregar les dades de suport. Consulteu els registres del servidor per obtenir-ne informació detallada.</target>
       </trans-unit>
-    <trans-unit id="coco.environment.kvm_amd_epyc_bergamo.description" xml:space="preserve">
+      <trans-unit id="coco.environment.kvm_amd_epyc_bergamo.description" xml:space="preserve">
         <source>KVM on AMD Epyc Processor, fourth generation (bergamo)</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">KVM en processador AMD Epyc, quarta generació (Bèrgam)</target>
+      </trans-unit>
       <trans-unit id="coco.environment.kvm_amd_epyc_bergamo.label" xml:space="preserve">
         <source>KVM on AMD Epyc - Bergamo</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">KVM en AMD Epyc - Bèrgam</target>
+      </trans-unit>
       <trans-unit id="coco.environment.kvm_amd_epyc_siena.description" xml:space="preserve">
         <source>KVM on AMD Epyc Processor, fourth generation (siena)</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">KVM en processador AMD Epyc, quarta generació (Siena)</target>
+      </trans-unit>
       <trans-unit id="coco.environment.kvm_amd_epyc_siena.label" xml:space="preserve">
         <source>KVM on AMD Epyc - Siena</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">KVM en AMD Epyc - Siena</target>
+      </trans-unit>
       <trans-unit id="coco.environment.kvm_amd_epyc_turin.description" xml:space="preserve">
         <source>KVM on AMD Epyc Processor, fifth generation (turin)</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">KVM en processador AMD Epyc, cinquena generació (Torí)</target>
+      </trans-unit>
       <trans-unit id="coco.environment.kvm_amd_epyc_turin.label" xml:space="preserve">
         <source>KVM on AMD Epyc - Turin</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">KVM en AMD Epyc - Torí</target>
+      </trans-unit>
       <trans-unit id="system.migration.noServersSelected" xml:space="preserve">
-          <source>Unable to identify the selected systems for the migration.</source>
-      <target state="new"/>
-  </trans-unit>
+        <source>Unable to identify the selected systems for the migration.</source>
+        <target state="translated">No s'han pogut identificar els sistemes seleccionats per a la migració.</target>
+      </trans-unit>
       <trans-unit id="system.migration.noCommonProduct" xml:space="preserve">
-          <source>The selected systems do not have a common base product.</source>
-      <target state="new"/>
-  </trans-unit>
+        <source>The selected systems do not have a common base product.</source>
+        <target state="translated">Els sistemes seleccionats no tenen un producte de base comú.</target>
+      </trans-unit>
       <trans-unit id="system.migration.noServersSelected" xml:space="preserve">
-          <source>Unable to identify a valid migration target for the selected systems.</source>
-      <target state="new"/>
-  </trans-unit>
+        <source>Unable to identify a valid migration target for the selected systems.</source>
+        <target state="translated">No s'ha pogut identificar un objectiu de migració vàlid per als sistemes seleccionats.</target>
+      </trans-unit>
       <trans-unit id="product_migration.os_not_supported" xml:space="preserve">
         <source>Product Migrations are not supported for the OS of this system.</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Les migracions de productes no són compatibles amb el sistema operatiu d'aquest sistema.</target>
+      </trans-unit>
       <trans-unit id="product_migration.source_unknown" xml:space="preserve">
         <source>The base product of this system is unknown.</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">El producte base d'aquest sistema és desconegut.</target>
+      </trans-unit>
       <trans-unit id="product_migration.source_mismatch" xml:space="preserve">
         <source>The base product of this system does not match.</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">El producte base d'aquest sistema no coincideix.</target>
+      </trans-unit>
       <trans-unit id="product_migration.salt_needs_update" xml:space="preserve">
         <source>Salt installed on this system is out of date.</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">El programari de Salt instal·lat en aquest sistema és obsolet.</target>
+      </trans-unit>
       <trans-unit id="product_migration.salt_needs_update.details" xml:space="preserve">
         <source>The installed &lt;pre&gt;{0}&lt;/pre&gt; package version on this system is out of date. Please update the package to the latest version before you start a Product migration.</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">La versió del paquet &lt;pre&gt;{0}&lt;/pre&gt; instal·lada en aquest sistema està desactualitzada. Actualitzeu el paquet a la darrera versió abans d'iniciar una migració de producte.</target>
+      </trans-unit>
       <trans-unit id="product_migration.addons_affected" xml:space="preserve">
         <source>Some installed addons are going to be affect, depending on chosen target.</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Alguns complements instal·lats se'n veuran afectats, segons l'objectiu escollit.</target>
+      </trans-unit>
       <trans-unit id="product_migration.single.addons_affected" xml:space="preserve">
         <source>Some installed addons are going to be affect.</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">Alguns complements instal·lats se'n veuran afectats.</target>
+      </trans-unit>
       <trans-unit id="product_migration.addons_affected.missing_successors" xml:space="preserve">
         <source>&lt;p&gt;Depending on chosen target, some or all of these products will be removed because no successor could be found, so proceed with caution:&lt;/p&gt;{0}</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">&lt;p&gt;Segons l'objectiu escollit, alguns o tots aquests productes s'eliminaran perquè no s'ha pogut trobar cap successor, així que procediu amb precaució:&lt;/p&gt;{0}</target>
+      </trans-unit>
       <trans-unit id="product_migration.single.addons_affected.missing_successors" xml:space="preserve">
         <source>&lt;p&gt;These products will be removed because no successor could be found, so proceed with caution:&lt;/p&gt;{0}</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">&lt;p&gt;Aquests productes s'eliminaran perquè no s'ha pogut trobar cap successor, així que procediu amb precaució:&lt;/p&gt;{0}</target>
+      </trans-unit>
       <trans-unit id="product_migration.addons_affected.installed_addons" xml:space="preserve">
         <source>&lt;p&gt;Depending on chosen target, some or all of these products will be installed:&lt;/p&gt;{0}</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">&lt;p&gt;Segons l'objectiu escollit, s'instal·laran alguns o tots aquests productes:&lt;/p&gt;{0}</target>
+      </trans-unit>
       <trans-unit id="product_migration.single.addons_affected.installed_addons" xml:space="preserve">
         <source>&lt;p&gt;These products will be installed:&lt;/p&gt;{0}</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">&lt;p&gt;Aquests productes s'instal·laran:&lt;/p&gt;{0}</target>
+      </trans-unit>
       <trans-unit id="product_migration.addon_or_higher" xml:space="preserve">
         <source>{0} or higher</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="translated">{0} o superior</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

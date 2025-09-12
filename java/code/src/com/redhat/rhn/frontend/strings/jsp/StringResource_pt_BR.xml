@@ -253,14 +253,14 @@
         <context-group name="ctx">
           <context context-type="sourcefile">Any page with required username fields</context>
         </context-group>
-        <target>{0} contém caracteres inválidos. Além dos caracteres alfanuméricos, '-', '_', '.' e '@' também são permitidos. Por favor tente novamente.</target>
+        <target state="translated">{0} contém caracteres inválidos. Além dos caracteres alfanuméricos, '-', '_', '.' e '@' também são permitidos. Tente novamente.</target>
       </trans-unit>
       <trans-unit id="errors.posix" xml:space="preserve">
         <source>{0} contains invalid characters. In addition to alphanumeric characters, '-', '_', and '.' are allowed.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">Any page with required posix name fields</context>
         </context-group>
-        <target>{0} contém caracteres inválidos. Além dos caracteres alfanuméricos, '-', '_', '.' e '.' também são permitidos. Por favor tente novamente. </target>
+        <target state="translated">{0} contém caracteres inválidos. Além dos caracteres alfanuméricos, '-', '_', '.' e '.' também são permitidos.</target>
       </trans-unit>
       <trans-unit id="errors.config_channel_label" xml:space="preserve">
         <source>{0} contains invalid characters. In addition to alphanumeric characters, '-' and '_' are allowed.</source>
@@ -487,7 +487,7 @@
       </trans-unit>
       <trans-unit id="missing_capabilities.jsp.summary" xml:space="preserve">
         <source>The server &lt;strong&gt;&lt;a href="{0}"&gt;{1}&lt;/a&gt;&lt;/strong&gt; does not have the &lt;strong&gt;{2}&lt;/strong&gt; client capability. Please enable the capability before proceeding with the operation.</source>
-        <target>A capacidade do cliente &lt;strong&gt;&lt;a href="{0}"&gt;{1}&lt;/a&gt;&lt;/strong&gt; does not have the &lt;strong&gt;{2}&lt;/strong&gt; do servidor. Por favor ative a capacidade antes de proceder com a operação.</target>
+        <target state="translated">A capacidade do cliente &lt;strong&gt;&lt;a href="{0}"&gt;{1}&lt;/a&gt;&lt;/strong&gt; does not have the &lt;strong&gt;{2}&lt;/strong&gt; do servidor. Ative a capacidade antes de proceder com a operação.</target>
         <context-group name="ctx">
           <context context-type="sourcefile">Lookup error page</context>
         </context-group>
@@ -902,7 +902,7 @@
         <context-group name="ctx">
           <context context-type="paramnotes">You've found an error in our site. Please help us by filling out _this form_ with details of how you received this message.</context>
         </context-group>
-        <target>Você encontrou um erro em nosso site.  Por favor, entre em contato com um representante de Suporte com os detalhes de como você recebeu esta mensagem.</target>
+        <target state="translated">Você encontrou um erro em nosso site.  Entre em contato com um representante de Suporte com os detalhes de como você recebeu esta mensagem.</target>
         <context-group name="ctx">
           <context context-type="sourcefile">Permission error page</context>
         </context-group>
@@ -1063,7 +1063,7 @@
         <context-group name="ctx">
           <context context-type="sourcefile">500 error page</context>
         </context-group>
-        <target>Por favor nos ajude a corrigir esta mensagem, contactando-nos com detalhes de como você recebeu esta mensagem.</target>
+        <target state="translated">Nos ajude a corrigir esta mensagem, contactando-nos com detalhes de como você recebeu esta mensagem.</target>
       </trans-unit>
       <trans-unit id="common.jsp.noscript" xml:space="preserve">
         <source>Some features require JavaScript in order to work properly. Make sure you enable JavaScript in your browser.</source>
@@ -1470,7 +1470,7 @@
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/account/LocalePreferences</context>
         </context-group>
-        <target>Por favor selecione seu idioma favorito na lista abaixo contendo os idiomas atualmente suportados. O idioma selecionado será usado como padrão para a interface do @@PRODUCT_NAME@@.</target>
+        <target state="translated">Selecione seu idioma favorito na lista abaixo contendo os idiomas atualmente suportados. O idioma selecionado será usado como padrão para a interface do @@PRODUCT_NAME@@.</target>
       </trans-unit>
       <trans-unit id="preferences.jsp.startpagetitle" xml:space="preserve">
         <source>"Overview" Start Page</source>
@@ -1813,7 +1813,7 @@
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/account/ChangeEmail</context>
         </context-group>
-        <target>Por favor preencha seu novo endereço de e-mail abaixo.</target>
+        <target state="translated">Preencha seu novo endereço de e-mail abaixo.</target>
       </trans-unit>
       <!-- channelmanagementperms.jsp -->
       <trans-unit id="channelManagementPerms.title" xml:space="preserve">
@@ -2313,7 +2313,7 @@ abaixo e &lt;b&gt;não poderá mais se autenticar&lt;/b&gt;.</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/DeleteUser</context>
         </context-group>
-        <target>&lt;p&gt;Isto removerá este usuário &lt;strong&gt;permanentemente&lt;/strong&gt;.&lt;/p&gt; &lt;p&gt;Todas as ações agendadas associadas a este usuário serão alteradas e desconexas do mesmo.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Por favor, clique somente uma vez no botão; o processo de remoção levará alguns instantes para concluir.&lt;/strong&gt;&lt;/p&gt;</target>
+        <target state="translated">&lt;p&gt;Isto removerá este usuário &lt;strong&gt;permanentemente&lt;/strong&gt;.&lt;/p&gt; &lt;p&gt;Todas as ações agendadas associadas a este usuário serão alteradas e desconexas do mesmo.&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Clique somente uma vez no botão; o processo de remoção levará alguns instantes para concluir.&lt;/strong&gt;&lt;/p&gt;</target>
       </trans-unit>
       <!-- disableuser.jsp -->
       <trans-unit id="disableuser.jsp.disable" xml:space="preserve">
@@ -2510,7 +2510,7 @@ abaixo e &lt;b&gt;não poderá mais se autenticar&lt;/b&gt;.</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/account/UserDetails</context>
         </context-group>
-        <target state="needs-adaptation">Por favor preencha suas informações no formulário abaixo. Os campos marcados com um asterisco (&lt;span class="required-form-field"&gt;*&lt;/span&gt;) são &lt;strong&gt;obrigatórios&lt;/strong&gt;.</target>
+        <target state="translated"> Preencha suas informações no formulário abaixo. Os campos marcados com um asterisco (&lt;span class="required-form-field"&gt;*&lt;/span&gt;) são &lt;strong&gt;obrigatórios&lt;/strong&gt;.</target>
       </trans-unit>
       <trans-unit id="your_edit_address_record.displayname" xml:space="preserve">
         <source>Record:</source>
@@ -29332,42 +29332,42 @@ Serão exibidos somente pacotes de uma arquitetura compatível.</target>
         </context-group>
         <target state="new"/>
       </trans-unit>
-    <trans-unit id="system.event.inventory" xml:space="preserve">
-          <source>Inventory:</source>
+      <trans-unit id="system.event.inventory" xml:space="preserve">
+        <source>Inventory:</source>
         <context-group name="ctx">
           <context context-type="sourcefile">System Events Pages</context>
         </context-group>
         <target state="new"/>
-  </trans-unit>
-        <trans-unit id="ansible_managed" xml:space="preserve">
+      </trans-unit>
+      <trans-unit id="ansible_managed" xml:space="preserve">
         <source>Ansible Managed</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="proxy_entitled" xml:space="preserve">
         <source>Proxy</source>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="403.jsp.title" xml:space="preserve">
         <source>403: Access Denied</source>
         <context-group name="ctx">
           <context context-type="sourcefile">403 error page</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="403.jsp.summary" xml:space="preserve">
         <source>You do not have permission to access the page: {0}.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">403 error page</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="403.jsp.instruction" xml:space="preserve">
         <source>You are signed in, but your account does not have permission to access this resource. If you believe you should have access, contact your organization administrator to review your access permissions.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">403 error page</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="403.jsp.actions" xml:space="preserve">
         <source>
           You can also &lt;a href="{0}"&gt;log out&lt;/a&gt; or &lt;a href="javascript:history.back()"&gt;go back&lt;/a&gt; to the previous page.
@@ -29375,48 +29375,48 @@ Serão exibidos somente pacotes de uma arquitetura compatível.</target>
         <context-group name="ctx">
           <context context-type="sourcefile">403 error page</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="userdetails.jsp.adminroles" xml:space="preserve">
         <source>Administrative Roles</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/UserDetails</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="schedule.edit.jsp.activateschedule" xml:space="preserve">
         <source>Activate Schedule</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/ScheduleDetail.do</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="actionchain.jsp.distupgrade.upgrade" xml:space="preserve">
         <source>Migrate the installed product on</source>
-            <context-group name="ctx">
+        <context-group name="ctx">
           <context context-type="sourcefile">/rhn/schedule/ActionChain</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="ssm.overview.product_migration" xml:space="preserve">
-            <source>Product Migration</source>
+        <source>Product Migration</source>
         <target state="new"/>
-  </trans-unit>
-        <trans-unit id="ssm.overview.product_migration.migrate" xml:space="preserve">
-            <source>&lt;a href="/rhn/manager/systems/ssm/product-migration"&gt;Migrate the products&lt;/a&gt; installed on the selected systems</source>
+      </trans-unit>
+      <trans-unit id="ssm.overview.product_migration.migrate" xml:space="preserve">
+        <source>&lt;a href="/rhn/manager/systems/ssm/product-migration"&gt;Migrate the products&lt;/a&gt; installed on the selected systems</source>
         <target state="new"/>
-  </trans-unit>
-        <trans-unit id="bunch.jsp.description.compare-task-bunch" xml:space="preserve">
+      </trans-unit>
+      <trans-unit id="bunch.jsp.description.compare-task-bunch" xml:space="preserve">
         <source>Schedules a generic comparison task</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/BunchDetail.do</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="new"/>
+      </trans-unit>
       <trans-unit id="task.status.compare-task-files" xml:space="preserve">
         <source>Compare Task</source>
-      <target state="new"/>
-  </trans-unit>
-      </body>
+        <target state="new"/>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
