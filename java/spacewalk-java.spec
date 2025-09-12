@@ -60,7 +60,7 @@
 %endif
 
 Name:           spacewalk-java
-Version:        5.1.17
+Version:        5.1.19
 Release:        0
 Summary:        Java web application files for %{productprettyname}
 License:        GPL-2.0-only
@@ -380,7 +380,6 @@ Requires:       spacewalk-java-config
 Requires:       spacewalk-java-jdbc
 Requires:       spacewalk-java-lib = %{version}
 Requires:       statistics
-Requires:       susemanager-frontend-libs >= 2.1.5
 Requires:       tomcat-taglibs-standard
 Requires:       xalan-j2 >= 2.6.0
 Requires:       xerces-j2

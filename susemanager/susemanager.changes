@@ -1,4 +1,21 @@
 -------------------------------------------------------------------
+Mon Sep 08 11:24:52 CEST 2025 - rosuna@suse.com
+
+- version 5.1.13-0
+  * Fix wrong header in old changelog entry
+
+-------------------------------------------------------------------
+Fri Aug 29 12:31:29 CEST 2025 - rosuna@suse.com
+
+- version 5.1.12-0
+  * Add missing bootrap repository definition for OES 24.4
+    (bsc#1241013)
+  * Use absolute paths when invoking external commands
+  * Configure default official update server domain
+  * Fix syntax error in changelog
+  * Add bootstrap repo data for openSUSE Leap Micro 6.2
+
+-------------------------------------------------------------------
 Tue Jun 17 17:04:48 CEST 2025 - marina.latini@suse.com
 
 - version 5.1.11-0
@@ -1821,7 +1838,7 @@ Mon Feb  6 17:40:11 CET 2012 - ug@suse.de
 - added cracklib check to DB password dialog (bnc#744983)
 
 -------------------------------------------------------------------
-Tue Jan 31 16:40:59 CET 2012 . mantel@suse.de
+Tue Jan 31 16:40:59 CET 2012 - mantel@suse.de
 
 - fix spelling in
   /etc/sysconfig/SuSEfirewall2.d/services/suse-manager-server

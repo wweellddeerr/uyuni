@@ -31,7 +31,7 @@
 %{!?nodejs_sitelib:%define nodejs_sitelib %{_prefix}/lib/node_modules}
 
 Name:           spacewalk-web
-Version:        5.1.13
+Version:        5.1.15
 Release:        0
 Summary:        Spacewalk Web site - Perl modules
 License:        GPL-2.0-only
@@ -63,6 +63,7 @@ but it does generate a number of sub-packages.
 
 %package -n spacewalk-html
 Summary:        HTML document files for Spacewalk
+# NB! This is a generated list, any changes you make here manually will be lost!
 License:        (GPL-3.0 OR MIT) AND (MPL-2.0 OR Apache-2.0) AND 0BSD AND Apache-2.0 AND BSD-2-Clause AND BSD-3-Clause AND CC-BY-4.0 AND GPL-2.0-only AND ISC AND LGPL-3.0-or-later AND MIT AND MPL-2.0 AND OFL-1.1 AND Python-2.0
 # FIXME: use correct group or remove it, see "https://en.opensuse.org/openSUSE:Package_group_guidelines"
 Group:          Applications/Internet
@@ -108,16 +109,8 @@ Obsoletes:      spacewalk-grail < %{version}
 Obsoletes:      spacewalk-pxt < %{version}
 Obsoletes:      spacewalk-sniglets < %{version}
 Provides:       rhn-base = 5.3.0
-%if 0%{?suse_version}
-Requires:       susemanager-frontend-libs
-%if 0%{?suse_version} >= 1500
 Requires:       python3-PyJWT
 Requires:       python3-numpy
-%else
-Requires:       python-PyJWT
-Requires:       python-numpy
-%endif
-%endif
 
 %description -n spacewalk-base
 This package includes the core RHN:: packages necessary to manipulate the
@@ -239,8 +232,6 @@ sed -i -e 's/^web.theme_default =.*$/web.theme_default = suse-light/' %{buildroo
 %dir %{www_path}
 %dir %{www_path}/css
 %{www_path}/css/*.{css,js}
-%dir %{www_path}/css/legacy
-%{www_path}/css/legacy/*.css
 %dir %{www_path}/fonts
 %{www_path}/fonts/*
 %dir %{www_path}/img

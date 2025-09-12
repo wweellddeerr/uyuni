@@ -57,7 +57,6 @@ export function SearchPanel(props: SearchPanelProps) {
       <div className={styles.pagination}>
         <span>
           {t("Items {from} - {to} of {total}", { from: props.fromItem, to: props.toItem, total: props.itemCount })}
-          &nbsp;&nbsp;
         </span>
         {props.selectable && props.selectedCount > 0 && (
           <span>
@@ -65,7 +64,6 @@ export function SearchPanel(props: SearchPanelProps) {
             <button className="btn-link" onClick={props.onClear}>
               {t("Clear")}
             </button>
-            &nbsp;/&nbsp;
           </span>
         )}
         {props.selectable && (
