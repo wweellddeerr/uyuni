@@ -88,6 +88,9 @@ type TableProps = {
 
   /** Title buttons to add next to the items per page selection */
   titleButtons?: Array<React.ReactNode>;
+
+  /** Bottom buttons to add after the table */
+  bottomButtons?: Array<React.ReactNode>;
 };
 
 function isColumn(input: any): input is React.ReactElement<React.ComponentProps<typeof Column>> {

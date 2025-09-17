@@ -19,6 +19,25 @@ type Props = {
   query?: string;
 };
 
+const DownloadCSVButton = ({ search }) => {
+  let url = "/rhn/manager/systems/csv/all";
+  if (search?.field && search?.criteria) {
+    const searchParams = new URLSearchParams({
+      qc: search.field,
+      q: search.criteria,
+    });
+    url += `?${searchParams.toString()}`;
+  }
+  return (
+    <div className="pull-right">
+      <a role="button" href={url} className="btn btn-default" data-senna-off="true">
+        <IconTag type="item-download-csv" />
+        Download CSV
+      </a>
+    </div>
+  );
+};
+
 export function AllSystems(props: Props) {
   const [selectedSystems, setSelectedSystems] = React.useState<string[]>([]);
 
@@ -66,6 +85,7 @@ export function AllSystems(props: Props) {
         defaultSearchField={props.queryColumn || "server_name"}
         initialSearch={props.query}
         emptyText={t("No Systems.")}
+        bottomButtons={[<DownloadCSVButton key="download-csv-button" search={{}} />]}
       >
         <Column
           columnKey="server_name"
@@ -158,13 +178,6 @@ export function AllSystems(props: Props) {
           cell={(item) => item.entitlementLevel}
         />
       </Table>
-
-      <div className="spacewalk-csv-download">
-        <a role="button" href="/rhn/manager/systems/csv/all" className="btn btn-default" data-senna-off="true">
-          <IconTag type="item-download-csv" />
-          Download CSV
-        </a>
-      </div>
     </>
   );
 }
