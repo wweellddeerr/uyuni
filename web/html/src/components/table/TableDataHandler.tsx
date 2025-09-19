@@ -4,7 +4,7 @@ import _isEqual from "lodash/isEqual";
 
 import { pageSize } from "core/user-preferences";
 
-import { Loading } from "components/utils";
+import { cloneReactElement, Loading } from "components/utils";
 
 import { AsyncDataProvider, PageControl, SimpleDataProvider } from "utils/data-providers";
 import { Comparator, PagedData } from "utils/data-providers";
@@ -103,6 +103,9 @@ type Props = {
 
   /** Title buttons to add next to the items per page selection */
   titleButtons?: Array<React.ReactNode>;
+
+  /** Bottom buttons to add after the table */
+  bottomButtons?: Array<React.ReactNode>;
 };
 
 type State = {
@@ -274,6 +277,14 @@ export class TableDataHandler extends React.Component<Props, State> {
     if (this.props.onSelect) {
       this.props.onSelect(selection);
     }
+  };
+
+  renderBottomButtons = () => {
+    return React.Children.map(this.props.bottomButtons, (item: React.ReactNode) =>
+      cloneReactElement(item, {
+        search: { field: this.state.field, criteria: this.state.criteria },
+      })
+    );
   };
 
   render() {
@@ -456,6 +467,7 @@ export class TableDataHandler extends React.Component<Props, State> {
             </div>
           ) : null}
         </div>
+        {this.renderBottomButtons()}
       </div>
     );
   }
