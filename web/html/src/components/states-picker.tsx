@@ -137,7 +137,7 @@ class StatesPicker extends React.Component<StatesPickerProps, StatesPickerState>
       }
     }
     const request = this.props.saveRequest(channels).then(
-      (data, textStatus, jqXHR) => {
+      (data) => {
         const newSearchResults = this.state.search.results.map((channel) => {
           const changed = this.state.changed.get(channelKey(channel));
           // We want to make sure the search results are updated with the changes. If there was a change
@@ -169,7 +169,7 @@ class StatesPicker extends React.Component<StatesPickerProps, StatesPickerState>
         this.setMessages(messages);
         this.hideRanking();
       },
-      (jqXHR, textStatus, errorThrown) => {
+      () => {
         this.setMessages(MessagesUtils.error(t("An error occurred on save.")));
       }
     );
