@@ -8,16 +8,14 @@
  * currently it makes autocomplete work nicely
  */
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type ValidKey<T extends string> = T extends `${infer A}${"{" | "}" | "," | " "}${infer B}` ? never : T;
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type PlaceholderKeys<T extends string, Keys extends string = never> = T extends `${infer F}{${infer K}${
   | "}"
   | ","}${infer R}`
   ? PlaceholderKeys<R, K | Keys>
   : Keys;
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 type TagKeys<T extends string, KS extends string = never> = T extends `${infer F}</${infer K}>${infer R}`
   ? TagKeys<R, K | KS>
   : KS;

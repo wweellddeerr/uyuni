@@ -8,7 +8,7 @@ interface Props {
 
   /** CSS class name to apply to the component */
   className?: string;
-};
+}
 
 export function FormGroup(props: Props) {
   const className = !DEPRECATED_unsafeEquals(props.className, null) ? props.className : "";

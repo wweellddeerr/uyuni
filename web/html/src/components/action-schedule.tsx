@@ -7,8 +7,7 @@ import { localizedMoment } from "utils";
 import { DEPRECATED_unsafeEquals } from "utils/legacy";
 import Network from "utils/network";
 
-import { Combobox } from "./combobox";
-import { ComboboxItem } from "./combobox";
+import { Combobox, ComboboxItem } from "./combobox";
 
 export type MaintenanceWindow = {
   id: number;

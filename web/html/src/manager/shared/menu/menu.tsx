@@ -81,7 +81,7 @@ class Element extends React.Component<ElementProps> {
   }
 
   isCurrentVisible = (element, search) => {
-    if (search == null || DEPRECATED_unsafeEquals(search.length, 0)) {
+    if (DEPRECATED_unsafeEquals(search, null) || DEPRECATED_unsafeEquals(search.length, 0)) {
       return true;
     }
 
@@ -89,7 +89,7 @@ class Element extends React.Component<ElementProps> {
   };
 
   isVisible = (element, search) => {
-    if (search == null || DEPRECATED_unsafeEquals(search.length, 0)) {
+    if (DEPRECATED_unsafeEquals(search, null) || DEPRECATED_unsafeEquals(search.length, 0)) {
       return true;
     }
 
@@ -101,7 +101,7 @@ class Element extends React.Component<ElementProps> {
   };
 
   isLeaf = (element) => {
-    return element.submenu == null;
+    return DEPRECATED_unsafeEquals(element.submenu, null);
   };
 
   toggleView = () => {
@@ -187,7 +187,7 @@ class Nav extends React.Component {
   };
 
   render() {
-    const isSearchActive = this.state.search != null && this.state.search.length > 0;
+    const isSearchActive = !DEPRECATED_unsafeEquals(this.state.search, null) && this.state.search.length > 0;
     return (
       <nav className={isSearchActive ? "" : "collapsed"}>
         <div className="nav-tool-box">
@@ -231,7 +231,7 @@ class Breadcrumb extends React.Component {
   render() {
     const breadcrumbArray: any[] = [];
     let level = window.JSONMenu.find((l) => l.active);
-    while (level != null) {
+    while (!DEPRECATED_unsafeEquals(level, null)) {
       breadcrumbArray.push(level);
       level = level.submenu ? level.submenu.find((l) => l.active) : null;
     }

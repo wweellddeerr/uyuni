@@ -66,10 +66,9 @@ class ActivationKeyChannelsApi extends React.Component<ActivationKeyChannelsProp
   }
 
   fetchBaseChannels = () => {
-    let future;
     this.setState({ loading: true });
 
-    future = Network.get(`/rhn/manager/api/activation-keys/base-channels`)
+    const future = Network.get(`/rhn/manager/api/activation-keys/base-channels`)
       .then((data) => {
         this.setState({
           availableBaseChannels: Array.from(data.data).map((channel: any) => channel.base),

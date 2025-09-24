@@ -1,3 +1,5 @@
+import { DEPRECATED_unsafeEquals } from "utils/legacy";
+
 import { Comparator, PagedData } from "./index";
 import PageControl from "./page-control";
 
@@ -56,7 +58,9 @@ export default class SimpleDataProvider {
   getIds(callback: (promise: Promise<any[]>) => any, criteria?: string) {
     const filtered = this.getFilteredData(criteria);
     const isSelectable = typeof this.selectable === "boolean" ? undefined : this.selectable;
-    const selectable = isSelectable != null ? filtered.filter((item) => isSelectable(item)) : filtered;
+    const selectable = !DEPRECATED_unsafeEquals(isSelectable, null)
+      ? filtered.filter((item) => isSelectable(item))
+      : filtered;
     callback(Promise.resolve(selectable.map(this.identifier)));
   }
 

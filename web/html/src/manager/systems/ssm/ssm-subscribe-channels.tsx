@@ -3,12 +3,10 @@ import * as React from "react";
 import * as ChannelUtils from "core/channels/utils/channels-dependencies.utils";
 import SpaRenderer from "core/spa/spa-renderer";
 
-import { ActionSchedule } from "components/action-schedule";
-import { ActionChain } from "components/action-schedule";
+import { ActionChain, ActionSchedule } from "components/action-schedule";
 import { AsyncButton, Button } from "components/buttons";
 import { ActionChainLink, ActionLink, ChannelLink, SystemLink } from "components/links";
-import { Messages } from "components/messages/messages";
-import { Utils as MessagesUtils } from "components/messages/messages";
+import { Messages, Utils as MessagesUtils } from "components/messages/messages";
 import { BootstrapPanel } from "components/panels/BootstrapPanel";
 import { PopUp } from "components/popup";
 import { Column } from "components/table/Column";
@@ -18,8 +16,7 @@ import { Toggler } from "components/toggler";
 import { localizedMoment } from "utils";
 import { Utils } from "utils/functions";
 import { DEPRECATED_unsafeEquals } from "utils/legacy";
-import Network from "utils/network";
-import { JsonResult } from "utils/network";
+import Network, { JsonResult } from "utils/network";
 
 // See java/code/webapp/WEB-INF/pages/channel/ssm/channelssub.jsp
 declare global {

@@ -9,6 +9,7 @@ import { ModalLink } from "components/dialog/ModalLink";
 import { Messages, MessageType, Utils as MessagesUtils } from "components/messages/messages";
 import { TopPanel } from "components/panels/TopPanel";
 
+import { DEPRECATED_unsafeEquals } from "utils/legacy";
 import Network from "utils/network";
 
 // See java/code/src/com/suse/manager/webui/templates/minion/bootstrap.jade
@@ -103,7 +104,7 @@ class ErrorDetailsDialog extends React.Component<ErrorDetailsDialogProps> {
     return (
       <Dialog
         id="show-error-details"
-        isOpen={this.props.error != null}
+        isOpen={!DEPRECATED_unsafeEquals(this.props.error, null)}
         title={title}
         className="modal-xs"
         onClose={this.props.onDialogClose}

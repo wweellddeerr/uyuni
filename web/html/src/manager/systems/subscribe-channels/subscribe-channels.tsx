@@ -4,19 +4,16 @@ import * as React from "react";
 
 import * as ChannelUtils from "core/channels/utils/channels-dependencies.utils";
 
-import { ActionSchedule } from "components/action-schedule";
-import { ActionChain } from "components/action-schedule";
+import { ActionChain, ActionSchedule } from "components/action-schedule";
 import { AsyncButton, Button } from "components/buttons";
 import { ActionChainLink, ActionLink, ChannelAnchorLink } from "components/links";
-import { Messages } from "components/messages/messages";
-import { Utils as MessagesUtils } from "components/messages/messages";
+import { Messages, Utils as MessagesUtils } from "components/messages/messages";
 import { BootstrapPanel } from "components/panels/BootstrapPanel";
 import { Toggler } from "components/toggler";
 
 import { localizedMoment } from "utils";
 import { DEPRECATED_unsafeEquals } from "utils/legacy";
-import Network from "utils/network";
-import { JsonResult } from "utils/network";
+import Network, { JsonResult } from "utils/network";
 
 declare let actionChains: ActionChain[];
 
@@ -246,7 +243,7 @@ class SystemChannels extends React.Component<SystemChannelsProps, SystemChannels
 
   selectChildChannel = (childChannelId: number, select: boolean) => {
     const child: ChannelDto | null | undefined = this.getAvailableChildren().get(childChannelId);
-    if (child == null || this.state.selectedBase == null) {
+    if (DEPRECATED_unsafeEquals(child, null) || DEPRECATED_unsafeEquals(this.state.selectedBase, null)) {
       return;
     }
     const selectedChildrenIds = this.state.selectedChildrenIds.get(this.state.selectedBase.id);

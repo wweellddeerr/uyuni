@@ -9,7 +9,7 @@ export interface TreeItem {
   id: string;
   data?: any;
   children?: string[];
-};
+}
 
 export type TreeData = {
   rootId: string;
