@@ -7,6 +7,7 @@ import { Column } from "components/table/Column";
 import { Table } from "components/table/Table";
 
 import { Utils } from "utils/functions";
+import { DEPRECATED_unsafeEquals } from "utils/legacy";
 import Network from "utils/network";
 
 import { SystemsListFilter } from "./list-filter";
@@ -98,7 +99,7 @@ export function AllSystems(props: Props) {
           comparator={Utils.sortByText}
           header={t("Updates")}
           cell={(item) => {
-            if (item.statusType == null) {
+            if (DEPRECATED_unsafeEquals(item.statusType, null)) {
               return "";
             }
             return Systems.statusDisplay(item, props.isAdmin);
@@ -109,7 +110,7 @@ export function AllSystems(props: Props) {
           comparator={Utils.sortByText}
           header={t("Patches")}
           cell={(item) => {
-            let totalErrataCount = item.securityErrata + item.bugErrata + item.enhancementErrata;
+            const totalErrataCount = item.securityErrata + item.bugErrata + item.enhancementErrata;
             if (totalErrataCount !== 0) {
               return <a href={`/rhn/systems/details/ErrataList.do?sid=${item.id}`}>{totalErrataCount}</a>;
             }
@@ -165,7 +166,7 @@ export function AllSystems(props: Props) {
           comparator={Utils.sortByText}
           header={t("Base Channel")}
           cell={(item) => {
-            if (item.channelId != null) {
+            if (!DEPRECATED_unsafeEquals(item.channelId, null)) {
               return <a href={`/rhn/channels/ChannelDetail.do?cid=${item.channelId}`}>{item.channelLabels}</a>;
             }
             return item.channelLabels;

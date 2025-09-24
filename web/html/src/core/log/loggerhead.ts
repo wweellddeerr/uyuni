@@ -96,7 +96,7 @@ export default class Loggerhead {
       "Content-Type": "application/json; charset=utf-8",
     };
 
-    var xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest();
     xhr.open("POST", this.url);
 
     Object.keys(this.setHeaders(headers)).forEach((key) => {

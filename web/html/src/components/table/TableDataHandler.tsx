@@ -6,9 +6,9 @@ import { pageSize } from "core/user-preferences";
 
 import { cloneReactElement, Loading } from "components/utils";
 
-import { AsyncDataProvider, PageControl, SimpleDataProvider } from "utils/data-providers";
-import { Comparator, PagedData } from "utils/data-providers";
+import { AsyncDataProvider, Comparator, PageControl, PagedData, SimpleDataProvider } from "utils/data-providers";
 import { Utils } from "utils/functions";
+import { DEPRECATED_unsafeEquals } from "utils/legacy";
 
 import { ItemsPerPageSelector, PaginationBlock } from "../pagination";
 import { Header } from "./Header";
@@ -16,16 +16,16 @@ import { SearchField } from "./SearchField";
 import { SearchPanel } from "./SearchPanel";
 
 type ChildrenArgsProps = {
-  currItems: Array<any>;
+  currItems: any[];
   headers: React.ReactNode;
   handleSelect: Function;
-  selectedItems: Array<any>;
+  selectedItems: any[];
   criteria?: string;
   field?: string;
 };
 
 type Props = {
-  columns: Array<React.ReactElement<any>>;
+  columns: React.ReactElement<any>[];
 
   /**
    * Either an array of data items of any type where each element is a row data,
@@ -41,7 +41,7 @@ type Props = {
    *
    * See: utils/data-providers/paged-data-endpoint.js for async usage
    */
-  data: Array<any> | string;
+  data: any[] | string;
 
   /** Function extracting the unique key of the row from the data object */
   identifier: (row: any) => any;
@@ -71,10 +71,10 @@ type Props = {
   selectable: boolean | ((row: unknown) => boolean);
 
   /** the handler to call when the table selection is updated. If not provided, the select boxes won't be rendered */
-  onSelect?: (items: Array<any>) => void;
+  onSelect?: (items: any[]) => void;
 
   /** the identifiers for selected items */
-  selectedItems?: Array<any>;
+  selectedItems?: any[];
 
   /** Allow items to be deleted */
   deletable?: boolean | ((row: any) => boolean);
@@ -99,17 +99,17 @@ type Props = {
   children: (args: ChildrenArgsProps) => React.ReactNode;
 
   /** Other filter fields */
-  additionalFilters?: Array<React.ReactNode>;
+  additionalFilters?: React.ReactNode[];
 
   /** Title buttons to add next to the items per page selection */
-  titleButtons?: Array<React.ReactNode>;
+  titleButtons?: React.ReactNode[];
 
   /** Bottom buttons to add after the table */
-  bottomButtons?: Array<React.ReactNode>;
+  bottomButtons?: React.ReactNode[];
 };
 
 type State = {
-  data: Array<any>;
+  data: any[];
   provider: SimpleDataProvider | AsyncDataProvider;
   currentPage: number;
   itemsPerPage: number;
@@ -148,9 +148,7 @@ export class TableDataHandler extends React.Component<Props, State> {
     const data = this.props.data;
     if (Array.isArray(data)) {
       // Gather comparators from columns
-      const comparators: {
-        [key: string]: Comparator;
-      } = this.props.columns.reduce((comparators, col) => {
+      const comparators: Record<string, Comparator> = this.props.columns.reduce((comparators, col) => {
         if (col.props.columnKey) {
           comparators[col.props.columnKey] = col.props.comparator;
         }
@@ -200,7 +198,7 @@ export class TableDataHandler extends React.Component<Props, State> {
 
   updateData({ items, total, selectedIds }: PagedData) {
     this.setState({ data: items, totalItems: total }, () => {
-      if (selectedIds != null) {
+      if (!DEPRECATED_unsafeEquals(selectedIds, null)) {
         this.props.onSelect?.(selectedIds);
       }
       const lastPage = this.getLastPage();
@@ -249,7 +247,7 @@ export class TableDataHandler extends React.Component<Props, State> {
 
   onSearchField = (field?: string): void => {
     this.setState({ currentPage: 1, field: field }, () => {
-      if (this.state.criteria != null && this.state.criteria !== "") {
+      if (!DEPRECATED_unsafeEquals(this.state.criteria, null) && this.state.criteria !== "") {
         this.getData();
       }
     });
@@ -291,7 +289,7 @@ export class TableDataHandler extends React.Component<Props, State> {
     // Skip rendering the headers if no header was provided
     const headers =
       this.props.columns.filter((column) => column.props.header).length > 0 &&
-      this.props.columns.map((column, index) => {
+      this.props.columns.map((column) => {
         if (column.props.header) {
           const sortDirection = column.props.columnKey === this.state.sortColumnKey ? this.state.sortDirection : 0;
           let comparator = column.props.comparator;
