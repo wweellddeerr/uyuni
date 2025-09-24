@@ -42,7 +42,7 @@ type SearchFieldProps = {
 /** Text input search field */
 export function SearchField(props: SearchFieldProps) {
   // Dummy model and onChange to reuse the Select component as it requires a Form
-  let model = {};
+  const model = {};
   const onChange = () => {};
 
   return (

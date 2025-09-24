@@ -153,7 +153,7 @@ class FormulaForm extends React.Component<Props, State> {
 
   saveFormula = (data) => {
     this.setState({ formulaChanged: false });
-    let scope = this.props.scope;
+    const scope = this.props.scope;
     let formType = scope.toUpperCase();
     if (formType === "SYSTEM") {
       formType = "SERVER";
@@ -172,7 +172,7 @@ class FormulaForm extends React.Component<Props, State> {
         errors: messages,
       });
     } else {
-      let formData = {
+      const formData = {
         type: formType,
         id: this.props.systemId,
         formula_name: this.state.formulaName,

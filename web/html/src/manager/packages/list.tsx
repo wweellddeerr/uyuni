@@ -17,7 +17,7 @@ type Props = {
   /** Locale of the help links */
   docsLocale: string;
   /** List of selected package ids */
-  selected: Array<string>;
+  selected: string[];
   /** The entry to select in the channel field */
   selectedChannel: string | null;
 };

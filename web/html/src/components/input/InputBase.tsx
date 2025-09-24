@@ -12,7 +12,7 @@ export type InputBaseProps<ValueType = string> = {
   /** name of the field to map in the form model.
    * The value can be an array of names if multiple inputs are contained in this field.
    */
-  name?: string | Array<string>;
+  name?: string | string[];
 
   /** Default value if none is set.
    * In the case of multiple properties managed by this input, an object with the properties
@@ -81,7 +81,7 @@ type State = {
   /** Error messages received from FormContext
    *  (typically errors messages received from server response)
    */
-  errors?: Array<string> | Object;
+  errors?: string[] | Object;
 };
 
 export class InputBase<ValueType = string> extends React.Component<InputBaseProps<ValueType>, State> {
@@ -199,7 +199,7 @@ export class InputBase<ValueType = string> extends React.Component<InputBaseProp
    * `this.props.name` is an array. This makes inferring validation types tricky, so we accept whatever inputs make sense
    * for a given branch.
    */
-  validate<InferredValueType = ValueType>(value: InferredValueType, errors?: Array<string> | Object): void {
+  validate<InferredValueType = ValueType>(value: InferredValueType, errors?: string[] | Object): void {
     const results: ReturnType<Validator>[] = [];
     let isValid = true;
 

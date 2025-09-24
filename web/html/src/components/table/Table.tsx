@@ -25,7 +25,7 @@ type TableProps = {
    *
    * See: utils/data-providers/paged-data-endpoint.js for async usage
    */
-  data: Array<any> | string;
+  data: any[] | string;
 
   /** Function extracting the unique key of the row from the data object */
   identifier: (row: any) => any;
@@ -49,10 +49,10 @@ type TableProps = {
   selectable?: boolean | ((row: any) => boolean);
 
   /** the handler to call when the table selection is updated. If not provided, the select boxes won't be rendered */
-  onSelect?: (items: Array<any>) => void;
+  onSelect?: (items: any[]) => void;
 
   /** the identifiers for selected items */
-  selectedItems?: Array<any>;
+  selectedItems?: any[];
 
   /** Allow items to be deleted or allow rows to be deleted on a case-by-case basis */
   deletable?: boolean | ((row: any) => boolean);
@@ -78,7 +78,7 @@ type TableProps = {
   children: React.ReactNode;
 
   /** Other filter fields */
-  additionalFilters?: Array<React.ReactNode>;
+  additionalFilters?: React.ReactNode[];
 
   /** Default search field */
   defaultSearchField?: string;
@@ -87,10 +87,10 @@ type TableProps = {
   initialSearch?: string;
 
   /** Title buttons to add next to the items per page selection */
-  titleButtons?: Array<React.ReactNode>;
+  titleButtons?: React.ReactNode[];
 
   /** Bottom buttons to add after the table */
-  bottomButtons?: Array<React.ReactNode>;
+  bottomButtons?: React.ReactNode[];
 };
 
 function isColumn(input: any): input is React.ReactElement<React.ComponentProps<typeof Column>> {

@@ -6,7 +6,7 @@ export type userLocalizationType = {
   timezone: string;
   localTime: string;
 };
-declare var global_user_localization: userLocalizationType | undefined;
+declare let global_user_localization: userLocalizationType | undefined;
 
 const UserLocalizationContext = React.createContext<Partial<userLocalizationType>>({});
 

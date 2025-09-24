@@ -24,7 +24,7 @@ import CancelActionsDialog from "../shared/cancel-actions-dialog";
 type MaintenanceScheduleDetailsProps = {
   id: number;
   name: string; // Name of the maintenance schedule
-  eventNames: Array<string>;
+  eventNames: string[];
   type: "SINGLE" | "MULTI";
   calendarName: string | undefined;
   onDelete: (item: { name: string }) => Promise<any>;
@@ -82,7 +82,7 @@ const MaintenanceScheduleDetails = (props: MaintenanceScheduleDetailsProps) => {
 type OverviewProps = {
   id: number;
   name: string; // Name of the maintenance schedule
-  eventNames: Array<string>;
+  eventNames: string[];
   calendarName: string | undefined;
   type: "SINGLE" | "MULTI";
   onMessage: (messages: MessageType[]) => void;

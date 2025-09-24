@@ -60,11 +60,11 @@ function emptyModel(): Model {
 class ImageImport extends React.Component {
   state: {
     imageStores?: any | null;
-    messages: Array<any>;
+    messages: any[];
     model: Model;
     isInvalid: boolean;
-    hosts: Array<any>;
-    activationkeys: Array<string>;
+    hosts: any[];
+    activationkeys: string[];
     channels?: Channels;
   };
 

@@ -124,7 +124,7 @@ class FormulaSelection extends React.Component<Props, State> {
   }
 
   generateList = () => {
-    let list: React.ReactNode[] = [];
+    const list: React.ReactNode[] = [];
     const groups = this.state.groups;
 
     if (groups.groupless.length > 0) {
@@ -158,7 +158,7 @@ class FormulaSelection extends React.Component<Props, State> {
         );
       }, this);
     }
-    for (let group_name in groups) {
+    for (const group_name in groups) {
       if (group_name === "groupless") continue;
       const group = groups[group_name];
       const group_state = this.getGroupItemState(group);

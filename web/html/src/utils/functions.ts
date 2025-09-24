@@ -40,9 +40,9 @@ function sortById(aRaw: any, bRaw: any): number {
 }
 
 function sortByText(aRaw: any, bRaw: any, columnKey: string, sortDirection: number): number {
-  var a = aRaw[columnKey];
-  var b = bRaw[columnKey];
-  var result = (a == null ? "" : a).toLowerCase().localeCompare((b == null ? "" : b).toLowerCase());
+  const a = aRaw[columnKey];
+  const b = bRaw[columnKey];
+  const result = (a == null ? "" : a).toLowerCase().localeCompare((b == null ? "" : b).toLowerCase());
   return (result || sortById(aRaw, bRaw)) * sortDirection;
 }
 

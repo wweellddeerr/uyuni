@@ -17,7 +17,7 @@ export type Channel = {
   recommended: boolean;
 };
 
-export type availableChannelsType = Array<{ base: Channel | null | undefined; children: Array<Channel> }>;
+export type availableChannelsType = { base: Channel | null | undefined; children: Channel[] }[];
 
 type ChildrenArgsProps = {
   messages: any[];
@@ -37,12 +37,12 @@ type ActivationKeyChannelsProps = {
 };
 
 type ActivationKeyChannelsState = {
-  messages: Array<any>;
+  messages: any[];
   loading: boolean;
   loadingChildren: boolean;
-  availableBaseChannels: Array<Channel>; //[base1, base2],
+  availableBaseChannels: Channel[]; //[base1, base2],
   availableChannels: availableChannelsType; //[{base : null, children: []}]
-  fetchedData: Map<number, Array<number>>;
+  fetchedData: Map<number, number[]>;
 };
 
 class ActivationKeyChannelsApi extends React.Component<ActivationKeyChannelsProps, ActivationKeyChannelsState> {

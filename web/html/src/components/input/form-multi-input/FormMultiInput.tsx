@@ -63,7 +63,7 @@ type Props = {
 /**
  * Compute the list of item keys in the model based of fields named like `${prefix}${idx}_${name}`
  */
-export function getOrderedItemsFromModel(model: any, prefix: string): Array<number> {
+export function getOrderedItemsFromModel(model: any, prefix: string): number[] {
   if (typeof model === "undefined" || model === null) {
     return [];
   }

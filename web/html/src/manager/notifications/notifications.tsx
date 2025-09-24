@@ -30,14 +30,14 @@ class Notifications extends React.Component<Props, State> {
   };
 
   componentDidMount() {
-    let port = window.location.port;
-    let url = "wss://" + window.location.hostname + (port ? ":" + port : "") + "/rhn/websocket/notifications";
-    let ws = new WebSocket(url);
+    const port = window.location.port;
+    const url = "wss://" + window.location.hostname + (port ? ":" + port : "") + "/rhn/websocket/notifications";
+    const ws = new WebSocket(url);
     ws.onopen = () => {
       ws.send('["user-notifications"]');
     };
     ws.onclose = (e) => {
-      let errs = this.state.errors ? this.state.errors : [];
+      const errs = this.state.errors ? this.state.errors : [];
       if (!this.state.pageUnloading && !this.state.websocketErr) {
         errs.push(t("Websocket connection closed. Refresh the page to try again."));
       }

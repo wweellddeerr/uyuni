@@ -175,13 +175,13 @@ class RecurringActionsEdit extends React.Component<Props, State> {
   };
 
   onTypeChanged = (type) => {
-    let { details } = this.state;
+    const { details } = this.state;
     details.type = type;
     this.setState({ details });
   };
 
   onCronTimesChanged = (cronTimes) => {
-    let { details } = this.state;
+    const { details } = this.state;
     details.cronTimes = cronTimes;
     this.setState({ details });
   };
@@ -191,7 +191,7 @@ class RecurringActionsEdit extends React.Component<Props, State> {
   };
 
   onSaveStates = (states) => {
-    let { details } = this.state;
+    const { details } = this.state;
     details.states = states;
     this.setState({ details });
     return Promise.resolve(states);
@@ -209,7 +209,7 @@ class RecurringActionsEdit extends React.Component<Props, State> {
   };
 
   toggleTestState = () => {
-    let { details } = this.state;
+    const { details } = this.state;
     details.test = !this.state.details.test;
     this.setState({ details });
   };

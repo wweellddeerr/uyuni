@@ -18,7 +18,7 @@ const SELECTION_KEY_SEPARATOR = "~*~";
 type Props = {
   serverId: number;
   selectionSet: string;
-  actionChains: Array<ActionChain>;
+  actionChains: ActionChain[];
   icon: string;
   listDataAPI: string;
   scheduleActionAPI: string;
@@ -32,7 +32,7 @@ type Props = {
 };
 
 type State = {
-  messages: Array<MessageType>;
+  messages: MessageType[];
   selectedPackages: string[];
   confirmAction: boolean;
   earliest: moment.Moment;

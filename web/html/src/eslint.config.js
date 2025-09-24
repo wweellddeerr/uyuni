@@ -1,8 +1,9 @@
 const { defineConfig, globalIgnores } = require("eslint/config");
 
-const tsParser = require("@typescript-eslint/parser");
+const eslint = require("@eslint/js");
+const tseslint = require("typescript-eslint");
+
 const reactHooks = require("eslint-plugin-react-hooks");
-const typescriptEslint = require("@typescript-eslint/eslint-plugin");
 const localRules = require("eslint-plugin-local-rules");
 const simpleImportSort = require("eslint-plugin-simple-import-sort");
 const prettier = require("eslint-plugin-prettier");
@@ -11,19 +12,18 @@ const react = require("eslint-plugin-react");
 
 const globals = require("globals");
 
-const productionRules = {
-  "prettier/prettier": "error",
-  "@typescript-eslint/no-unused-vars": "error",
-  "no-console": "error",
-};
+const isProduction = process.env.NODE_ENV === "production";
 
 module.exports = defineConfig([
+  globalIgnores(["dist/**/*", "vendors/**/*", "build/yarn/**/*"]),
+  eslint.configs.recommended,
+  // In the future, it would be nice to use `tseslint.configs.recommended` here, but legacy code is too far from that for now
+  tseslint.configs.stylistic,
   {
     languageOptions: {
-      parser: tsParser,
-
       globals: {
         ...globals.browser,
+        ...globals.node,
         t: true,
         module: true,
         jQuery: true,
@@ -33,7 +33,6 @@ module.exports = defineConfig([
     plugins: {
       react,
       "react-hooks": reactHooks,
-      "@typescript-eslint": typescriptEslint,
       "local-rules": localRules,
       "simple-import-sort": simpleImportSort,
       "jsx-a11y": jsxA11y,
@@ -41,7 +40,24 @@ module.exports = defineConfig([
     },
 
     rules: {
-      "prettier/prettier": "warn",
+      // We use `@typescript-eslint/no-unused-vars` instead
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": [
+        isProduction ? "error" : "warn",
+        {
+          caughtErrors: "none",
+          ignoreRestSiblings: true,
+          destructuredArrayIgnorePattern: "^_",
+        },
+      ],
+      "prettier/prettier": isProduction ? "error" : "warn",
+      "no-console": isProduction ? "error" : "warn",
+      // Too much legacy code holds empty references and such, we can't enable these rules yet, but aim for it in the future
+      "@typescript-eslint/no-empty-function": "off",
+      "no-async-promise-executor": "off",
+      "no-prototype-builtins": "off",
+      "no-case-declarations": "off",
+
       "jsx-a11y/anchor-is-valid": "error",
       "react/jsx-no-target-blank": "error",
       "react-hooks/rules-of-hooks": "error",
@@ -49,7 +65,13 @@ module.exports = defineConfig([
       radix: ["error", "always"],
       // ESLint doesn't recongize overloads by default
       "no-redeclare": "off",
-      "@typescript-eslint/no-redeclare": ["error"],
+      // Align with existing code style
+      "@typescript-eslint/no-redeclare": "error",
+      "@typescript-eslint/prefer-for-of": "off",
+      "@typescript-eslint/consistent-type-definitions": "off",
+      "@typescript-eslint/no-redundant-type-constituents": "off",
+      "@typescript-eslint/no-inferrable-types": "off",
+      "@typescript-eslint/consistent-generic-constructors": "off",
       // TODO: Eventually this should be "error"
       "local-rules/no-raw-date": "warn",
       "local-rules/intl-apostrophe-curly": "error",
@@ -88,6 +110,7 @@ module.exports = defineConfig([
         },
       ],
       "sort-imports": "off",
+      "no-duplicate-imports": "error",
       // "no-duplicate-imports": "error",
       // We use a `DEPRECATED_` prefix for old components that doesn't conform with this rule
       "react/jsx-pascal-case": "off",
@@ -109,7 +132,6 @@ module.exports = defineConfig([
           ],
         },
       ],
-      ...(process.env.NODE_ENV === "production" ? productionRules : {}),
     },
 
     settings: {
@@ -125,12 +147,18 @@ module.exports = defineConfig([
       },
     },
   },
-  globalIgnores(["dist/**/*", "vendors/**/*", "build/yarn/**/*"]),
   {
-    // Build scripts are allowed to use the console
-    files: ["build/**"],
+    // Build scripts and tests are allowed to use the console
+    files: ["build.js", "build/**", "utils/test-utils/**", "**/*.test.{ts,tsx}"],
     rules: {
       "no-console": "off",
+    },
+  },
+  {
+    // Examples and tests can have lingering vars to exemplify
+    files: ["**/*.example.{ts,tsx}", "**/*.test.{ts,tsx}"],
+    rules: {
+      "@typescript-eslint/no-unused-vars": "off",
     },
   },
 ]);

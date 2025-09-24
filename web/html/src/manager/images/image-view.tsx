@@ -198,10 +198,10 @@ class ImageView extends React.Component<ImageViewProps, ImageViewState> {
   }
 
   getImageInfoList() {
-    let listPromise = Network.get("/rhn/manager/api/cm/images")
+    const listPromise = Network.get("/rhn/manager/api/cm/images")
       .then((data) => this.setState({ selected: undefined, images: data }))
       .catch(this.handleResponseError);
-    let updatedData: any = {};
+    const updatedData: any = {};
     if (this.props.runtimeInfoEnabled) {
       const runtimePromises: any[] = [];
       this.setState({ imagesRuntime: {} });
@@ -247,13 +247,13 @@ class ImageView extends React.Component<ImageViewProps, ImageViewState> {
     //overview, runtime
     else url = "/rhn/manager/api/cm/images/" + id;
 
-    let detailsPromise = Network.get(url)
+    const detailsPromise = Network.get(url)
       .then((data) => {
         this.setState({ selected: data });
       })
       .catch(this.handleResponseError);
 
-    let updatedData: any = {};
+    const updatedData: any = {};
     if (this.props.runtimeInfoEnabled) {
       const runtimePromises: any[] = [];
       //Get a list of cluster ids
@@ -571,7 +571,7 @@ class ImageViewList extends React.Component<ImageViewListProps, ImageViewListSta
 
     let totalCount = 0;
     if (row.instances) {
-      for (let clusterCount of Object.values(row.instances)) {
+      for (const clusterCount of Object.values(row.instances)) {
         totalCount += Number(clusterCount) || 0;
       }
     }
@@ -600,7 +600,7 @@ class ImageViewList extends React.Component<ImageViewListProps, ImageViewListSta
   };
 
   render() {
-    let runtimeColumns: React.ReactNode[] = [];
+    const runtimeColumns: React.ReactNode[] = [];
     if (this.props.runtimeInfoEnabled) {
       runtimeColumns.push(
         <Column columnKey="runtime" header={t("Runtime")} cell={(row) => this.renderRuntimeIcon(row)} />

@@ -21,7 +21,5 @@ type TagKeys<T extends string, KS extends string = never> = T extends `${infer F
   ? TagKeys<R, K | KS>
   : KS;
 type PossibleKeysOf<T extends string> = ValidKey<PlaceholderKeys<T> | TagKeys<T>>;
-type PartialRecord<K extends keyof any, T> = {
-  [P in K]?: T;
-};
+type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>;
 export type Values<T extends string> = PartialRecord<PossibleKeysOf<T>, any>;

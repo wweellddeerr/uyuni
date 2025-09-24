@@ -33,7 +33,7 @@ const PropertiesHistoryEntries = (props) => (
 );
 
 const PropertiesView = (props: Props) => {
-  let propertiesToShow = produce(props.properties, (draftProperties) => {
+  const propertiesToShow = produce(props.properties, (draftProperties) => {
     draftProperties.historyEntries.sort((a, b) => b.version - a.version);
   });
 

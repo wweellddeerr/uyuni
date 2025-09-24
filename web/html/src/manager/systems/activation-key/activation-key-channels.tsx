@@ -17,7 +17,7 @@ type ActivationKeyChannelsProps = {
 
 type ActivationKeyChannelsState = {
   currentSelectedBaseId: number;
-  currentChildSelectedIds: Array<number>;
+  currentChildSelectedIds: number[];
 };
 
 class ActivationKeyChannels extends React.Component<ActivationKeyChannelsProps, ActivationKeyChannelsState> {
@@ -46,7 +46,7 @@ class ActivationKeyChannels extends React.Component<ActivationKeyChannelsProps, 
     );
   };
 
-  selectChildChannels = (channelIds: Array<number>, selectedFlag: boolean) => {
+  selectChildChannels = (channelIds: number[], selectedFlag: boolean) => {
     let selectedIds = [...this.state.currentChildSelectedIds];
     if (selectedFlag) {
       selectedIds = [...channelIds.filter((c) => !selectedIds.includes(c)), ...selectedIds];

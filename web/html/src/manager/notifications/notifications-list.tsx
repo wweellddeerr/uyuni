@@ -27,17 +27,17 @@ enum DataType {
 }
 
 type Props = {
-  notificationTypes: Array<NotificationType>;
+  notificationTypes: NotificationType[];
 };
 
 type State = {
-  serverData: Array<Notification> | undefined;
+  serverData: Notification[] | undefined;
   dataType: DataType;
   loading: boolean;
-  messages: Array<MessageType>;
-  selectedItems: Array<number>;
+  messages: MessageType[];
+  selectedItems: number[];
   popupItem: Notification | undefined;
-  typeCriteria: Array<string>;
+  typeCriteria: string[];
 };
 
 export class NotificationList extends React.Component<Props, State> {
@@ -149,7 +149,7 @@ export class NotificationList extends React.Component<Props, State> {
     );
   }
 
-  private renderFilters(): Array<React.ReactNode> {
+  private renderFilters(): React.ReactNode[] {
     return [
       <div key="typeFilter" className="multiple-select-wrapper table-input-search">
         {/* TODO: Remove this <Form> wrapper once https://github.com/SUSE/spacewalk/issues/14250 is implemented */}
@@ -282,7 +282,7 @@ export class NotificationList extends React.Component<Props, State> {
   }
 
   // Filter the notifications with the current type filter
-  private filterDataByType(data: Array<Notification>): Array<Notification> {
+  private filterDataByType(data: Notification[]): Notification[] {
     if (this.state.typeCriteria.length === 0) {
       return data;
     }
@@ -291,7 +291,7 @@ export class NotificationList extends React.Component<Props, State> {
   }
 
   // Set the notification read status to the specified value
-  private async updateReadStatus(messageIds: Array<number>, flagAsRead: boolean): Promise<void> {
+  private async updateReadStatus(messageIds: number[], flagAsRead: boolean): Promise<void> {
     try {
       await Network.post("/rhn/manager/notification-messages/update-messages-status", { messageIds, flagAsRead });
 
@@ -313,7 +313,7 @@ export class NotificationList extends React.Component<Props, State> {
     }
   }
 
-  private async deleteNotifications(messageIds: Array<number>): Promise<void> {
+  private async deleteNotifications(messageIds: number[]): Promise<void> {
     try {
       await Network.post("/rhn/manager/notification-messages/delete", messageIds);
 

@@ -68,7 +68,7 @@ export class Form extends React.Component<Props> {
     formDirection: "form-horizontal",
   };
 
-  inputs: { [key: string]: InputBaseRef | undefined } = {};
+  inputs: Record<string, InputBaseRef | undefined> = {};
 
   setModelValue = (name: string, value: any) => {
     const { model, errors } = this.props;

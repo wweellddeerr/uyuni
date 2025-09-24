@@ -35,7 +35,7 @@ class UnmatchedProducts extends React.Component<UnmatchedProductsProps> {
   };
 
   sortBySystemCount = (a, b, columnKey, sortDirection) => {
-    let result = a[columnKey] - b[columnKey];
+    const result = a[columnKey] - b[columnKey];
     return (result || Utils.sortById(a, b)) * sortDirection;
   };
 

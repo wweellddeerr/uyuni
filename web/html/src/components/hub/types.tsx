@@ -99,7 +99,7 @@ export type MigrationMessage = {
 
 export type MigrationResult = {
   resultCode: MigrationResultCode;
-  messageSet: Array<MigrationMessage>;
+  messageSet: MigrationMessage[];
 };
 
 export type Org = {

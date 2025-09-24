@@ -43,7 +43,7 @@ const PaygSshDataEdit = (props: Props) => {
       });
   };
 
-  let title = props.labelPrefix + " SSH connection";
+  const title = props.labelPrefix + " SSH connection";
 
   return (
     <div id={props.labelPrefix + "-panel-wrapper"}>

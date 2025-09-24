@@ -251,7 +251,7 @@ class StatesPicker extends React.Component<StatesPickerProps, StatesPickerState>
       }
     });
 
-    for (let row of rows) {
+    for (const row of rows) {
       const changed = row.value;
       const currentChannel = changed === undefined ? row.original : changed;
 

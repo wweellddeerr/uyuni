@@ -8,16 +8,17 @@ import { getVersionMessageByNumber } from "../properties/properties.utils";
 
 type Props = {
   environment: ProjectEnvironmentType;
-  historyEntries: Array<ProjectHistoryEntry>;
+  historyEntries: ProjectHistoryEntry[];
 };
 
-type EnvironmentStatusEnumType = {
-  [key: string]: {
+type EnvironmentStatusEnumType = Record<
+  string,
+  {
     key: string;
     text: string;
     isBuilding: boolean;
-  };
-};
+  }
+>;
 
 const environmentStatusEnum: EnvironmentStatusEnumType = {
   new: { key: "new", text: t("New"), isBuilding: false },

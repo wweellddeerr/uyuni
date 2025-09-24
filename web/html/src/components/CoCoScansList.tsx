@@ -19,7 +19,7 @@ type Props = {
   serverId?: number;
 
   /** The action chains */
-  actionChains?: Array<ActionChain>;
+  actionChains?: ActionChain[];
 };
 
 type State = {

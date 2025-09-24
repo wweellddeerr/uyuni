@@ -56,7 +56,7 @@ type CommonSelectProps = (SingleMode | MultiMode) & {
 
 type SelectProps = CommonSelectProps & {
   /** Select options */
-  options: Array<Object | string>;
+  options: (Object | string)[];
 };
 
 type AsyncSelectProps = Omit<CommonSelectProps, "value" | "defaultValue"> & {
@@ -71,7 +71,7 @@ type AsyncSelectProps = Omit<CommonSelectProps, "value" | "defaultValue"> & {
   /**
    * Function that returns a promise, which is the set of options to be used once the promise resolves.
    */
-  loadOptions: (searchString: string, callback: (options: Array<Object>) => undefined) => Promise<any> | undefined;
+  loadOptions: (searchString: string, callback: (options: Object[]) => undefined) => Promise<any> | undefined;
   cacheOptions?: boolean;
 };
 type AsyncPaginateSelectProps = Omit<CommonSelectProps, "value" | "defaultValue"> & {

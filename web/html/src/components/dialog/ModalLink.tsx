@@ -20,7 +20,7 @@ type Props = {
  */
 export function ModalLink(props: Props) {
   const margin = props.text ? "" : " no-margin";
-  var icon = props.icon && <i className={"fa " + props.icon + margin} />;
+  const icon = props.icon && <i className={"fa " + props.icon + margin} />;
 
   return (
     <button

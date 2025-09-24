@@ -22,7 +22,7 @@ type Props = {
   environmentTarget: ProjectEnvironmentType;
   environmentNextTarget: ProjectEnvironmentType;
   versionToPromote: number;
-  historyEntries: Array<ProjectHistoryEntry>;
+  historyEntries: ProjectHistoryEntry[];
   onChange: Function;
 };
 
