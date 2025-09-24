@@ -5,10 +5,10 @@ import { Form } from "components/input/form/Form";
 
 import { DEPRECATED_unsafeEquals } from "utils/legacy";
 
-interface SearchFieldOption {
+type SearchFieldOption = {
   label: string;
   value: string;
-}
+};
 
 type SearchFieldProps = {
   /** The value that the user will enter to perform the filter on the criteriaField */

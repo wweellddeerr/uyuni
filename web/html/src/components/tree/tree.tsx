@@ -5,11 +5,11 @@ import { CustomDiv } from "components/custom-objects";
 
 import { DEPRECATED_unsafeEquals } from "utils/legacy";
 
-export interface TreeItem {
+export type TreeItem = {
   id: string;
   data?: any;
   children?: string[];
-}
+};
 
 export type TreeData = {
   rootId: string;

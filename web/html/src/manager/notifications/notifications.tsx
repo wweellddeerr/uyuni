@@ -4,7 +4,7 @@ import SpaRenderer from "core/spa/spa-renderer";
 
 import { DEPRECATED_unsafeEquals } from "utils/legacy";
 
-interface Props {}
+type Props = {};
 
 type State = {
   unreadMessagesLength: any;

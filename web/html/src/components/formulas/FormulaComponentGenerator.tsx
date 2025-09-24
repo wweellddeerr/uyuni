@@ -309,10 +309,10 @@ function buildValuePath<ValueType>(id: string, formValues) {
   const tokens = id.split("#");
   let value = formValues;
 
-  interface ValuePath<T = unknown> {
+  type ValuePath<T = unknown> = {
     parent: ValuePath<T> | null;
     value: T;
-  }
+  };
 
   let prevPath: ValuePath<ValueType> | null = null;
   let path: ValuePath<ValueType> | null = null;
