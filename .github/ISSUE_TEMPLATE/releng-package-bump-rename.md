@@ -70,6 +70,7 @@ If the new package is part of any codestream matching: `SUSE:SLE-12:Update`, `SU
 
 Then mark the following checkbox:
 - [ ] ECO is **required**
+- [ ] And add this card to the `PO Backlog` project/board
 
 Otherwise mark this other one:
 - [ ] ECO is **NOT required**

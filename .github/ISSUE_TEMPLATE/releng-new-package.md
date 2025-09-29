@@ -66,6 +66,7 @@ If the new package:
 
 Then mark the following checkbox:
 - [ ] ECO is **required**
+- [ ] And add this card to the `PO Backlog` project/board
 
 Otherwise mark this other one:
 - [ ] ECO is **NOT required**
