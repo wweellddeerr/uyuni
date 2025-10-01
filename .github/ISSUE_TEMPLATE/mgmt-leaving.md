@@ -41,7 +41,7 @@ General template for leavers of the SUSE Multi-Linux team.
 - [ ] Confluence
   - [ ] Remove from the [team overview page](https://confluence.suse.com/display/SUSEMANAGER/)
   - [ ] Remove from the [squads page](https://confluence.suse.com/display/SUSEMANAGER/Squads%2C+People+and+Topics), cleaning ownerships if needed
-  - [ ] Depending the role, remove the user from the groups [https://gitlab.suse.de/jira/ldap-server/-/blob/master/teams/user/multi-linux-teamleads.def](multi-linux-teamleads) and [https://gitlab.suse.de/jira/ldap-server/-/blob/master/teams/user/multi-linux-lt.def](multi-linux-lt) with a GitLab MR
+  - [ ] Depending the role, remove the user from the groups [multi-linux-teamleads](https://gitlab.suse.de/jira/ldap-server/-/blob/master/teams/user/multi-linux-teamleads.def) and [multi-linux-lt](https://gitlab.suse.de/jira/ldap-server/-/blob/master/teams/user/multi-linux-lt.def) with a GitLab MR
 - [ ] Mailing lists
   - [ ] [galaxy-alerts](https://mailman.suse.de/mailman/admin/galaxy-alerts/members/remove)
   - [ ] [galaxy-bugs](https://mailman.suse.de/mailman/admin/galaxy-bugs/members/remove)
@@ -52,7 +52,7 @@ General template for leavers of the SUSE Multi-Linux team.
   - [ ] [galaxy-releng](https://mailman.suse.de/mailman/admin/galaxy-releng/members/remove)
   - [ ] [salt](https://mailman.suse.de/mailman/admin/salt/members/remove)
   - [ ] [salt-maintainers](https://mailman.suse.de/mailman/admin/salt-maintainers/members/remove)
-  - [ ] [multi-linux-manager](https://mailman.suse.de/mailman/admindb/multi-linux-manager/)
+  - [ ] [multi-linux-manager](https://mailman.suse.de/mailman/admindb/multi-linux-manager/remove)
   - [ ] [tomcat-maintainers](https://mailman.suse.de/mailman/admin/tomcat-maintainers/members/remove)
   - [ ] [uyuni-leader](https://mailman.suse.de/mailman/admin/uyuni-leader/members/remove)
   - [ ] uyuni announce as [user](https://lists.opensuse.org/manage/lists/announce.lists.uyuni-project.org/members/member/) (to prevent bounces later), and maybe [moderator](https://lists.opensuse.org/manage/lists/announce.lists.uyuni-project.org/members/moderator/) and [owner](https://lists.opensuse.org/manage/lists/announce.lists.uyuni-project.org/members/owner/)
