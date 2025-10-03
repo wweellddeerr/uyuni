@@ -7,6 +7,7 @@ import { Column } from "components/table/Column";
 import { Table } from "components/table/Table";
 
 import { Utils } from "utils/functions";
+import { DEPRECATED_unsafeEquals } from "utils/legacy";
 import Network from "utils/network";
 
 import { SystemsListFilter } from "./list-filter";
@@ -17,6 +18,25 @@ type Props = {
   isAdmin: boolean;
   queryColumn?: string;
   query?: string;
+};
+
+const DownloadCSVButton = ({ search }) => {
+  let url = "/rhn/manager/systems/csv/all";
+  if (search?.field && search?.criteria) {
+    const searchParams = new URLSearchParams({
+      qc: search.field,
+      q: search.criteria,
+    });
+    url += `?${searchParams.toString()}`;
+  }
+  return (
+    <div className="pull-right">
+      <a role="button" href={url} className="btn btn-default" data-senna-off="true">
+        <IconTag type="item-download-csv" />
+        Download CSV
+      </a>
+    </div>
+  );
 };
 
 export function AllSystems(props: Props) {
@@ -66,6 +86,7 @@ export function AllSystems(props: Props) {
         defaultSearchField={props.queryColumn || "server_name"}
         initialSearch={props.query}
         emptyText={t("No Systems.")}
+        bottomButtons={[<DownloadCSVButton key="download-csv-button" search={{}} />]}
       >
         <Column
           columnKey="server_name"
@@ -78,7 +99,7 @@ export function AllSystems(props: Props) {
           comparator={Utils.sortByText}
           header={t("Updates")}
           cell={(item) => {
-            if (item.statusType == null) {
+            if (DEPRECATED_unsafeEquals(item.statusType, null)) {
               return "";
             }
             return Systems.statusDisplay(item, props.isAdmin);
@@ -89,7 +110,7 @@ export function AllSystems(props: Props) {
           comparator={Utils.sortByText}
           header={t("Patches")}
           cell={(item) => {
-            let totalErrataCount = item.securityErrata + item.bugErrata + item.enhancementErrata;
+            const totalErrataCount = item.securityErrata + item.bugErrata + item.enhancementErrata;
             if (totalErrataCount !== 0) {
               return <a href={`/rhn/systems/details/ErrataList.do?sid=${item.id}`}>{totalErrataCount}</a>;
             }
@@ -141,11 +162,17 @@ export function AllSystems(props: Props) {
           }}
         />
         <Column
+          columnKey="last_checkin"
+          comparator={Utils.sortByText}
+          header={t("Last Checked In")}
+          cell={(item) => item.lastCheckin}
+        />
+        <Column
           columnKey="channel_labels"
           comparator={Utils.sortByText}
           header={t("Base Channel")}
           cell={(item) => {
-            if (item.channelId != null) {
+            if (!DEPRECATED_unsafeEquals(item.channelId, null)) {
               return <a href={`/rhn/channels/ChannelDetail.do?cid=${item.channelId}`}>{item.channelLabels}</a>;
             }
             return item.channelLabels;
@@ -158,13 +185,6 @@ export function AllSystems(props: Props) {
           cell={(item) => item.entitlementLevel}
         />
       </Table>
-
-      <div className="spacewalk-csv-download">
-        <a role="button" href="/rhn/manager/systems/csv/all" className="btn btn-default" data-senna-off="true">
-          <IconTag type="item-download-csv" />
-          Download CSV
-        </a>
-      </div>
     </>
   );
 }

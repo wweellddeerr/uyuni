@@ -27,12 +27,12 @@ type ContentProjectOverviewType = {
     description: String;
     lastBuildDate: moment.Moment;
   };
-  environments: Array<String>;
+  environments: String[];
   needRebuild: Boolean;
 };
 
 type Props = {
-  projects: Array<ContentProjectOverviewType>;
+  projects: ContentProjectOverviewType[];
   flashMessage?: ServerMessageType;
 };
 

@@ -19,7 +19,7 @@ General template for new joiners of the SUSE Multi-Linux team.
 - [ ] Confluence
   - [ ] Add to [squads page](https://confluence.suse.com/display/SUSEMANAGER/Squads%2C+People+and+Topics)
   - [ ] Add to [team overview page](https://confluence.suse.com/display/SUSEMANAGER/)
-  - [ ] Depending the role, add the user to the groups [https://gitlab.suse.de/jira/ldap-server/-/blob/master/teams/user/multi-linux-teamleads.def](multi-linux-teamleads) and [https://gitlab.suse.de/jira/ldap-server/-/blob/master/teams/user/multi-linux-lt.def](multi-linux-lt) with a GitLab MR
+  - [ ] Depending the role, add the user to the groups [multi-linux-teamleads](https://gitlab.suse.de/jira/ldap-server/-/blob/master/teams/user/multi-linux-teamleads.def) and [multi-linux-lt](https://gitlab.suse.de/jira/ldap-server/-/blob/master/teams/user/multi-linux-lt.def) with a GitLab MR
 - [ ] Subscribe the user to the following mailing lists:
   - [ ] [galaxy-devel](https://mailman.suse.de/mailman/admin/galaxy-devel/members/add)
   - [ ] [multi-linux-manager](https://mailman.suse.de/mailman/admin/multi-linux-manager/members/add)

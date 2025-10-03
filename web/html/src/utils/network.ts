@@ -1,16 +1,15 @@
 import { MessageType, Utils as MessagesUtils } from "components/messages/messages";
 import { showErrorToastr } from "components/toastr";
 
-import { Utils } from "utils/functions";
-import { Cancelable } from "utils/functions";
+import { Cancelable, Utils } from "utils/functions";
 
 import { replacer } from "./json";
 
-declare var csrfToken: string;
+declare let csrfToken: string;
 
 export type JsonResult<T> = {
   success: boolean;
-  messages: Array<String>;
+  messages: String[];
   data: T;
 };
 
@@ -92,7 +91,7 @@ function get<Returns = any>(url: string, contentType: string = "application/json
   return request<Returns>(url, "GET", undefined, undefined, contentType);
 }
 
-function errorMessageByStatus(status: number): Array<string> {
+function errorMessageByStatus(status: number): string[] {
   if (status === 401) {
     return [t("Session expired, please reload the page.")];
   } else if (status === 403) {
@@ -111,7 +110,7 @@ export type MapFuncType = (status: string, message: string) => string | null | u
 function responseErrorMessage(
   jqXHR: Error | JQueryXHR,
   messageMapFunc: MapFuncType | null | undefined = null
-): Array<MessageType> {
+): MessageType[] {
   if (jqXHR instanceof Error) {
     Loggerhead.error("Error: " + jqXHR.toString());
     throw jqXHR;
@@ -125,10 +124,10 @@ function responseErrorMessage(
     Array.isArray(jqXHR.responseJSON.messages) &&
     jqXHR.responseJSON.messages.length > 0
   ) {
-    let msgs: Array<string>;
+    let msgs: string[];
     if (messageMapFunc) {
       msgs = jqXHR.responseJSON.messages.map((msg) => {
-        let m = messageMapFunc(jqXHR.status.toString(), msg);
+        const m = messageMapFunc(jqXHR.status.toString(), msg);
         return m ? m : msg;
       });
     } else {

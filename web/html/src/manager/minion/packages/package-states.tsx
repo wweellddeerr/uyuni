@@ -22,7 +22,7 @@ type ViewType = "search" | "system" | "changes";
 const PackageStates = ({ serverId }: PropsType) => {
   const [filter, setFilter] = useState<string>("");
   const [view, setView] = useState<ViewType | "">("system");
-  const [tableRows, setTableRows] = useState<Array<PackagesObject>>([]);
+  const [tableRows, setTableRows] = useState<PackagesObject[]>([]);
   const [changed, setChanged] = useImmer<ChangesMapObject>({});
   const searchRef = useRef<AsyncButton | null>(null);
 
@@ -154,7 +154,7 @@ const PackageStates = ({ serverId }: PropsType) => {
   };
 
   const generateTableData = (): void => {
-    let rows: Array<PackagesObject> = [];
+    const rows: PackagesObject[] = [];
     if (view === "system") {
       for (const state of packageStates) {
         const key = packageHelpers.packageStateKey(state);

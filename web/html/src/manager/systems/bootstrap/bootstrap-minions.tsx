@@ -9,6 +9,7 @@ import { ModalLink } from "components/dialog/ModalLink";
 import { Messages, MessageType, Utils as MessagesUtils } from "components/messages/messages";
 import { TopPanel } from "components/panels/TopPanel";
 
+import { DEPRECATED_unsafeEquals } from "utils/legacy";
 import Network from "utils/network";
 
 // See java/code/src/com/suse/manager/webui/templates/minion/bootstrap.jade
@@ -103,7 +104,7 @@ class ErrorDetailsDialog extends React.Component<ErrorDetailsDialogProps> {
     return (
       <Dialog
         id="show-error-details"
-        isOpen={this.props.error != null}
+        isOpen={!DEPRECATED_unsafeEquals(this.props.error, null)}
         title={title}
         className="modal-xs"
         onClose={this.props.onDialogClose}
@@ -254,9 +255,9 @@ class BootstrapMinions extends React.Component<Props, State> {
   };
 
   proxyChanged = (event) => {
-    var proxyId = parseInt(event.target.value, 10);
-    var proxy = this.props.proxies.find((p) => p.id === proxyId);
-    var showWarn = proxy && proxy.hostname.indexOf(".") < 0;
+    const proxyId = parseInt(event.target.value, 10);
+    const proxy = this.props.proxies.find((p) => p.id === proxyId);
+    const showWarn = proxy && proxy.hostname.indexOf(".") < 0;
     this.setState({
       proxy: event.target.value,
       showProxyHostnameWarn: showWarn,
@@ -277,7 +278,7 @@ class BootstrapMinions extends React.Component<Props, State> {
 
   onBootstrap = () => {
     this.setState({ errors: [], loading: true });
-    var formData: any = {};
+    const formData: any = {};
     formData["host"] = this.state.host.trim();
     formData["port"] = this.state.port.trim() === "" ? undefined : this.state.port.trim();
     formData["user"] = this.state.user.trim() === "" ? undefined : this.state.user.trim();
@@ -323,7 +324,7 @@ class BootstrapMinions extends React.Component<Props, State> {
             loading: false,
           });
         } catch (err) {
-          var errMessage =
+          const errMessage =
             xhr.status === 0
               ? t(
                   "Request interrupted or invalid response received from the server. Please check if your minion was bootstrapped correctly."
@@ -349,7 +350,7 @@ class BootstrapMinions extends React.Component<Props, State> {
   };
 
   render() {
-    var alertMessages: MessageType[] = [];
+    let alertMessages: MessageType[] = [];
     if (this.state.success) {
       alertMessages = MessagesUtils.success(
         <p>
@@ -391,7 +392,7 @@ class BootstrapMinions extends React.Component<Props, State> {
       alertMessages = MessagesUtils.info(t("Loading SSH Private Key.."));
     }
 
-    var buttons = [
+    const buttons = [
       <AsyncButton
         id="bootstrap-btn"
         defaultType="btn-primary"
@@ -676,7 +677,7 @@ class BootstrapMinions extends React.Component<Props, State> {
   componentDidMount() {
     window.addEventListener("beforeunload", (e) => {
       if (this.state.loading) {
-        var confirmationMessage = t("Are you sure you want to close this page while bootstrapping is in progress ?");
+        const confirmationMessage = t("Are you sure you want to close this page while bootstrapping is in progress ?");
         (e || window.event).returnValue = confirmationMessage;
         return confirmationMessage;
       }
