@@ -29847,7 +29847,7 @@ lt;/pgt;
       </trans-unit>
       <trans-unit id="ssm.overview.product_migration" xml:space="preserve">
         <source>Product Migration</source>
-        <target state="translated">Migració de producte</target>
+        <target state="translated">Migració de productes</target>
       </trans-unit>
       <trans-unit id="ssm.overview.product_migration.migrate" xml:space="preserve">
         <source>&lt;a href="/rhn/manager/systems/ssm/product-migration"&gt;Migrate the products&lt;/a&gt; installed on the selected systems</source>

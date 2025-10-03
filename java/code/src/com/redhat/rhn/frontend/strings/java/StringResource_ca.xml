@@ -10285,11 +10285,11 @@ lt;stronggt;Note:lt;/stronggt; La documentació addicional sobre l'ús de l'ISO 
         <target state="translated">Atès que vas afegir un tipus de sistema de virtualització al sistema, també vam realitzar alguns passos addicionals per assegurar que el teu sistema serà capaç de gestionar millor els convidats virtuals. Vegeu lt;a href."/docs/administration/virtualization.html"gt;herelt;/agt; per a més informació.</target>
       </trans-unit>
       <trans-unit id="system.entitle.added.monitoring_entitled" xml:space="preserve">
-        <source>&lt;strong&gt;Monitor this Host&lt;/strong&gt; type has been applied.&lt;br/&gt;&lt;strong&gt;Note:&lt;/strong&gt; Since you added the Monitoring system type we automatically assigned the Prometheus Exporters formula to the system. Please apply the &lt;a href="/rhn/manager/systems/details/highstate?sid={0}"&gt;Highstate&lt;/a&gt; in order to install and enable the Prometheus metrics exporters.&lt;br/&gt;&lt;strong&gt;Note:&lt;/strong&gt; Please make sure to open the &lt;a href="/docs/{1}/installation-and-upgrade/ports.html#_external_client_ports" target="_blank"&gt;required network ports&lt;/a&gt; for all installed exporters.</source>
+        <source>&lt;strong&gt;Monitor this Host&lt;/strong&gt; type has been applied.&lt;br/&gt;&lt;strong&gt;Note:&lt;/strong&gt; Since you added the Monitoring system type we automatically assigned the Prometheus Exporters formula to the system. Please apply the &lt;a href="/rhn/manager/systems/details/highstate?sid={0}"&gt;Highstate&lt;/a&gt; in order to install and enable the Prometheus metrics exporters.&lt;br/&gt;&lt;strong&gt;Note:&lt;/strong&gt; Please make sure to open the &lt;a href="/docs/{1}/installation-and-upgrade/network-requirements.html#_external_client_ports" target="_blank"&gt;required network ports&lt;/a&gt; for all installed exporters.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/details/Overview.do</context>
         </context-group>
-        <target state="translated">S'ha aplicat el tipus&lt;strong&gt;Superviseu aquest amfitrió&lt;/strong&gt;.&lt;br/&gt;&lt;strong&gt;Nota:&lt;/strong&gt; Com que heu afegit el tipus de sistema de monitorització, hem assignat automàticament la fórmula dels exportadors de Prometheus al sistema. Apliqueu el &lt;a href="/rhn/manager/systems/details/highstate?sid={0}"&gt;Highstate&lt;/a&gt; per instal·lar i habilitar els exportadors de mètriques de Prometheus.&lt;br/&gt;&lt;strong&gt;Nota:&lt;/strong&gt; Assegureu-vos d'obrir els &lt;a href="/docs/{1}/installation-and-upgrade/ports.html#_external_client_ports" target="_blank"&gt;ports de xarxa necessaris&lt;/a&gt; per a tots els exportadors instal·lats.</target>
+        <target state="needs-adaptation">S'ha aplicat el tipus&lt;strong&gt;Superviseu aquest amfitrió&lt;/strong&gt;.&lt;br/&gt;&lt;strong&gt;Nota:&lt;/strong&gt; Com que heu afegit el tipus de sistema de monitorització, hem assignat automàticament la fórmula dels exportadors de Prometheus al sistema. Apliqueu el &lt;a href="/rhn/manager/systems/details/highstate?sid={0}"&gt;Highstate&lt;/a&gt; per instal·lar i habilitar els exportadors de mètriques de Prometheus.&lt;br/&gt;&lt;strong&gt;Nota:&lt;/strong&gt; Assegureu-vos d'obrir els &lt;a href="/docs/{1}/installation-and-upgrade/ports.html#_external_client_ports" target="_blank"&gt;ports de xarxa necessaris&lt;/a&gt; per a tots els exportadors instal·lats.</target>
       </trans-unit>
       <trans-unit id="system.entitle.formula_error" xml:space="preserve">
         <source>There was a problem assigning the Prometheus Exporters formula.</source>
@@ -11946,35 +11946,35 @@ Per a esmenar aquesta situació, afegiu credencials SCC lt;a href""/rhn/admin/se
       </trans-unit>
       <trans-unit id="product_migration.source_mismatch" xml:space="preserve">
         <source>The base product of this system does not match.</source>
-        <target state="translated">El producte base d'aquest sistema no coincideix.</target>
+        <target state="translated">El producte de base d'aquest sistema no coincideix.</target>
       </trans-unit>
       <trans-unit id="product_migration.salt_needs_update" xml:space="preserve">
         <source>Salt installed on this system is out of date.</source>
-        <target state="translated">El programari de Salt instal·lat en aquest sistema és obsolet.</target>
+        <target state="translated">El Salt instal·lat en aquest sistema és obsolet.</target>
       </trans-unit>
       <trans-unit id="product_migration.salt_needs_update.details" xml:space="preserve">
         <source>The installed &lt;pre&gt;{0}&lt;/pre&gt; package version on this system is out of date. Please update the package to the latest version before you start a Product migration.</source>
-        <target state="translated">La versió del paquet &lt;pre&gt;{0}&lt;/pre&gt; instal·lada en aquest sistema està desactualitzada. Actualitzeu el paquet a la darrera versió abans d'iniciar una migració de producte.</target>
+        <target state="translated">La versió del paquet &lt;pre&gt;{0}&lt;/pre&gt; instal·lada en aquest sistema no està actualitzada. Actualitzeu el paquet a la darrera versió abans d'iniciar una migració de producte.</target>
       </trans-unit>
       <trans-unit id="product_migration.addons_affected" xml:space="preserve">
         <source>Some installed addons are going to be affect, depending on chosen target.</source>
-        <target state="translated">Alguns complements instal·lats se'n veuran afectats, segons l'objectiu escollit.</target>
+        <target state="translated">Alguns complements instal·lats seran afectats, segons l'objectiu triat.</target>
       </trans-unit>
       <trans-unit id="product_migration.single.addons_affected" xml:space="preserve">
         <source>Some installed addons are going to be affect.</source>
-        <target state="translated">Alguns complements instal·lats se'n veuran afectats.</target>
+        <target state="translated">Alguns complements instal·lats seran afectats.</target>
       </trans-unit>
       <trans-unit id="product_migration.addons_affected.missing_successors" xml:space="preserve">
         <source>&lt;p&gt;Depending on chosen target, some or all of these products will be removed because no successor could be found, so proceed with caution:&lt;/p&gt;{0}</source>
-        <target state="translated">&lt;p&gt;Segons l'objectiu escollit, alguns o tots aquests productes s'eliminaran perquè no s'ha pogut trobar cap successor, així que procediu amb precaució:&lt;/p&gt;{0}</target>
+        <target state="translated">&lt;p&gt;Segons l'objectiu triat, alguns o tots aquests productes s'eliminaran perquè no s'ha pogut trobar cap successor, així que procediu amb precaució:&lt;/p&gt;{0}</target>
       </trans-unit>
       <trans-unit id="product_migration.single.addons_affected.missing_successors" xml:space="preserve">
         <source>&lt;p&gt;These products will be removed because no successor could be found, so proceed with caution:&lt;/p&gt;{0}</source>
-        <target state="translated">&lt;p&gt;Aquests productes s'eliminaran perquè no s'ha pogut trobar cap successor, així que procediu amb precaució:&lt;/p&gt;{0}</target>
+        <target state="translated">&lt;p&gt;Aquests productes s'eliminaran perquè no se n'ha pogut trobar cap successor, així que procediu amb precaució:&lt;/p&gt;{0}</target>
       </trans-unit>
       <trans-unit id="product_migration.addons_affected.installed_addons" xml:space="preserve">
         <source>&lt;p&gt;Depending on chosen target, some or all of these products will be installed:&lt;/p&gt;{0}</source>
-        <target state="translated">&lt;p&gt;Segons l'objectiu escollit, s'instal·laran alguns o tots aquests productes:&lt;/p&gt;{0}</target>
+        <target state="translated">&lt;p&gt;Segons l'objectiu triat, s'instal·laran alguns o tots aquests productes:&lt;/p&gt;{0}</target>
       </trans-unit>
       <trans-unit id="product_migration.single.addons_affected.installed_addons" xml:space="preserve">
         <source>&lt;p&gt;These products will be installed:&lt;/p&gt;{0}</source>
