@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Spacewalk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-20 17:53+0200\n"
-"PO-Revision-Date: 2025-10-05 14:59+0000\n"
+"PO-Revision-Date: 2025-10-05 15:59+0000\n"
 "Last-Translator: Ferdinan Rizky Budiarto <ferdinan.rizky@yahoo.com>\n"
 "Language-Team: Indonesian <https://l10n.opensuse.org/projects/uyuni/backend-5-1/id/>\n"
 "Language: id\n"
@@ -123,21 +123,20 @@ msgid "Your account does not have access to any channels matching (release='%(re
 msgstr "Akun Anda tidak memiliki akses ke saluran apa pun yang cocok (release='%(release)s', arch='%(arch)s')%(www_activation)s"
 
 #: ../server/rhnChannel.py:2236
-#, fuzzy, python-format
+#, python-format
 msgid "Insufficient subscription permissions for release (%s, %s"
-msgstr "Izin berlangganan tidak cukup untuk rilis (%s, %s"
+msgstr "Hak langganan untuk rilis (%s, %s) tidak mencukupi"
 
 #. Various messages that can be reused
 #.
 #. bretm 02/07/2007 -- when we have better old-client documentation, probably
 #. will be safe to get rid of all this crap
 #: ../server/rhnChannel.py:2550 ../server/rhnChannel.py:2569
-#, fuzzy
 msgid "System Registered but Inactive"
 msgstr "Sistem Terdaftar tetapi Tidak Aktif"
 
 #: ../server/rhnChannel.py:2552
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "\n"
 "Invalid Architecture and OS release combination (%s, %s).\n"
@@ -145,13 +144,14 @@ msgid ""
 "because it could not be subscribed to a base channel.\n"
 "Please contact your organization administrator for assistance.\n"
 msgstr ""
-"Kombinasi pelepas Arsitektur dan OS tidak valid (%s, %s).\n"
+"\n"
+"Kombinasi Arsitektur dan rilis OS tidak valid (%s, %s).\n"
 "Sistem Anda telah terdaftar, tetapi tidak akan menerima pembaruan\n"
-"karena tidak dapat di subscribe ke base channel.\n"
-"Hubungi administrator organisasi Anda untuk mendapatkan bantuan."
+"karena tidak dapat berlangganan ke saluran dasar.\n"
+"Silakan hubungi administrator organisasi Anda untuk bantuan.\n"
 
 #: ../server/rhnChannel.py:2561
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "\n"
 "  This system has been successfully registered, but is not yet entitled\n"
@@ -159,13 +159,14 @@ msgid ""
 "\n"
 "  %(entitlement_url)s\n"
 msgstr ""
-"Sistem ini telah berhasil didaftarkan, namun belum\n"
-"  layanan.  Untuk memberikan hak sistem ini ke layanan, login ke situs web di:\n"
 "\n"
-"%(entitlement_url)s (Dalam Bahasa Inggris)"
+"  Sistem ini telah berhasil didaftarkan, tetapi belum memiliki hak akses\n"
+"  untuk layanan.  Untuk memberikan hak akses layanan pada sistem ini, masuklah ke situs web di:\n"
+"\n"
+"  %(entitlement_url)s\n"
 
 #: ../server/rhnChannel.py:2571
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "\n"
 "  This system has been successfully registered, but no service entitlements\n"
@@ -173,10 +174,11 @@ msgid ""
 "\n"
 "  %(entitlement_url)s\n"
 msgstr ""
-"Sistem ini telah berhasil didaftarkan, tetapi tidak ada hak layanan\n"
-"  tersedia.  Untuk memberikan hak sistem ini ke layanan, login ke situs web di:\n"
 "\n"
-"%(entitlement_url)s (Dalam Bahasa Inggris)"
+"  Sistem ini telah berhasil didaftarkan, tetapi belum memiliki hak akses\n"
+"  untuk layanan.  Untuk memberikan hak akses layanan pada sistem ini, masuklah ke situs web di:\n"
+"\n"
+"  %(entitlement_url)s\n"
 
 #. Invalid server certificate.
 #: ../server/rhnHandler.py:62
