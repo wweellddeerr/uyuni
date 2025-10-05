@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Spacewalk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-20 17:53+0200\n"
-"PO-Revision-Date: 2025-10-05 10:59+0000\n"
+"PO-Revision-Date: 2025-10-05 13:59+0000\n"
 "Last-Translator: Ferdinan Rizky Budiarto <ferdinan.rizky@yahoo.com>\n"
 "Language-Team: Indonesian <https://l10n.opensuse.org/projects/uyuni/backend-5-1/id/>\n"
 "Language: id\n"
@@ -39,7 +39,7 @@ msgstr "Permintaan tidak valid diterima (%s)."
 
 #. Send the message as a fault.
 #: ../server/apacheRequest.py:130
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "IMPORTANT MESSAGE FOLLOWS:\n"
 "%s"
@@ -48,13 +48,13 @@ msgstr ""
 "%s"
 
 #: ../server/apacheRequest.py:160
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "While running '%s': caught\n"
 "%s : %s\n"
 msgstr ""
 "Saat menjalankan '%s': tertangkap\n"
-"%s : %s (Dalam Bahasa Inggris)"
+"%s : %s\n"
 
 #. pylint: disable-next=consider-using-f-string
 #: ../server/apacheRequest.py:675
