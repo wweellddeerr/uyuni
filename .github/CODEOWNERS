@@ -50,20 +50,20 @@ java/conf/cobbler/snippets/ @uyuni-project/python
 mgr_bootstrap_data.py
 
 # Frontend
-web/html/ @uyuni-project/frontend
-web/setup.sh @uyuni-project/frontend
-branding/ @uyuni-project/frontend
-*.jsp @uyuni-project/frontend
-*.jspf @uyuni-project/frontend
-.github/workflows/frontend-build.yml @uyuni-project/frontend
-.github/workflows/frontend-dependency-audit.yml @uyuni-project/frontend
-.github/workflows/frontend-lint-fix-pr.yml @uyuni-project/frontend
-.github/workflows/frontend-lint.yml @uyuni-project/frontend
-.github/workflows/frontend-typescript-compilation.yml @uyuni-project/frontend
-.github/workflows/frontend-unit-tests.yml @uyuni-project/frontend
-.npmrc @uyuni-project/frontend
-package.json @uyuni-project/frontend
-package-lock.json @uyuni-project/frontend
+web/html/ @SUSE/multi-linux-manager-frontend
+web/setup.sh @SUSE/multi-linux-manager-frontend
+branding/ @SUSE/multi-linux-manager-frontend
+*.jsp @SUSE/multi-linux-manager-frontend
+*.jspf @SUSE/multi-linux-manager-frontend
+.github/workflows/frontend-build.yml @SUSE/multi-linux-manager-frontend
+.github/workflows/frontend-dependency-audit.yml @SUSE/multi-linux-manager-frontend
+.github/workflows/frontend-lint-fix-pr.yml @SUSE/multi-linux-manager-frontend
+.github/workflows/frontend-lint.yml @SUSE/multi-linux-manager-frontend
+.github/workflows/frontend-typescript-compilation.yml @SUSE/multi-linux-manager-frontend
+.github/workflows/frontend-unit-tests.yml @SUSE/multi-linux-manager-frontend
+.npmrc @SUSE/multi-linux-manager-frontend
+package.json @SUSE/multi-linux-manager-frontend
+package-lock.json @SUSE/multi-linux-manager-frontend
 
 # QE
 testsuite/ @SUSE/multi-linux-manager-qe
