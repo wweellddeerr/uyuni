@@ -4,7 +4,7 @@
   "remoteEnv": {
     "JAVA_HOME": "/usr/lib64/jvm/java-17-openjdk"
   },
-  "postCreateCommand": "cd /workspaces/uyuni &&  ant -f java/manager-build.xml ivy"
+  "postCreateCommand": "cd /workspaces/uyuni && ant -f java/manager-build.xml ivy && npm --prefix web install"
   
   // More info: https://containers.dev/implementors/json_reference/
 }

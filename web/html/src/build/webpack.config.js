@@ -1,16 +1,26 @@
-const path = require("path");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const webpackAlias = require("./webpack.alias");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
-const autoprefixer = require("autoprefixer");
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import autoprefixer from "autoprefixer";
+import CleanWebpackPlugin from "clean-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { createRequire } from "node:module";
+import path, { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import SpeedMeasurePlugin from "speed-measure-webpack-plugin";
+const require = createRequire(import.meta.url);
 
-const GenerateStoriesPlugin = require("./plugins/generate-stories-plugin");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const web = path.resolve(__dirname, "../../..");
+const webHtmlSrc = path.resolve(__dirname, "..");
+const dist = path.resolve(webHtmlSrc, "./dist");
+
+import GenerateStoriesPlugin from "./plugins/generate-stories-plugin.js";
+import webpackAlias from "./webpack.alias.js";
 
 const DEVSERVER_WEBSOCKET_PATHNAME = "/ws";
 
-module.exports = (env, opts) => {
+export default (env, opts) => {
   let pluginsInUse = [];
   const isProductionMode = opts.mode === "production";
   const moduleName = isProductionMode ? "[id].[chunkhash]" : "[id]";
@@ -19,61 +29,68 @@ module.exports = (env, opts) => {
     pluginsInUse.push(new SpeedMeasurePlugin());
   }
 
+  if (!isProductionMode) {
+    pluginsInUse.push(
+      new ReactRefreshWebpackPlugin({
+        overlay: false,
+      })
+    );
+  }
+
   pluginsInUse = [
     ...pluginsInUse,
-    new CleanWebpackPlugin(["dist"], { root: path.resolve(__dirname, "../") }),
+    new CleanWebpackPlugin(["dist"], { root: dist }),
     new CopyWebpackPlugin([
       // Legacy scripts
-      { from: path.resolve(__dirname, "../../javascript"), to: path.resolve(__dirname, "../dist/javascript") },
+      { from: path.resolve(web, "./html/javascript"), to: path.resolve(dist, "./javascript") },
       // Translations
-      { from: path.resolve(__dirname, "../../../po"), to: path.resolve(__dirname, "../dist/po") },
+      { from: path.resolve(web, "./po"), to: path.resolve(dist, "./po") },
       // Unimported branding assets
       {
-        from: path.resolve(__dirname, "../branding/fonts/font-spacewalk"),
-        to: path.resolve(__dirname, "../dist/fonts/font-spacewalk"),
+        from: path.resolve(webHtmlSrc, "./branding/fonts/font-spacewalk"),
+        to: path.resolve(dist, "./fonts/font-spacewalk"),
       },
       // TODO: Copy all font licenses too
-      { from: path.resolve(__dirname, "../branding/img"), to: path.resolve(__dirname, "../dist/img") },
+      { from: path.resolve(webHtmlSrc, "./branding/img"), to: path.resolve(dist, "./img") },
       // Any non-compiled CSS files will be compiled by their entry points
       {
-        from: path.resolve(__dirname, "../branding/css/*.css"),
-        context: path.resolve(__dirname, "../branding/css"),
-        to: path.resolve(__dirname, "../dist/css"),
+        from: path.resolve(webHtmlSrc, "./branding/css/*.css"),
+        context: path.resolve(webHtmlSrc, "./branding/css"),
+        to: path.resolve(dist, "./css"),
       },
       {
-        from: path.resolve(__dirname, "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"),
-        to: path.resolve(__dirname, "../dist/javascript/legacy/bootstrap-webpack.js"),
+        from: path.resolve(web, "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"),
+        to: path.resolve(dist, "./javascript/legacy/bootstrap-webpack.js"),
       },
       {
-        from: path.resolve(__dirname, "../node_modules/jquery/dist/jquery.min.js"),
-        to: path.resolve(__dirname, "../dist/javascript/legacy"),
+        from: path.resolve(web, "./node_modules/jquery/dist/jquery.min.js"),
+        to: path.resolve(dist, "./javascript/legacy"),
       },
-      // TODO: This overlaps with susemanager-frontend-libs
       {
-        from: path.resolve(__dirname, "../node_modules/jquery-ui/dist/jquery-ui.js"),
-        to: path.resolve(__dirname, "../dist/javascript/legacy"),
+        from: path.resolve(web, "./node_modules/jquery-ui/dist/jquery-ui.js"),
+        to: path.resolve(dist, "./javascript/legacy"),
       },
       // TODO: In the future it would be nice to bundle this instead of copying it
       {
-        from: path.resolve(__dirname, "../node_modules/font-awesome"),
-        to: path.resolve(__dirname, "../dist/fonts/font-awesome"),
+        from: path.resolve(web, "./node_modules/font-awesome"),
+        to: path.resolve(dist, "./fonts/font-awesome"),
       },
       {
-        from: path.resolve(__dirname, "../node_modules/pwstrength-bootstrap/dist/pwstrength-bootstrap-1.0.2.js"),
-        to: path.resolve(__dirname, "../dist/javascript/legacy"),
+        from: path.resolve(web, "./node_modules/pwstrength-bootstrap/dist/pwstrength-bootstrap-1.0.2.js"),
+        to: path.resolve(dist, "./javascript/legacy"),
       },
       // TODO: Take only what we need after we've confirmed it works fine, otherwise there's a lot of fluff in this
       {
-        from: path.resolve(__dirname, "../node_modules/ace-builds/src-min-noconflict"),
-        to: path.resolve(__dirname, "../dist/javascript/legacy/ace-editor"),
+        from: path.resolve(web, "./node_modules/ace-builds/src-min-noconflict"),
+        to: path.resolve(dist, "./javascript/legacy/ace-editor"),
       },
     ]),
     new MiniCssExtractPlugin({
       chunkFilename: `css/${moduleName}.css`,
     }),
     new GenerateStoriesPlugin({
-      inputDir: path.resolve(__dirname, "../manager"),
-      outputFile: path.resolve(__dirname, "../manager/storybook/stories.generated.ts"),
+      inputDir: path.resolve(webHtmlSrc, "./manager"),
+      outputFile: path.resolve(webHtmlSrc, "./manager/storybook/stories.generated.ts"),
     }),
   ];
 
@@ -122,7 +139,8 @@ module.exports = (env, opts) => {
                 {
                   loader: require.resolve("babel-loader"),
                   options: {
-                    configFile: path.resolve(__dirname, "../.babelrc"),
+                    configFile: path.resolve(webHtmlSrc, "./.babelrc"),
+                    plugins: isProductionMode ? undefined : [require.resolve("react-refresh/babel")],
                   },
                 },
               ],
@@ -153,7 +171,7 @@ module.exports = (env, opts) => {
           test: /\.po$/,
           type: "json",
           use: {
-            loader: path.resolve(__dirname, "loaders/po-loader.js"),
+            loader: path.resolve(__dirname, "./loaders/po-loader.js"),
           },
         },
         {
@@ -206,7 +224,7 @@ module.exports = (env, opts) => {
               loader: require.resolve("sass-loader"),
               options: {
                 sassOptions: {
-                  loadPaths: path.resolve(__dirname, "../"),
+                  loadPaths: [webHtmlSrc],
                 },
               },
             },
@@ -224,7 +242,7 @@ module.exports = (env, opts) => {
       hot: true,
       open: true,
       static: {
-        directory: path.resolve(__dirname, "../dist"),
+        directory: dist,
         publicPath: "/",
         // This is currently redundant, but will become relevant when we include static files in Webpack
         watch: true,
@@ -238,10 +256,6 @@ module.exports = (env, opts) => {
           pathname: DEVSERVER_WEBSOCKET_PATHNAME,
         },
         logging: "error",
-      },
-      // Override CORS headers for `yarn storybook`, these are not required otherwise
-      headers: {
-        "Access-Control-Allow-Origin": "*",
       },
       /**
        * The documentation isn't very good for this, but shortly we're proxying everything besides what comes out of Webpack through to the provided server
@@ -265,9 +279,7 @@ module.exports = (env, opts) => {
       ],
       devMiddleware: {
         publicPath: "/",
-        // Don't write changes to disk so we can do hard reloads only on static file changes in the future
-        // TODO: Revert
-        // writeToDisk: false,
+        // If we ever integrate theme loading locally as opposeds to a global load in jsp, we can set this to false to get faster HMR
         writeToDisk: true,
         // Allow proxying requests to root "/" (disabled by default), see https://webpack.js.org/configuration/dev-server/#devserverproxy
         index: false,
