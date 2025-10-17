@@ -14,6 +14,8 @@ RUN zypper ref && \
       expect \
       git \
       curl \
+      obs-to-maven \
+      nodejs22 \
+      npm22 \
       wget && \
-    zypper -n install obs-to-maven yarn && \
     zypper clean -a
