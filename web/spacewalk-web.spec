@@ -148,9 +148,7 @@ Configuration file for spacewalk-base-minimal package.
 
 %prep
 %setup -q
-pushd html/src
 tar xf %{S:1}
-popd
 
 %build
 make -f Makefile.spacewalk-web PERLARGS="INSTALLDIRS=vendor" %{?_smp_mflags}
