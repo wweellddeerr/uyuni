@@ -1,8 +1,12 @@
-const fs = require("fs").promises;
-const path = require("path");
+import { promises as fs } from "node:fs";
+import path, { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /** Automatically gather all imports for story files */
-module.exports = class GenerateStoriesPlugin {
+export default class GenerateStoriesPlugin {
   didApply = false;
   outputFile = undefined;
 
@@ -64,9 +68,9 @@ module.exports = class GenerateStoriesPlugin {
   }
 
   wordify(input) {
-    return input.replace(/[\W_]+/g, "_");
+    return input.replaceAll(/[\W_]+/g, "_");
   }
-};
+}
 
 const storyTemplate = (filePath, safeName, groupName) =>
   `
