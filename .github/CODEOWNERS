@@ -33,7 +33,7 @@
 # Uyuni Code Owners
 
 # Workflows reviewers
-.github/workflows @uyuni-project/workflows-reviewers
+# .github/workflows @uyuni-project/workflows-reviewers
 
 # Release Engineering
 .github/ISSUE_TEMPLATE/releng-*.md @SUSE/multi-linux-manager-releng
@@ -42,10 +42,10 @@ tito.props @SUSE/multi-linux-manager-releng
 web/conf/rhn_web.conf @SUSE/multi-linux-manager-releng
 
 # Cobbler
-java/conf/cobbler/snippets/ @uyuni-project/python
+java/conf/cobbler/snippets/ @SUSE/multi-linux-manager-python
 
 # Python
-*.py @uyuni-project/python
+*.py @SUSE/multi-linux-manager-python
 # This file only holds data, no Python code
 mgr_bootstrap_data.py
 
@@ -75,51 +75,51 @@ testsuite/ @SUSE/multi-linux-manager-qe
 susemanager-utils/mgr-libmod/ @cbbayburt
 
 # Generic fallback for Java, apart from changelog files
-java/ @uyuni-project/java
+java/ @SUSE/multi-linux-manager-java
 java/*.changes*
 
 # Individual Java packages
 
 # XMLRPC API
-java/code/src/com/redhat/rhn/frontend/xmlrpc/ @uyuni-project/naica
+java/code/src/com/redhat/rhn/frontend/xmlrpc/ @SUSE/multi-linux-manager-naica
 
 # HTTP API
-java/code/src/com/suse/manager/api/ @uyuni-project/naica
+java/code/src/com/suse/manager/api/ @SUSE/multi-linux-manager-naica
 
 # Content Lifecycle Management
-java/code/src/com/redhat/rhn/manager/contentmgmt/ @uyuni-project/naica
-java/code/src/com/suse/manager/webui/controllers/contentmanagement/ @uyuni-project/naica
-java/code/src/com/redhat/rhn/domain/contentmgmt/ @uyuni-project/naica
+java/code/src/com/redhat/rhn/manager/contentmgmt/ @SUSE/multi-linux-manager-naica
+java/code/src/com/suse/manager/webui/controllers/contentmanagement/ @SUSE/multi-linux-manager-naica
+java/code/src/com/redhat/rhn/domain/contentmgmt/ @SUSE/multi-linux-manager-naica
 
 # Maintenance Windows
-java/code/src/com/suse/manager/model/maintenance/ @uyuni-project/naica
-java/code/src/com/suse/manager/webui/controllers/maintenance/ @uyuni-project/naica
-java/code/src/com/suse/manager/maintenance/ @uyuni-project/naica
-java/code/src/com/suse/manager/webui/utils/gson/MaintenanceWindowDataJson.java @uyuni-project/naica
+java/code/src/com/suse/manager/model/maintenance/ @SUSE/multi-linux-manager-naica
+java/code/src/com/suse/manager/webui/controllers/maintenance/ @SUSE/multi-linux-manager-naica
+java/code/src/com/suse/manager/maintenance/ @SUSE/multi-linux-manager-naica
+java/code/src/com/suse/manager/webui/utils/gson/MaintenanceWindowDataJson.java @SUSE/multi-linux-manager-naica
 
 # Minion Bootstrapping
-java/code/src/com/suse/manager/webui/controllers/bootstrap/ @uyuni-project/naica
-java/code/src/com/suse/manager/webui/utils/gson/BootstrapHostsJson.java @uyuni-project/naica
-java/code/src/com/suse/manager/webui/utils/gson/BootstrapParameters.java @uyuni-project/naica
+java/code/src/com/suse/manager/webui/controllers/bootstrap/ @SUSE/multi-linux-manager-naica
+java/code/src/com/suse/manager/webui/utils/gson/BootstrapHostsJson.java @SUSE/multi-linux-manager-naica
+java/code/src/com/suse/manager/webui/utils/gson/BootstrapParameters.java @SUSE/multi-linux-manager-naica
 
 # Notification Messages
-java/code/src/com/redhat/rhn/domain/notification/ @uyuni-project/naica
-java/code/src/com/suse/manager/webui/controllers/NotificationMessageController.java @uyuni-project/naica
-java/code/src/com/suse/manager/webui/utils/gson/NotificationMessageJson.java @uyuni-project/naica
+java/code/src/com/redhat/rhn/domain/notification/ @SUSE/multi-linux-manager-naica
+java/code/src/com/suse/manager/webui/controllers/NotificationMessageController.java @SUSE/multi-linux-manager-naica
+java/code/src/com/suse/manager/webui/utils/gson/NotificationMessageJson.java @SUSE/multi-linux-manager-naica
 
 # Websockets
-java/code/src/com/suse/manager/webui/websocket/ @uyuni-project/naica
+java/code/src/com/suse/manager/webui/websocket/ @SUSE/multi-linux-manager-naica
 
 # RBAC
-java/code/src/com/redhat/rhn/manager/access/ @uyuni-project/naica
-java/code/src/com/redhat/rhn/domain/access/ @uyuni-project/naica
-java/code/src/com/redhat/rhn/frontend/xmlrpc/access/ @uyuni-project/naica
-java/code/src/com/redhat/rhn/frontend/servlets/AuthorizationFilter.java @uyuni-project/naica
-schema/spacewalk/common/data/accessGroup.sql @uyuni-project/naica
-schema/spacewalk/common/data/accessGroupNamespace.sql @uyuni-project/naica
-schema/spacewalk/common/data/endpoint.sql @uyuni-project/naica
-schema/spacewalk/common/data/endpointNamespace.sql @uyuni-project/naica
-schema/spacewalk/common/data/namespace.sql @uyuni-project/naica
+java/code/src/com/redhat/rhn/manager/access/ @SUSE/multi-linux-manager-naica
+java/code/src/com/redhat/rhn/domain/access/ @SUSE/multi-linux-manager-naica
+java/code/src/com/redhat/rhn/frontend/xmlrpc/access/ @SUSE/multi-linux-manager-naica
+java/code/src/com/redhat/rhn/frontend/servlets/AuthorizationFilter.java @SUSE/multi-linux-manager-naica
+schema/spacewalk/common/data/accessGroup.sql @SUSE/multi-linux-manager-naica
+schema/spacewalk/common/data/accessGroupNamespace.sql @SUSE/multi-linux-manager-naica
+schema/spacewalk/common/data/endpoint.sql @SUSE/multi-linux-manager-naica
+schema/spacewalk/common/data/endpointNamespace.sql @SUSE/multi-linux-manager-naica
+schema/spacewalk/common/data/namespace.sql @SUSE/multi-linux-manager-naica
 
 # Ignore translations, in the CODEOWNERS the last matching wins
 **/*.po
