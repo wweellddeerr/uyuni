@@ -1,5 +1,3 @@
-import { hot } from "react-hot-loader/root";
-
 import * as React from "react";
 import { useEffect, useState } from "react";
 
@@ -219,4 +217,4 @@ const ListFilters = (props: Props) => {
   );
 };
 
-export default hot(withPageWrapper<Props>(ListFilters));
+export default withPageWrapper<Props>(ListFilters);
