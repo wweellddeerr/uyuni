@@ -35,5 +35,6 @@
     "javadoc.method.scope": "public",
     "javadoc.type.scope": "package",
     "javadoc.var.scope": "package"
-  }
+  },
+  "prettier.configPath": "web/.prettierrc"
 }
