@@ -36,8 +36,5 @@
     "javadoc.type.scope": "package",
     "javadoc.var.scope": "package"
   },
-	"vscode-postgres.virtualFolders": [
-    "functions"
-  ],
   "prettier.configPath": "web/.prettierrc"
 }
