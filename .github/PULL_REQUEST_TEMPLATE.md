@@ -64,7 +64,7 @@ If you need to re-run a test, please mark the related checkbox, it will be unche
 - [ ] Re-run test "ruby_rubocop"
 - [ ] Re-run test "schema_migration_test_pgsql"
 - [ ] Re-run test "susemanager_unittests"
-- [ ] Re-run test "javascript_lint"
+- [ ] Re-run test "frontend_checks"
 - [ ] Re-run test "spacecmd_unittests"
 
 # Before you merge
