@@ -53,7 +53,7 @@ Feature: Smoke tests for <client>
     And the system name for "<client>" should be correct
     And I should see several text fields
 
-@skip_for_debianlike
+@skip_for_debian
 @skip_for_rocky9
 @skip_for_alma9
   Scenario: Install a patch on the <client>
