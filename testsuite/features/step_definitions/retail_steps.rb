@@ -111,15 +111,15 @@ end
 
 When(/^I connect the second interface of the proxy to the private network$/) do
   node = get_target('proxy')
-  _result, return_code = node.run('which nmcli')
+  _result, return_code = node.run('which nmcli', check_errors: false)
   if return_code.zero?
-    # Network manager: we give eth1 precedence over eth0
+    # Network manager: we give second interface precedence over first interface
     #                  otherwise the name server we get from DHCP is lost at the end of the list
     #                  (the name servers list in resolv.conf is limited to 3 entries)
     cmd = 'nmcli connection modify "Wired connection 1" ipv4.dns-priority 20 && ' \
-          'nmcli device modify eth0 ipv4.dns-priority 20 && ' \
+          "nmcli device modify #{node.public_interface} ipv4.dns-priority 20 && " \
           'nmcli connection modify "Wired connection 2" ipv4.dns-priority 10 && ' \
-          'nmcli device modify eth1 ipv4.dns-priority 10'
+          "nmcli device modify #{node.private_interface} ipv4.dns-priority 10"
   else
     # Wicked: is there a way to give eth1 precedence?
     #         we use a static setting for the name server instead
@@ -210,7 +210,7 @@ end
 When(/^I create the bootstrap script for "([^"]+)" hostname and "([^"]*)" activation key on "([^"]*)"$/) do |hostname, key, host|
   node = get_target(host)
   # WORKAROUND: Revert once pxeboot autoinstallation contains venv-salt-minion
-  # force_bundle = use_salt_bundle ? '--force-bundle' : ''
+  # force_bundle = $use_salt_bundle ? '--force-bundle' : ''
   # get_target(host).run("mgr-bootstrap #{force_bundle}")
   node.run("mgr-bootstrap --hostname=#{hostname} --activation-keys=#{key}")
 
@@ -544,7 +544,7 @@ Then(/^I open the details page of the image for "([^"]*)"$/) do |host|
 
   begin
     tr = find('tr', text: name)
-    tr.find('button[aria-label="Details"]').click
+    tr.find('button[title="Details"]').click
   rescue Capybara::ElementNotFound
     raise ScriptError, "Can not open details page for image #{name}"
   end

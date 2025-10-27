@@ -23,6 +23,7 @@ Summary:        Supportconfig Plugin for SUSE Manager
 License:        GPL-2.0-only
 # FIXME: use correct group or remove it, see "https://en.opensuse.org/openSUSE:Package_group_guidelines"
 Group:          Documentation/SuSE
+#!CreateArchive: %{name}
 Source:         %{name}-%{version}.tar.gz
 URL:            https://github.com/uyuni-project/uyuni
 Requires:       supportutils
