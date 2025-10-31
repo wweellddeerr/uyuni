@@ -10,7 +10,7 @@ assignees: ''
 
 # Tasks
   - [ ] Make sure SLE MU pipeline is in good shape
-    - [ ] 4.3 https://ci.suse.de/view/Manager/view/Manager-4.3/job/manager-4.3-qe-sle-update-NUE/
+    - [ ] [4.3 NUE](https://ci.suse.de/view/Manager/view/Manager-4.3/job/manager-4.3-qe-sle-update-NUE/)
     - [ ] [5.0 micro NUE](https://ci.suse.de/view/Manager/view/Manager-5.0/job/manager-5.0-micro-qe-sle-update-NUE/)
     - [ ] [5.0 sles NUE](https://ci.suse.de/view/Manager/view/Manager-5.0/job/manager-5.0-sles-qe-sle-update-NUE/)
     - [ ] [5.1 micro NUE](https://ci.suse.de/view/Manager/view/Manager-5.1/job/manager-5.1-micro-qe-sle-update-NUE/)
