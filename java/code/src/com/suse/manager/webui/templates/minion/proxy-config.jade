@@ -12,9 +12,9 @@ script(type='text/javascript').
               'proxy-config',
               {
                 serverId: "#{server.id}",
-                parents: JSON.parse('!{parents}'),
+                parents: !{parents},
                 currentConfig: !{currentConfig},
-                initFailMessage: "#{initFailMessage}",
+                validationErrors: !{validationErrors},
                 registryUrlExample: "#{registryUrlExample}",
                 registryTagExample: "#{registryTagExample}",
                 hasCertificates: JSON.parse("#{hasCertificates}")
