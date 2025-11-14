@@ -1146,12 +1146,6 @@ When(/^I redeploy the original server container$/) do
   node.run("mgradm upgrade podman --registry #{original_container_repository}", timeout: 180, runs_in_container: false)
 end
 
-When(/^I redeploy the original server container$/) do
-  node = get_target('server')
-  original_container_repository, _code = node.run("venv-salt-call --local grains.get container_repository | cut -d':' -f2 | xargs", runs_in_container: false)
-  node.run("mgradm upgrade podman --registry #{original_container_repository}", timeout: 180, runs_in_container: false)
-end
-
 When(/^I obtain and extract the supportconfig from the server$/) do
   supportconfig_path = '/root/server-supportconfig.tar.gz'
   test_runner_file = '/root/server-supportconfig.tar.gz'

@@ -16,6 +16,5 @@ Feature: Test Program Temporary Fixes (PTF) deployment
   @susemanager
   Scenario: Re-deploy the original server container  
     When I redeploy the original server container
-srbarrios marked this conversation as resolved.
     And I wait for "30" seconds
     Then I expect "uyuni-server" container to be healthy within 300 seconds
