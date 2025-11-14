@@ -11848,36 +11848,36 @@ To amend this situation, please add SCC credentials &lt;a href="/rhn/admin/setup
         <source>The server {0} cannot be registered as a peripheral of this hub</source>
         <target state="final">サーバ {0} は、このハブの周辺機器として登録できません</target>
       </trans-unit>
-      <trans-unit id="hub.sync_bunch_error" xml:space="preserve">
+      <trans-unit id="hub.sync_bunch_error" xml:space="preserve" approved="yes">
         <source>Error when triggering the channels sync.</source>
-        <target state="new"/>
+        <target state="final">チャンネル同期をトリガする際にエラーが発生しました。</target>
       </trans-unit>
-      <trans-unit id="supportdata.get" xml:space="preserve">
+      <trans-unit id="supportdata.get" xml:space="preserve" approved="yes">
         <source>Get and Upload Support data</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/schedule/ActionDetails.do</context>
         </context-group>
-        <target state="new"/>
+        <target state="final">サポートデータの取得とアップロード</target>
       </trans-unit>
-      <trans-unit id="message.scheduleactivated" xml:space="preserve">
+      <trans-unit id="message.scheduleactivated" xml:space="preserve" approved="yes">
         <source>Schedule &lt;strong&gt;{0}&lt;/strong&gt; activated.</source>
-        <target state="new"/>
+        <target state="final">スケジュール&lt;strong&gt;{0}&lt;/strong&gt;が有効化されました。</target>
       </trans-unit>
-      <trans-unit id="task.status.errata-advisory-map-sync" xml:space="preserve">
+      <trans-unit id="task.status.errata-advisory-map-sync" xml:space="preserve" approved="yes">
         <source>Update SUSE errata advisory map</source>
-        <target state="new"/>
+        <target state="final">SUSEエラータアドバイザリマップを更新</target>
       </trans-unit>
-      <trans-unit id="bunch.jsp.description.errata-advisory-map-sync-bunch" xml:space="preserve">
+      <trans-unit id="bunch.jsp.description.errata-advisory-map-sync-bunch" xml:space="preserve" approved="yes">
         <source>Update SUSE errata advisory map to retrieve announcement ids and advisor URLs</source>
-        <target state="new"/>
+        <target state="final">SUSEエラータアドバイザリマップを更新し、アナウンスIDとアドバイザURLを取得します</target>
       </trans-unit>
-      <trans-unit id="supportdata.uploadGeoType.eu" xml:space="preserve">
+      <trans-unit id="supportdata.uploadGeoType.eu" xml:space="preserve" approved="yes">
         <source>EU</source>
-        <target state="new"/>
+        <target state="final">EU</target>
       </trans-unit>
-      <trans-unit id="supportdata.uploadGeoType.us" xml:space="preserve">
+      <trans-unit id="supportdata.uploadGeoType.us" xml:space="preserve" approved="yes">
         <source>US</source>
-        <target state="new"/>
+        <target state="final">US</target>
       </trans-unit>
       <trans-unit id="system.details.support.invalid_case_number" xml:space="preserve">
         <source>The case number {0} is not valid.</source>
@@ -11895,29 +11895,29 @@ To amend this situation, please add SCC credentials &lt;a href="/rhn/admin/setup
         <source>Unable to gather and upload the support data. Please check the server logs for detailed information.</source>
         <target state="new"/>
       </trans-unit>
-      <trans-unit id="coco.environment.kvm_amd_epyc_bergamo.description" xml:space="preserve">
+      <trans-unit id="coco.environment.kvm_amd_epyc_bergamo.description" xml:space="preserve" approved="yes">
         <source>KVM on AMD Epyc Processor, fourth generation (bergamo)</source>
-        <target state="new"/>
+        <target state="final">KVM on AMD Epycプロセッサ、第4世代(bergamo)</target>
       </trans-unit>
-      <trans-unit id="coco.environment.kvm_amd_epyc_bergamo.label" xml:space="preserve">
+      <trans-unit id="coco.environment.kvm_amd_epyc_bergamo.label" xml:space="preserve" approved="yes">
         <source>KVM on AMD Epyc - Bergamo</source>
-        <target state="new"/>
+        <target state="final">KVM on AMD Epyc - Bergamo</target>
       </trans-unit>
-      <trans-unit id="coco.environment.kvm_amd_epyc_siena.description" xml:space="preserve">
+      <trans-unit id="coco.environment.kvm_amd_epyc_siena.description" xml:space="preserve" approved="yes">
         <source>KVM on AMD Epyc Processor, fourth generation (siena)</source>
-        <target state="new"/>
+        <target state="final">KVM on AMD Epycプロセッサ、第4世代(siena)</target>
       </trans-unit>
-      <trans-unit id="coco.environment.kvm_amd_epyc_siena.label" xml:space="preserve">
+      <trans-unit id="coco.environment.kvm_amd_epyc_siena.label" xml:space="preserve" approved="yes">
         <source>KVM on AMD Epyc - Siena</source>
-        <target state="new"/>
+        <target state="final">KVM on AMD Epyc - Siena</target>
       </trans-unit>
-      <trans-unit id="coco.environment.kvm_amd_epyc_turin.description" xml:space="preserve">
+      <trans-unit id="coco.environment.kvm_amd_epyc_turin.description" xml:space="preserve" approved="yes">
         <source>KVM on AMD Epyc Processor, fifth generation (turin)</source>
-        <target state="new"/>
+        <target state="final">KVM on AMD Epycプロセッサ、第5世代(turin)</target>
       </trans-unit>
-      <trans-unit id="coco.environment.kvm_amd_epyc_turin.label" xml:space="preserve">
+      <trans-unit id="coco.environment.kvm_amd_epyc_turin.label" xml:space="preserve" approved="yes">
         <source>KVM on AMD Epyc - Turin</source>
-        <target state="new"/>
+        <target state="final">KVM on AMD Epyc - Turin</target>
       </trans-unit>
       <trans-unit id="system.migration.noServersSelected" xml:space="preserve">
         <source>Unable to identify the selected systems for the migration.</source>
