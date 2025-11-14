@@ -27310,7 +27310,7 @@ given channel.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/DeleteSchedule.do</context>
         </context-group>
-        <target state="needs-adaptation">本当にスケジュールを削除してもよいですか? 関連付けられているバンチがスケジュールされなくなります。これにより@@PRODUCT_NAME@@の機能性に多大な影響を及ぼす可能性があります。削除による影響をよく理解した上で続行してください。</target>
+        <target state="final">本当にスケジュールを削除してもよいですか? 関連付けられているバンチがスケジュールされなくなります。これにより@@PRODUCT_NAME@@の機能性に多大な影響を及ぼす可能性があります。削除による影響をよく理解した上で続行してください。</target>
       </trans-unit>
       <trans-unit id="schedule.jsp.schedulenameinuse" xml:space="preserve">
         <source>Schedule name {0} is already in use. Please choose another one.</source>
@@ -27347,12 +27347,12 @@ given channel.</source>
         </context-group>
         <target>スケジュールの作成</target>
       </trans-unit>
-      <trans-unit id="toolbar.delete.schedule" xml:space="preserve">
+      <trans-unit id="toolbar.delete.schedule" xml:space="preserve" approved="yes">
         <source>disable schedule</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/ScheduleDetail.do</context>
         </context-group>
-        <target state="needs-adaptation">スケジュールの削除</target>
+        <target state="final">スケジュールの無効化</target>
       </trans-unit>
       <trans-unit id="schedule.edit.jsp.satschedules" xml:space="preserve">
         <source>@@PRODUCT_NAME@@ Schedules</source>
@@ -27427,12 +27427,12 @@ given channel.</source>
           <context context-type="sourcefile">/rhn/admin/ScheduleDetail.do</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="schedule.delete.jsp.deleteschedule" xml:space="preserve">
+      <trans-unit id="schedule.delete.jsp.deleteschedule" xml:space="preserve" approved="yes">
         <source>Disable Schedule</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/DeleteSchedule.do</context>
         </context-group>
-        <target state="needs-adaptation">スケジュールの削除</target>
+        <target state="final">スケジュールの無効化</target>
       </trans-unit>
       <trans-unit id="task.edit.jsp.name" xml:space="preserve">
         <source>Task Name</source>
@@ -28810,33 +28810,33 @@ given channel.</source>
         <source>Password</source>
         <target>パスワード</target>
       </trans-unit>
-      <trans-unit id="mirror-credentials.jsp.primary" xml:space="preserve">
+      <trans-unit id="mirror-credentials.jsp.primary" xml:space="preserve" approved="yes">
         <source>This is the primary credentials</source>
-        <target state="needs-adaptation">これは主となる資格情報です</target>
+        <target state="final">これは主となる資格情報です</target>
       </trans-unit>
-      <trans-unit id="mirror-credentials.jsp.make-primary" xml:space="preserve">
+      <trans-unit id="mirror-credentials.jsp.make-primary" xml:space="preserve" approved="yes">
         <source>Make primary credentials</source>
-        <target state="needs-adaptation">主となる資格情報にする</target>
+        <target state="final">主となる資格情報にする</target>
       </trans-unit>
-      <trans-unit id="mirror-credentials.jsp.subscriptions" xml:space="preserve">
+      <trans-unit id="mirror-credentials.jsp.subscriptions" xml:space="preserve" approved="yes">
         <source>List subscriptions</source>
-        <target state="needs-adaptation">サブスクリプションの一覧</target>
+        <target state="final">サブスクリプションの一覧</target>
       </trans-unit>
-      <trans-unit id="mirror-credentials.jsp.edit" xml:space="preserve">
+      <trans-unit id="mirror-credentials.jsp.edit" xml:space="preserve" approved="yes">
         <source>Edit credentials</source>
-        <target state="needs-adaptation">資格情報の編集</target>
+        <target state="final">資格情報の編集</target>
       </trans-unit>
-      <trans-unit id="mirror-credentials.jsp.delete" xml:space="preserve">
+      <trans-unit id="mirror-credentials.jsp.delete" xml:space="preserve" approved="yes">
         <source>Delete credentials</source>
-        <target state="needs-adaptation">資格情報の削除</target>
+        <target state="final">資格情報の削除</target>
       </trans-unit>
-      <trans-unit id="mirror-credentials.jsp.success" xml:space="preserve">
+      <trans-unit id="mirror-credentials.jsp.success" xml:space="preserve" approved="yes">
         <source>Credentials verified (click to refresh)</source>
-        <target state="needs-adaptation">資格情報確認済み (クリックして更新)</target>
+        <target state="final">資格情報確認済み (クリックして更新)</target>
       </trans-unit>
-      <trans-unit id="mirror-credentials.jsp.failed" xml:space="preserve">
+      <trans-unit id="mirror-credentials.jsp.failed" xml:space="preserve" approved="yes">
         <source>Verification failed (click to refresh)</source>
-        <target state="needs-adaptation">資格情報失敗 (クリックして更新)</target>
+        <target state="final">資格情報失敗 (クリックして更新)</target>
       </trans-unit>
       <trans-unit id="mirror-credentials.jsp.modal-edit.title" xml:space="preserve">
         <source>Edit credentials</source>
@@ -29823,45 +29823,45 @@ given channel.</source>
           &lt;a href="{0}"&gt;ログアウト&lt;/a&gt;することも、前のページに &lt;a href="javascript:history.back()"&gt;戻る&lt;/a&gt;こともできます。
         </target>
       </trans-unit>
-      <trans-unit id="userdetails.jsp.adminroles" xml:space="preserve">
+      <trans-unit id="userdetails.jsp.adminroles" xml:space="preserve" approved="yes">
         <source>Administrative Roles</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/UserDetails</context>
         </context-group>
-        <target state="new"/>
+        <target state="final">管理者ロール</target>
       </trans-unit>
-      <trans-unit id="schedule.edit.jsp.activateschedule" xml:space="preserve">
+      <trans-unit id="schedule.edit.jsp.activateschedule" xml:space="preserve" approved="yes">
         <source>Activate Schedule</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/ScheduleDetail.do</context>
         </context-group>
-        <target state="new"/>
+        <target state="final">スケジュールを有効化する</target>
       </trans-unit>
-      <trans-unit id="actionchain.jsp.distupgrade.upgrade" xml:space="preserve">
+      <trans-unit id="actionchain.jsp.distupgrade.upgrade" xml:space="preserve" approved="yes">
         <source>Migrate the installed product on</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/schedule/ActionChain</context>
         </context-group>
-        <target state="new"/>
+        <target state="final">インストールされている製品の移行</target>
       </trans-unit>
-      <trans-unit id="ssm.overview.product_migration" xml:space="preserve">
+      <trans-unit id="ssm.overview.product_migration" xml:space="preserve" approved="yes">
         <source>Product Migration</source>
-        <target state="new"/>
+        <target state="final">製品移行</target>
       </trans-unit>
-      <trans-unit id="ssm.overview.product_migration.migrate" xml:space="preserve">
+      <trans-unit id="ssm.overview.product_migration.migrate" xml:space="preserve" approved="yes">
         <source>&lt;a href="/rhn/manager/systems/ssm/product-migration"&gt;Migrate the products&lt;/a&gt; installed on the selected systems</source>
-        <target state="new"/>
+        <target state="final">選択したシステムにインストールされている&lt;a href="/rhn/manager/systems/ssm/product-migration"&gt;製品を移行する&lt;/a&gt;</target>
       </trans-unit>
-      <trans-unit id="bunch.jsp.description.compare-task-bunch" xml:space="preserve">
+      <trans-unit id="bunch.jsp.description.compare-task-bunch" xml:space="preserve" approved="yes">
         <source>Schedules a generic comparison task</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/BunchDetail.do</context>
         </context-group>
-        <target state="new"/>
+        <target state="final">一般的な比較タスクをスケジュールする</target>
       </trans-unit>
-      <trans-unit id="task.status.compare-task-files" xml:space="preserve">
+      <trans-unit id="task.status.compare-task-files" xml:space="preserve" approved="yes">
         <source>Compare Task</source>
-        <target state="new"/>
+        <target state="final">比較タスク</target>
       </trans-unit>
     </body>
   </file>
