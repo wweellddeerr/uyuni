@@ -67,7 +67,7 @@ When(/^I clear the caches on the server$/) do
   node.run('spacecmd -u admin -p admin clear_caches')
 end
 
-When(/I click on profile "([^"]*)"$/) do |profile|
+When(/I^ click on profile "([^"]*)"$/) do |profile|
   xpath_query = "//a[text()='#{profile}']/../../td[1]/input[@type='radio']"
   find(:xpath, xpath_query).click
 end

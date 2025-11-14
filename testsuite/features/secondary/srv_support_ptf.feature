@@ -7,11 +7,15 @@ Feature: Test Program Temporary Fixes (PTF) deployment
   Without leaving the system in an inactive state
 
   @susemanager
-  Scenario: Successfully apply and roll back a Program Temporary Fix
+  Scenario: Successfully apply a Program Temporary Fix
     When I login to SUSE Customer Center DUMMY Sanity Check Account
     And I apply a Program Temporary Fix to the containerized server
     And I wait for "30" seconds
     Then I expect "uyuni-server" container to be healthy within 300 seconds
+
+  @susemanager
+  Scenario: Re-deploy the original server container  
     When I redeploy the original server container
+srbarrios marked this conversation as resolved.
     And I wait for "30" seconds
     Then I expect "uyuni-server" container to be healthy within 300 seconds

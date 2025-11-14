@@ -1076,7 +1076,7 @@ When(/^I install package tftpboot-installation on the server$/) do
   end
 end
 
-When(/I copy "([^"]*)" from "([^"]*)" to "([^"]*)" via scp in the path "([^"]*)"$/) do |file, origin, dest, dest_folder|
+When(/I^ copy "([^"]*)" from "([^"]*)" to "([^"]*)" via scp in the path "([^"]*)"$/) do |file, origin, dest, dest_folder|
   node_origin = get_target(origin)
   node_dest = get_target(dest)
   dest_hostname = node_dest.hostname
@@ -1084,75 +1084,75 @@ When(/I copy "([^"]*)" from "([^"]*)" to "([^"]*)" via scp in the path "([^"]*)"
   raise StandardError, "File could not be sent from #{origin} to #{dest}" unless return_code.zero?
 end
 
-When(/I copy the distribution inside the container on the server$/) do
+When(/I^ copy the distribution inside the container on the server$/) do
   node = get_target('server')
   node.run('mgradm distro copy /tmp/tftpboot-installation/SLE-15-SP4-x86_64 SLE-15-SP4-TFTP', runs_in_container: false)
 end
 
-When(/I generate a supportconfig for the server$/) do
+When(/I^ generate a supportconfig for the server$/) do
   node = get_target('server')
   node.run('mgradm support config', timeout: 600, runs_in_container: false)
   node.run('mv /root/scc_*.tar.gz /root/server-supportconfig.tar.gz', runs_in_container: false)
 end
 
-When(/I validate the "([^"]*)" command$/) do |command|
+Given(/^the "([^"]*)" command is available on the host$/) do |command|
   node = get_target('server')
-  cmd = "#{command} --help"
+  _result, return_code = node.run(command, runs_in_container: false, check_errors: false)
+  raise ScriptError, "#{command} command not found" unless return_code.zero?
+end
+
+Then(/^the argument "([^"]*)" is valid in mgradm$/) do |arg|
+  node = get_target('server')
+  cmd = "mgradm #{arg} --help"
 
   _result, return_code = node.run(cmd, runs_in_container: false, check_errors: false)
-  raise ScriptError, "#{cmd} command is unknown or not found" unless return_code.zero?
+  raise ScriptError, "#{cmd} argument is unknown or not found" unless return_code.zero?
 
   _result, return_code = node.run("echo $(#{cmd}) | grep -qv 'Use \".*\" for more information'", runs_in_container: false, check_errors: false)
   raise ScriptError, "#{cmd} one of parameters supplied is invalid" unless return_code.zero?
 end
 
-When(/I login to SUSE Customer Center DUMMY Sanity Check Account$/) do
+When(/^I login to SUSE Customer Center DUMMY Sanity Check Account$/) do
   ptf_username = ENV['SCC_PTF_USER']
   ptf_password = ENV['SCC_PTF_PASSWORD']
   raise ScriptError, 'SCC_PTF_USER environment variable not set' if ptf_username.nil? || ptf_username.empty?
   raise ScriptError, 'SCC_PTF_PASSWORD environment variable not set' if ptf_password.nil? || ptf_password.empty?
 
   node = get_target('server')
-  _result, return_code = node.run("podman login -u #{ptf_username} -p #{ptf_password}", timeout: 60, runs_in_container: false)
+  _result, return_code = node.run("podman login -u #{ptf_username} -p #{ptf_password} registry.suse.com", timeout: 60, runs_in_container: false)
   raise ScriptError, "Failed to log in to SUSE Customer Center with provided DUMMY Sanity Check Account credentials" unless return_code.zero?
 end
 
-When(/I apply a Program Temporary Fix to the containerized server$/) do
+When(/^I apply a Program Temporary Fix to the containerized server$/) do
   node = get_target('server')
   node.run('mgradm support ptf podman --ptf 30284 --user a127499', timeout: 180, runs_in_container: false)
 end
 
 Then(/^I expect "([^"]*)" container to be healthy within (\d+) seconds$/) do |container, timeout|
   node = get_target('server')
-
   healthcheck_cmd = "podman inspect #{container} --format '{{.State.Health.Status}}'"
 
-  deadline = Time.now + timeout.to_i
-  status = nil
-
-  loop do 
+  repeat_until_timeout(timeout: timeout.to_i, message: "Timeout after #{timeout} seconds: container '#{container}' is not healthy") do
     output, _code = node.run(healthcheck_cmd, runs_in_container: false, check_errors: false)
     status = output.strip
-
-    if status != "healthy"
-      if Time.now > deadline
-        raise ScriptError, "Timeout after #{timeout} seconds: container '#{container}' is '#{status}'."
-      else
-        sleep 5
-      end
-    else
-      break
-    end
+    break if status == "healthy"
+    sleep 5
   end
 end
 
-When(/I redeploy the original server container$/) do
+When(/^I redeploy the original server container$/) do
   node = get_target('server')
   original_container_repository, _code = node.run("venv-salt-call --local grains.get container_repository | cut -d':' -f2 | xargs", runs_in_container: false)
   node.run("mgradm upgrade podman --registry #{original_container_repository}", timeout: 180, runs_in_container: false)
 end
 
-When(/I obtain and extract the supportconfig from the server$/) do
+When(/I^ redeploy the original server container$/) do
+  node = get_target('server')
+  original_container_repository, _code = node.run("venv-salt-call --local grains.get container_repository | cut -d':' -f2 | xargs", runs_in_container: false)
+  node.run("mgradm upgrade podman --registry #{original_container_repository}", timeout: 180, runs_in_container: false)
+end
+
+When(/I^ obtain and extract the supportconfig from the server$/) do
   supportconfig_path = '/root/server-supportconfig.tar.gz'
   test_runner_file = '/root/server-supportconfig.tar.gz'
   get_target('server').scp_download(supportconfig_path, test_runner_file)
@@ -1163,7 +1163,7 @@ When(/I obtain and extract the supportconfig from the server$/) do
   `mv /root/server-supportconfig/scc_suse_*/ /root/server-supportconfig/uyuni-server-supportconfig/`
 end
 
-When(/I remove the autoinstallation files from the server$/) do
+When(/I^ remove the autoinstallation files from the server$/) do
   node = get_target('server')
   node.run('rm -r /tmp/tftpboot-installation', runs_in_container: false)
   node.run('rm -r /srv/www/distributions/SLE-15-SP4-TFTP')
