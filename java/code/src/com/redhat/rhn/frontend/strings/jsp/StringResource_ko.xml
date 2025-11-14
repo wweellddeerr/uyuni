@@ -21109,7 +21109,7 @@ any of these revisions.  Are you sure you want to do this?</source>
       </trans-unit>
       <trans-unit id="ssm.operations.provisioning.remotecommand.form.queue.succeed" xml:space="preserve">
         <source>Task "{0}" has been successfully added to Action Chain &lt;a href="/rhn/schedule/ActionChain.do?id={1}"&gt;{2}&lt;/a&gt;.</source>
-        <target state="needs-adaptation">"{0}" 작업이 작업 체인 {1}에 추가되었습니다.</target>
+        <target state="needs-translation">"{0}" 작업이 작업 체인 &lt;a href="/rhn/schedule/ActionChain.do?id={1}"&gt;{2}&lt;/a&gt;에 추가되었습니다.</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/ssm/kickstart/KickstartableSystems.do</context>
         </context-group>
@@ -27295,12 +27295,12 @@ given channel.</source>
         </context-group>
         <target>여기에서 선택한 묶음의 스케줄을 설정할 수 있습니다.</target>
       </trans-unit>
-      <trans-unit approved="yes" id="schedule.delete.jsp.introparagraph" xml:space="preserve">
+      <trans-unit approved="no" id="schedule.delete.jsp.introparagraph" xml:space="preserve">
         <source>Are you sure you want to disable the schedule? Associated bunch won't get scheduled any more. This can have a huge impact on @@PRODUCT_NAME@@ functionality. Proceed only if you know what you're doing.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/DeleteSchedule.do</context>
         </context-group>
-        <target state="needs-adaptation">스케줄을 삭제하시겠습니까? 연결된 묶음은 더 이상 예약되지 않습니다. 이는 @@PRODUCT_NAME@@ 기능에 큰 영향을 미칠 수 있습니다. 삭제로 인한 영향을 잘 이해한 후 계속 실행하십시오.</target>
+        <target state="needs-translation">스케줄을 삭제하시겠습니까? 연결된 번들은 더 이상 예약되지 않습니다. 이 작업은 @@PRODUCT_NAME@@ 기능에 큰 영향을 미칠 수 있습니다. 현재 진행 중인 작업을 이해하는 경우에만 계속 진행하십시오.</target>
       </trans-unit>
       <trans-unit id="schedule.jsp.schedulenameinuse" xml:space="preserve">
         <source>Schedule name {0} is already in use. Please choose another one.</source>
@@ -27342,7 +27342,7 @@ given channel.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/ScheduleDetail.do</context>
         </context-group>
-        <target state="needs-adaptation">스케줄 삭제</target>
+        <target state="needs-translation">스케줄 비활성화</target>
       </trans-unit>
       <trans-unit id="schedule.edit.jsp.satschedules" xml:space="preserve">
         <source>@@PRODUCT_NAME@@ Schedules</source>
@@ -27422,7 +27422,7 @@ given channel.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/DeleteSchedule.do</context>
         </context-group>
-        <target state="needs-adaptation">스케줄 삭제</target>
+        <target state="needs-translation">스케줄 비활성화</target>
       </trans-unit>
       <trans-unit id="task.edit.jsp.name" xml:space="preserve">
         <source>Task Name</source>
@@ -28799,7 +28799,7 @@ given channel.</source>
       </trans-unit>
       <trans-unit id="mirror-credentials.jsp.primary" xml:space="preserve">
         <source>This is the primary credentials</source>
-        <target state="needs-adaptation">필수 인증서임</target>
+        <target state="needs-translation">기본 인증서임</target>
       </trans-unit>
       <trans-unit id="mirror-credentials.jsp.make-primary" xml:space="preserve">
         <source>Make primary credentials</source>
@@ -28807,7 +28807,7 @@ given channel.</source>
       </trans-unit>
       <trans-unit id="mirror-credentials.jsp.subscriptions" xml:space="preserve">
         <source>List subscriptions</source>
-        <target state="needs-adaptation">구독 나열</target>
+        <target state="needs-translation">서브스크립션 나열</target>
       </trans-unit>
       <trans-unit id="mirror-credentials.jsp.edit" xml:space="preserve">
         <source>Edit credentials</source>
@@ -28819,11 +28819,11 @@ given channel.</source>
       </trans-unit>
       <trans-unit id="mirror-credentials.jsp.success" xml:space="preserve">
         <source>Credentials verified (click to refresh)</source>
-        <target state="needs-adaptation">인증서 확인됨(클릭하여 새로 고침)</target>
+        <target state="needs-translation">인증서 검증됨(클릭하여 새로 고침)</target>
       </trans-unit>
       <trans-unit id="mirror-credentials.jsp.failed" xml:space="preserve">
         <source>Verification failed (click to refresh)</source>
-        <target state="needs-adaptation">확인 실패(클릭하여 새로 고침)</target>
+        <target state="needs-translation">검증 실패(클릭하여 새로 고침)</target>
       </trans-unit>
       <trans-unit id="mirror-credentials.jsp.modal-edit.title" xml:space="preserve">
         <source>Edit credentials</source>
@@ -29809,46 +29809,46 @@ given channel.</source>
           또한  &lt;a href="{0}"&gt;로그아웃&lt;/a&gt; 하거나 이전 페이지로 &lt;a href="javascript:history.back()"&gt;돌아가기&lt;/a&gt;를 수행할 수 있습니다.
         </target>
       </trans-unit>
-    <trans-unit id="userdetails.jsp.adminroles" xml:space="preserve">
+      <trans-unit id="userdetails.jsp.adminroles" xml:space="preserve">
         <source>Administrative Roles</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/UserDetails</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="needs-translation">관리 역할</target>
+      </trans-unit>
       <trans-unit id="schedule.edit.jsp.activateschedule" xml:space="preserve">
         <source>Activate Schedule</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/ScheduleDetail.do</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="needs-translation">스케줄 활성화</target>
+      </trans-unit>
       <trans-unit id="actionchain.jsp.distupgrade.upgrade" xml:space="preserve">
         <source>Migrate the installed product on</source>
-            <context-group name="ctx">
+        <context-group name="ctx">
           <context context-type="sourcefile">/rhn/schedule/ActionChain</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="needs-translation">설치된 제품을 다음에서 마이그레이션</target>
+      </trans-unit>
       <trans-unit id="ssm.overview.product_migration" xml:space="preserve">
-            <source>Product Migration</source>
-        <target state="new"/>
-  </trans-unit>
-        <trans-unit id="ssm.overview.product_migration.migrate" xml:space="preserve">
-            <source>&lt;a href="/rhn/manager/systems/ssm/product-migration"&gt;Migrate the products&lt;/a&gt; installed on the selected systems</source>
-        <target state="new"/>
-  </trans-unit>
-        <trans-unit id="bunch.jsp.description.compare-task-bunch" xml:space="preserve">
+        <source>Product Migration</source>
+        <target state="needs-translation">제품 마이그레이션</target>
+      </trans-unit>
+      <trans-unit id="ssm.overview.product_migration.migrate" xml:space="preserve">
+        <source>&lt;a href="/rhn/manager/systems/ssm/product-migration"&gt;Migrate the products&lt;/a&gt; installed on the selected systems</source>
+        <target state="needs-translation">&lt;a href="/rhn/manager/systems/ssm/product-migration"&gt;제품 마이그레이션&lt;/a&gt; 선택한 시스템에 설치됨</target>
+      </trans-unit>
+      <trans-unit id="bunch.jsp.description.compare-task-bunch" xml:space="preserve">
         <source>Schedules a generic comparison task</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/BunchDetail.do</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
+        <target state="needs-translation">일반 비교 작업 예약</target>
+      </trans-unit>
       <trans-unit id="task.status.compare-task-files" xml:space="preserve">
         <source>Compare Task</source>
-      <target state="new"/>
-  </trans-unit>
-      </body>
+        <target state="needs-translation">작업 비교</target>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
