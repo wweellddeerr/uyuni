@@ -11879,21 +11879,21 @@ To amend this situation, please add SCC credentials &lt;a href="/rhn/admin/setup
         <source>US</source>
         <target state="final">US</target>
       </trans-unit>
-      <trans-unit id="system.details.support.invalid_case_number" xml:space="preserve">
+      <trans-unit id="system.details.support.invalid_case_number" xml:space="preserve" approved="yes">
         <source>The case number {0} is not valid.</source>
-        <target state="new"/>
+        <target state="final">ケース番号 {0} は無効です。</target>
       </trans-unit>
-      <trans-unit id="system.details.support.invalid_region" xml:space="preserve">
+      <trans-unit id="system.details.support.invalid_region" xml:space="preserve" approved="yes">
         <source>The region {0] is not valid.</source>
-        <target state="new"/>
+        <target state="final">地域 {0] は無効です。</target>
       </trans-unit>
-      <trans-unit id="system.details.support.unable_to_schedule" xml:space="preserve">
+      <trans-unit id="system.details.support.unable_to_schedule" xml:space="preserve" approved="yes">
         <source>Unexpected error while scheduling the generation of the support data. Please check the server logs for detailed information.</source>
-        <target state="new"/>
+        <target state="final">サポートデータの生成のスケジュール中に予期しないエラーが発生しました。詳細については、サーバログを確認してください。</target>
       </trans-unit>
-      <trans-unit id="system.details.support.unable_to_upload" xml:space="preserve">
+      <trans-unit id="system.details.support.unable_to_upload" xml:space="preserve" approved="yes">
         <source>Unable to gather and upload the support data. Please check the server logs for detailed information.</source>
-        <target state="new"/>
+        <target state="final">サポートデータを収集してアップロードできません。詳細については、サーバログを確認してください。</target>
       </trans-unit>
       <trans-unit id="coco.environment.kvm_amd_epyc_bergamo.description" xml:space="preserve" approved="yes">
         <source>KVM on AMD Epyc Processor, fourth generation (bergamo)</source>
