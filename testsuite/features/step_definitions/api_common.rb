@@ -669,7 +669,7 @@ When(/^I delete profile and distribution using the API for "([^"]*)" kickstart t
   $api_test.kickstart.tree.delete_tree_and_profiles(distro_name)
 end
 
-When(/I verify channel "([^"]*)" is( not)? modular via the API/) do |channel_label, not_modular|
+When(/^I verify channel "([^"]*)" is( not)? modular via the API/) do |channel_label, not_modular|
   is_modular = $api_test.channel.appstreams.modular?(channel_label)
   expected = not_modular.nil?
 
