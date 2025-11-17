@@ -15,7 +15,7 @@ General template for leavers of the SUSE Multi-Linux team.
 
 # Some days before the member's last work day
 
-- [ ] **General SUSE Procedure:** Team Lead to review the [team members leaving the company](https://intra.suse.net/company/company-news/department/hr/team-leader-hr-quick-links/), in particular the `SUSE Termination Information Guide`? Those documents contain information about everything that needs to be returned, and things to be done by the team lead and the team member (not just hardware!)
+- [ ] **General SUSE Procedure:** Team Lead to review the [team members leaving the company](https://sites.google.com/suse.com/resources/team-leader-quick-links), in particular the `Information Guide when a Team Member is Leaving`. Those documents contain information about everything that needs to be returned, and things to be done by the team lead and the team member (not just hardware!)
 - [ ] **Exit interview:** Conduct an [exit interview](https://en.wikipedia.org/wiki/Exit_interview) and store the notes at [Confluence](https://confluence.suse.com/display/SUSEMANAGER/Exit+Interviews)
 - [ ] **Hardware:** 
   - [ ] Does this person have access to something special which also needs to get transferred to another person? (SSH access to a server, permissions to special pages on wikis, Confluence, resources in the cloud, etc.)
