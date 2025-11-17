@@ -231,7 +231,7 @@ public class SystemEntitlementManagerTest extends JMockBaseTestCaseWithUser {
 
     @Test
     public void testEntitlementsOnProxy() throws Exception {
-        User user = UserTestUtils.createUser(this);
+        User user = UserTestUtils.findNewUser();
         user.addPermanentRole(RoleFactory.ORG_ADMIN);
         Server server = ServerFactoryTest.createTestProxyServer(user, true);
         server = HibernateFactory.reload(server);
