@@ -52,7 +52,7 @@ General template for leavers of the SUSE Multi-Linux team.
   - [ ] [galaxy-releng](https://mailman.suse.de/mailman/admin/galaxy-releng/members/remove)
   - [ ] [salt](https://mailman.suse.de/mailman/admin/salt/members/remove)
   - [ ] [salt-maintainers](https://mailman.suse.de/mailman/admin/salt-maintainers/members/remove)
-  - [ ] [multi-linux-manager](https://mailman.suse.de/mailman/admindb/multi-linux-manager/remove)
+  - [ ] [multi-linux-manager](https://mailman.suse.de/mailman/admin/multi-linux-manager/remove)
   - [ ] [tomcat-maintainers](https://mailman.suse.de/mailman/admin/tomcat-maintainers/members/remove)
   - [ ] [uyuni-leader](https://mailman.suse.de/mailman/admin/uyuni-leader/members/remove)
   - [ ] uyuni announce as [user](https://lists.opensuse.org/manage/lists/announce.lists.uyuni-project.org/members/member/) (to prevent bounces later), and maybe [moderator](https://lists.opensuse.org/manage/lists/announce.lists.uyuni-project.org/members/moderator/) and [owner](https://lists.opensuse.org/manage/lists/announce.lists.uyuni-project.org/members/owner/)
