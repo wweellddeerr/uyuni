@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Thu Nov 20 18:12:57 CET 2025 - marina.latini@suse.com
+
+- version 5.1.18-0
+  * Adjust sls files for python311-kiwi (bsc#1251864, bsc#1253024)
+  * SLE12 Kiwi is located under sbin, fix command path (bsc#1251928)
+
+-------------------------------------------------------------------
 Tue Oct 21 15:52:58 CEST 2025 - rosuna@suse.com
 
 - version 5.1.17-0
