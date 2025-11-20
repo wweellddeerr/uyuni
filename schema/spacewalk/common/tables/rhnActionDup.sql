@@ -18,12 +18,11 @@ CREATE TABLE rhnActionDup
                             ,
     action_id           NUMERIC NOT NULL
                             CONSTRAINT rhn_actiondup_aid_fk
-                                REFERENCES rhnAction (id)
-                                ON DELETE CASCADE,
+                            REFERENCES rhnAction (id)
+                            ON DELETE CASCADE,
     server_id           NUMERIC NOT NULL
                             CONSTRAINT rhn_actiondup_sid_fk
-                                REFERENCES rhnServer (id)
-                                ON DELETE CASCADE,
+                                REFERENCES rhnServer (id),
     dry_run             CHAR(1)
                             DEFAULT ('N') NOT NULL
                             CONSTRAINT rhn_actiondup_dr_ck
