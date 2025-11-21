@@ -49,6 +49,7 @@ General template for new joiners of the SUSE Multi-Linux team.
     - [ ] Squad specific group
 - [ ] Add the user to the Google [SUSE Multi-Linux Team](https://groups.google.com/a/suse.com/g/multi-linux-all/members) and squad groups (if available), to get access to the calendar (PHP, Retrospective, and all other events), and to emails send to the mailing list for the group
 - [ ] Add SSH public key to the [galaxy/infrastructure repository](https://gitlab.suse.de/galaxy/infrastructure/-/blob/master/srv/salt/ssh/init.sls)
+- [ ] Add the user's GPG key to the [credentials repository](https://gitlab.suse.de/galaxy/credentials/), if needed (usually for team leads, release engineers or people working on infrastructure)
 - [ ] Provide default passwords if applicable (testsuite VMs, maybe https://gitlab.suse.de/galaxy/credentials)
 - [ ] Add user to SCC organization [SUSE Multi-Linux Manager Team Playground](https://scc.suse.com/organizations/432530/users) for SCC mirror credentials
 - [ ] Add to the relevant IBS/OBS groups:
