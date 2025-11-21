@@ -70,12 +70,13 @@ General template for new joiners of the SUSE Multi-Linux team.
     - [ ] https://src.suse.de/Galaxy/MLMTools/src/branch/mlmtools_sle16-stable/workflow.config and the same file in all `mlmtools_sle16-*` branches
       - [ ] After the PRs are merged, forward them to https://src.suse.de/products/MLMTools-products
     - [ ] https://src.suse.de/Galaxy/SUSE_Multi-Linux_Manager and the same file in all branches
-       - [ ] After the PRs are merged, forwared them to https://src.suse.de/products/SUSE_Multi-Linux_Manager
+       - [ ] After the PRs are merged, forward them to https://src.suse.de/products/SUSE_Multi-Linux_Manager
     - [ ] https://src.suse.de/Galaxy/SUSE_Multi-Linux_Manager-packages/src/branch/mlm-5.2/workflow.config and the same file in all branches
-      - [ ] After the PRs are merged, forwared them to https://src.suse.de/products/SUSE_Multi-Linux_Manager-packages
+      - [ ] After the PRs are merged, forward them to https://src.suse.de/products/SUSE_Multi-Linux_Manager-packages
     - [ ] https://src.suse.de/products/SUSE_Multi-Linux_Manager-pubclouds/src/branch/5.1/workflow.config and the same file in all branches
     - [ ] https://src.suse.de/products/ManagerToolsBetaForMicro/src/branch/6/workflow.config and the same file in all branches
     - [ ] https://src.suse.de/products/ManagerToolsForMicro/src/branch/6/workflow.config and the same file in all branches
+    - [ ] https://src.opensuse.org/saltbundle/_ObsPrj/src/branch/bundle/_maintainership.json and the same file in all branches
 - [ ] Add the new employee to our [GitLab group](https://gitlab.suse.de/groups/galaxy/-/group_members)
 - [ ] Schedule new joiner meetups with at least one [member from each squad](https://confluence.suse.com/x/OIGAOQ), with the PO and with the architect
 - [ ] Update the [finglonger config](https://gitlab.suse.de/galaxy/infrastructure/-/blob/master/srv/salt/bugguy-finglonger/galaxy.edn)
