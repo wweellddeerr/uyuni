@@ -68,7 +68,7 @@ General template for new joiners of the SUSE Multi-Linux team.
   - For release engineering:
     - [ ] https://src.suse.de/products/MultiLinuxManagerTools-SL-Micro/src/branch/6/workflow.config and the same file in all `6*` branches
     - [ ] https://src.suse.de/Galaxy/MLMTools/src/branch/mlmtools_sle16-stable/workflow.config and the same file in all `mlmtools_sle16-*` branches
-      - [ ] After the PRs are merged, forwared them to https://src.suse.de/products/MLMTools-products
+      - [ ] After the PRs are merged, forward them to https://src.suse.de/products/MLMTools-products
     - [ ] https://src.suse.de/Galaxy/SUSE_Multi-Linux_Manager and the same file in all branches
        - [ ] After the PRs are merged, forwared them to https://src.suse.de/products/SUSE_Multi-Linux_Manager
     - [ ] https://src.suse.de/Galaxy/SUSE_Multi-Linux_Manager-packages/src/branch/mlm-5.2/workflow.config and the same file in all branches
