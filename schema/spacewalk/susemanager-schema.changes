@@ -1,4 +1,15 @@
 -------------------------------------------------------------------
+Thu Nov 20 18:11:55 CET 2025 - marina.latini@suse.com
+
+- version 5.1.13-0
+  * Remove any associated dist upgrade action when removing a server
+  * Remove any orphan dist upgrade action data during upgrade
+  * RBAC mappings for search box in top bar (bsc#1250514)
+  * Add missing RBAC endpoints for package search (bsc#1250514)
+  * Add new DB function to support appstreams clone and
+    prevent timeouts in channel clone (bsc#1247990)
+
+-------------------------------------------------------------------
 Fri Sep 05 12:01:04 CEST 2025 - rosuna@suse.com
 
 - version 5.1.12-0
