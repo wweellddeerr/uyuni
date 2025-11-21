@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Thu Nov 20 18:09:44 CET 2025 - marina.latini@suse.com
+
+- version 5.1.21-0
+  * RBAC mappings for search box in top bar (bsc#1250514)
+  * Optimize appstream cloning to prevent timeout during
+    channel clone (bsc#1247990)
+
+-------------------------------------------------------------------
 Tue Sep 23 11:24:32 CEST 2025 - rosuna@suse.com
 
 - version 5.1.20-0
