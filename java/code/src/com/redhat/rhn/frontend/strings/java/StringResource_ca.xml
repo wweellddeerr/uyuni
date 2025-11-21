@@ -11984,6 +11984,13 @@ Per a esmenar aquesta situació, afegiu credencials SCC lt;a href""/rhn/admin/se
         <source>Unable to identify a valid migration target for the selected systems.</source>
         <target state="translated">No s'ha pogut identificar un objectiu de migració vàlid per als sistemes seleccionats.</target>
       </trans-unit>
-    </body>
+    <trans-unit id="virt.refresh_list" xml:space="preserve">
+        <source>Virtualization List Refresh</source>
+        <context-group name="ctx">
+          <context context-type="sourcefile">/rhn/schedule/ActionDetails.do</context>
+        </context-group>
+      <target state="new"/>
+  </trans-unit>
+      </body>
   </file>
 </xliff>

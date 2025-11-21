@@ -11956,6 +11956,13 @@ To amend this situation, please add SCC credentials &lt;a href="/rhn/admin/setup
           <source>Unable to identify a valid migration target for the selected systems.</source>
       <target state="new"/>
   </trans-unit>
+      <trans-unit id="virt.refresh_list" xml:space="preserve">
+        <source>Virtualization List Refresh</source>
+        <context-group name="ctx">
+          <context context-type="sourcefile">/rhn/schedule/ActionDetails.do</context>
+        </context-group>
+      <target state="new"/>
+  </trans-unit>
       </body>
   </file>
 </xliff>
