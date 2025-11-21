@@ -13994,8 +13994,8 @@ the &lt;strong&gt;@@ENTERPRISE_LINUX_NAME@@ System Administration Guide.&lt;/str
         </context-group>
       </trans-unit>
       <trans-unit id="activation-keys.config.rank.jsp.para1" xml:space="preserve">
-        <source>This activation key is subscribed to the configuration channels listed below in order from highest to lowest rank. Files from a particular channel will override files with the same filepath and name from channels below it.</source>
-        <target>このアクティベーションキーは以下に表示される設定ファイルチャンネルにサブスクライブされています。設定ファイルチャンネルは順位の高いチャンネルから順に表示されています。特定のチャンネルからのファイルは、そのチャンネルより順位の低いチャンネルの同じファイルパスを持つファイルと同じ名前を持つファイルを上書きします。</target>
+        <source>This activation key is subscribed to the configuration channels listed below in order from highest to lowest rank. Files from a particular channel will override files with the same filepath and name from channels below it. In other words, the channel listed last will be applied first.</source>
+        <target state="needs-adaptation">このアクティベーションキーは以下に表示される設定ファイルチャンネルにサブスクライブされています。設定ファイルチャンネルは順位の高いチャンネルから順に表示されています。特定のチャンネルからのファイルは、そのチャンネルより順位の低いチャンネルの同じファイルパスを持つファイルと同じ名前を持つファイルを上書きします。</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/activationkeys/configuration/* pages</context>
         </context-group>
@@ -21110,7 +21110,7 @@ any of these revisions.  Are you sure you want to do this?</source>
           <context context-type="sourcefile">/rhn/systems/ssm/kickstart/KickstartableSystems.do</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="ssm.operations.provisioning.remotecommand.form.queue.succeed" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="ssm.operations.provisioning.remotecommand.form.queue.succeed" xml:space="preserve">
         <source>Task "{0}" has been successfully added to Action Chain &lt;a href="/rhn/schedule/ActionChain.do?id={1}"&gt;{2}&lt;/a&gt;.</source>
         <target state="final">タスク "{0}" が動作チェーン &lt;a href="/rhn/schedule/ActionChain.do?id={1}"&gt;{2}&lt;/a&gt; に正しく追加されました。</target>
         <context-group name="ctx">
@@ -23672,8 +23672,8 @@ The Tree Path, Base Channel, and Installer Generation should always match. This 
         </context-group>
       </trans-unit>
       <trans-unit id="sdc.config.rank.jsp.para1" xml:space="preserve">
-        <source>This system is subscribed to the configuration channels listed below in order from highest to lowest rank. Files from a particular channel will override files with the same filepath and name from channels below it.</source>
-        <target>このシステムは以下に表示される設定ファイルに順位の高い順から低い順でサブスクライブされています。特定チャンネルからのファイルはそれより下にあるチャンネルの同じファイルパスと同じ名前を持つファイルを上書きします。</target>
+        <source>This system is subscribed to the configuration channels listed below in order from highest to lowest rank. Files from a particular channel will override files with the same filepath and name from channels below it. In other words, the channel listed last will be applied first.</source>
+        <target state="needs-adaptation">このシステムは以下に表示される設定ファイルに順位の高い順から低い順でサブスクライブされています。特定チャンネルからのファイルはそれより下にあるチャンネルの同じファイルパスと同じ名前を持つファイルを上書きします。</target>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/details/configuration/RankChannels.do</context>
         </context-group>
@@ -27347,7 +27347,7 @@ given channel.</source>
         </context-group>
         <target>スケジュールの作成</target>
       </trans-unit>
-      <trans-unit id="toolbar.delete.schedule" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="toolbar.delete.schedule" xml:space="preserve">
         <source>disable schedule</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/ScheduleDetail.do</context>
@@ -27427,7 +27427,7 @@ given channel.</source>
           <context context-type="sourcefile">/rhn/admin/ScheduleDetail.do</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="schedule.delete.jsp.deleteschedule" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="schedule.delete.jsp.deleteschedule" xml:space="preserve">
         <source>Disable Schedule</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/DeleteSchedule.do</context>
@@ -28810,31 +28810,31 @@ given channel.</source>
         <source>Password</source>
         <target>パスワード</target>
       </trans-unit>
-      <trans-unit id="mirror-credentials.jsp.primary" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="mirror-credentials.jsp.primary" xml:space="preserve">
         <source>This is the primary credentials</source>
         <target state="final">これは主となる資格情報です</target>
       </trans-unit>
-      <trans-unit id="mirror-credentials.jsp.make-primary" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="mirror-credentials.jsp.make-primary" xml:space="preserve">
         <source>Make primary credentials</source>
         <target state="final">主となる資格情報にする</target>
       </trans-unit>
-      <trans-unit id="mirror-credentials.jsp.subscriptions" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="mirror-credentials.jsp.subscriptions" xml:space="preserve">
         <source>List subscriptions</source>
         <target state="final">サブスクリプションの一覧</target>
       </trans-unit>
-      <trans-unit id="mirror-credentials.jsp.edit" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="mirror-credentials.jsp.edit" xml:space="preserve">
         <source>Edit credentials</source>
         <target state="final">資格情報の編集</target>
       </trans-unit>
-      <trans-unit id="mirror-credentials.jsp.delete" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="mirror-credentials.jsp.delete" xml:space="preserve">
         <source>Delete credentials</source>
         <target state="final">資格情報の削除</target>
       </trans-unit>
-      <trans-unit id="mirror-credentials.jsp.success" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="mirror-credentials.jsp.success" xml:space="preserve">
         <source>Credentials verified (click to refresh)</source>
         <target state="final">資格情報確認済み (クリックして更新)</target>
       </trans-unit>
-      <trans-unit id="mirror-credentials.jsp.failed" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="mirror-credentials.jsp.failed" xml:space="preserve">
         <source>Verification failed (click to refresh)</source>
         <target state="final">資格情報失敗 (クリックして更新)</target>
       </trans-unit>
@@ -29823,43 +29823,43 @@ given channel.</source>
           &lt;a href="{0}"&gt;ログアウト&lt;/a&gt;することも、前のページに &lt;a href="javascript:history.back()"&gt;戻る&lt;/a&gt;こともできます。
         </target>
       </trans-unit>
-      <trans-unit id="userdetails.jsp.adminroles" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="userdetails.jsp.adminroles" xml:space="preserve">
         <source>Administrative Roles</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/users/UserDetails</context>
         </context-group>
         <target state="final">管理者ロール</target>
       </trans-unit>
-      <trans-unit id="schedule.edit.jsp.activateschedule" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="schedule.edit.jsp.activateschedule" xml:space="preserve">
         <source>Activate Schedule</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/ScheduleDetail.do</context>
         </context-group>
         <target state="final">スケジュールを有効化する</target>
       </trans-unit>
-      <trans-unit id="actionchain.jsp.distupgrade.upgrade" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="actionchain.jsp.distupgrade.upgrade" xml:space="preserve">
         <source>Migrate the installed product on</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/schedule/ActionChain</context>
         </context-group>
         <target state="final">インストールされている製品の移行</target>
       </trans-unit>
-      <trans-unit id="ssm.overview.product_migration" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="ssm.overview.product_migration" xml:space="preserve">
         <source>Product Migration</source>
         <target state="final">製品移行</target>
       </trans-unit>
-      <trans-unit id="ssm.overview.product_migration.migrate" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="ssm.overview.product_migration.migrate" xml:space="preserve">
         <source>&lt;a href="/rhn/manager/systems/ssm/product-migration"&gt;Migrate the products&lt;/a&gt; installed on the selected systems</source>
         <target state="final">選択したシステムにインストールされている&lt;a href="/rhn/manager/systems/ssm/product-migration"&gt;製品を移行する&lt;/a&gt;</target>
       </trans-unit>
-      <trans-unit id="bunch.jsp.description.compare-task-bunch" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="bunch.jsp.description.compare-task-bunch" xml:space="preserve">
         <source>Schedules a generic comparison task</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/BunchDetail.do</context>
         </context-group>
         <target state="final">一般的な比較タスクをスケジュールする</target>
       </trans-unit>
-      <trans-unit id="task.status.compare-task-files" xml:space="preserve" approved="yes">
+      <trans-unit approved="yes" id="task.status.compare-task-files" xml:space="preserve">
         <source>Compare Task</source>
         <target state="final">比較タスク</target>
       </trans-unit>
