@@ -87,6 +87,7 @@ General template for leavers of the SUSE Multi-Linux team.
 - [ ] Internal
   - [ ] Remove SSH public key from the [galaxy/infrastructure repository](https://gitlab.suse.de/galaxy/infrastructure/-/blob/master/srv/salt/ssh/init.sls)
   - [ ] Remove SSH public key from the [OPS-Service/repository](https://gitlab.suse.de/OPS-Service/salt/-/blob/production/pillar/ssh_keys/groups/suma-infra.sls) (make sure you also remove the key from the `users` folder)
+  - [ ] Remove user's GPG key from the [credentials repository](https://gitlab.suse.de/galaxy/credentials/), if present
   - [ ] Remove user from SCC organization [SUSE Multi-Linux Manager Team Playground](https://scc.suse.com/organizations/432530/users) for SCC mirror credentials
   - [ ] Remove user from SCC organization [SUSE Multi-Linux Stable (Infra/CI/MU validation)](https://scc.suse.com/organizations/784242/users) for SCC mirror credentials
   - [ ] Remove SUMA account on [manager.mgr.suse.de](https://manager.mgr.suse.de)
