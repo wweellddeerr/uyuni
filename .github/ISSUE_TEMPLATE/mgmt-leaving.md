@@ -84,7 +84,7 @@ General template for leavers of the SUSE Multi-Linux team.
   - [ ] Remove from https://build.suse.de/groups/susemanager-releng (if applicable)
   - [ ] Remove from https://build.opensuse.org/groups/uyuni-maintainers (if applicable)
   - [ ] Remove from https://build.opensuse.org/groups/salt-maintainers (if applicable)
-- Git Workflow: Until this [issue is fixed](https://github.com/openSUSE/openSUSE-git/issues/140), also prepepare PRs to remove the user (or replace it if the user is the last one, as you will need a new maintainer) from the following places:
+- Git Workflow: Until this [issue is fixed](https://github.com/openSUSE/openSUSE-git/issues/140), also prepare PRs to remove the user (or replace it if the user is the last one, as you will need a new maintainer) from the following places:
   - [ ] https://src.suse.de/products/SLFO/src/branch/slfo-main/_maintainership.json (this is `slfo-main` branch, do it from `slfo-X.Y` branches as well)
   - [ ] https://src.suse.de/products/MultiLinuxManagerTools-SL-Micro/src/branch/6/workflow.config and the same file in all `6*` branches
   - [ ] https://src.suse.de/Galaxy/MLMTools/src/branch/mlmtools_sle16-stable/workflow.config and the same file in all `mlmtools_sle16-*` branches
