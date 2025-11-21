@@ -60,7 +60,7 @@ General template for new joiners of the SUSE Multi-Linux team.
   - [ ] Add to https://build.suse.de/groups/susemanager-releng (if applicable)
   - [ ] Add to https://build.opensuse.org/groups/uyuni-maintainers (if applicable)
   - [ ] Add to https://build.opensuse.org/groups/salt-maintainers (if applicable)
-- Git Workflow: Until this [issue is fixed](https://github.com/openSUSE/openSUSE-git/issues/140), also prepepare PRs to add the user to the following places:
+- Git Workflow: Until this [issue is fixed](https://github.com/openSUSE/openSUSE-git/issues/140), also prepare PRs to add the user to the following places:
   - For package maintenance, consider if the user will help comaintaining any packages (as an example tomcat11, or monitoring packages):
     - [ ] https://src.suse.de/products/SLFO/src/branch/slfo-main/_maintainership.json (this is `slfo-main` branch, do it from `slfo-X.Y` branches as well) and add the user where relevant
   - For release engineering (add the user where `deneb-alpha` is):
