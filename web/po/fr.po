@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-07 10:24+0100\n"
+"POT-Creation-Date: 2025-11-21 11:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -744,7 +744,7 @@ msgid "Sync"
 msgstr ""
 
 #: ../html/src/components/hub/HierarchicalChannelsTable.tsx:209
-#: ../html/src/components/states-picker.tsx:450
+#: ../html/src/components/states-picker.tsx:454
 msgid "Channel Name"
 msgstr ""
 
@@ -1240,7 +1240,7 @@ msgstr ""
 #: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:379
 #: ../html/src/components/package/PackageListActionScheduler.tsx:181
 #: ../html/src/components/states-picker.tsx:368
-#: ../html/src/components/states-picker.tsx:558
+#: ../html/src/components/states-picker.tsx:562
 #: ../html/src/manager/admin/setup/products/products.tsx:1086
 #: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:38
 #: ../html/src/manager/maintenance/edit/calendar-edit.tsx:194
@@ -1852,34 +1852,34 @@ msgstr ""
 msgid "Edit Channel Ranks"
 msgstr ""
 
-#: ../html/src/components/states-picker.tsx:436
-msgid "Edit the ranking of the states by dragging them."
-msgstr ""
-
 #: ../html/src/components/states-picker.tsx:437
-msgid "Edit the ranking of the configuration channels by dragging them."
+msgid "Edit the ranking of the states by dragging them. They are listed in order from highest to lowest rank. In other words, the bottom ones will be applied first."
 msgstr ""
 
-#: ../html/src/components/states-picker.tsx:442
+#: ../html/src/components/states-picker.tsx:440
+msgid "Edit the ranking of the configuration channels by dragging them. They are listed in order from highest to lowest rank. Files from a particular channel will override files with the same filepath and name from channels below it. In other words, the bottom ones will be applied first."
+msgstr ""
+
+#: ../html/src/components/states-picker.tsx:446
 msgid "There are no states assigned."
 msgstr ""
 
-#: ../html/src/components/states-picker.tsx:450
+#: ../html/src/components/states-picker.tsx:454
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:283
 msgid "State Name"
 msgstr ""
 
-#: ../html/src/components/states-picker.tsx:451
+#: ../html/src/components/states-picker.tsx:455
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:296
 msgid "State Label"
 msgstr ""
 
-#: ../html/src/components/states-picker.tsx:451
+#: ../html/src/components/states-picker.tsx:455
 #: ../html/src/components/table/Table.example.tsx:51
 msgid "Channel Label"
 msgstr ""
 
-#: ../html/src/components/states-picker.tsx:452
+#: ../html/src/components/states-picker.tsx:456
 #: ../html/src/manager/admin/create-payg/create-payg.tsx:71
 #: ../html/src/manager/admin/list-payg/list-payg.tsx:79
 #: ../html/src/manager/admin/payg-shared/info/payg-info-form.tsx:23
@@ -1895,28 +1895,28 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: ../html/src/components/states-picker.tsx:453
+#: ../html/src/components/states-picker.tsx:457
 msgid "Assign"
 msgstr ""
 
-#: ../html/src/components/states-picker.tsx:512
+#: ../html/src/components/states-picker.tsx:516
 msgid "Select the systems to schedule for immediate state execution and confirm."
 msgstr ""
 
-#: ../html/src/components/states-picker.tsx:522
+#: ../html/src/components/states-picker.tsx:526
 msgid "This table is empty"
 msgstr ""
 
-#: ../html/src/components/states-picker.tsx:529
-#: ../html/src/components/states-picker.tsx:571
+#: ../html/src/components/states-picker.tsx:533
+#: ../html/src/components/states-picker.tsx:575
 msgid "System Name"
 msgstr ""
 
-#: ../html/src/components/states-picker.tsx:549
+#: ../html/src/components/states-picker.tsx:553
 msgid "Execute States"
 msgstr ""
 
-#: ../html/src/components/states-picker.tsx:554
+#: ../html/src/components/states-picker.tsx:558
 msgid "Select Sytems"
 msgstr ""
 
