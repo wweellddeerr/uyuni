@@ -78,7 +78,7 @@ end
 # @return [Boolean] true if the product is 'Uyuni' or the product version is 'head', '5.0', '4.3', or '4.2'
 # - false otherwise
 def use_salt_bundle
-  # Use venv-salt-minion in Uyuni, or SUMA Head, 5.1, 5.0, 4.2 and 4.3
+  # Use venv-salt-minion in Uyuni, or MLM Head, 5.1, 5.0, 4.2 and 4.3
   product == 'Uyuni' || %w[develHead 5.1 5.0 4.3 4.2].include?(product_version)
 end
 
