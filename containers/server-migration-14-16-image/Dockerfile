@@ -5,12 +5,15 @@ ARG INIT_IMAGE=uyuni/init:latest
 FROM $INIT_IMAGE
 
 # Main packages
-RUN zypper ref 
-RUN zypper --gpg-auto-import-keys --non-interactive install --auto-agree-with-licenses --force-resolution \
-    postgresql16-server \
-    postgresql16-contrib \
-    postgresql14-server \
-    postgresql14-contrib
+RUN zypper ref && \
+    zypper --gpg-auto-import-keys --non-interactive install --auto-agree-with-licenses --force-resolution \
+        postgresql16-server \
+        postgresql16-contrib \
+        postgresql14-server \
+        postgresql14-contrib && \
+    zypper --non-interactive clean --all && \
+    rpm -e zypper libzypp && \
+    rm -rf /var/log/{alternatives.log,lastlog,tallylog,suseconnect.log,zypper.log,zypp/history,YaST2}
 
 # LABELs
 ARG PRODUCT=Uyuni
