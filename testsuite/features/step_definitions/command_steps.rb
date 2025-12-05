@@ -703,7 +703,7 @@ When(/^I set the default PXE menu entry to the (target profile|local boot) on th
   when 'local boot'
     script = '-e "s/^TIMEOUT .*/TIMEOUT 2/" -e "s/ONTIMEOUT .*/ONTIMEOUT local/"'
   when 'target profile'
-    script = '-e "s/^TIMEOUT .*/TIMEOUT 2/" -e "s/ONTIMEOUT .*/ONTIMEOUT 15-sp4-cobbler:1:SUSETest/"'
+    script = '-e "s/^TIMEOUT .*/TIMEOUT 2/" -e "s/ONTIMEOUT .*/ONTIMEOUT 15-sp7-cobbler:1:SUSETest/"'
   else
     log "Entry #{entry} not supported"
   end
@@ -856,15 +856,6 @@ When(/^I get "(.*?)" file details for channel "(.*?)" via spacecmd$/) do |arg1, 
 end
 
 # Repositories and packages management
-When(/^I migrate the non-SUMA repositories on "([^"]*)"$/) do |host|
-  node = get_target(host)
-  salt_call = use_salt_bundle ? 'venv-salt-call' : 'salt-call'
-  # use sumaform states to migrate to latest SP the system repositories:
-  node.run("#{salt_call} --local --file-root /root/salt/ state.apply repos")
-  # disable again the non-SUMA repositories:
-  node.run('for repo in $(zypper lr | awk \'NR>7 && !/susemanager:/ {print $3}\'); do zypper mr -d $repo; done')
-  # node.run('salt-call state.apply channels.disablelocalrepos') does not work
-end
 
 When(/^I (enable|disable) Debian-like "([^"]*)" repository on "([^"]*)"$/) do |action, repo, host|
   node = get_target(host)
@@ -1053,15 +1044,15 @@ When(/^I install package tftpboot-installation on the server$/) do
 
   # set this variable to true when the server and the build host run the same operating system version
   # examples:
-  # * the server's container is either SLES 15 SP6 or Leap 15.6, and the build host is SLES 15 SP4:
+  # * the server's container is either SLES 15 SP7 or Leap 15.6, and the build host is SLES 15 SP7:
   #   same_version_on_server_and_build_host = false
-  # * the server's container is either SLES 15 SP6 or Leap 15.6, and the build host is SLES 15 SP6:
+  # * the server's container is either SLES 15 SP7 or Leap 15.6, and the build host is SLES 15 SP7:
   #   same_version_on_server_and_build_host = product != 'Uyuni'
   same_version_on_server_and_build_host = false
 
   # set this variable to the name of the desired tftpboot package
   # beware that "-x86_64" is part of the package name, the package itself is noarch!
-  tftpboot_package = 'tftpboot-installation-SLE-15-SP4-x86_64'
+  tftpboot_package = 'tftpboot-installation-SLE-15-SP7-x86_64'
 
   # if same version, fetch the package directly, otherwise search it among the reposynced packages
   if same_version_on_server_and_build_host
@@ -1086,7 +1077,7 @@ end
 
 When(/^I copy the distribution inside the container on the server$/) do
   node = get_target('server')
-  node.run('mgradm distro copy /tmp/tftpboot-installation/SLE-15-SP4-x86_64 SLE-15-SP4-TFTP', runs_in_container: false)
+  node.run('mgradm distro copy /tmp/tftpboot-installation/SLE-15-SP7-x86_64 SLE-15-SP7-TFTP', runs_in_container: false)
 end
 
 When(/^I generate a supportconfig for the server$/) do
@@ -1160,7 +1151,7 @@ end
 When(/^I remove the autoinstallation files from the server$/) do
   node = get_target('server')
   node.run('rm -r /tmp/tftpboot-installation', runs_in_container: false)
-  node.run('rm -r /srv/www/distributions/SLE-15-SP4-TFTP')
+  node.run('rm -r /srv/www/distributions/SLE-15-SP7-TFTP')
 end
 
 When(/^I reset tftp defaults on the proxy$/) do
@@ -1362,7 +1353,7 @@ Then(/^I wait until refresh package list on "(.*?)" is finished$/) do |client|
   timeout_time = (Time.now + long_wait_delay + round_minute).strftime('%Y%m%d%H%M')
   node = get_system_name(client)
   get_target('server').run('spacecmd -u admin -p admin clear_caches')
-  # Gather all the ids of package refreshes existing at SUMA
+  # Gather all the ids of package refreshes existing at MLM
   refreshes, = get_target('server').run('spacecmd -u admin -p admin schedule_list | grep \'Package List Refresh\' | cut -f1 -d\' \'', check_errors: false)
   node_refreshes = ''
   refreshes.split.each do |refresh_id|

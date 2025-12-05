@@ -29,7 +29,7 @@ end
 
 When(/^I start tftp on the proxy$/) do
   case product
-  # TODO: Should we handle this in Sumaform?
+    # TODO: Should we handle this in Sumaform?
   when 'Uyuni'
     step 'I enable repositories before installing branch server'
     cmd = 'zypper --non-interactive --ignore-unknown remove atftp && ' \
@@ -166,21 +166,7 @@ Then(/^name resolution should work on private network$/) do
 end
 
 When(/^I restart the network on the PXE boot minion$/) do
-  # We have no IPv4 address on that machine yet,
-  # so the only way to contact it is via IPv6 link-local.
-  # We convert MAC address to IPv6 link-local address:
-  mac = $pxeboot_mac.tr(':', '')
-  hex = (("#{mac[0..5]}fffe#{mac[6..11]}").to_i(16) ^ 0x0200000000000000).to_s(16)
-  ipv6 = "fe80::#{hex[0..3]}:#{hex[4..7]}:#{hex[8..11]}:#{hex[12..15]}%eth1"
-  file = 'restart-network-pxeboot.exp'
-  source = "#{File.dirname(__FILE__)}/../upload_files/#{file}"
-  dest = "/tmp/#{file}"
-  success = file_inject(get_target('proxy'), source, dest)
-  raise ScriptError, 'File injection failed' unless success
-
-  # We have no direct access to the PXE boot minion
-  # so we run the command from the proxy
-  get_target('proxy').run("expect -f /tmp/#{file} #{ipv6}")
+  execute_expect_command_proxy('pxeboot_minion', 'restart-network-pxeboot.exp', 'eth1')
 end
 
 When(/^I reboot the (Retail|Cobbler) terminal "([^"]*)" through the interface "([^"]*)"$/) do |context, host, interface|
@@ -189,8 +175,10 @@ When(/^I reboot the (Retail|Cobbler) terminal "([^"]*)" through the interface "(
   case host
   when 'pxeboot_minion'
     mac = $pxeboot_mac
-  when 'sle15sp4_terminal'
-    mac = $sle15sp4_terminal_mac
+  when 'sle15sp6_terminal'
+    mac = $sle15sp6_terminal_mac
+  when 'sle15sp7_terminal'
+    mac = $sle15sp7_terminal_mac
   end
   mac = mac.tr(':', '')
   hex = (("#{mac[0..5]}fffe#{mac[6..11]}").to_i(16) ^ 0x0200000000000000).to_s(16)
@@ -218,14 +206,7 @@ When(/^I create the bootstrap script for "([^"]+)" hostname and "([^"]*)" activa
 end
 
 When(/^I bootstrap pxeboot minion via bootstrap script on the proxy$/) do
-  file = 'bootstrap-pxeboot.exp'
-  source = "#{File.dirname(__FILE__)}/../upload_files/#{file}"
-  dest = "/tmp/#{file}"
-  success = file_inject(get_target('proxy'), source, dest)
-  raise ScriptError, 'File injection failed' unless success
-
-  ipv4 = net_prefix + PRIVATE_ADDRESSES['pxeboot_minion']
-  get_target('proxy').run("expect -f /tmp/#{file} #{ipv4}", verbose: true)
+  execute_expect_command_proxy('pxeboot_minion', 'bootstrap-pxeboot.exp', 'eth1')
 end
 
 When(/^I accept key of pxeboot minion in the Salt master$/) do
@@ -245,14 +226,7 @@ When(/^I install the GPG key of the test packages repository on the PXE boot min
 end
 
 When(/^I wait until Salt client is inactive on the PXE boot minion$/) do
-  file = 'wait-end-of-cleanup-pxeboot.exp'
-  source = "#{File.dirname(__FILE__)}/../upload_files/#{file}"
-  dest = "/tmp/#{file}"
-  success = file_inject(get_target('proxy'), source, dest)
-  raise ScriptError, 'File injection failed' unless success
-
-  ipv4 = net_prefix + PRIVATE_ADDRESSES['pxeboot_minion']
-  get_target('proxy').run("expect -f /tmp/#{file} #{ipv4}")
+  execute_expect_command_proxy('pxeboot_minion', 'wait-end-of-cleanup-pxeboot.exp', 'eth1')
 end
 
 When(/^I prepare the retail configuration file on server$/) do
@@ -298,22 +272,6 @@ Then(/^I should not see any terminals imported from the configuration file$/) do
     next if (terminal.include? 'minion') || (terminal.include? 'client')
 
     step %(I should not see a "#{terminal}" text)
-  end
-end
-
-When(/^I delete all the imported terminals$/) do
-  terminals = read_terminals_from_yaml
-  terminals.each do |terminal|
-    next if (terminal.include? 'minion') || (terminal.include? 'client')
-
-    log "Deleting terminal with name: #{terminal}"
-    steps %(
-      When I follow "#{terminal}" terminal
-      And I follow "Delete System"
-      And I should see a "Confirm System Profile Deletion" text
-      And I click on "Delete Profile"
-      Then I should see a "has been deleted" text
-    )
   end
 end
 
@@ -419,9 +377,12 @@ end
 When(/^I enter the MAC address of "([^"]*)" in (.*) field$/) do |host, field|
   if host == 'pxeboot_minion'
     mac = $pxeboot_mac
-  elsif host == 'sle15sp4_terminal'
-    mac = $sle15sp4_terminal_mac
+  elsif host == 'sle15sp6_terminal'
+    mac = $sle15sp6_terminal_mac
     mac = 'EE:EE:EE:00:00:06' if mac.nil?
+  elsif host == 'sle15sp7_terminal'
+    mac = $sle15sp7_terminal_mac
+    mac = 'EE:EE:EE:00:00:07' if mac.nil?
   elsif (host.include? 'deblike') || (host.include? 'debian12') || (host.include? 'ubuntu')
     node = get_target(host)
     output, _code = node.run('ip link show dev ens4')

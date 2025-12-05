@@ -78,7 +78,7 @@ end
 # @return [Boolean] true if the product is 'Uyuni' or the product version is 'head', '5.0', '4.3', or '4.2'
 # - false otherwise
 def use_salt_bundle
-  # Use venv-salt-minion in Uyuni, or SUMA Head, 5.1, 5.0, 4.2 and 4.3
+  # Use venv-salt-minion in Uyuni, or MLM Head, 5.1, 5.0, 4.2 and 4.3
   product == 'Uyuni' || %w[develHead 5.1 5.0 4.3 4.2].include?(product_version)
 end
 
@@ -539,13 +539,20 @@ def get_system_name(host)
         word.match?(/example.Intel-Genuine-None-/) || word.match?(/example.pxeboot-/) || word.match?(/example.Intel/) || word.match?(/pxeboot-/)
       end
     system_name = 'pxeboot.example.org' if system_name.nil?
-  when 'sle15sp4_terminal'
+  when 'sle15sp6_terminal'
     output, _code = get_target('server').run('salt-key')
     system_name =
       output.split.find do |word|
-        word.match?(/example.sle15sp4terminal-/)
+        word.match?(/example.sle15sp6terminal-/)
       end
-    system_name = 'sle15sp4terminal.example.org' if system_name.nil?
+    system_name = 'sle15sp6terminal.example.org' if system_name.nil?
+  when 'sle15sp7_terminal'
+    output, _code = get_target('server').run('salt-key')
+    system_name =
+      output.split.find do |word|
+        word.match?(/example.sle15sp7terminal-/)
+      end
+    system_name = 'sle15sp7terminal.example.org' if system_name.nil?
   else
     begin
       node = get_target(host)

@@ -17,14 +17,15 @@ ENV_VAR_BY_HOST = {
   'sle15sp3_ssh_minion' => 'SLE15SP3_SSHMINION',
   'sle15sp4_minion' => 'SLE15SP4_MINION',
   'sle15sp4_ssh_minion' => 'SLE15SP4_SSHMINION',
-  'sle15sp4_buildhost' => 'SLE15SP4_BUILDHOST',
   'monitoring_server' => 'MONITORING_SERVER',
   'sle15sp5_minion' => 'SLE15SP5_MINION',
   'sle15sp5_ssh_minion' => 'SLE15SP5_SSHMINION',
   'sle15sp6_minion' => 'SLE15SP6_MINION',
   'sle15sp6_ssh_minion' => 'SLE15SP6_SSHMINION',
+  'sle15sp6_buildhost' => 'SLE15SP6_BUILDHOST',
   'sle15sp7_minion' => 'SLE15SP7_MINION',
   'sle15sp7_ssh_minion' => 'SLE15SP7_SSHMINION',
+  'sle15sp7_buildhost' => 'SLE15SP7_BUILDHOST',
   'slemicro51_minion' => 'SLEMICRO51_MINION',
   'slemicro51_ssh_minion' => 'SLEMICRO51_SSHMINION',
   'slemicro52_minion' => 'SLEMICRO52_MINION',
@@ -72,12 +73,13 @@ ENV_VAR_BY_HOST = {
   'salt_migration_minion' => 'SALT_MIGRATION_MINION'
 }.freeze
 
-# TODO: the values for pxeboot_minion, sle15sp4_terminal, and proxy can now be set in sumaform
+# TODO: the values for pxeboot_minion, sle15sp6_terminal, sle15sp7_terminal and proxy can now be set in sumaform
 #       remove them from this array when we read them from .bashrc
 PRIVATE_ADDRESSES = {
   'network'           => '0',
   'pxeboot_minion'    => '4',
-  'sle15sp4_terminal' => '6',
+  'sle15sp6_terminal' => '6',
+  'sle15sp7_terminal' => '7',
   'dhcp_dns'          => '53',
   'range begin'       => '128',
   'range end'         => '253',
@@ -228,27 +230,29 @@ BASE_CHANNEL_BY_CLIENT = {
     'proxy_container' => 'SL-Micro-6.1-Pool for x86_64',
     'proxy_traditional' => 'SLE-Product-SUSE-Manager-Proxy-4.3-Pool for x86_64',
     'proxy_nontransactional' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
-    'sle_minion' => 'SLE-Product-SLES15-SP4-Pool for x86_64',
-    'ssh_minion' => 'SLE-Product-SLES15-SP4-Pool for x86_64',
+    'sle_minion' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
+    'ssh_minion' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
     'rhlike_minion' => 'RHEL8-Pool for x86_64',
     'deblike_minion' => 'ubuntu-2004-amd64-main for amd64',
-    'pxeboot_minion' => 'SLE-Product-SLES15-SP4-Pool for x86_64',
-    'build_host' => 'SLE-Product-SLES15-SP4-Pool for x86_64',
+    'pxeboot_minion' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
+    'build_host' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
     'sle12sp5_minion' => 'SLES12-SP5-Pool for x86_64',
     'sle12sp5_ssh_minion' => 'SLES12-SP5-Pool for x86_64',
     'sle15sp3_minion' => 'SLE-Product-SLES15-SP3-Pool for x86_64',
     'sle15sp3_ssh_minion' => 'SLE-Product-SLES15-SP3-Pool for x86_64',
     'sle15sp4_minion' => 'SLE-Product-SLES15-SP4-Pool for x86_64',
     'sle15sp4_ssh_minion' => 'SLE-Product-SLES15-SP4-Pool for x86_64',
-    'sle15sp4_buildhost' => 'SLE-Product-SLES15-SP4-Pool for x86_64',
     'monitoring_server' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
-    'sle15sp4_terminal' => 'SLE-Product-SLES15-SP4-Pool for x86_64',
     'sle15sp5_minion' => 'SLE-Product-SLES15-SP5-Pool for x86_64',
     'sle15sp5_ssh_minion' => 'SLE-Product-SLES15-SP5-Pool for x86_64',
     'sle15sp6_minion' => 'SLE-Product-SLES15-SP6-Pool for x86_64',
+    'sle15sp6_buildhost' => 'SLE-Product-SLES15-SP6-Pool for x86_64',
+    'sle15sp6_terminal' => 'SLE-Product-SLES15-SP6-Pool for x86_64',
     'sle15sp6_ssh_minion' => 'SLE-Product-SLES15-SP6-Pool for x86_64',
     'sle15sp7_minion' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
+    'sle15sp7_buildhost' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
     'sle15sp7_ssh_minion' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
+    'sle15sp7_terminal' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
     'slemicro51_minion' => 'SUSE-MicroOS-5.1-Pool for x86_64',
     'slemicro51_ssh_minion' => 'SUSE-MicroOS-5.1-Pool for x86_64',
     'slemicro52_minion' => 'SUSE-MicroOS-5.2-Pool for x86_64',
@@ -304,22 +308,24 @@ BASE_CHANNEL_BY_CLIENT = {
     'rhlike_minion' => 'RHEL8-Pool for x86_64',
     'deblike_minion' => 'Ubuntu 20.04 LTS AMD64 Base for Uyuni',
     'pxeboot_minion' => 'SLE-Product-SLES15-SP4-Pool for x86_64',
-    'build_host' => 'SLE-Product-SLES15-SP4-Pool for x86_64',
+    'build_host' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
     'sle12sp5_minion' => 'SLES12-SP5-Pool for x86_64',
     'sle12sp5_ssh_minion' => 'SLES12-SP5-Pool for x86_64',
     'sle15sp3_minion' => 'SLE-Product-SLES15-SP3-Pool for x86_64',
     'sle15sp3_ssh_minion' => 'SLE-Product-SLES15-SP3-Pool for x86_64',
     'sle15sp4_minion' => 'SLE-Product-SLES15-SP4-Pool for x86_64',
     'sle15sp4_ssh_minion' => 'SLE-Product-SLES15-SP4-Pool for x86_64',
-    'sle15sp4_buildhost' => 'SLE-Product-SLES15-SP4-Pool for x86_64',
     'monitoring_server' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
-    'sle15sp4_terminal' => 'SLE-Product-SLES15-SP4-Pool for x86_64',
     'sle15sp5_minion' => 'SLE-Product-SLES15-SP5-Pool for x86_64',
     'sle15sp5_ssh_minion' => 'SLE-Product-SLES15-SP5-Pool for x86_64',
     'sle15sp6_minion' => 'SLE-Product-SLES15-SP6-Pool for x86_64',
     'sle15sp6_ssh_minion' => 'SLE-Product-SLES15-SP6-Pool for x86_64',
+    'sle15sp6_buildhost' => 'SLE-Product-SLES15-SP6-Pool for x86_64',
+    'sle15sp6_terminal' => 'SLE-Product-SLES15-SP6-Pool for x86_64',
     'sle15sp7_minion' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
     'sle15sp7_ssh_minion' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
+    'sle15sp7_buildhost' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
+    'sle15sp7_terminal' => 'SLE-Product-SLES15-SP7-Pool for x86_64',
     'slemicro51_minion' => 'SUSE-MicroOS-5.1-Pool for x86_64',
     'slemicro51_ssh_minion' => 'SUSE-MicroOS-5.1-Pool for x86_64',
     'slemicro52_minion' => 'SUSE-MicroOS-5.2-Pool for x86_64',
@@ -376,7 +382,7 @@ BASE_CHANNEL_BY_CLIENT = {
 
 # Used for creating activation keys
 # The keys are the values of BASE_CHANNEL_BY_CLIENT
-# SUMA: The values can be found under Admin -> Setup Wizard -> Products
+# MLM: The values can be found under Admin -> Setup Wizard -> Products
 # Select the desired product and have a look at its product channels
 # The required product has to be synced before
 # Uyuni: You have to use `spacewalk-common-channels -l` to get the proper values
@@ -518,7 +524,7 @@ CHANNEL_LABEL_TO_SYNC_BY_BASE_CHANNEL = {
 }.freeze
 
 # Used for creating bootstrap repositories
-# SUMA: The values can be found under Admin -> Setup Wizard -> Products
+# MLM: The values can be found under Admin -> Setup Wizard -> Products
 # Select the desired product and have a look at its product channels
 # The required product has to be synced before
 # Uyuni: You have to use `spacewalk-common-channels -l` with the appended architecture
@@ -654,7 +660,7 @@ PKGARCH_BY_CLIENT = {
 }.freeze
 
 # Explanations:
-# - SLED channels for SUMA tools were removed as we are not currently synchronizing them
+# - SLED channels for MLM tools were removed as we are not currently synchronizing them
 # - 'default' is required for auto-installation tests.
 # - '# CHECKED' means that we verified that the list of channels matches the results in /var/log/rhn/reposync,
 #   and that we took the occasion to evaluate a reasonable timeout for them
@@ -662,26 +668,23 @@ CHANNEL_TO_SYNC_BY_OS_PRODUCT_VERSION = {
   'SUSE Manager' => {
     'default' => # CHECKED
       %w[
-        sle-product-sles15-sp4-pool-x86_64
-        sle-product-sles15-sp4-updates-x86_64
-        sle15-sp4-installer-updates-x86_64
-        sle-module-basesystem15-sp4-updates-x86_64
-        sle-module-basesystem15-sp4-pool-x86_64
-        sle-module-desktop-applications15-sp4-updates-x86_64
-        sle-module-desktop-applications15-sp4-pool-x86_64
-        sle-module-server-applications15-sp4-pool-x86_64
-        sle-module-server-applications15-sp4-updates-x86_64
-        managertools-sle15-pool-x86_64-sp4
-        managertools-sle15-updates-x86_64-sp4
-        managertools-beta-sle15-pool-x86_64-sp4
-        managertools-beta-sle15-updates-x86_64-sp4
-        sle-module-devtools15-sp4-updates-x86_64
-        sle-module-devtools15-sp4-pool-x86_64
-        sle-module-python3-15-sp4-pool-x86_64
-        sle-module-python3-15-sp4-updates-x86_64
-        sle-module-containers15-sp4-pool-x86_64
-        sle-module-containers15-sp4-updates-x86_64
-        sle-product-sles15-sp4-ltss-updates-x86_64
+        sle-product-sles15-sp7-pool-x86_64
+        sle-product-sles15-sp7-updates-x86_64
+        sle15-sp7-installer-updates-x86_64
+        sle-module-basesystem15-sp7-pool-x86_64
+        sle-module-basesystem15-sp7-updates-x86_64
+        managertools-sle15-pool-x86_64-sp7
+        managertools-sle15-updates-x86_64-sp7
+        sle-module-python3-15-sp7-pool-x86_64
+        sle-module-python3-15-sp7-updates-x86_64
+        sle-module-server-applications15-sp7-pool-x86_64
+        sle-module-server-applications15-sp7-updates-x86_64
+        sle-module-desktop-applications15-sp7-pool-x86_64
+        sle-module-desktop-applications15-sp7-updates-x86_64
+        sle-module-devtools15-sp7-updates-x86_64
+        sle-module-devtools15-sp7-pool-x86_64
+        sle-module-systems-management-15-sp7-pool-x86_64
+        sle-module-systems-management-15-sp7-updates-x86_64
       ],
     'almalinux8' => # CHECKED
       %w[
@@ -843,6 +846,7 @@ CHANNEL_TO_SYNC_BY_OS_PRODUCT_VERSION = {
       %w[
         sle-product-sles15-sp7-pool-x86_64
         sle-product-sles15-sp7-updates-x86_64
+        sle15-sp7-installer-updates-x86_64
         sle-module-basesystem15-sp7-pool-x86_64
         sle-module-basesystem15-sp7-updates-x86_64
         managertools-sle15-pool-x86_64-sp7
@@ -855,7 +859,7 @@ CHANNEL_TO_SYNC_BY_OS_PRODUCT_VERSION = {
         sle-module-desktop-applications15-sp7-updates-x86_64
         sle-module-devtools15-sp7-updates-x86_64
         sle-module-devtools15-sp7-pool-x86_64
-        sle-module-systems-management-15-sp7-pool-x86_64-sled
+        sle-module-systems-management-15-sp7-pool-x86_64
         sle-module-systems-management-15-sp7-updates-x86_64
       ],
     'slesforsap15-sp5' =>
@@ -1024,21 +1028,23 @@ CHANNEL_TO_SYNC_BY_OS_PRODUCT_VERSION = {
   'Uyuni' => {
     'default' => # CHECKED
       %w[
-        sle-product-sles15-sp4-pool-x86_64
-        sle-product-sles15-sp4-updates-x86_64
-        sle15-sp4-installer-updates-x86_64
-        sle-module-basesystem15-sp4-updates-x86_64
-        sle-module-basesystem15-sp4-pool-x86_64
-        sle-module-server-applications15-sp4-updates-x86_64
-        sle-module-server-applications15-sp4-pool-x86_64
-        sle-module-desktop-applications15-sp4-updates-x86_64
-        sle-module-desktop-applications15-sp4-pool-x86_64
-        sle-product-sles15-sp4-ltss-updates-x86_64
-        sle-module-devtools15-sp4-pool-x86_64
-        sle-module-devtools15-sp4-updates-x86_64
-        sle-module-containers15-sp4-pool-x86_64
-        sle-module-containers15-sp4-updates-x86_64
-        sles15-sp4-uyuni-client-x86_64
+        sle-product-sles15-sp7-pool-x86_64
+        sle-product-sles15-sp7-updates-x86_64
+        sle15-sp7-installer-updates-x86_64
+        sle-module-basesystem15-sp7-pool-x86_64
+        sle-module-basesystem15-sp7-updates-x86_64
+        managertools-sle15-pool-x86_64-sp7
+        managertools-sle15-updates-x86_64-sp7
+        sle-module-python3-15-sp7-pool-x86_64
+        sle-module-python3-15-sp7-updates-x86_64
+        sle-module-server-applications15-sp7-pool-x86_64
+        sle-module-server-applications15-sp7-updates-x86_64
+        sle-module-desktop-applications15-sp7-pool-x86_64
+        sle-module-desktop-applications15-sp7-updates-x86_64
+        sle-module-devtools15-sp7-updates-x86_64
+        sle-module-devtools15-sp7-pool-x86_64
+        sle-module-systems-management-15-sp7-pool-x86_64
+        sle-module-systems-management-15-sp7-updates-x86_64
       ],
     'almalinux8' => # CHECKED
       %w[
@@ -1180,17 +1186,21 @@ CHANNEL_TO_SYNC_BY_OS_PRODUCT_VERSION = {
       %w[
         sle-product-sles15-sp7-pool-x86_64
         sle-product-sles15-sp7-updates-x86_64
+        sle15-sp7-installer-updates-x86_64
         sle-module-basesystem15-sp7-pool-x86_64
         sle-module-basesystem15-sp7-updates-x86_64
-        sle-module-desktop-applications15-sp7-pool-x86_64
-        sle-module-desktop-applications15-sp7-updates-x86_64
-        sle-module-devtools15-sp7-pool-x86_64
-        sle-module-devtools15-sp7-updates-x86_64
+        managertools-sle15-pool-x86_64-sp7
+        managertools-sle15-updates-x86_64-sp7
         sle-module-python3-15-sp7-pool-x86_64
         sle-module-python3-15-sp7-updates-x86_64
         sle-module-server-applications15-sp7-pool-x86_64
         sle-module-server-applications15-sp7-updates-x86_64
-        sles15-sp7-devel-uyuni-client-x86_64
+        sle-module-desktop-applications15-sp7-pool-x86_64
+        sle-module-desktop-applications15-sp7-updates-x86_64
+        sle-module-devtools15-sp7-updates-x86_64
+        sle-module-devtools15-sp7-pool-x86_64
+        sle-module-systems-management-15-sp7-pool-x86_64
+        sle-module-systems-management-15-sp7-updates-x86_64
       ],
     'slesforsap15-sp5' =>
       %w[
@@ -1486,6 +1496,7 @@ TIMEOUT_BY_CHANNEL_NAME = {
   'rockylinux-9-x86_64' => 180,
   'sle15-sp3-installer-updates-x86_64' => 60,
   'sle15-sp4-installer-updates-x86_64' => 60,
+  'sle15-sp7-installer-updates-x86_64' => 60,
   'sle-micro-5.3-devel-uyuni-client-x86_64' => 120,
   'sle-micro-5.3-pool-x86_64' => 180,
   'sle-micro-5.3-updates-x86_64' => 900,
@@ -1557,8 +1568,8 @@ TIMEOUT_BY_CHANNEL_NAME = {
   'sle-module-systems-management-15-sp6-updates-x86_64-sled' => 60,
   'sle-module-python3-15-sp7-pool-x86_64' => 60,
   'sle-module-python3-15-sp7-updates-x86_64' => 60,
-  'sle-module-systems-management-15-sp7-pool-x86_64-sled' => 60,
-  'sle-module-systems-management-15-sp7-updates-x86_64-sled' => 60,
+  'sle-module-systems-management-15-sp7-pool-x86_64' => 60,
+  'sle-module-systems-management-15-sp7-updates-x86_64' => 60,
   'sle-module-server-applications15-sp3-pool-x86_64' => 60,
   'sle-module-server-applications15-sp3-updates-x86_64' => 120,
   'sle-module-server-applications15-sp4-pool-x86_64' => 60,
@@ -1670,7 +1681,6 @@ TIMEOUT_BY_CHANNEL_NAME = {
 EMPTY_CHANNELS = %w[
   suse-multi-linux-manager-proxy-sle-5.1-updates-x86_64-sp7
   suse-multi-linux-manager-retail-branch-server-sle-5.1-updates-x86_64-sp7
-  managertools-sle15-updates-x86_64-sp7
   suse-manager-proxy-5.0-updates-x86_64
   suse-manager-retail-branch-server-5.0-updates-x86_64
   sle-module-suse-manager-retail-branch-server-4.3-updates-x86_64
