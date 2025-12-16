@@ -33,7 +33,7 @@ public class VmInfoSlsResult {
      * @return return virtual machine information
      */
     public Map<String, Map<String, Object>> getVmInfos() {
-        if (vminfo == null) {
+        if (vminfo == null || vminfo.getChanges() == null || vminfo.getChanges().getRet() == null) {
             LOG.info("No virtual machines found");
             return Collections.emptyMap();
         }
