@@ -2164,8 +2164,6 @@ public class ErrataManager extends BaseManager {
 
         Collection<Long> list = errataToClone;
         Set<Channel> channelSet = Set.of(channel);
-        List<Long> cids = new ArrayList<>();
-        cids.add(channel.getId());
         // let's avoid deadlocks please
         ChannelFactory.lock(channel);
 
