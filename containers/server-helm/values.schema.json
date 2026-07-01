@@ -306,6 +306,12 @@
           "description": "Node label matching rules.",
           "required": []
         },
+        "podsCIDR": {
+          "default": "10.42.0.0/16",
+          "description": "Network IP range to allow plain text connections from, usually the cluster pods CIDR. The default has been adjusted with rke2's pods CIDR default.",
+          "required": [],
+          "title": "podsCIDR"
+        },
         "report": {
           "$ref": "#/definitions/dbConnectionConfig",
           "description": "Configuration of the report database connection",

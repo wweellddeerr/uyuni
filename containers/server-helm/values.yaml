@@ -621,7 +621,11 @@ db:
   # @schema
   # db.enable -- Deploys the internal dababase if set to true. Setting to false is not supported yet.
   enable: true
- 
+
+  # db.podsCIDR -- Network IP range to allow plain text connections from, usually the cluster pods CIDR.
+  # The default has been adjusted with rke2's pods CIDR default.
+  podsCIDR: 10.42.0.0/16
+
   # @schema
   # $ref: "#/definitions/dbConnectionConfig"
   # @schema
