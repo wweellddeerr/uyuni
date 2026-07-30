@@ -27,7 +27,7 @@
         <dependency org="manager-52" name="commons-text" rev="1.15.0" />
         <dependency org="manager-52" name="commons-logging" rev="1.3.4" />
         <dependency org="manager-52" name="commons-validator" rev="1.3.1" />
-        <dependency org="manager-52" name="commons-compress" rev="1.26.0" />
+        <dependency org="manager-52" name="commons-compress" rev="1.28.0" />
         <dependency org="manager-52" name="concurrentlinkedhashmap-lru" rev="1.3.2" />
         <dependency org="manager-52" name="cache-api" rev="1.1.1" />
         <dependency org="manager-52" name="geronimo-jta_1.1_spec" rev="1.2" />
