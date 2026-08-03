@@ -31,6 +31,7 @@ assignees: ''
 
 ## Preparation
 
+- [ ] Clean up the old environment
 - [ ] Check the mirror
 - [ ] JSON creation (go through the JSON file before using it)
 
