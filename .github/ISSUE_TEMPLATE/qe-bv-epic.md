@@ -58,64 +58,14 @@ assignees: ''
 
 ## Manual tests and tasks
 
-- [ ] Clean up the old environment
-- [ ] Update the mirror / check if it is up to date
-
-### Long-running environment
-
-The official documentation is linked below, but you need to run the `upgrade` command with the correct MI container URL to get the correct container to update to.
-
-- [ ] [Upgrade the server](https://documentation.suse.com/multi-linux-manager/5.1/en/docs/installation-and-upgrade/container-management/updating-server-containers.html)
-- [ ] [Upgrade the proxy](https://documentation.suse.com/multi-linux-manager/5.1/en/docs/installation-and-upgrade/container-management/updating-proxy-containers.html)
-
 ### Release notes and new features
 
 - [ ] Update and verify the release notes for server and proxy
-- [ ] ...
+- [ ] Take a look at the (new) documentation
 
 ### Fixed bugs to verify
 
 - [ ] ...
-
----
-
-## Automated tests and tasks
-
-### Preparation
-
-- [ ] Check the mirror
-- [ ] JSON creation (go through the JSON file before using it)
-
-### Proxy and Monitoring
-
-- [ ] Proxy setup
-- [ ] Monitoring server setup
-
-### Client Bootstrap and Smoke Tests
-
-- [ ] All supported systems were bootstrapped and passed smoke tests
-  - [ ] Client bootstrap stage
-  - [ ] Client smoke tests
-
-### Migration Tests
-
-- [ ] Product and Salt migration tests
-  - [ ] SLES 15 SP6 minion → SP7
-  - [ ] SLES 15 SP6 SSH minion → SP7
-  - [ ] SL Micro 5.5 → 6.1
-  - [ ] OS Salt → Salt Bundle
-
-### Retail
-
-- [ ] SLES 15 SP6
-- [ ] SLES 15 SP7
-
-### Second host OS
-
-- [ ] Test the installation and setup of the server and proxy on the other supported host OS (SLES 15)
-  - [ ] server installation
-  - [ ] core & reposync
-  - [ ] proxy
 
 ---
 
