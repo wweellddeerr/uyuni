@@ -37,6 +37,7 @@ Team Lead to handle the following tasks:
   - [ ] Remove the leaver from the [Multi-Linux Administrators](https://github.com/orgs/SUSE/teams/multi-linux-manager-administrators/members)
   - [ ] Remove the leaver from the [Multi-Linux CI Administrators](https://github.com/orgs/SUSE/teams/multi-linux-manager-ci-administrators/members)
   - [ ] Remove the leaver from the [Uyuni organization](https://github.com/orgs/uyuni-project/people) and [teams](https://github.com/orgs/uyuni-project/teams). It can remain a member (but not owner), if it will keep contributing.
+  - [ ] Until [SD-228907](https://sd.suse.com/servicedesk/customer/portal/1/SD-228907) is fixed, create a [SD Service request](https://sd.suse.com/servicedesk/customer/portal/1/create/1) for the system `GitHub` requesting to remove the leaver from the [SUSE gmbh enterprise](https://github.com/enterprises/suse-gmbh/teams) and from the [SUSE organization](https://github.com/orgs/SUSE)
 - [ ] Confluence:
   - [ ] Remove the leaver the [team overview page](https://confluence.suse.com/display/SUSEMANAGER/)
   - [ ] Remove the leaver the [squads page](https://confluence.suse.com/display/SUSEMANAGER/Squads%2C+People+and+Topics), cleaning ownerships if needed
