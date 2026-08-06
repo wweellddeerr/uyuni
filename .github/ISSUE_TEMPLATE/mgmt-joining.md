@@ -73,6 +73,7 @@ A few of the tasks are to be done by the new joiner and will be marked as such w
   - [ ] Add to https://build.suse.de/groups/susemanager-releng (releng)
   - [ ] Add to https://build.opensuse.org/groups/uyuni-maintainers (releng)
   - [ ] Add to https://build.opensuse.org/groups/salt-maintainers (Ion & releng)
+  - [ ] Add to https://build.opensuse.org/groups/uyuni-retail-maintainers (Retail developers and QE)
 - Git Workflow: Until this [issue is fixed](https://github.com/openSUSE/openSUSE-git/issues/140), also prepare PRs to add the joiner to the following places:
   - For release engineering:
     - [ ] https://src.suse.de/products/MultiLinuxManagerTools-SL-Micro/src/branch/6/workflow.config and the same file in all `6*` branches

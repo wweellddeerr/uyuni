@@ -83,6 +83,7 @@ Team Lead to handle the following tasks:
   - [ ] https://build.suse.de/groups/susemanager-releng
   - [ ] https://build.opensuse.org/groups/uyuni-maintainers
   - [ ] https://build.opensuse.org/groups/salt-maintainers
+  - [ ] https://build.opensuse.org/groups/uyuni-retail-maintainers
 - Git Workflow: Until this [issue is fixed](https://github.com/openSUSE/openSUSE-git/issues/140), also prepare PRs to remove the leaver (or replace it if the leaver is the last one, as you will need a new maintainer) from the following places:
   - [ ] https://src.suse.de/products/MultiLinuxManagerTools-SL-Micro/src/branch/6/workflow.config and the same file in all `6*` branches
   - [ ] https://src.suse.de/products/MLMTools-products/src/branch/mlmtools_sle16-stable/workflow.config and the same file in all maintained branches
