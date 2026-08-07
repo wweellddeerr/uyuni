@@ -107,6 +107,10 @@ Team Lead to handle the following tasks:
   - [ ] Remove leaver entries for private hypervisor from [SUMA infrastructure](https://gitlab.suse.de/galaxy/infrastructure/-/blob/master/srv/salt/qa/users/init.sls)
   - [ ] Remove leaver entries for DNS from the [galaxy/infrastructure repository](https://gitlab.suse.de/galaxy/infrastructure/-/tree/master/srv/salt/bind-server)
   - [ ] Remove leaver entries for DHCP from the [galaxy/infrastructure repository](https://gitlab.suse.de/galaxy/infrastructure/-/tree/master/srv/salt/dhcpd-server)
+  - [ ] Remove the leaver's [personal pipeline](https://github.com/SUSE/susemanager-ci/tree/master/jenkins_pipelines/environments/personal) from susemanager-ci
+  - [ ] Remove leaver entries from [`terracumber_config/tf_files/personal/environment.tfvars`](https://github.com/SUSE/susemanager-ci/blob/master/terracumber_config/tf_files/personal/environment.tfvars) in susemanager-ci. This frees their MACs and their additional network for reuse
+  - [ ] Rename the leaver's `<leaver>-personal-pipeline` job on [ci.suse.de](https://ci.suse.de/view/Manager/view/Manager-qe/) to `DELETEME-<leaver>-personal-pipeline`. Deleting the pipeline file does not delete the job. Nobody in the team has `Job/Delete`, but the `DELETEME-` prefix hides the job from the views and the ci.suse.de admins delete it later
+  - [ ] Remove the leaver's libvirt pool `<leaver>_disks` and its directory on their private hypervisor, plus any leftover domains and networks
   - [ ] Remove from [galaxy-qa](https://mailman.suse.de/mailman/admin/galaxy-qa/members/remove) mailing list
   - [ ] Remove from [Multi-Linux Manager QE Team](https://github.com/orgs/SUSE/teams/multi-linux-manager-qe/members) on GitHub
   - [ ] Remove from [Uyuni QE developer Team](https://github.com/orgs/uyuni-project/teams/qe) on GitHub
