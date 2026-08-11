@@ -158,11 +158,11 @@
             <artifactId>jose4j</artifactId>
         </dependency>
         <dependency>
-            <groupId>suse</groupId>
+            <groupId>manager-52</groupId>
             <artifactId>struts</artifactId>
         </dependency>
         <dependency>
-            <groupId>suse</groupId>
+            <groupId>manager-52</groupId>
             <artifactId>sitemesh</artifactId>
         </dependency>
         <dependency>
@@ -170,11 +170,11 @@
             <artifactId>quartz</artifactId>
         </dependency>
         <dependency>
-            <groupId>suse</groupId>
+            <groupId>manager-52</groupId>
             <artifactId>redstone-xmlrpc</artifactId>
         </dependency>
         <dependency>
-            <groupId>suse</groupId>
+            <groupId>manager-52</groupId>
             <artifactId>redstone-xmlrpc-client</artifactId>
         </dependency>
         <dependency>
@@ -265,7 +265,7 @@
             <artifactId>oro</artifactId>
         </dependency>
         <dependency>
-            <groupId>suse</groupId>
+            <groupId>manager-52</groupId>
             <artifactId>simple-core</artifactId>
         </dependency>
 
