@@ -20,7 +20,6 @@ function initEdit(element) {
 function initDelete(element) {
   var id = jQuery(element).data("id");
   var user = jQuery(element).data("user");
-  console.log("initDelete(): " + id);
   deleteId = id;
   jQuery("#delete-user").text(user);
 }
