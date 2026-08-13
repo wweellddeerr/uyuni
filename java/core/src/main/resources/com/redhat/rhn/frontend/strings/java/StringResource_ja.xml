@@ -12099,9 +12099,9 @@ To amend this situation, please add SCC credentials &lt;a href="/rhn/admin/setup
         </context-group>
         <target state="final">アクセス制御</target>
       </trans-unit>
-      <trans-unit id="pxeeventfailed" xml:space="preserve">
+      <trans-unit id="pxeeventfailed" xml:space="preserve" approved="yes">
         <source>PXE Event Failed</source>
-        <target state="new"/>
+        <target state="final">PXEイベントに失敗しました</target>
       </trans-unit>
       <trans-unit id="ARMHF Debian" xml:space="preserve" approved="yes">
         <source>ARMHF Debian</source>
@@ -12120,26 +12120,26 @@ To amend this situation, please add SCC credentials &lt;a href="/rhn/admin/setup
         <source>You are running out of space on your @@PRODUCT_NAME@@ {0}. This is {1}. If you run out of disk space, @@PRODUCT_NAME@@ will stop running, and this could lead to a loss of data. @@PRODUCT_NAME@@ will shutdown automatically.</source>
         <target state="final">@@PRODUCT_NAME@@ {0} の空き容量が不足しています。これは {1} です。ディスク容量が不足すると、@@PRODUCT_NAME@@ は動作を停止し、データの損失につながる可能性があります。@@PRODUCT_NAME@@ は自動的にシャットダウンします。</target>
       </trans-unit>
-      <trans-unit id="SCAP Policies" xml:space="preserve">
+      <trans-unit id="SCAP Policies" xml:space="preserve" approved="yes">
         <source>SCAP Policies</source>
         <context-group name="ctx">
           <context context-type="sourcefile">Navigation Menu</context>
         </context-group>
-        <target state="new"/>
+        <target state="final">SCAPポリシー</target>
       </trans-unit>
-      <trans-unit id="SCAP Content" xml:space="preserve">
+      <trans-unit id="SCAP Content" xml:space="preserve" approved="yes">
         <source>SCAP Content</source>
         <context-group name="ctx">
           <context context-type="sourcefile">Navigation Menu</context>
         </context-group>
-        <target state="new"/>
+        <target state="final">SCAPコンテンツ</target>
       </trans-unit>
-      <trans-unit id="Tailoring Files" xml:space="preserve">
+      <trans-unit id="Tailoring Files" xml:space="preserve" approved="yes">
         <source>Tailoring Files</source>
         <context-group name="ctx">
           <context context-type="sourcefile">Navigation Menu</context>
         </context-group>
-        <target state="new"/>
+        <target state="final">ファイルの調整</target>
       </trans-unit>
       <trans-unit id="distupgrade.sles16.migration.success" xml:space="preserve" approved="yes">
         <source>SLES 16 migration completed successfully.{0}</source>
