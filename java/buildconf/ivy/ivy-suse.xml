@@ -1,109 +1,109 @@
 <ivy-module version="1.0">
-    <info organisation="suse" module="manager" />
+    <info organisation="manager-52" module="manager" />
     <dependencies>
         <!-- Runtime dependencies -->
-        <dependency org="suse" name="jakarta.transaction-api" rev="2.0.1" />
-        <dependency org="suse" name="antlr4-runtime" rev="4.13.0" />
-        <dependency org="suse" name="byte-buddy" rev="1.18.3" />
-        <dependency org="suse" name="c3p0" rev="0.9.5.5" />
-        <dependency org="suse" name="classmate" rev="1.5.1" />
-        <dependency org="suse" name="jakarta.mail-api" rev="2.1.3" />
-        <dependency org="suse" name="jakarta.mail" rev="2.0.3" />
-        <dependency org="suse" name="client" rev="2.1" />
-        <dependency org="suse" name="common" rev="2.1" />
-        <dependency org="suse" name="stringprep" rev="1.1" />
-        <dependency org="suse" name="saslprep" rev="1.1" />
-        <dependency org="suse" name="commons-beanutils" rev="1.11.0" />
-        <dependency org="suse" name="commons-cli" rev="1.5.0" />
-        <dependency org="suse" name="commons-codec" rev="1.16.1" />
-        <dependency org="suse" name="commons-collections" rev="3.2.2" />
-        <dependency org="suse" name="commons-digester" rev="2.1" />
-        <dependency org="suse" name="commons-discovery" rev="0.5" />
-        <dependency org="suse" name="commons-fileupload2-core" rev="2.0.0~M4" />
-        <dependency org="suse" name="commons-fileupload2-jakarta-servlet6" rev="2.0.0~M4" />
-        <dependency org="suse" name="commons-io" rev="2.18.0" />
-        <dependency org="suse" name="commons-jexl" rev="2.1.1" />
-        <dependency org="suse" name="commons-lang3" rev="3.18.0" />
-        <dependency org="suse" name="commons-text" rev="1.10.0" />
-        <dependency org="suse" name="commons-logging" rev="1.3.4" />
-        <dependency org="suse" name="commons-validator" rev="1.3.1" />
-        <dependency org="suse" name="commons-compress" rev="1.26.0" />
-        <dependency org="suse" name="concurrentlinkedhashmap-lru" rev="1.3.2" />
-        <dependency org="suse" name="cache-api" rev="1.1.1" />
-        <dependency org="suse" name="geronimo-jta_1.1_spec" rev="1.2" />
-        <dependency org="suse" name="gson" rev="2.8.9" />
-        <dependency org="suse" name="hibernate-c3p0" rev="7.1.6" />
-        <dependency org="suse" name="hibernate-models" rev="1.0.1" />
-        <dependency org="suse" name="hibernate-core" rev="7.1.6" />
-        <dependency org="suse" name="hibernate-jcache" rev="7.1.6" />
-        <dependency org="suse" name="httpasyncclient" rev="4.1.4" />
-        <dependency org="suse" name="httpclient" rev="4.5.14" />
-        <dependency org="suse" name="httpcore" rev="4.4.14" />
-        <dependency org="suse" name="httpcore-nio" rev="4.4.14" />
-        <dependency org="suse" name="ical4j" rev="3.2.19" />
-        <dependency org="suse" name="jackson-annotations" rev="2.17.3" />
-        <dependency org="suse" name="jackson-core" rev="2.17.3" />
-        <dependency org="suse" name="jackson-databind" rev="2.17.3" />
-        <dependency org="suse" name="angus-activation" rev="2.0.3" />
-        <dependency org="suse" name="jakarta.activation-api" rev="2.1.3" />
-        <dependency org="suse" name="jade4j" rev="1.2.7" />
-        <dependency org="suse" name="jakarta.persistence-api" rev="3.2.0" />
-        <dependency org="suse" name="java-saml" rev="2.9.0" />
-        <dependency org="suse" name="java-saml-core" rev="2.9.0" />
-        <dependency org="suse" name="jboss-logging" rev="3.6.1" />
-        <dependency org="suse" name="jdom" rev="1.1.3" />
-        <dependency org="suse" name="jose4j" rev="0.9.6" />
-        <dependency org="suse" name="log4j-api" rev="2.17.2" />
-        <dependency org="suse" name="log4j-core" rev="2.17.2" />
-        <dependency org="suse" name="jsch" rev="0.2.22" />
-        <dependency org="suse" name="jctools-core" rev="4.0.5" />
-        <dependency org="suse" name="mchange-commons-java" rev="0.2.20" />
-        <dependency org="suse" name="oro" rev="2.0.8" />
-        <dependency org="suse" name="postgresql" rev="42.2.25" />
-        <dependency org="suse" name="quartz" rev="2.5.0" />
-        <dependency org="suse" name="redstone-xmlrpc" rev="1.1_20071120" />
-        <dependency org="suse" name="redstone-xmlrpc-client" rev="1.1_20071120" />
-        <dependency org="suse" name="salt-netapi-client" rev="1.0.0" />
-        <dependency org="suse" name="prometheus-metrics-config" rev="1.5.1" />
-        <dependency org="suse" name="prometheus-metrics-core" rev="1.5.1" />
-        <dependency org="suse" name="prometheus-metrics-model" rev="1.5.1" />
-        <dependency org="suse" name="prometheus-metrics-exporter-common" rev="1.5.1" />
-        <dependency org="suse" name="prometheus-metrics-exporter-httpserver" rev="1.5.1" />
-        <dependency org="suse" name="prometheus-metrics-exporter-servlet-jakarta" rev="1.5.1" />
-        <dependency org="suse" name="prometheus-metrics-exposition-textformats" rev="1.5.1" />
-        <dependency org="suse" name="simple-core" rev="3.1.3" />
-        <dependency org="suse" name="sitemesh" rev="2.1" />
-        <dependency org="suse" name="slf4j-api" rev="1.7.36" />
-        <dependency org="suse" name="log4j-slf4j-impl" rev="2.17.2" />
-        <dependency org="suse" name="snakeyaml" rev="2.2" />
-        <dependency org="suse" name="spark-core" rev="2.9.3" />
-        <dependency org="suse" name="spark-template-jade" rev="2.7.1" />
-        <dependency org="suse" name="struts" rev="1.2.9" />
-        <dependency org="suse" name="xmlsec" rev="4.0.4" />
-        <dependency org="suse" name="woodstox-core" rev="6.2.8" />
-        <dependency org="suse" name="stax2-api" rev="4.0.0" />
-        <dependency org="suse" name="jakarta.xml.bind-api" rev="4.0.0" />
-        <dependency org="suse" name="jakarta.activation-api" rev="2.1.3" />
-        <dependency org="suse" name="jakarta.servlet.jsp.jstl" rev="3.0.2" />
-        <dependency org="suse" name="jakarta.servlet.jsp.jstl-api" rev="3.0.2" />
-        <dependency org="suse" name="jaxb-core" rev="4.0.5" />
-        <dependency org="suse" name="jaxb-runtime" rev="4.0.5" />
-        <dependency org="suse" name="txw2" rev="4.0.5" />
-        <dependency org="suse" name="istack-commons-runtime" rev="4.2.0" />
-        <dependency org="suse" name="ehcache" rev="3.11.1" />
+        <dependency org="manager-52" name="jakarta.transaction-api" rev="2.0.1" />
+        <dependency org="manager-52" name="antlr4-runtime" rev="4.13.0" />
+        <dependency org="manager-52" name="byte-buddy" rev="1.18.3" />
+        <dependency org="manager-52" name="c3p0" rev="0.9.5.5" />
+        <dependency org="manager-52" name="classmate" rev="1.5.1" />
+        <dependency org="manager-52" name="jakarta.mail-api" rev="2.1.3" />
+        <dependency org="manager-52" name="jakarta.mail" rev="2.0.3" />
+        <dependency org="manager-52" name="client" rev="2.1" />
+        <dependency org="manager-52" name="common" rev="2.1" />
+        <dependency org="manager-52" name="stringprep" rev="1.1" />
+        <dependency org="manager-52" name="saslprep" rev="1.1" />
+        <dependency org="manager-52" name="commons-beanutils" rev="1.11.0" />
+        <dependency org="manager-52" name="commons-cli" rev="1.9.0" />
+        <dependency org="manager-52" name="commons-codec" rev="1.16.1" />
+        <dependency org="manager-52" name="commons-collections" rev="3.2.2" />
+        <dependency org="manager-52" name="commons-digester" rev="2.1" />
+        <dependency org="manager-52" name="commons-discovery" rev="0.5" />
+        <dependency org="manager-52" name="commons-fileupload2-core" rev="2.0.0~M4" />
+        <dependency org="manager-52" name="commons-fileupload2-jakarta-servlet6" rev="2.0.0~M4" />
+        <dependency org="manager-52" name="commons-io" rev="2.18.0" />
+        <dependency org="manager-52" name="commons-jexl" rev="2.1.1" />
+        <dependency org="manager-52" name="commons-lang3" rev="3.20.0" />
+        <dependency org="manager-52" name="commons-text" rev="1.15.0" />
+        <dependency org="manager-52" name="commons-logging" rev="1.3.4" />
+        <dependency org="manager-52" name="commons-validator" rev="1.3.1" />
+        <dependency org="manager-52" name="commons-compress" rev="1.28.0" />
+        <dependency org="manager-52" name="concurrentlinkedhashmap-lru" rev="1.3.2" />
+        <dependency org="manager-52" name="cache-api" rev="1.1.1" />
+        <dependency org="manager-52" name="geronimo-jta_1.1_spec" rev="1.2" />
+        <dependency org="manager-52" name="gson" rev="2.8.9" />
+        <dependency org="manager-52" name="hibernate-c3p0" rev="7.1.6" />
+        <dependency org="manager-52" name="hibernate-models" rev="1.0.1" />
+        <dependency org="manager-52" name="hibernate-core" rev="7.1.6" />
+        <dependency org="manager-52" name="hibernate-jcache" rev="7.1.6" />
+        <dependency org="manager-52" name="httpasyncclient" rev="4.1.4" />
+        <dependency org="manager-52" name="httpclient" rev="4.5.14" />
+        <dependency org="manager-52" name="httpcore" rev="4.4.14" />
+        <dependency org="manager-52" name="httpcore-nio" rev="4.4.14" />
+        <dependency org="manager-52" name="ical4j" rev="3.2.19" />
+        <dependency org="manager-52" name="jackson-annotations" rev="2.18.9" />
+        <dependency org="manager-52" name="jackson-core" rev="2.18.9" />
+        <dependency org="manager-52" name="jackson-databind" rev="2.18.9" />
+        <dependency org="manager-52" name="angus-activation" rev="2.0.3" />
+        <dependency org="manager-52" name="jakarta.activation-api" rev="2.1.3" />
+        <dependency org="manager-52" name="jade4j" rev="1.2.7" />
+        <dependency org="manager-52" name="jakarta.persistence-api" rev="3.2.0" />
+        <dependency org="manager-52" name="java-saml" rev="2.9.0" />
+        <dependency org="manager-52" name="java-saml-core" rev="2.9.0" />
+        <dependency org="manager-52" name="jboss-logging" rev="3.6.1" />
+        <dependency org="manager-52" name="jdom" rev="1.1.3" />
+        <dependency org="manager-52" name="jose4j" rev="0.9.6" />
+        <dependency org="manager-52" name="log4j-api" rev="2.26.1" />
+        <dependency org="manager-52" name="log4j-core" rev="2.26.1" />
+        <dependency org="manager-52" name="jsch" rev="0.2.22" />
+        <dependency org="manager-52" name="jctools-core" rev="4.0.5" />
+        <dependency org="manager-52" name="mchange-commons-java" rev="0.2.20" />
+        <dependency org="manager-52" name="oro" rev="2.0.8" />
+        <dependency org="manager-52" name="postgresql" rev="42.2.25" />
+        <dependency org="manager-52" name="quartz" rev="2.5.0" />
+        <dependency org="manager-52" name="redstone-xmlrpc" rev="1.1_20071120" />
+        <dependency org="manager-52" name="redstone-xmlrpc-client" rev="1.1_20071120" />
+        <dependency org="manager-52" name="salt-netapi-client" rev="1.0.0" />
+        <dependency org="manager-52" name="prometheus-metrics-config" rev="1.5.1" />
+        <dependency org="manager-52" name="prometheus-metrics-core" rev="1.5.1" />
+        <dependency org="manager-52" name="prometheus-metrics-model" rev="1.5.1" />
+        <dependency org="manager-52" name="prometheus-metrics-exporter-common" rev="1.5.1" />
+        <dependency org="manager-52" name="prometheus-metrics-exporter-httpserver" rev="1.5.1" />
+        <dependency org="manager-52" name="prometheus-metrics-exporter-servlet-jakarta" rev="1.5.1" />
+        <dependency org="manager-52" name="prometheus-metrics-exposition-textformats" rev="1.5.1" />
+        <dependency org="manager-52" name="simple-core" rev="3.1.3" />
+        <dependency org="manager-52" name="sitemesh" rev="2.1" />
+        <dependency org="manager-52" name="slf4j-api" rev="1.7.36" />
+        <dependency org="manager-52" name="log4j-slf4j-impl" rev="2.26.1" />
+        <dependency org="manager-52" name="snakeyaml" rev="2.2" />
+        <dependency org="manager-52" name="spark-core" rev="2.9.3" />
+        <dependency org="manager-52" name="spark-template-jade" rev="2.7.1" />
+        <dependency org="manager-52" name="struts" rev="1.2.9" />
+        <dependency org="manager-52" name="xmlsec" rev="4.0.4" />
+        <dependency org="manager-52" name="woodstox-core" rev="7.2.1" />
+        <dependency org="manager-52" name="stax2-api" rev="4.3.0" />
+        <dependency org="manager-52" name="jakarta.xml.bind-api" rev="4.0.0" />
+        <dependency org="manager-52" name="jakarta.activation-api" rev="2.1.3" />
+        <dependency org="manager-52" name="jakarta.servlet.jsp.jstl" rev="3.0.2" />
+        <dependency org="manager-52" name="jakarta.servlet.jsp.jstl-api" rev="3.0.2" />
+        <dependency org="manager-52" name="jaxb-core" rev="4.0.5" />
+        <dependency org="manager-52" name="jaxb-runtime" rev="4.0.5" />
+        <dependency org="manager-52" name="txw2" rev="4.0.5" />
+        <dependency org="manager-52" name="istack-commons-runtime" rev="4.2.0" />
+        <dependency org="manager-52" name="ehcache" rev="3.11.1" />
         <!-- Tomcat jars -->
-        <dependency org="suse" name="tomcat-el-api" rev="[11.0.0,12.0.0[" />
-        <dependency org="suse" name="tomcat-jsp-api" rev="[11.0.0,12.0.0[" />
-        <dependency org="suse" name="tomcat-juli" rev="[11.0.0,12.0.0[" />
-        <dependency org="suse" name="tomcat-servlet-api" rev="[11.0.0,12.0.0[" />
+        <dependency org="manager-52" name="tomcat-el-api" rev="[11.0.0,12.0.0[" />
+        <dependency org="manager-52" name="tomcat-jsp-api" rev="[11.0.0,12.0.0[" />
+        <dependency org="manager-52" name="tomcat-juli" rev="[11.0.0,12.0.0[" />
+        <dependency org="manager-52" name="tomcat-servlet-api" rev="[11.0.0,12.0.0[" />
         <!-- Compilation and testing -->
-        <dependency org="suse" name="velocity-engine-core" rev="2.4"/>
-        <dependency org="suse" name="jetty-util" rev="9.4.58" />
+        <dependency org="manager-52" name="velocity-engine-core" rev="2.4"/>
+        <dependency org="manager-52" name="jetty-util" rev="9.4.58" />
         <dependency org="checkstyle" name="checkstyle" rev="10.12.7" transitive="false">
-          <artifact name="zz-checkstyle-all" type="jar" url="https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.12.7/checkstyle-10.12.7-all.jar"/>
+            <artifact name="zz-checkstyle-all" type="jar" url="https://github.com/checkstyle/checkstyle/releases/download/checkstyle-10.12.7/checkstyle-10.12.7-all.jar"/>
         </dependency>
-        <dependency org="suse" name="hamcrest" rev="3.0" transitive="false"/>
-        <dependency org="suse" name="junit" rev="4.13.2" transitive="false"/>
+        <dependency org="manager-52" name="hamcrest" rev="3.0" transitive="false"/>
+        <dependency org="manager-52" name="junit" rev="4.13.2" transitive="false"/>
         <dependency org="org.junit.jupiter" name="junit-jupiter" rev="5.8.2" />
         <dependency org="org.opentest4j" name="opentest4j" rev="1.2.0" transitive="false"/>
         <dependency org="org.apiguardian" name="apiguardian-api" rev="1.1.0" transitive="false"/>
@@ -113,7 +113,7 @@
         <dependency org="org.objenesis" name="objenesis" rev="3.3" transitive="false"/>
         <dependency org="jakarta.websocket" name="jakarta.websocket-api" rev="2.2.0" />
         <dependency org="org.jacoco" name="org.jacoco.ant" rev="0.8.7" transitive="false">
-           <artifact name="nodeps" type="jar" url="https://repo1.maven.org/maven2/org/jacoco/org.jacoco.ant/0.8.7/org.jacoco.ant-0.8.7-nodeps.jar"/>
+            <artifact name="nodeps" type="jar" url="https://repo1.maven.org/maven2/org/jacoco/org.jacoco.ant/0.8.7/org.jacoco.ant-0.8.7-nodeps.jar"/>
         </dependency>
         <dependency org="com.github.tomakehurst" name="wiremock-standalone" rev="2.27.2" transitive="false"/>
     </dependencies>

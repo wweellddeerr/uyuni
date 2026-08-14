@@ -37,6 +37,7 @@ Team Lead to handle the following tasks:
   - [ ] Remove the leaver from the [Multi-Linux Administrators](https://github.com/orgs/SUSE/teams/multi-linux-manager-administrators/members)
   - [ ] Remove the leaver from the [Multi-Linux CI Administrators](https://github.com/orgs/SUSE/teams/multi-linux-manager-ci-administrators/members)
   - [ ] Remove the leaver from the [Uyuni organization](https://github.com/orgs/uyuni-project/people) and [teams](https://github.com/orgs/uyuni-project/teams). It can remain a member (but not owner), if it will keep contributing.
+  - [ ] Until [SD-228907](https://sd.suse.com/servicedesk/customer/portal/1/SD-228907) is fixed, create a [SD Service request](https://sd.suse.com/servicedesk/customer/portal/1/create/1) for the system `GitHub` requesting to remove the leaver from the [SUSE gmbh enterprise](https://github.com/enterprises/suse-gmbh/teams) and from the [SUSE organization](https://github.com/orgs/SUSE)
 - [ ] Confluence:
   - [ ] Remove the leaver the [team overview page](https://confluence.suse.com/display/SUSEMANAGER/)
   - [ ] Remove the leaver the [squads page](https://confluence.suse.com/display/SUSEMANAGER/Squads%2C+People+and+Topics), cleaning ownerships if needed
@@ -72,6 +73,7 @@ Team Lead to handle the following tasks:
   - [ ] AWS
   - [ ] Azure
   - [ ] Google Cloud
+- [ ] Weblate: Remove the leaver from the [project](https://l10n.opensuse.org/access/uyuni/)
 - [ ] Remove the leaver from the relevant IBS/OBS groups:
   - [ ] https://build.suse.de/groups/monitoring
   - [ ] https://build.suse.de/groups/salt-maintainers
@@ -81,6 +83,7 @@ Team Lead to handle the following tasks:
   - [ ] https://build.suse.de/groups/susemanager-releng
   - [ ] https://build.opensuse.org/groups/uyuni-maintainers
   - [ ] https://build.opensuse.org/groups/salt-maintainers
+  - [ ] https://build.opensuse.org/groups/uyuni-retail-maintainers
 - Git Workflow: Until this [issue is fixed](https://github.com/openSUSE/openSUSE-git/issues/140), also prepare PRs to remove the leaver (or replace it if the leaver is the last one, as you will need a new maintainer) from the following places:
   - [ ] https://src.suse.de/products/MultiLinuxManagerTools-SL-Micro/src/branch/6/workflow.config and the same file in all `6*` branches
   - [ ] https://src.suse.de/products/MLMTools-products/src/branch/mlmtools_sle16-stable/workflow.config and the same file in all maintained branches
@@ -104,6 +107,10 @@ Team Lead to handle the following tasks:
   - [ ] Remove leaver entries for private hypervisor from [SUMA infrastructure](https://gitlab.suse.de/galaxy/infrastructure/-/blob/master/srv/salt/qa/users/init.sls)
   - [ ] Remove leaver entries for DNS from the [galaxy/infrastructure repository](https://gitlab.suse.de/galaxy/infrastructure/-/tree/master/srv/salt/bind-server)
   - [ ] Remove leaver entries for DHCP from the [galaxy/infrastructure repository](https://gitlab.suse.de/galaxy/infrastructure/-/tree/master/srv/salt/dhcpd-server)
+  - [ ] Remove the leaver's [personal pipeline](https://github.com/SUSE/susemanager-ci/tree/master/jenkins_pipelines/environments/personal) from susemanager-ci
+  - [ ] Remove leaver entries from [`terracumber_config/tf_files/personal/environment.tfvars`](https://github.com/SUSE/susemanager-ci/blob/master/terracumber_config/tf_files/personal/environment.tfvars) in susemanager-ci. This frees their MACs and their additional network for reuse
+  - [ ] Rename the leaver's `<leaver>-personal-pipeline` job on [ci.suse.de](https://ci.suse.de/view/Manager/view/Manager-qe/) to `DELETEME-<leaver>-personal-pipeline`. Deleting the pipeline file does not delete the job. Nobody in the team has `Job/Delete`, but the `DELETEME-` prefix hides the job from the views and the ci.suse.de admins delete it later
+  - [ ] Remove the leaver's libvirt pool `<leaver>_disks` and its directory on their private hypervisor, plus any leftover domains and networks
   - [ ] Remove from [galaxy-qa](https://mailman.suse.de/mailman/admin/galaxy-qa/members/remove) mailing list
   - [ ] Remove from [Multi-Linux Manager QE Team](https://github.com/orgs/SUSE/teams/multi-linux-manager-qe/members) on GitHub
   - [ ] Remove from [Uyuni QE developer Team](https://github.com/orgs/uyuni-project/teams/qe) on GitHub
