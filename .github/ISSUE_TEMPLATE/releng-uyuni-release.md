@@ -76,7 +76,10 @@ Add more tasks if needed.
   - [ ] Make sure to update the Uyuni version in the `<span style="display: none;" id="current_version">` of the `release-notes-uyuni-server.adoc` and `release-notes-uyuni-proxy.adoc` release notes. That value in the Server release notes is used by the "Update notification" feature.
 - [ ] Merge the release notes PR, submit the release notes to [systemsmanagement:Uyuni:Master](https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Master)
 - [ ] Prepare the PR for the [website repository, master branch](https://github.com/uyuni-project/uyuni-project.github.io), including announcement at the main page, updates to the stable page, news page, new doc folder (PDFs) with doc and release notes.
-- [ ] Prepare the email announcement and the X announcement, add them as comments to this card.
+- [ ] Prepare the Announcements add them as comments to this card:
+  - [ ] email announcement
+  - [ ] X announcement
+  - [ ] news.opensuse.org blogpost [following the instructions](https://github.com/openSUSE/news-o-o#how-to-submit-a-new-post). There is an [Uyuni](https://news.opensuse.org/category/uyuni) category and also an [uyuni](https://news.opensuse.org/tag/uyuni) tag.
 - [ ] Prepare a new [snapshot](https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Snapshots) as OBS subproject of `systemsmanagement:Uyuni:Snapshots`, following the naming schema `systemsmanagement:Uyuni:Snapshots:YYYY.MM` (Use `obs_subproject_creator.py` from uyuni-releng-tools). You can use [systemsmanagement:Uyuni:Snapshots:2026.08](https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Snapshots:2026.08) as guidance (even better if you use the snapshot for the most recent release), but make sure you adjust the meta configuration to match the version and the expect OS version used as base OS.
 - [ ] Modify the [meta configuration](https://build.opensuse.org/projects/systemsmanagement:Uyuni:Stable/meta) for `systemsmanagement:Uyuni:Stable`, so the promotion is done against the new Snapshot.
 
