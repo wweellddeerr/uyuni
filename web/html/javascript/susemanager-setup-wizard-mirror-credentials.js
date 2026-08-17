@@ -49,11 +49,11 @@ function saveCredentials() {
   jQuery('#add-credentials-form .form-control[required]').each(function() {
     var field = jQuery(this);
     if (field.val().length == 0) {
-      field.closest('.form-group').addClass('has-error');
+      field.closest('.row').addClass('has-error');
       validated = false;
     }
     else {
-      field.closest('.form-group').removeClass('has-error');
+      field.closest('.row').removeClass('has-error');
     }
   });
 
