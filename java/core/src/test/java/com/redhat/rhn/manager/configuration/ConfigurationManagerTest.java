@@ -26,6 +26,7 @@ import com.redhat.rhn.common.db.datasource.DataResult;
 import com.redhat.rhn.domain.access.AccessGroupFactory;
 import com.redhat.rhn.domain.action.Action;
 import com.redhat.rhn.domain.action.ActionFactory;
+import com.redhat.rhn.domain.action.ActionTypeEnum;
 import com.redhat.rhn.domain.action.config.ConfigAction;
 import com.redhat.rhn.domain.action.config.ConfigRevisionAction;
 import com.redhat.rhn.domain.config.ConfigChannel;
@@ -127,7 +128,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
 
     @Test
     public void testListSystemsForFileCopy() throws Exception {
-        UserTestUtils.addAccessGroup(user, AccessGroupFactory.CONFIG_ADMIN);
+        UserTestUtils.addAccessGroup(user, AccessGroupFactory.getConfigAdmin());
 
         // Create a system
         Server srv1 = ServerFactoryTest.createTestServer(user, true,
@@ -229,7 +230,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
 
     @Test
     public void testListCurrentFiles() {
-        UserTestUtils.addAccessGroup(user, AccessGroupFactory.CONFIG_ADMIN);
+        UserTestUtils.addAccessGroup(user, AccessGroupFactory.getConfigAdmin());
 
         // Channel of interest - has rev-1 of aFile
         ConfigChannel gcc1 = ConfigTestUtils.createConfigChannel(user.getOrg(),
@@ -260,7 +261,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
      */
     @Test
     public void testListCurrentFilesSlsCase() {
-        UserTestUtils.addAccessGroup(user, AccessGroupFactory.CONFIG_ADMIN);
+        UserTestUtils.addAccessGroup(user, AccessGroupFactory.getConfigAdmin());
 
         ConfigChannel configChannel = ConfigTestUtils.createConfigChannel(user.getOrg(), ConfigChannelType.state());
 
@@ -288,7 +289,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
 
     @Test
     public void testGlobalFileDeployInfo() throws Exception {
-        UserTestUtils.addAccessGroup(user, AccessGroupFactory.CONFIG_ADMIN);
+        UserTestUtils.addAccessGroup(user, AccessGroupFactory.getConfigAdmin());
 
         // Channel of interest - has rev-1 of aFile
         ConfigChannel gcc1 = ConfigTestUtils.createConfigChannel(user.getOrg(),
@@ -431,7 +432,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
          * I am going with option #2 because I think its a better test.
          */
         ConfigTestUtils.giveUserChanAccess(user, cc);  //option 2
-        //UserTestUtils.addAccessGroup(user, AccessGroupFactory.CONFIG_ADMIN);  //option 1
+        //UserTestUtils.addAccessGroup(user, AccessGroupFactory.getConfigAdmin());  //option 1
 
         DataResult<ConfigChannelDto> dr = cm.listGlobalChannels(user, pc);
         assertEquals(1, dr.getTotalSize());
@@ -441,7 +442,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
 
     @Test
     public void testListGlobalChannelsForSDC() {
-        UserTestUtils.addAccessGroup(user, AccessGroupFactory.CONFIG_ADMIN);
+        UserTestUtils.addAccessGroup(user, AccessGroupFactory.getConfigAdmin());
 
         //Create a config channel
         ConfigChannel cc = ConfigTestUtils.createConfigChannel(user.getOrg());
@@ -461,7 +462,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
 
     @Test
     public void testListGlobalChannelsForActivationKeys() {
-        UserTestUtils.addAccessGroup(user, AccessGroupFactory.ACTIVATION_KEY_ADMIN);
+        UserTestUtils.addAccessGroup(user, AccessGroupFactory.getActivationKeyAdmin());
 
         //Create a config channel
         ConfigChannel cc = ConfigTestUtils.createConfigChannel(user.getOrg());
@@ -515,7 +516,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
         //Only Config Admins can use this manager function.
         //Making the user a config admin will also automatically
         //give him access to the file and channel we just created.
-        UserTestUtils.addAccessGroup(user, AccessGroupFactory.CONFIG_ADMIN);
+        UserTestUtils.addAccessGroup(user, AccessGroupFactory.getConfigAdmin());
 
         //That is not enough though, the user must also have a server that is
         //a member of the config channel and have access to the server as well.
@@ -700,7 +701,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
     @Test
     public void testCountCentrallyManagedFiles() throws Exception {
         user.getOrg().addRole(RoleFactory.CONFIG_ADMIN);
-        user.addToGroup(AccessGroupFactory.CONFIG_ADMIN);
+        user.addToGroup(AccessGroupFactory.getConfigAdmin());
         Server s = makeServerForChannelCountTests();
         ConfigFileCount actual = cm.countCentrallyManagedPaths(s, user);
 
@@ -976,7 +977,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
 
     @Test
     public void testListSystemsNotInChannel() throws Exception {
-        UserTestUtils.addAccessGroup(user, AccessGroupFactory.CONFIG_ADMIN);
+        UserTestUtils.addAccessGroup(user, AccessGroupFactory.getConfigAdmin());
 
         // Create  global config channels
         ConfigChannel gcc1 = ConfigTestUtils.createConfigChannel(user.getOrg(),
@@ -1043,7 +1044,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
 
     @Test
     public void testDeployConfiguration() throws Exception {
-        UserTestUtils.addAccessGroup(user, AccessGroupFactory.CONFIG_ADMIN);
+        UserTestUtils.addAccessGroup(user, AccessGroupFactory.getConfigAdmin());
         ConfigurationManager mgr = ConfigurationManager.getInstance();
 
         TaskomaticApi taskomaticMock = context.mock(TaskomaticApi.class);
@@ -1097,7 +1098,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
                                     recentlyScheduledActions(user, null, 1);
         ConfigAction ca = null;
         for (ScheduledAction action : actions) {
-            if (ActionFactory.TYPE_CONFIGFILES_DEPLOY.getName().
+            if (ActionFactory.lookupActionTypeByEnum(ActionTypeEnum.TYPE_CONFIGFILES_DEPLOY).getName().
                     equals(action.getTypeName())) {
                 ca = (ConfigAction)ActionManager.lookupAction(user,
                         action.getId());
@@ -1112,7 +1113,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
 
     @Test
     public void testDeployFiles() throws Exception {
-        UserTestUtils.addAccessGroup(user, AccessGroupFactory.CONFIG_ADMIN);
+        UserTestUtils.addAccessGroup(user, AccessGroupFactory.getConfigAdmin());
 
         ConfigurationManager mgr = ConfigurationManager.getInstance();
 
@@ -1188,7 +1189,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
 
     @Test
     public void testListManagedFilePaths() {
-        UserTestUtils.addAccessGroup(user, AccessGroupFactory.CONFIG_ADMIN);
+        UserTestUtils.addAccessGroup(user, AccessGroupFactory.getConfigAdmin());
 
         // Create  global config channels
         ConfigChannel gcc1 = ConfigTestUtils.createConfigChannel(user.getOrg(),
@@ -1312,7 +1313,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
 
     @Test
     public void testSandboxManagedFilePaths() {
-        UserTestUtils.addAccessGroup(user, AccessGroupFactory.CONFIG_ADMIN);
+        UserTestUtils.addAccessGroup(user, AccessGroupFactory.getConfigAdmin());
 
         // Create  Sandbox  config channel
         ConfigChannel sandbox = ConfigTestUtils.createConfigChannel(user.getOrg(),
@@ -1399,7 +1400,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
             assertEquals(IllegalArgumentException.class, ie.getClass());
         }
 
-        UserTestUtils.addAccessGroup(user, AccessGroupFactory.CONFIG_ADMIN);
+        UserTestUtils.addAccessGroup(user, AccessGroupFactory.getConfigAdmin());
         UserFactory.save(user);
         OrgFactory.save(user.getOrg());
 
@@ -1465,7 +1466,7 @@ public class ConfigurationManagerTest extends BaseTestCaseWithUser {
         assertFalse(cm.accessToChannel(user.getId(), cc.getId()));
 
         // Make us config-admin - we SHOULD have access
-        UserTestUtils.addAccessGroup(user, AccessGroupFactory.CONFIG_ADMIN);
+        UserTestUtils.addAccessGroup(user, AccessGroupFactory.getConfigAdmin());
         assertTrue(cm.accessToChannel(user.getId(), cc.getId()));
     }
 

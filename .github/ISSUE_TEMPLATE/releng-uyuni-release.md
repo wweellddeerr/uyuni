@@ -10,7 +10,7 @@ assignees: ''
 
 # Important changes, for the release notes
 
-- 
+-
 
 # Procedure
 
@@ -27,17 +27,25 @@ You can also create sub-issues if preferred, but the needed information must be 
 
 Add doc and web page PRs which needs to be merged at release time
 
-- 
+-
 
 # ToDo some days before
 
 Add more tasks if needed.
 
+- Do we have new client tools?
+  - If yes:
+    - [ ] mention them at the release notes and in the section `Important changes, for the release notes`
+    - [ ] ensure that the doc has been updated
+    - [ ] link the issue of the new enabled client tool in this card
+    - [ ] ensure that QE is able to test the new client
+    - [ ] ensure to update the needed Master/Stable OBS projects with release targets and needed repos
+    - [ ] On the PR for the website, don't forget to list the new client tools in the stable and devel pages listing the repos that the community can consume.
 - [ ] Check all the [tests](https://ci.suse.de/view/Manager/view/Uyuni/): everything should be green, in particular the acceptance testsuite or otherwise submission must be approved by QA.
 - [ ] Ask the Doc Squad:
   - [ ] a PR to https://src.opensuse.org/uyuni/uyuni-docs_en on branch uyuni-main
   - [ ] a PR for the main documention and ReportDB documentation at the [documentation repository, gh-pages branch](https://github.com/uyuni-project/uyuni-docs/tree/gh-pages)
-  - [ ] a PR for the [documentation API repository, gh-pages branch](https://github.com/uyuni-project/uyuni-docs-api/tree/gh-pages). 
+  - [ ] a PR for the [documentation API repository, gh-pages branch](https://github.com/uyuni-project/uyuni-docs-api/tree/gh-pages).
   - [ ] tell them which is going to be the Uyuni version to be released
   - [ ] tell them if there is an API version change. Developers should inform relengs, but if it's not the case the `rel-eng/uyuni-check-version` at the Git repository will show the info
 - [ ] Confirm that the documentation is ready.
@@ -55,7 +63,12 @@ Add more tasks if needed.
   - [ ] https://github.com/uyuni-project/uyuni-tools/pulls
 - [ ] Open a PR to bump the products and patterns files. This has to follow a specific procedure which is described here: https://src.opensuse.org/uyuni/Uyuni/src/branch/uyuni-main/README.md
 - [ ] Quick review changelogs with `tito-wrapper`, and request changes if needed
-- [ ] Adjust the version number in `web/conf/rhn_web.conf` (`web.version.uyuni`)
+- [ ] Verify if there is any important pending PR on the following:
+  - [ ] https://src.opensuse.org/uyuni/UyuniTools/pulls
+  - [ ] https://src.opensuse.org/uyuni/Uyuni/pulls
+  - [ ] https://github.com/uyuni-project/uyuni/pulls
+  - [ ] https://github.com/uyuni-project/uyuni-tools/pulls
+- [ ] Adjust the version number in `web/conf/rhn_web.conf` (`web.version.uyuni`) with [update_rhn_web_conf.py](https://gitlab.suse.de/galaxy/suma-release-tools/-/blob/master/update_rhn_web_conf.py?ref_type=heads)
   - [ ] When SUSE Multi-Linux Manager is still under development and it uses the same `master` branch as Uyuni, check that the sed that replaces the default tag for SUSE Multi-Linux Manager in the [push.sh](https://github.com/uyuni-project/uyuni-tools/blob/main/push.sh) script in [uyuni-tools](https://github.com/SUSE/uyuni-tools) specifies the same SUSE Multi-Linux Manager version you added in `web.version`. If the value is outdated, update it with a PR for [uyuni-tools](https://github.com/SUSE/uyuni-tools). This is not required if the code of SUSE Multi-Linux Manager has been already branched.
 - [ ] Check if the migration paths exist for both the main database and report database, if they are needed (more at https://github.com/uyuni-project/uyuni/wiki/Releasing-Uyuni-versions)
 - [ ] Check if schema migration directories exist last SUSE Manager versions and Uyuni (more at https://github.com/uyuni-project/uyuni/wiki/Releasing-Uyuni-versions)
@@ -69,8 +82,11 @@ Add more tasks if needed.
   - [ ] Make sure to update the Uyuni version in the `<span style="display: none;" id="current_version">` of the `release-notes-uyuni-server.adoc` and `release-notes-uyuni-proxy.adoc` release notes. That value in the Server release notes is used by the "Update notification" feature.
 - [ ] Merge the release notes PR, submit the release notes to [systemsmanagement:Uyuni:Master](https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Master)
 - [ ] Prepare the PR for the [website repository, master branch](https://github.com/uyuni-project/uyuni-project.github.io), including announcement at the main page, updates to the stable page, news page, new doc folder (PDFs) with doc and release notes.
-- [ ] Prepare the email announcement and the X announcement, add them as comments to this card.
-- [ ] Prepare a new [snapshot](https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Snapshots) as OBS subproject of `systemsmanagement:Uyuni:Snapshots`, following the naming schema `systemsmanagement:Uyuni:Snapshots:YYYY.MM` (Use `obs_subproject_creator.py` from uyuni-releng-tools). You can use [systemsmanagement:Uyuni:Snapshots:2025.07](https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Snapshots:2025.07) as base (even better if you use the snapshot for the most recent release), but make sure you adjust the meta configuration to match the version and the expect OS version used as base OS.
+- [ ] Prepare the Announcements add them as comments to this card:
+  - [ ] email announcement
+  - [ ] X announcement
+  - [ ] news.opensuse.org blogpost [following the instructions](https://github.com/openSUSE/news-o-o#how-to-submit-a-new-post). There is an [Uyuni](https://news.opensuse.org/category/uyuni) category and also an [uyuni](https://news.opensuse.org/tag/uyuni) tag.
+- [ ] Prepare a new [snapshot](https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Snapshots) as OBS subproject of `systemsmanagement:Uyuni:Snapshots`, following the naming schema `systemsmanagement:Uyuni:Snapshots:YYYY.MM` (Use `obs_subproject_creator.py` from uyuni-releng-tools). You can use [systemsmanagement:Uyuni:Snapshots:2026.08](https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Snapshots:2026.08) as guidance (even better if you use the snapshot for the most recent release), but make sure you adjust the meta configuration to match the version and the expect OS version used as base OS.
 - [ ] Modify the [meta configuration](https://build.opensuse.org/projects/systemsmanagement:Uyuni:Stable/meta) for `systemsmanagement:Uyuni:Stable`, so the promotion is done against the new Snapshot.
 
 # ToDo during release day
@@ -91,6 +107,6 @@ Add more tasks if needed.
 - [ ] Send an email to `galaxy-devel@suse.de` informing that the branches `uyuni-project/uyuni:master` and `uyuni-project/uyuni:main` are unlocked, and adjust the topic on the slack [#team-multi-linux-manager](https://app.slack.com/client/T02863RC2AC/C02D78LLS04) channel
 
 ## After the release
-- [ ] (Ping QE, and in particular Jordi): mention that Update the [test container images](https://github.com/uyuni-project/uyuni/wiki/Build-or-update-the-test-container-images)
-> :information_source: We wait 24h release to give time to the opensuse mirrors to be in sync.
+- [ ] (Ping QE): mention that they can update the [test container images](https://github.com/uyuni-project/uyuni/wiki/Build-or-update-the-test-container-images)
+> :information_source: We wait 24h release to give time to the openSUSE mirrors to be in sync.
 - [ ] Create the GitHub issues for the Uyuni release.
