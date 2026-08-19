@@ -56,19 +56,20 @@ Add more tasks if needed.
   - [ ] from `master-weblate` to `uyuni-project/uyuni:master`
   - [ ] from `weblate-main` to `uyuni-project/uyuni-tool:main`.
 - [ ] Merge the PR for the translations with the option `Merge pull request` (now should be the unique option available)
-- [ ] Quick review changelogs with `tito-wrapper`, and request changes if needed
 - [ ] Verify if there is any important pending PR on the following:
   - [ ] https://src.opensuse.org/uyuni/UyuniTools/pulls
   - [ ] https://src.opensuse.org/uyuni/Uyuni/pulls
   - [ ] https://github.com/uyuni-project/uyuni/pulls
   - [ ] https://github.com/uyuni-project/uyuni-tools/pulls
+- [ ] Open a PR to bump the products and patterns files. This has to follow a specific procedure which is described here: https://src.opensuse.org/uyuni/Uyuni/src/branch/uyuni-main/README.md
+- [ ] Quick review changelogs with `tito-wrapper`, and request changes if needed
 - [ ] Adjust the version number in `web/conf/rhn_web.conf` (`web.version.uyuni`) with [update_rhn_web_conf.py](https://gitlab.suse.de/galaxy/suma-release-tools/-/blob/master/update_rhn_web_conf.py?ref_type=heads)
   - [ ] When SUSE Multi-Linux Manager is still under development and it uses the same `master` branch as Uyuni, check that the sed that replaces the default tag for SUSE Multi-Linux Manager in the [push.sh](https://github.com/uyuni-project/uyuni-tools/blob/main/push.sh) script in [uyuni-tools](https://github.com/SUSE/uyuni-tools) specifies the same SUSE Multi-Linux Manager version you added in `web.version`. If the value is outdated, update it with a PR for [uyuni-tools](https://github.com/SUSE/uyuni-tools). This is not required if the code of SUSE Multi-Linux Manager has been already branched.
 - [ ] Check if the migration paths exist for both the main database and report database, if they are needed (more at https://github.com/uyuni-project/uyuni/wiki/Releasing-Uyuni-versions)
 - [ ] Check if schema migration directories exist last SUSE Manager versions and Uyuni (more at https://github.com/uyuni-project/uyuni/wiki/Releasing-Uyuni-versions)
 - [ ] Check if any of the packages in the `microservices` folder need to be tagged. **[There's a specific procedure to follow](https://confluence.suse.com/display/SUSEMANAGER/How+to+tag+microservices+packages?src=contextnavpagetreemode)**
 - [ ] Tag everything in `uyuni-project/uyuni:master` with `tito tag` and push. Do NOT tag if the version has not been already bumped in `web/conf/rhn_web.conf` (`web.version.uyuni`), as requested in one of the previous points.
-- [ ] Tag everything in `uyuni-project/uyuni-tools:main` with `tito tag` and push.
+- [ ] Tag `uyuni-project/uyuni-tools:main` with `tito tag` and push.
 - [ ] Check that the job [uyuni-Master-releng-2obs](https://ci.suse.de/view/Manager/view/Uyuni/job/uyuni-Master-releng-2obs/) job has packaged the whole tagging and submitted the changes from `uyuni-project/uyuni:master` branch into https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Master (changes will propagate to the client tools for linked packages)
 - [ ] Check that the job [uyuni-tools-Master-2obs/](https://ci.suse.de/view/Manager/view/Uyuni/job/uyuni-tools-Master-2obs/) job has packaged the whole tagging and submitted the changes from `uyuni-project/uyuni-tools:master` branch into https://build.opensuse.org/project/show/systemsmanagement:Uyuni:Master:ContainerUtils (changes will propagate to Uyuni:Master and the client tools for linked packages)
 - [ ] Run `rel-eng/uyuni-check-version` at the Git repository, to check what other packages need changes and adjust them.
