@@ -17,8 +17,9 @@
       min-width: 100%;
     }
 
-    :global(.form-group) {
+    :global(.row) {
       margin: 0;
+      gap: 2em;
 
       > * {
         padding: 0;
@@ -28,6 +29,6 @@
 
   .inlineSearchPanel {
     flex: 0;
-    flex-wrap: initial; 
+    flex-wrap: initial;
   }
 }

@@ -101,7 +101,7 @@ const FilterForm = (props: Props) => {
         )}
 
         {!props.editing ? (
-          <div className="row form-group">
+          <div className="row">
             <div className="col-md-6 col-md-offset-3 offset-md-3">
               {filterBy === FilterBy.Type ? (
                 <Button
