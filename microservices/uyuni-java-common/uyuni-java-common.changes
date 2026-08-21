@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Fri Aug 21 12:20:18 CEST 2026 - antonio.garofalo@suse.com
+
+- version 5.2.7-0
+  * Refactor microservices common utility classes and resolve
+    SonarCloud code quality issues
+
+-------------------------------------------------------------------
 Fri May 22 11:45:58 CEST 2026 - michael.calmer@suse.com
 
 - version 5.2.6-0
