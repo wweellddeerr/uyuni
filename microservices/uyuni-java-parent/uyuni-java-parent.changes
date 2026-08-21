@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Fri Aug 21 12:19:09 CEST 2026 - antonio.garofalo@suse.com
+
+- version 5.2.7-0
+  * Update dependencies for Multi-Linux Manager 5.2 and bump version
+    to 5.2.6
+
+-------------------------------------------------------------------
 Fri May 22 11:28:54 CEST 2026 - michael.calmer@suse.com
 
 - version 5.2.6-0
