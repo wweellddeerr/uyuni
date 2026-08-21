@@ -1,4 +1,22 @@
 -------------------------------------------------------------------
+Fri Aug 21 12:11:19 CEST 2026 - antonio.garofalo@suse.com
+
+- version 5.2.14-0
+  * Improve product selection checkboxes in the setup UI
+  * Show partial selection state for product trees more accurately
+  * Fixed the "Clear selected system set" button flickering
+    during page navigation. (bsc#1271523)
+  * Add web.version.eol setting to provide an end of life date
+  * Fix duplicate remaining characters label in the Create Custom
+    Info Key description field. (bsc#1269679)
+  * Improve handling of invalid issue_date values when creating
+    CLM filters via the API. (bsc#1271467)
+  * Refactor checkboxes in the RBAC UI
+  * Reuse common Check component
+  * Use the standard Bootstrap 5 row class in place of
+    legacy layout classes.
+
+-------------------------------------------------------------------
 Wed Jun 17 17:37:25 CEST 2026 - michael.calmer@suse.com
 
 - version 5.2.13-0
