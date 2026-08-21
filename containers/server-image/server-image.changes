@@ -1,4 +1,14 @@
 -------------------------------------------------------------------
+Fri Aug 21 12:00:47 CEST 2026 - antonio.garofalo@suse.com
+
+- version 5.2.15
+  * Increase start-period (bsc#1271124)
+  * Check disk space on startup
+  * Use correct healthcheck cmd (bsc#1273144)
+  * Detect an existing cgroup2 mount by filesystem type,
+    not mountpoint.
+
+-------------------------------------------------------------------
 Fri Jun 26 14:43:50 CEST 2026 - michael.calmer@suse.com
 
 - version 5.2.14
