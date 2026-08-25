@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-20 16:55+0200\n"
-"PO-Revision-Date: 2026-08-25 08:09+0000\n"
+"PO-Revision-Date: 2026-08-26 12:01+0000\n"
 "Last-Translator: Bone NI <bounkirdni@gmail.com>\n"
 "Language-Team: Lao <https://l10n.opensuse.org/projects/uyuni/web-5-2/lo/>\n"
 "Language: lo\n"
@@ -841,7 +841,7 @@ msgstr "ໃນໜ້ານີ້ ທ່ານສາມາດເລືອກ Salt
 #: ../html/src/manager/groups/formula/group-formula-selection.renderer.tsx:63
 #: ../html/src/manager/groups/formula/group-formula.renderer.tsx:27
 msgid "Formulas"
-msgstr "ສູດ (Formulas)"
+msgstr "ຟໍມູລາ (Formulas)"
 
 #: ../html/src/components/formulas/EditGroup.tsx:361
 msgid "This field is used as a 'key' identifier in the resulting pillar data."
@@ -1689,7 +1689,7 @@ msgstr "ລຶບອອກ"
 #: ../html/src/manager/admin/access-control/access-group-list.tsx:122
 #: ../html/src/manager/admin/access-control/access-group.tsx:209
 msgid "Users"
-msgstr "ຜູ້ໃຊ້ (Users)"
+msgstr "ຜູ້ໃຊ້"
 
 #: ../html/src/components/input/form-multi-input/single-field.example.tsx:47
 #: ../html/src/manager/login/uyuni/login.tsx:85
@@ -2046,7 +2046,7 @@ msgstr "ກະລຸນາກວດສອບສິ່ງທີ່ເລືອກ
 #: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:103
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:182
 msgid "Systems"
-msgstr "ລະບົບ"
+msgstr "Systems"
 
 #: ../html/src/components/product-migration/MigrationConfirmScheduleForm.tsx:63
 msgid "Product after migration"
@@ -2991,7 +2991,7 @@ msgstr "ການຕັ້ງຄ່ານະໂຍບາຍລະຫັດຜ່
 
 #: ../html/src/manager/admin/password-policy/password-policy.tsx:29
 msgid "Min Password Length"
-msgstr "ຄວາມຍາວລະຫັດຜ່ານຕ່ຳສຸດ"
+msgstr "ຄວາມຍາວລະຫັດຜ່ານຂັ້ນຕ່ຳ"
 
 #: ../html/src/manager/admin/password-policy/password-policy.tsx:38
 msgid "Max Password Length"
@@ -3000,15 +3000,15 @@ msgstr "ຄວາມຍາວລະຫັດຜ່ານສູງສຸດ"
 #. Require Digits
 #: ../html/src/manager/admin/password-policy/password-policy.tsx:56
 msgid "Require Digits"
-msgstr "ຕ້ອງມີຕົວເລກ"
+msgstr "ຕ້ອງການຕົວເລກ"
 
 #: ../html/src/manager/admin/password-policy/password-policy.tsx:59
 msgid "Require Lowercase Characters"
-msgstr "ຕ້ອງມີຕົວອັກສອນພິມນ້ອຍ"
+msgstr "ຕ້ອງການຕົວອັກສອນພິມນ້ອຍ"
 
 #: ../html/src/manager/admin/password-policy/password-policy.tsx:66
 msgid "Require Uppercase Characters"
-msgstr "ຕ້ອງມີຕົວອັກສອນພິມໃຫຍ່"
+msgstr "ຕ້ອງການຕົວອັກສອນພິມໃຫຍ່"
 
 #: ../html/src/manager/admin/password-policy/password-policy.tsx:73
 msgid "Restrict Consecutive Characters"
@@ -3016,7 +3016,7 @@ msgstr "ຈຳກັດຕົວອັກສອນທີ່ລຽງກັນ"
 
 #: ../html/src/manager/admin/password-policy/password-policy.tsx:80
 msgid "Require Special Characters"
-msgstr "ຕ້ອງມີຕົວອັກສອນພິເສດ"
+msgstr "ຕ້ອງການຕົວອັກສອນພິເສດ"
 
 #: ../html/src/manager/admin/password-policy/password-policy.tsx:90
 msgid "Allowed Special Characters"
@@ -3095,7 +3095,7 @@ msgstr "ຜູ້ໃຊ້"
 #: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:444
 #: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:562
 msgid "SSH Private Key"
-msgstr "ກະແຈສ່ວນຕົວ SSH"
+msgstr "SSH Private Key (ຄີສ່ວນຕົວ SSH)"
 
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-form.tsx:102
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-view.tsx:37
@@ -3280,7 +3280,7 @@ msgstr "ເລືອກຊ່ອງທາງເສີມທີ່ທ່ານຕ
 
 #: ../html/src/manager/admin/setup/products/products.tsx:1093
 msgid "Mandatory Channels"
-msgstr "ຊ່ອງທາງທີ່ຈຳເປັນ"
+msgstr "ຊ່ອງທາງທີ່ບັງຄັບ"
 
 #: ../html/src/manager/admin/setup/products/products.tsx:1095
 msgid "Optional Channels"
@@ -3508,7 +3508,7 @@ msgstr "ແພັກເກັດໃນ {stream}"
 
 #: ../html/src/manager/appstreams/panel-appstream.tsx:20
 msgid "Modules"
-msgstr "ໂມດູນ"
+msgstr "ໂມດູນ (Modules)"
 
 #: ../html/src/manager/appstreams/panel-appstream.tsx:21
 msgid "Streams"
@@ -3926,7 +3926,7 @@ msgstr "ຜ່ານ"
 #: ../html/src/manager/images/image-view-overview.tsx:87
 #: ../html/src/manager/images/image-view.tsx:514
 msgid "Failed"
-msgstr "ຫຼົ້ມເຫຼວ"
+msgstr "ຫຼົ້ມເຫຼວ (Failed)"
 
 #: ../html/src/manager/audit/scap/scap-policy-details.tsx:244
 msgid "Other"
@@ -4401,7 +4401,7 @@ msgstr "ວັນທີອອກທີ່ຈັດເກັບໄວ້ຢູ່
 
 #: ../html/src/manager/content-management/list-filters/filter-form.tsx:224
 msgid "Issued"
-msgstr "ອອກເມື່ອ"
+msgstr "Issued (ຖືກອອກໃຫ້)"
 
 #: ../html/src/manager/content-management/list-filters/filter-form.tsx:235
 #: ../html/src/manager/content-management/shared/components/panels/build/build.tsx:69
@@ -4598,7 +4598,7 @@ msgstr "ການແກ້ໄຂຊົ່ວຄາວຂອງຜະລິດຕ
 
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:46
 msgid "contains"
-msgstr "ປະກອບມີ"
+msgstr "ປະກອບດ້ວຍ (contains)"
 
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:47
 msgid "containing"
@@ -4616,7 +4616,7 @@ msgstr "Regular expression ກົງກັບຊື່ແພັກເກດ"
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:56
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:101
 msgid "equals"
-msgstr "ເທົ່າກັບ"
+msgstr "ເທົ່າກັບ (equals)"
 
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:57
 msgid "contains package name equals"
@@ -4664,7 +4664,7 @@ msgstr "ປະກອບມີແພັກເກດທີ່ມີຊື່ສິ
 
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:91
 msgid "lower"
-msgstr "ນ້ອຍກວ່າ"
+msgstr "ໜ້ອຍກວ່າ (lower)"
 
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:92
 msgid "lower than"
@@ -4672,7 +4672,7 @@ msgstr "ນ້ອຍກວ່າ"
 
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:96
 msgid "lower or equal"
-msgstr "ນ້ອຍກວ່າ ຫຼື ເທົ່າກັບ"
+msgstr "ໜ້ອຍກວ່າ ຫຼື ເທົ່າກັບ (lower or equal)"
 
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:97
 msgid "lower or equal than"
@@ -4684,7 +4684,7 @@ msgstr "ເທົ່າກັບ"
 
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:106
 msgid "greater or equal"
-msgstr "ຫຼາຍກວ່າ ຫຼື ເທົ່າກັບ"
+msgstr "ຫຼາຍກວ່າ ຫຼື ເທົ່າກັບ (greater or equal)"
 
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:107
 msgid "greater or equal than"
@@ -4692,7 +4692,7 @@ msgstr "ຫຼາຍກວ່າ ຫຼື ເທົ່າກັບ"
 
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:111
 msgid "greater"
-msgstr "ຫຼາຍກວ່າ"
+msgstr "ຫຼາຍກວ່າ (greater)"
 
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:117
 msgid "matches regular expression"
@@ -5224,7 +5224,7 @@ msgstr "ເຈົ້າສາມາດນຳເຂົ້າໄດ້ສະເພ
 
 #: ../html/src/manager/images/image-import.tsx:271
 msgid "Image name"
-msgstr "ຊື່ອິເມຈ໌"
+msgstr "ຊື່ອິເມຈ"
 
 #: ../html/src/manager/images/image-import.tsx:273
 msgid "Image name is required."
@@ -5232,7 +5232,7 @@ msgstr "ຈຳເປັນຕ້ອງໃສ່ຊື່ອິເມຈ໌."
 
 #: ../html/src/manager/images/image-import.tsx:280
 msgid "Image version"
-msgstr "ເວີຊັນອິເມຈ໌"
+msgstr "ເວີຊັນອິເມຈ"
 
 #: ../html/src/manager/images/image-import.tsx:282
 msgid "Image version is required."
@@ -5435,7 +5435,7 @@ msgstr "ກຳລັງດຳເນີນການ"
 
 #: ../html/src/manager/images/image-view-overview.tsx:75
 msgid "Successful"
-msgstr "ສຳເລັດ"
+msgstr "ສຳເລັດ (Successful)"
 
 #: ../html/src/manager/images/image-view-overview.tsx:99
 #: ../html/src/manager/images/image-view-overview.tsx:100
@@ -7276,7 +7276,7 @@ msgstr "ຕົວປ່ຽນ (Variables)"
 #: ../html/src/manager/recurring/search/recurring-actions-search-utils.tsx:10
 #: ../html/src/manager/state/highstate.tsx:148
 msgid "Highstate"
-msgstr "ໄຮສະເຕດ (Highstate)"
+msgstr "Highstate"
 
 #: ../html/src/manager/recurring/search/recurring-actions-search-utils.tsx:11
 msgid "Custom State"
@@ -7573,7 +7573,7 @@ msgstr "ກວດສອບຫຼ້າສຸດເມື່ອ"
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:145
 #: ../html/src/manager/systems/subscribe-channels/subscribe-channels.tsx:590
 msgid "Base Channel"
-msgstr "ຊ່ອງທາງພື້ນຖານ"
+msgstr "Base Channel (ຊ່ອງທາງຫຼັກ)"
 
 #: ../html/src/manager/systems/all-list.tsx:183
 #: ../html/src/manager/systems/list-filter.tsx:53
@@ -8325,7 +8325,7 @@ msgstr "ເພີ່ມຕົວຈັດການໂຮສສະເໝືອນ
 
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager.tsx:152
 msgid "Virtual Host Managers"
-msgstr "ຕົວຈັດການໂຮສສະເໝືອນ"
+msgstr "Virtual Host Managers (VHM)"
 
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager.tsx:173
 msgid "Add a virtual host manager"
