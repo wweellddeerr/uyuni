@@ -47,6 +47,10 @@ class CobblerTest
     output, retcode = node.run('systemctl restart apache2')
     raise(SystemCallError, "Failed to restart apache2 (rc=#{retcode}): #{output}") unless retcode.zero?
 
+    # check running and connection
+    server_address = node.full_hostname
+    @server = XMLRPC::Client.new2("http://#{server_address}/cobbler_api", nil, DEFAULT_TIMEOUT)
+
     retries = 10
     connected = false
 
