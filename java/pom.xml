@@ -20,7 +20,7 @@
     </parent>
 
     <artifactId>spacewalk-java</artifactId>
-    <version>5.2.21</version>
+    <version>5.2.22</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -173,7 +173,7 @@
             <dependency>
                 <groupId>org.uyuni-project</groupId>
                 <artifactId>branding</artifactId>
-                <version>5.2.6</version>
+                <version>5.2.7</version>
             </dependency>
 
             <dependency>
