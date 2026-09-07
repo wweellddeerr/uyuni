@@ -12973,7 +12973,7 @@ SOFTWARE.
 
 --------------------------------------------------------------------------------
 
-Package: immutable@4.3.7
+Package: immutable@4.3.9
 License text:
 
 MIT License
