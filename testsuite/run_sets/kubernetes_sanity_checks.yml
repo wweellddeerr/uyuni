@@ -9,7 +9,7 @@
 # IDEMPOTENT
 
 - features/kubernetes/srv_rke2_check_installation.feature
-- features/kubernetes/proxy_rke2_install.feature
+- features/kubernetes/proxy_rke2_check_installation.feature
 - features/kubernetes/srv_rke2_tftpd_sanity.feature
 
 ## Kubernetes sanity checks END ##
