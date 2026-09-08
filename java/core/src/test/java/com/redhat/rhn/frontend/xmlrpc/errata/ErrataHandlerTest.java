@@ -33,6 +33,7 @@ import com.redhat.rhn.FaultException;
 import com.redhat.rhn.common.db.datasource.DataResult;
 import com.redhat.rhn.common.db.datasource.Row;
 import com.redhat.rhn.domain.channel.Channel;
+import com.redhat.rhn.domain.channel.ChannelFactory;
 import com.redhat.rhn.domain.channel.ChannelFactoryTest;
 import com.redhat.rhn.domain.channel.ChannelTestUtility;
 import com.redhat.rhn.domain.errata.AdvisoryStatus;
@@ -913,6 +914,29 @@ public class ErrataHandlerTest extends BaseHandlerTestCase {
         channel.setOrg(admin.getOrg());
         List<String> channels = List.of(channel.getLabel());
         Errata published = handler.publish(admin, e.getAdvisoryName(), channels);
+
+        assertEquals(e.getAdvisory(), published.getAdvisory());
+    }
+
+    @Test
+    public void publishCanUpdateExistingErrata() throws Exception {
+        Errata e = ErrataFactoryTest.createTestErrata(admin.getOrg().getId());
+
+        Channel channel = ChannelFactoryTest.createBaseChannel(admin);
+        String channelLabel = channel.getLabel();
+        channel.setOrg(admin.getOrg());
+        e.getPackages().forEach(p -> channel.getPackages().add(p));
+        ChannelFactory.save(channel);
+
+        TestUtils.flushAndClearSession();
+
+        // Publish the first time to create it
+        handler.publish(admin, e.getAdvisoryName(), List.of(channelLabel));
+
+        TestUtils.flushAndClearSession();
+
+        // Publish a second to time to trigger the update code path
+        Errata published = handler.publish(admin, e.getAdvisoryName(), List.of(channelLabel));
 
         assertEquals(e.getAdvisory(), published.getAdvisory());
     }
