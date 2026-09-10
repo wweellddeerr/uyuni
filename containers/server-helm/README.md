@@ -1,7 +1,7 @@
 # server-helm
 
-This chart installs [Uyuni server](https://uyuni-project.org).
-This is deploying the core features, [the uyuni-charts repository](https://github.com/uyuni-project/uyuni-charts) contains some examples Helm charts using it in conjunction with other tools.
+This chart installs [SUSE Multi-Linux Manager server](https://www.suse.com/products/multi-linux-manager/).
+This is deploying the core features, [the uyuni-charts repository](https://github.com/uyuni-project/uyuni-charts) contains some Helm chart examples that could be derived to use it conjunction with other tools.
 
 ## Configuration
 
@@ -137,7 +137,7 @@ db:
 
 ### Exposing ports
 
-Uyuni requires some TCP and UDP ports to be routed to its services.
+SUSE Multi-Linux Manager server requires some TCP and UDP ports to be routed to its services.
 Here is a list of the ports to map:
 
 | Protocol | Port  | Service name | Service port |                                                  |
@@ -283,7 +283,7 @@ require {
     type cgroup_t;
     type tmpfs_t;
     type proc_t;
-   
+
     class dir { search write add_name create remove_name rmdir setattr getattr mounton };
     class file { create open write append read unlink setattr getattr watch };
     class filesystem { mount getattr relabelfrom relabelto remount unmount };
@@ -434,4 +434,4 @@ Once installed, the web interface can be accessed directly on the configured FQD
 
 ## More Info
 
-Check the product documentation: https://www.uyuni-project.org/uyuni-docs
+Check the product documentation: https://documentation.suse.com/multi-linux-manager/5.2/

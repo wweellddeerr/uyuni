@@ -1,7 +1,7 @@
 # proxy-helm
 
-This chart installs [Uyuni proxy](https://uyuni-project.org).
-This is deploying the core features, [the uyuni-charts repository](https://github.com/uyuni-project/uyuni-charts) contains some examples Helm charts using it in conjunction with other tools.
+This chart installs [SUSE Multi-Linux Manager proxy](https://www.suse.com/products/multi-linux-manager/).
+This is deploying the core features, [the uyuni-charts repository](https://github.com/uyuni-project/uyuni-charts) contains some Helm chart examples that could be derived to use it conjunction with other tools.
 
 ## Configuration
 
@@ -33,13 +33,19 @@ If `proxy-cert` or `uyuni-ca` already exist in the namespace (e.g. created by ha
 To let helm take over and manage them from the tarball values, the chart has to render the resources so helm has something to adopt. Set `cert.takeOwnership=true` and pass `helm install --take-ownership` (helm 3.14+) once:
 
 ```bash
-helm upgrade --install uyuni-proxy <chart> \
-  --namespace <namespace> \
-  --take-ownership \
-  --set cert.takeOwnership=true \
-  --set-file global.config=config.yaml \
-  --set-file global.httpd=httpd.yaml \
-  --set-file global.ssh=ssh.yaml
+ARCH=x86_64  # Adjust to the target architecture to deploy
+helm upgrade --install smlm-proxy \
+    oci://registry.suse.com/suse/multi-linux-manager/5.2/proxy-helm \
+    --take-ownership \
+    -n uyuni-proxy \
+    --description "Proxy installation" \
+    --set "registrySecret=the-scc-secret" \
+    --set "repository=registry.suse.com/suse/multi-linux-manager/5.2/$ARCH" \
+    --set-file global.config=path/to/config.yaml \
+    --set-file global.ssh=path/to/ssh.yaml \
+    --set-file global.httpd=path/to/httpd.yaml \
+    --set cert.takeOwnership=true \
+    --version 5.2.0  # Adjust to the version to deploy
 ```
 
 After adoption the chart treats them as helm-managed: value changes are applied on upgrade, and they are removed on `helm uninstall` like any other chart resource. `cert.takeOwnership` can be left at `true` or dropped back to `false` on subsequent upgrades — once the objects carry the helm `managed-by` label the default render condition already covers them.
@@ -59,7 +65,7 @@ It can also have the `volumeName` and `selector` properties to precisely associa
 
 ### Node Tuning
 
-For the Uyuni Proxy deployments, it is possible to finely control which nodes the pods are scheduled on. This chart supports a **default** configuration with **local overrides**, allowing baseline rules to be set for all pods and customized for specific components (like `tftp` or the main proxy) when needed.
+For the SUSE Multi-Linux Manager Proxy deployments, it is possible to finely control which nodes the pods are scheduled on. This chart supports a **default** configuration with **local overrides**, allowing baseline rules to be set for all pods and customized for specific components (like `tftp` or the main proxy) when needed.
 
 Scheduling can be controlled using `nodeSelector`, `affinity`, `tolerations`, or `nodeName`. It is not necessary to use all of them; simply choose the method that matches the cluster's scheduling strategy.
 
@@ -110,7 +116,7 @@ tftp:
 
 ### Exposing ports
 
-Uyuni proxy requires some TCP ports to be routed to its services.
+SUSE Multi-Linux Manager proxy requires some TCP ports to be routed to its services.
 Here is a list of the ports to map:
 
 
@@ -176,7 +182,7 @@ dnsConfig:
 
 ### Configuration files
 
-The chart requires the `global.config`, `global.httpd` and `global.ssh` values to contain the YAML produced by the server. Generate them from the **Systems > Proxy Configuration** page on the Uyuni/MLM server (or via the `proxy.containerConfig` API). The server returns a `config.tar.gz` containing `config.yaml`, `httpd.yaml` and `ssh.yaml`. Extract it and pass the files to Helm with `--set-file`.
+The chart requires the `global.config`, `global.httpd` and `global.ssh` values to contain the YAML produced by the server. Generate them from the **Systems > Proxy Configuration** page on the SUSE Multi-Linux Manager server (or via the `proxy.containerConfig` API). The server returns a `config.tar.gz` containing `config.yaml`, `httpd.yaml` and `ssh.yaml`. Extract it and pass the files to Helm with `--set-file`.
 
 ## Installation
 
@@ -224,15 +230,18 @@ mkdir -p /root/proxy-config && cd /root/proxy-config
 tar xzf /root/config.tar.gz   # gives config.yaml, httpd.yaml, ssh.yaml
 
 # 2. Install the chart — proxy-cert and uyuni-ca are created from the tarball values
-CHART=oci://<registry>/proxy   # adjust to your registry
 kubectl create namespace uyuni-proxy
-helm upgrade --install uyuni-proxy $CHART \
-  --namespace uyuni-proxy \
-  --set-file global.config=config.yaml \
-  --set-file global.httpd=httpd.yaml \
-  --set-file global.ssh=ssh.yaml \
-  --set ingress.type=traefik \
-  --set ingress.class=traefik
+ARCH=x86_64  # Adjust to the target architecture to deploy
+helm upgrade --install smlm-proxy \
+    oci://registry.suse.com/suse/multi-linux-manager/5.2/proxy-helm \
+    -n uyuni-proxy \
+    --description "Proxy installation" \
+    --set "registrySecret=the-scc-secret" \
+    --set "repository=registry.suse.com/suse/multi-linux-manager/5.2/$ARCH" \
+    --set-file global.config=config.yaml \
+    --set-file global.httpd=httpd.yaml \
+    --set-file global.ssh=ssh.yaml \
+    --version 5.2.0  # Adjust to the version to deploy
 ```
 
 ### K3S
@@ -284,19 +293,24 @@ mkdir -p /root/proxy-config && cd /root/proxy-config
 tar xzf /root/config.tar.gz   # gives config.yaml, httpd.yaml, ssh.yaml
 
 # Install the chart — proxy-cert and uyuni-ca are created from the tarball values
-CHART=oci://<registry>/proxy   # adjust to your registry
 kubectl create namespace uyuni-proxy
-helm upgrade --install uyuni-proxy $CHART \
-  --namespace uyuni-proxy \
-  --set-file global.config=config.yaml \
-  --set-file global.httpd=httpd.yaml \
-  --set-file global.ssh=ssh.yaml \
-  --set ingress.type=traefik \
-  --set ingress.class=traefik \
-  --set tftp.hostNetwork=true
+ARCH=x86_64  # Adjust to the target architecture to deploy
+helm upgrade --install smlm-proxy \
+    oci://registry.suse.com/suse/multi-linux-manager/5.2/proxy-helm \
+    -n uyuni-proxy \
+    --description "Proxy installation" \
+    --set "registrySecret=the-scc-secret" \
+    --set "repository=registry.suse.com/suse/multi-linux-manager/5.2/$ARCH" \
+    --set-file global.config=config.yaml \
+    --set-file global.httpd=httpd.yaml \
+    --set-file global.ssh=ssh.yaml \
+    --set ingress.type=traefik \
+    --set ingress.class=traefik \
+    --set tftp.hostNetwork=true \
+    --version 5.2.0  # Adjust to the version to deploy
 ```
 
-## Upgrade from proxy deployed with mgrpxy to helm chart on K3S
+## Upgrade from SUSE Multi-Linux Manager 5.1 proxy to 5.2 proxy on K3S
 
 The deployment selector labels changed between the installation using `mgrpxy` and the helm chart (`app: uyuni-proxy` → `app.kubernetes.io/component: proxy`).
 Since `spec.selector` is immutable in Kubernetes, the old deployment must be removed before the new one can be created.
@@ -369,9 +383,13 @@ kubectl patch pv $PV --type=json \
   -p '[{"op":"remove","path":"/spec/claimRef"}]'
 
 # Install the proxy using the helm chart, binding to the existing squid PV
-CHART=oci://<registry>/proxy
-helm upgrade --install uyuni-proxy $CHART \
+ARCH=x86_64  # Adjust to the target architecture to deploy
+helm upgrade --install uyuni-proxy \
+  oci://registry.suse.com/suse/multi-linux-manager/5.2/proxy-helm \
   --namespace uyuni-proxy \
+  --description "Migrate from 5.1 to 5.2"
+  --set "registrySecret=the-scc-secret" \
+  --set "repository=registry.suse.com/suse/multi-linux-manager/5.2/$ARCH" \
   --set-file global.config=/root/proxy-config/config.yaml \
   --set-file global.httpd=/root/proxy-config/httpd.yaml \
   --set-file global.ssh=/root/proxy-config/ssh.yaml \
@@ -406,4 +424,4 @@ Once installed, systems can be connected the to proxy.
 
 ## More Info
 
-Check the product documentation: https://www.uyuni-project.org/uyuni-docs
+Check the product documentation: https://documentation.suse.com/multi-linux-manager/5.2/
