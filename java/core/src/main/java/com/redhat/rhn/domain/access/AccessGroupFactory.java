@@ -255,7 +255,7 @@ public class AccessGroupFactory extends HibernateFactory {
         );
 
         return Optional.ofNullable(id)
-                       .map(i -> getSession().get(AccessGroup.class, i))
+                       .map(i -> getSession().find(AccessGroup.class, i))
                        .orElse(null);
     }
 }
