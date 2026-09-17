@@ -42,6 +42,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -91,16 +92,37 @@ public class CVEAuditManagerOVAL {
                 results.stream().collect(Collectors.groupingBy(CVEAuditManager.CVEPatchStatus::getSystemId));
 
         Set<Server> clients = user.getServers();
+        boolean ovalEnabled = ConfigDefaults.get().isOvalEnabledForCveAudit();
+        Set<String> ovalPlatformCpes = ovalEnabled ?
+                OVALCachingFactory.getOVALPlatformCpes() :
+                Collections.emptySet();
+        Set<Long> serversWithErrata = clients.isEmpty() ?
+                Collections.emptySet() :
+                OVALCachingFactory.getServersWithErrata(user.getId());
+        Map<String, Boolean> cpeAvailabilityCache = new HashMap<>();
+        Set<Long> ovalServerIds = clients.stream()
+                .filter(clientServer -> {
+                    String cpe = clientServer.getCpe();
+                    return ovalEnabled && cpe != null &&
+                            cpeAvailabilityCache.computeIfAbsent(cpe,
+                                    value -> isCpeCoveredByOval(value, ovalPlatformCpes));
+                })
+                .map(Server::getId)
+                .collect(Collectors.toSet());
+        Map<Long, List<VulnerablePackage>> vulnerablePackagesByServer =
+                OVALCachingFactory.getVulnerablePackagesByProductAndCve(ovalServerIds, cveIdentifier);
+
         for (Server clientServer : clients) {
             CVEAuditSystemBuilder auditWithChannelsResult = null;
             CVEAuditSystemBuilder auditWithOVALResult = null;
 
-            if (ConfigDefaults.get().isOvalEnabledForCveAudit() && checkOVALAvailability(clientServer)) {
-                auditWithOVALResult =
-                        doAuditSystem(cveIdentifier, resultsBySystem.get(clientServer.getId()), clientServer);
+            if (ovalServerIds.contains(clientServer.getId())) {
+                auditWithOVALResult = doAuditSystem(resultsBySystem.get(clientServer.getId()),
+                        clientServer, vulnerablePackagesByServer.getOrDefault(clientServer.getId(),
+                                Collections.emptyList()));
             }
 
-            if (checkChannelsErrataAvailability(clientServer)) {
+            if (serversWithErrata.contains(clientServer.getId())) {
                 auditWithChannelsResult =
                         CVEAuditManager.doAuditSystem(clientServer.getId(), resultsBySystem.get(clientServer.getId()));
             }
@@ -143,6 +165,11 @@ public class CVEAuditManagerOVAL {
         return result;
     }
 
+    private static boolean isCpeCoveredByOval(String cpe, Set<String> ovalPlatformCpes) {
+        return cpe != null && ovalPlatformCpes.stream()
+                .anyMatch(ovalCpe -> cpe.startsWith(ovalCpe) || ovalCpe.startsWith(cpe));
+    }
+
     /**
      * Check if we have any OVAL vulnerability records for the given client OS in the database.
      *
@@ -180,6 +207,13 @@ public class CVEAuditManagerOVAL {
     public static CVEAuditSystemBuilder doAuditSystem(String cveIdentifier,
                                                       List<CVEAuditManager.CVEPatchStatus> results,
                                                       Server clientServer) {
+        return doAuditSystem(results, clientServer,
+                OVALCachingFactory.getVulnerablePackagesByProductAndCve(clientServer.getId(), cveIdentifier));
+    }
+
+    private static CVEAuditSystemBuilder doAuditSystem(List<CVEAuditManager.CVEPatchStatus> results,
+                                                      Server clientServer,
+                                                      List<VulnerablePackage> clientProductVulnerablePackages) {
         // It's possible to find more than one patch for a particular package in the available channels. It's NOT
         // necessary to apply all of them because they will have the same outcome i.e. patch the package
         // instead we need to choose only one. To choose the one, we rank patches based on the channel they come
@@ -189,9 +223,6 @@ public class CVEAuditManagerOVAL {
 
         CVEAuditSystemBuilder cveAuditServerBuilder = new CVEAuditSystemBuilder(clientServer.getId());
         cveAuditServerBuilder.setSystemName(clientServer.getName());
-
-        List<VulnerablePackage> clientProductVulnerablePackages =
-                OVALCachingFactory.getVulnerablePackagesByProductAndCve(clientServer.getId(), cveIdentifier);
 
         LOG.debug("Client vulnerable packages: {}", clientProductVulnerablePackages);
 
