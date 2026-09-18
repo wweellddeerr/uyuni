@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Mon Aug 24 13:54:56 CEST 2026 - marina.latini@suse.com
+
+- version 5.2.10-0
+  * Pre-filter errata in system_applyerrata to avoid using
+    API calls for all existing errata (bsc#1267261)
+  * Fix spacecmd build on SUSE Linux Micro 6
+
+-------------------------------------------------------------------
 Wed Jun 17 14:18:55 CEST 2026 - michael.calmer@suse.com
 
 - version 5.2.9-0

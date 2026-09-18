@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Fri Aug 21 12:01:15 CEST 2026 - antonio.garofalo@suse.com
+
+- version 5.2.13
+  * Automatically set the log timezone for TZ env (bsc#1267871)
+  * Increase start-period and timeout (bsc#1271124)
+  * Check disk space on startup
+
+-------------------------------------------------------------------
 Fri Jun 26 14:42:55 CEST 2026 - michael.calmer@suse.com
 
 - version 5.2.12

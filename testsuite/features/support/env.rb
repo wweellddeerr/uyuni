@@ -10,8 +10,8 @@ require 'capybara'
 require 'capybara/cucumber'
 require 'cucumber'
 # require 'simplecov'
-require 'minitest/autorun'
-require 'minitest/unit'
+require 'minitest'
+require 'minitest/assertions'
 require 'securerandom'
 require 'capybara/playwright'
 require 'multi_test'
@@ -150,11 +150,10 @@ Capybara.server_port = 8888 + ENV['TEST_ENV_NUMBER'].to_i
 $stdout.puts "Capybara APP Host: #{Capybara.app_host}:#{Capybara.server_port}"
 
 # enable minitest assertions in steps
-World(MiniTest::Assertions)
+World(Minitest::Assertions)
 
 # Initialize the API client
-$api_test = new_api_client
-
+$api_test = new_api_client unless ENV.key?('UYUNI_NOT_INSTALLED') && ENV['UYUNI_NOT_INSTALLED'] == 'true'
 # Init CodeCoverage Handler
 $code_coverage = CodeCoverage.new if $code_coverage_mode
 
@@ -293,6 +292,13 @@ AfterAll do
   process_code_coverage
 end
 
+After('@install_mlm_on_rke2') do |scenario|
+  next unless scenario.passed?
+
+  bashrc_file = '/root/.bashrc'
+  get_target('localhost').run("sed -i 's/export UYUNI_NOT_INSTALLED=true/export UYUNI_NOT_INSTALLED=false/g' #{bashrc_file}")
+end
+
 # get the Cobbler log output when it fails
 After('@scope_cobbler') do |scenario|
   if scenario.failed?
@@ -408,7 +414,7 @@ Before('@skip_known_issue') do
 end
 
 # Create a user for each feature
-Before do |scenario|
+Before('not @no_user_creation') do |scenario|
   feature_path = scenario.location.file
   $feature_filename = feature_path.split(%r{(\.feature|/)})[-2]
   next if get_context('user_created') == true
@@ -449,8 +455,8 @@ Before('@run_if_proxy_transactional_or_slmicro62_minion') do
   skip_this_scenario unless suse_proxy_transactional? || ENV.key?(ENV_VAR_BY_HOST['slmicro62_minion'])
 end
 
-Before('@run_if_proxy_not_transactional_or_sles15sp7_minion') do
-  skip_this_scenario unless suse_proxy_non_transactional? || ENV.key?(ENV_VAR_BY_HOST['sles15sp7_minion'])
+Before('@run_if_proxy_not_transactional_or_sles15sp7_minion_or_monitoring_server') do
+  skip_this_scenario unless suse_proxy_non_transactional? || ENV.key?(ENV_VAR_BY_HOST['sles15sp7_minion']) || ENV.key?(ENV_VAR_BY_HOST['monitoring_server'])
 end
 
 Before('@sle_minion') do
@@ -547,12 +553,36 @@ Before('@oracle10_sshminion') do
   skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['oracle10_sshminion']
 end
 
+Before('@rhel7_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['rhel7_minion']
+end
+
+Before('@rhel7_sshminion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['rhel7_sshminion']
+end
+
+Before('@rhel8_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['rhel8_minion']
+end
+
+Before('@rhel8_sshminion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['rhel8_sshminion']
+end
+
 Before('@rhel9_minion') do
   skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['rhel9_minion']
 end
 
 Before('@rhel9_sshminion') do
   skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['rhel9_sshminion']
+end
+
+Before('@rhel10_minion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['rhel10_minion']
+end
+
+Before('@rhel10_sshminion') do
+  skip_this_scenario unless ENV.key? ENV_VAR_BY_HOST['rhel10_sshminion']
 end
 
 Before('@rocky8_minion') do
@@ -805,8 +835,28 @@ Before('@skip_for_transactional_minion') do |scenario|
   skip_this_scenario if scenario.location.file.include?('slemicro') || scenario.location.file.include?('slmicro')
 end
 
+Before('@skip_for_rhel_container') do |scenario|
+  skip_this_scenario if scenario.location.file.match?(/rhel\d+_(ssh)?minion/)
+end
+
+Before('@skip_for_rhel7') do |scenario|
+  skip_this_scenario if scenario.location.file.include? 'rhel7'
+end
+
+Before('@skip_for_rhel8') do |scenario|
+  skip_this_scenario if scenario.location.file.include? 'rhel8'
+end
+
+Before('@skip_for_rhel9') do |scenario|
+  skip_this_scenario if scenario.location.file.include? 'rhel9'
+end
+
+Before('@skip_for_rhel10') do |scenario|
+  skip_this_scenario if scenario.location.file.include? 'rhel10'
+end
+
 Before('@skip_for_rhel10_like') do |scenario|
-  rhel10_minion_tags = %w[@alma10_minion @alma10_sshminion @oracle10_minion @oracle10_sshminion @rocky10_minion @rocky10_sshminion]
+  rhel10_minion_tags = %w[@alma10_minion @alma10_sshminion @oracle10_minion @oracle10_sshminion @rhel10_minion @rhel10_sshminion @rocky10_minion @rocky10_sshminion]
   skip_this_scenario if rhel10_minion_tags.any? { |tag| scenario.source_tag_names.include?(tag) }
 end
 

@@ -226,6 +226,7 @@ public class ConfigDefaults {
      * Taskomatic defaults
      */
     private static final String TASKOMATIC_CHANNEL_REPODATA_WORKERS = "java.taskomatic_channel_repodata_workers";
+    private static final String TASKOMATIC_CLMDIFF_WORKERS = "java.taskomatic_clmdiff_workers";
 
     /**
      * HTTP proxy defaults
@@ -1043,6 +1044,10 @@ public class ConfigDefaults {
         return Config.get().getInt(TASKOMATIC_CHANNEL_REPODATA_WORKERS, 1);
     }
 
+    public int getTaskoClmDiffWorkers() {
+        return Config.get().getInt(TASKOMATIC_CLMDIFF_WORKERS, 1);
+    }
+
     /**
      * Gets the proxy host.
      * @return the proxy host
@@ -1398,4 +1403,5 @@ public class ConfigDefaults {
     public String getScapXccdfResumeXsl() {
         return Config.get().getString(SCAP_XCCDF_RESUME_XSL, DEFAULT_SCAP_XCCDF_RESUME_XSL);
     }
+
 }

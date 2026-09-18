@@ -461,6 +461,24 @@ Feature: Synchronize products in the products page of the Setup Wizard
     And I wait until I see "openSUSE Leap 16.0 aarch64" product has been added
     And I wait until all synchronized channels for "leap16.0-aarch64" have finished
 
+# needed to test Leap 16.0 ARM to SLE 16.0 ARM migrations in BV
+@susemanager
+@opensuse160arm_minion
+  Scenario: Add SUSE Linux Enterprise Server 16.0 for ARM
+    Given I am authorized for the "Admin" section
+    When I follow the left menu "Admin > Setup Wizard > Products"
+    And I wait until I do not see "currently running" text
+    And I wait until I do not see "Loading" text
+    And I enter "SUSE Linux Enterprise Server 16.0" as the filtered product description
+    And I wait until I see "SUSE Linux Enterprise Server 16.0 aarch64" text
+    And I open the sub-list of the product "SUSE Linux Enterprise Server 16.0 aarch64"
+    When I select "SUSE Linux Enterprise Server 16.0 aarch64" as a product
+    Then I should see the "SUSE Linux Enterprise Server 16.0 aarch64" selected
+    When I click the Add Product button
+    And I wait until I see "Selected channels/products were scheduled successfully for syncing." text
+    And I wait until I see "SUSE Linux Enterprise Server 16.0 aarch64" product has been added
+    And I wait until all synchronized channels for "sles16-aarch64" have finished
+
 @uyuni
 @opensuse160arm_minion
   Scenario: Add openSUSE 16.0 for ARM Uyuni Client tools
@@ -648,6 +666,35 @@ Feature: Synchronize products in the products page of the Setup Wizard
     And I wait until I see "Oracle Linux 10 x86_64" product has been added
     And I wait until all synchronized channels for "oraclelinux10" have finished
 
+@susemanager
+@rhel7_minion
+  Scenario: Add RHEL 7
+    Given I am authorized for the "Admin" section
+    When I follow the left menu "Admin > Setup Wizard > Products"
+    And I wait until I do not see "currently running" text
+    And I wait until I do not see "Loading" text
+    And I enter "RHEL7 Base x86_64" as the filtered product description
+    And I select "RHEL7 Base x86_64" as a product
+    Then I should see the "RHEL7 Base x86_64" selected
+    When I click the Add Product button
+    And I wait until I see "RHEL7 Base x86_64" product has been added
+    And I wait until all synchronized channels for "el7" have finished
+
+@susemanager
+@rhel8_minion
+  Scenario: Add RHEL 8
+    Given I am authorized for the "Admin" section
+    When I follow the left menu "Admin > Setup Wizard > Products"
+    And I wait until I do not see "currently running" text
+    And I wait until I do not see "Loading" text
+    And I enter "RHEL and Liberty 8 Base" as the filtered product description
+    And I select "RHEL and Liberty 8 Base" as a product
+    Then I should see the "RHEL and Liberty 8 Base" selected
+    When I click the Add Product button
+    And I wait until I see "RHEL and Liberty 8 Base" product has been added
+    And I wait until all synchronized channels for "el8" have finished
+
+@susemanager
 @rhel9_minion
   Scenario: Add RHEL 9
     Given I am authorized for the "Admin" section
@@ -660,6 +707,20 @@ Feature: Synchronize products in the products page of the Setup Wizard
     When I click the Add Product button
     And I wait until I see "RHEL and Liberty 9 Base" product has been added
     And I wait until all synchronized channels for "el9" have finished
+
+@susemanager
+@rhel10_minion
+  Scenario: Add RHEL 10
+    Given I am authorized for the "Admin" section
+    When I follow the left menu "Admin > Setup Wizard > Products"
+    And I wait until I do not see "currently running" text
+    And I wait until I do not see "Loading" text
+    And I enter "RHEL and Liberty 10 Base" as the filtered product description
+    And I select "RHEL and Liberty 10 Base" as a product
+    Then I should see the "RHEL and Liberty 10 Base" selected
+    When I click the Add Product button
+    And I wait until I see "RHEL and Liberty 10 Base" product has been added
+    And I wait until all synchronized channels for "el10" have finished
 
 @susemanager
 @rocky8_minion
@@ -820,7 +881,7 @@ Feature: Synchronize products in the products page of the Setup Wizard
     And I wait until the channel "sl-micro-6.2-devel-uyuni-client-x86_64" has been synced
 
 @susemanager
-@run_if_proxy_not_transactional_or_sles15sp7_minion
+@run_if_proxy_not_transactional_or_sles15sp7_minion_or_monitoring_server
   Scenario: Add SUSE Linux Enterprise Server 15 SP7
     Given I am authorized for the "Admin" section
     When I follow the left menu "Admin > Setup Wizard > Products"

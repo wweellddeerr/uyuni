@@ -1,4 +1,15 @@
 -------------------------------------------------------------------
+Fri Aug 21 12:14:02 CEST 2026 - antonio.garofalo@suse.com
+
+- version 5.2.15-0
+  * Propagate cert validation errors to UI (bsc#1271332)
+  * Fix cleanup timeout when deleting minions (bsc#1258567)
+  * Fix salt deletion on SSH minions (bsc#1274023)
+  * Set podman secrets for proxy directly from salt
+  * Fix migration of jmx conf (bsc#1268755)
+  * Remove unused udevdb salt module as upstream udev is used
+
+-------------------------------------------------------------------
 Fri Jul 03 15:43:34 CEST 2026 - michael.calmer@suse.com
 
 - version 5.2.14-0

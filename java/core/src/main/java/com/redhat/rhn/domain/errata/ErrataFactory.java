@@ -1,4 +1,5 @@
 /*
+ * Copyright (c) 2019--2026 SUSE LLC
  * Copyright (c) 2009--2018 Red Hat, Inc.
  *
  * This software is licensed to you under the GNU General Public License,
@@ -11,9 +12,6 @@
  * Red Hat trademarks are not licensed under GPLv2. No permission is
  * granted to use or replicate Red Hat trademarks that are incorporated
  * in this software or its documentation.
- */
-/*
- * Copyright (c) 2010 SUSE LLC
  */
 package com.redhat.rhn.domain.errata;
 
@@ -46,8 +44,6 @@ import com.redhat.rhn.frontend.xmlrpc.InvalidChannelException;
 import com.redhat.rhn.manager.channel.ChannelManager;
 import com.redhat.rhn.manager.errata.ErrataManager;
 import com.redhat.rhn.manager.errata.cache.ErrataCacheManager;
-
-import com.suse.utils.Opt;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -232,7 +228,7 @@ public class ErrataFactory extends HibernateFactory {
                                             User user, boolean inheritPackages, boolean performPostActions) {
         List<com.redhat.rhn.domain.errata.Errata> toReturn = new ArrayList<>();
         for (Errata errata : errataList) {
-            errata.addChannel(chan);
+            chan.addErrata(errata);
             ErrataManager.replaceChannelNotifications(errata.getId(), chan.getId(), new Date());
 
             Set<Package> packagesToPush = new HashSet<>();
@@ -259,8 +255,7 @@ public class ErrataFactory extends HibernateFactory {
 
             for (PackageOverview packOver : packs) {
                 //lookup the Package object
-                Package pack = PackageFactory.lookupByIdAndUser(
-                        packOver.getId(), user);
+                Package pack = PackageFactory.lookupByIdAndUser(packOver.getId(), user);
                 packagesToPush.add(pack);
             }
 
@@ -284,7 +279,7 @@ public class ErrataFactory extends HibernateFactory {
      */
     public static void addToChannel(Errata errata, Channel chan, User user,
                                       Set<Package> packages) {
-        errata.addChannel(chan);
+        chan.addErrata(errata);
         addErrataPackagesToChannel(errata, chan, user, packages);
         ChannelManager.refreshWithNewestPackages(chan, "java::addErrataPackagesToChannel");
     }
@@ -307,12 +302,11 @@ public class ErrataFactory extends HibernateFactory {
                     " has NULL path, please run spacewalk-data-fsck");
             }
 
-            Optional<ErrataFile> fileOpt =
-                    ErrataFactory.lookupErrataFile(errata.getId(), pack.getPath());
+            ErrataFile errataFile = ErrataFactory.lookupErrataFile(errata.getId(), pack.getPath())
+                .map(ef -> addErrataFile(ef, pack, chan))
+                .orElseGet(() -> createErrataFile(pack, errata, chan));
 
-            singleton.saveObject(Opt.fold(fileOpt, () -> createErrataFile(pack, errata, chan),
-                    ef -> addErrataFile(ef, pack, chan)));
-
+            singleton.saveObject(errataFile);
         }
         ChannelFactory.save(chan);
 
@@ -1109,7 +1103,7 @@ public class ErrataFactory extends HibernateFactory {
         cloned.setAdvisoryStatus(original.getAdvisoryStatus());
 
         // Copy the packages
-        cloned.setPackages(new HashSet<>(original.getPackages()));
+        cloned.replacePackages(new HashSet<>(original.getPackages()));
 
         // Copy the keywords
         original.getKeywords().forEach(k -> cloned.addKeyword(k));

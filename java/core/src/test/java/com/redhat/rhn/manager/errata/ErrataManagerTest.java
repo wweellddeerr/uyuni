@@ -1,4 +1,5 @@
 /*
+ * Copyright (c) 2026 SUSE LLC
  * Copyright (c) 2009--2017 Red Hat, Inc.
  *
  * This software is licensed to you under the GNU General Public License,
@@ -167,7 +168,7 @@ public class ErrataManagerTest extends JMockBaseTestCaseWithUser {
         e.addPackage(p);
         ErrataFactory.save(e);
 
-        channel.ifPresent(e::addChannel);
+        channel.ifPresent(c -> c.addErrata(e));
 
         WebSession session = WebSessionFactory.createSession();
         WebSessionFactory.save(session);
@@ -250,6 +251,29 @@ public class ErrataManagerTest extends JMockBaseTestCaseWithUser {
             ErrataManager.relevantErrataByType(user, pc, ErrataFactory.ERRATA_TYPE_BUG);
         assertNotNull(errata);
         assertFalse(errata.isEmpty());
+    }
+
+    @Test
+    public void testRelevantErrataListElaboratesCves() throws Exception {
+        User user = UserTestUtils.createUser(this);
+        Errata errata = createRelevantErrataWithCve(user, ErrataFactory.ERRATA_TYPE_BUG, "CVE-2026-3333");
+
+        DataResult<ErrataOverview> result = ErrataManager.relevantErrata(user);
+        result.elaborate();
+
+        assertEquals("CVE-2026-3333", getOverview(result, errata).getCveNames());
+    }
+
+    @Test
+    public void testRelevantErrataByTypeElaboratesCves() throws Exception {
+        User user = UserTestUtils.createUser(this);
+        Errata errata = createRelevantErrataWithCve(user, ErrataFactory.ERRATA_TYPE_BUG, "CVE-2026-4444");
+
+        DataResult<ErrataOverview> result = ErrataManager.relevantErrataByType(
+                user, null, ErrataFactory.ERRATA_TYPE_BUG);
+        result.elaborate();
+
+        assertEquals("CVE-2026-4444", getOverview(result, errata).getCveNames());
     }
 
     @Test
@@ -1656,12 +1680,12 @@ public class ErrataManagerTest extends JMockBaseTestCaseWithUser {
         Channel channel = ChannelTestUtils.createBaseChannel(user);
 
         Errata patch = ErrataFactoryTest.createTestErrata(user.getOrg().getId());
-        patch.addChannel(channel);
+        channel.addErrata(patch);
         ErrataFactory.save(patch);
 
         Errata retractedPatch = ErrataFactoryTest.createTestErrata(user.getOrg().getId());
         retractedPatch.setAdvisoryStatus(AdvisoryStatus.RETRACTED);
-        retractedPatch.addChannel(channel);
+        channel.addErrata(retractedPatch);
         ErrataFactory.save(retractedPatch);
 
         DataResult<ErrataOverview> patches = ErrataManager.allErrata(user);
@@ -1683,5 +1707,19 @@ public class ErrataManagerTest extends JMockBaseTestCaseWithUser {
         ));
         olderPkg.setPackageName(fromPkg.getPackageName());
         return olderPkg;
+    }
+
+    private Errata createRelevantErrataWithCve(User user, String errataType, String cveName) throws Exception {
+        Map<String, Object> cache = ErrataCacheManagerTest.createServerNeededCache(user, errataType);
+        Errata errata = (Errata) cache.get("errata");
+        errata.setCves(Set.of(ErrataTestUtils.createTestCve(cveName)));
+        return TestUtils.saveAndFlush(errata);
+    }
+
+    private ErrataOverview getOverview(DataResult<ErrataOverview> result, Errata errata) {
+        return result.stream()
+                .filter(overview -> overview.getId().equals(errata.getId()))
+                .findFirst()
+                .orElseThrow();
     }
 }

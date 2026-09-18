@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Mon Aug 24 14:08:41 CEST 2026 - antonio.garofalo@suse.com
+
+- version 5.2.10
+  * Use custom entry id for grub saltboot entries
+    (bsc#1258382, bsc#1208800)
+
+-------------------------------------------------------------------
 Thu Aug 20 15:59:10 CEST 2026 - antonio.garofalo@suse.com
 
 - version 5.2.9

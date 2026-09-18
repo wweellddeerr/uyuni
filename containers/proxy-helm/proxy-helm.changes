@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Fri Aug 21 12:00:15 CEST 2026 - antonio.garofalo@suse.com
+
+- version 5.2.10
+  * Use the appVersion of the chart as the default tag for images
+    (bsc#1271902)
+
+-------------------------------------------------------------------
 Tue Jun 30 11:04:57 CEST 2026 - michael.calmer@suse.com
 
 - version 5.2.9

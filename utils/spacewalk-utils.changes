@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Fri Aug 21 12:10:33 CEST 2026 - antonio.garofalo@suse.com
+
+- version 5.2.8-0
+  * Taskotop now handles timezone (bsc#1267871)
+
+-------------------------------------------------------------------
 Wed Jun 17 14:15:06 CEST 2026 - michael.calmer@suse.com
 
 - version 5.2.7-0

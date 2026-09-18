@@ -1,4 +1,18 @@
 -------------------------------------------------------------------
+Tue Aug 25 18:30:11 CEST 2026 - marina.latini@suse.com
+
+- version 5.2.11
+  * CVE-2026-71400: Remove cobbler_api endpoint from public interface
+    (bsc#1274613, bsc#1274775)
+
+-------------------------------------------------------------------
+Mon Aug 24 14:28:30 CEST 2026 - antonio.garofalo@suse.com
+
+- version 5.2.10
+  * Use the appVersion of the chart as the default tag for images
+    (bsc#1271902)
+
+-------------------------------------------------------------------
 Tue Jun 30 11:05:32 CEST 2026 - michael.calmer@suse.com
 
 - version 5.2.9

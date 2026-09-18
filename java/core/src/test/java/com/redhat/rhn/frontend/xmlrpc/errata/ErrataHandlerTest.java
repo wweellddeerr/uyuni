@@ -1,4 +1,5 @@
 /*
+ * Copyright (c) 2026 SUSE LLC
  * Copyright (c) 2009--2014 Red Hat, Inc.
  *
  * This software is licensed to you under the GNU General Public License,
@@ -33,6 +34,7 @@ import com.redhat.rhn.FaultException;
 import com.redhat.rhn.common.db.datasource.DataResult;
 import com.redhat.rhn.common.db.datasource.Row;
 import com.redhat.rhn.domain.channel.Channel;
+import com.redhat.rhn.domain.channel.ChannelFactory;
 import com.redhat.rhn.domain.channel.ChannelFactoryTest;
 import com.redhat.rhn.domain.channel.ChannelTestUtility;
 import com.redhat.rhn.domain.errata.AdvisoryStatus;
@@ -116,7 +118,7 @@ public class ErrataHandlerTest extends BaseHandlerTestCase {
         // clone a channel with its errata, and the errata's packages are EMPTY
         Errata emptyErrata = ErrataFactoryTest.createTestErrata(admin.getOrg().getId());
 
-        emptyErrata.setPackages(new HashSet<>());
+        emptyErrata.clearPackages();
         ErrataFactory.save(emptyErrata);
 
         foundErrata = ErrataFactory.lookupById(emptyErrata.getId());
@@ -482,7 +484,7 @@ public class ErrataHandlerTest extends BaseHandlerTestCase {
 
         //unique errata for user's org. Applicable to one user channel
         Channel channel1 = ChannelFactoryTest.createTestChannel(admin);
-        userErrata.addChannel(channel1);
+        channel1.addErrata(userErrata);
 
         ErrataFactory.save(userErrata);
 
@@ -500,7 +502,7 @@ public class ErrataHandlerTest extends BaseHandlerTestCase {
         Errata vendorErrata = ErrataFactoryTest.createTestErrata(null, Optional.of(userErrata.getAdvisory()));
 
         Channel channel2 = ChannelFactoryTest.createTestChannel(admin);
-        vendorErrata.addChannel(channel2);
+        channel2.addErrata(vendorErrata);
 
         ErrataFactory.save(vendorErrata);
 
@@ -913,6 +915,29 @@ public class ErrataHandlerTest extends BaseHandlerTestCase {
         channel.setOrg(admin.getOrg());
         List<String> channels = List.of(channel.getLabel());
         Errata published = handler.publish(admin, e.getAdvisoryName(), channels);
+
+        assertEquals(e.getAdvisory(), published.getAdvisory());
+    }
+
+    @Test
+    public void publishCanUpdateExistingErrata() throws Exception {
+        Errata e = ErrataFactoryTest.createTestErrata(admin.getOrg().getId());
+
+        Channel channel = ChannelFactoryTest.createBaseChannel(admin);
+        String channelLabel = channel.getLabel();
+        channel.setOrg(admin.getOrg());
+        e.getPackages().forEach(p -> channel.getPackages().add(p));
+        ChannelFactory.save(channel);
+
+        TestUtils.flushAndClearSession();
+
+        // Publish the first time to create it
+        handler.publish(admin, e.getAdvisoryName(), List.of(channelLabel));
+
+        TestUtils.flushAndClearSession();
+
+        // Publish a second to time to trigger the update code path
+        Errata published = handler.publish(admin, e.getAdvisoryName(), List.of(channelLabel));
 
         assertEquals(e.getAdvisory(), published.getAdvisory());
     }

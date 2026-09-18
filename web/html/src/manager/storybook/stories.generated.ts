@@ -1,7 +1,7 @@
 /**
  * NB! This is a generated file!
  * Any changes you make here will be lost.
- * See: web/html/src/build/plugins/generate-stories-plugin.js
+ * See: web/html/src/build/webpack/plugins/generate-stories-plugin.js
  */
 
 /* eslint-disable */
@@ -424,6 +424,18 @@ export const components_toastr_toastr_example_tsx = {
   groupName: "toastr",
   component: components_toastr_toastr_example_tsx_component,
   raw: components_toastr_toastr_example_tsx_raw,
+};
+
+// @ts-ignore
+import components_toggle_button_group_toggle_button_group_example_tsx_component from "components/toggle-button-group/toggle-button-group.example.tsx";
+import components_toggle_button_group_toggle_button_group_example_tsx_raw from "components/toggle-button-group/toggle-button-group.example.tsx?raw";
+
+export const components_toggle_button_group_toggle_button_group_example_tsx = {
+  path: "components/toggle-button-group/toggle-button-group.example.tsx",
+  title: "toggle-button-group.example.tsx",
+  groupName: "toggle-button-group",
+  component: components_toggle_button_group_toggle_button_group_example_tsx_component,
+  raw: components_toggle_button_group_toggle_button_group_example_tsx_raw,
 };
 
 // @ts-ignore

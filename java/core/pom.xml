@@ -16,7 +16,7 @@
     <parent>
         <groupId>org.uyuni-project</groupId>
         <artifactId>spacewalk-java</artifactId>
-        <version>5.2.19</version>
+        <version>5.2.22</version>
     </parent>
 
     <groupId>org.uyuni-project.spacewalk-java</groupId>
@@ -146,11 +146,11 @@
             <artifactId>jade4j</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.suse</groupId>
+            <groupId>org.uyuni-project.dependencies</groupId>
             <artifactId>java-saml</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.suse</groupId>
+            <groupId>org.uyuni-project.dependencies</groupId>
             <artifactId>java-saml-core</artifactId>
         </dependency>
         <dependency>

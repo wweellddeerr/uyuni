@@ -20071,6 +20071,12 @@ The Tree Path, Base Channel, and Installer Generation should always match. This 
           <context context-type="sourcefile">/rhn/systems/details/configuration/ConfigChannelList.do</context>
         </context-group>
         </trans-unit>
+        <trans-unit id="exportcolumn.cveNames">
+          <source>CVEs</source>
+        <context-group name="ctx">
+          <context context-type="sourcefile">/rhn/errata/RelevantErrata</context>
+        </context-group>
+        </trans-unit>
         <trans-unit id="exportcolumn.affectedSystemCount">
           <source>Systems Affected</source>
         <context-group name="ctx">
@@ -23285,6 +23291,25 @@ given channel.</source>
           <context context-type="sourcefile">/rhn/channels/manage/Delete.do</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="channel.delete.jsp.actkeysheader" xml:space="preserve">
+        <source>Activation Keys</source>
+            <context-group name="ctx">
+          <context context-type="sourcefile">/rhn/channels/manage/Delete.do</context>
+        </context-group>
+      </trans-unit>
+        <trans-unit id="channel.delete.jsp.actkeysparagraph" xml:space="preserve">
+        <source>Channel deletion will remove any Activation Key that has {0} as a base channel.
+         </source>
+            <context-group name="ctx">
+          <context context-type="sourcefile">/rhn/channels/manage/Delete.do</context>
+        </context-group>
+      </trans-unit>
+        <trans-unit id="channel.delete.jsp.actkeysaffected" xml:space="preserve">
+        <source>Activation Keys Affected:</source>
+            <context-group name="ctx">
+          <context context-type="sourcefile">/rhn/channels/manage/Delete.do</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="channel.delete.jsp.unsubheader" xml:space="preserve">
         <source>Unsubscribe Systems</source>
         <context-group name="ctx">
@@ -23590,6 +23615,12 @@ given channel.</source>
       </trans-unit>
       <trans-unit id="bunch.jsp.description.channel-repodata-bunch" xml:space="preserve">
         <source>Generates channel repodata</source>
+        <context-group name="ctx">
+          <context context-type="sourcefile">/rhn/admin/BunchDetail.do</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bunch.jsp.description.clm-diff-bunch" xml:space="preserve">
+        <source>Generates differences for CLM channels</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/admin/BunchDetail.do</context>
         </context-group>
@@ -24068,6 +24099,9 @@ given channel.</source>
       </trans-unit>
       <trans-unit id="task.status.channel-repodata" xml:space="preserve">
         <source>Channel Repodata</source>
+      </trans-unit>
+      <trans-unit id="task.status.clm-diff" xml:space="preserve">
+        <source>Calculate CLM Differences</source>
       </trans-unit>
       <trans-unit id="task.status.cleanup-timeseries-data" xml:space="preserve">
         <source>TimeSeries Cleanup</source>
@@ -24923,9 +24957,6 @@ given channel.</source>
       </trans-unit>
       <trans-unit id="spmigration.jsp.error.unsupported" xml:space="preserve">
         <source>Product Migrations are supported for &lt;strong&gt;SUSE&lt;/strong&gt; systems only.</source>
-      </trans-unit>
-      <trans-unit id="spmigration.jsp.error.update-zypp-plugin" xml:space="preserve">
-        <source>Product Migrations are currently not supported for this system, please install the latest version of &lt;strong&gt;zypp-plugin-spacewalk&lt;/strong&gt;.</source>
       </trans-unit>
       <trans-unit id="spmigration.jsp.error.scheduled" xml:space="preserve">
         <source>A Product Migration is already &lt;a href="/rhn/systems/details/history/Event.do?sid={0}&amp;aid={1}"&gt;scheduled&lt;/a&gt; for this system.</source>
