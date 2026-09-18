@@ -12245,6 +12245,13 @@ To amend this situation, please add SCC credentials &lt;a href="/rhn/admin/setup
         <source>The host key document is not a valid PEM certificate.</source>
         <target state="final">호스트 키 문서가 유효한 PEM 인증서가 아닙니다.</target>
       </trans-unit>
-    </body>
+    <trans-unit id="system.entitle.added.peripheral_server" xml:space="preserve">
+        <source>&lt;strong&gt;Peripheral server&lt;/strong&gt; type has been applied.</source>
+        <context-group name="ctx">
+          <context context-type="sourcefile">/rhn/systems/details/Overview.do</context>
+        </context-group>
+      <target state="new"/>
+  </trans-unit>
+      </body>
   </file>
 </xliff>
