@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-20 16:55+0200\n"
-"PO-Revision-Date: 2026-08-17 02:13+0000\n"
+"PO-Revision-Date: 2026-08-30 01:26+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German <https://l10n.opensuse.org/projects/uyuni/spacecmd-5-2/de/>\n"
 "Language: de\n"
@@ -5985,7 +5985,7 @@ msgstr ""
 
 #: ../src/spacecmd/system.py:83 ../src/spacecmd/system.py:4143
 msgid "Package"
-msgstr ""
+msgstr "Paket"
 
 #: ../src/spacecmd/system.py:84
 msgid "This System"

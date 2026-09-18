@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-20 16:55+0200\n"
+"POT-Creation-Date: 2026-09-18 10:25+0200\n"
 "PO-Revision-Date: 2026-08-20 03:13+0000\n"
 "Last-Translator: Carina Hagl <vistatec_pm@sunflare.co.jp>\n"
 "Language-Team: Japanese <https://l10n.opensuse.org/projects/uyuni/web-5-2/ja/>\n"
@@ -95,35 +95,35 @@ msgstr "スキャンなし"
 msgid "Formula saved. Applying the highstate is not needed for this formula."
 msgstr "formula を保存しました。この formula に対する highstate の適用は不要です。"
 
-#: ../html/src/components/FormulaForm.tsx:134
+#: ../html/src/components/FormulaForm.tsx:136
 msgid "Multiple Group formulas detected. Only one formula for \"{name}\" can be used on each system!"
 msgstr "複数のグループformulaが検出されました。各システムに対しては1つの\"{name}\"向けformulaのみを設定できます。"
 
-#: ../html/src/components/FormulaForm.tsx:165
+#: ../html/src/components/FormulaForm.tsx:167
 msgid "Please input required fields: {fields}"
 msgstr "必須の項目に入力を行なってください: {fields}"
 
-#: ../html/src/components/FormulaForm.tsx:168
+#: ../html/src/components/FormulaForm.tsx:170
 msgid "Invalid format of fields: {fields}"
 msgstr "項目の書式が正しくありません: {fields}"
 
-#: ../html/src/components/FormulaForm.tsx:210
+#: ../html/src/components/FormulaForm.tsx:215
 msgid "On this page you can configure Salt Formulas to automatically install and configure software."
 msgstr "このページでは Salt Formula を設定して、ソフトウェアの自動インストールと設定を行なうことができます。"
 
-#: ../html/src/components/FormulaForm.tsx:265
+#: ../html/src/components/FormulaForm.tsx:270
 msgid "Expand All Sections"
 msgstr "すべてのセクションを展開"
 
-#: ../html/src/components/FormulaForm.tsx:272
+#: ../html/src/components/FormulaForm.tsx:277
 msgid "Collapse All Sections"
 msgstr "すべてのセクションを折りたたむ"
 
-#: ../html/src/components/FormulaForm.tsx:337
+#: ../html/src/components/FormulaForm.tsx:343
 msgid "Unnamed"
 msgstr "名前なし"
 
-#: ../html/src/components/FormulaForm.tsx:346
+#: ../html/src/components/FormulaForm.tsx:352
 msgid "Search by formula's group name"
 msgstr "数式のグループ名で検索"
 
@@ -131,27 +131,27 @@ msgstr "数式のグループ名で検索"
 msgid "new action chain"
 msgstr "新しい動作チェーン"
 
-#: ../html/src/components/action-schedule.tsx:197
+#: ../html/src/components/action-schedule.tsx:210
 msgid "There are multiple maintenance schedules for selected systems. Make sure that systems in the set use at most 1 maintenance schedule if you want to schedule by date or maintenance window."
 msgstr "選択したシステムには複数のメンテナンススケジュールが存在しています。日付やメンテナンスウィンドウでスケジュールを設定したい場合は、システムに対して最大でも 1 つのメンテナンススケジュールのみを設定してください。"
 
-#: ../html/src/components/action-schedule.tsx:204
+#: ../html/src/components/action-schedule.tsx:217
 msgid "No upcoming maintenance windows"
 msgstr "次のメンテナンスウィンドウはありません"
 
-#: ../html/src/components/action-schedule.tsx:249
+#: ../html/src/components/action-schedule.tsx:262
 msgid "Earliest:"
 msgstr "指定時刻以降にスケジュール:"
 
-#: ../html/src/components/action-schedule.tsx:249
+#: ../html/src/components/action-schedule.tsx:262
 msgid "Maintenance Window:"
 msgstr "メンテナンスウィンドウ:"
 
-#: ../html/src/components/action-schedule.tsx:279
+#: ../html/src/components/action-schedule.tsx:292
 msgid "Add to:"
 msgstr "以下に追加:"
 
-#: ../html/src/components/action-schedule.tsx:297
+#: ../html/src/components/action-schedule.tsx:310
 msgid "Loading the scheduler..."
 msgstr "スケジューラを読み込んでいます..."
 
@@ -189,7 +189,7 @@ msgstr "SCAPコンテンツが必要です。"
 
 #: ../html/src/components/audit/schedule-scap-scan-form.tsx:227
 #: ../html/src/manager/audit/scap/create-scap-policy.tsx:196
-#: ../html/src/manager/recurring/recurring-actions-details.tsx:323
+#: ../html/src/manager/recurring/recurring-actions-details.tsx:325
 msgid "XCCDF Profile"
 msgstr "XCCDFプロファイル"
 
@@ -293,13 +293,13 @@ msgstr "姓"
 #: ../html/src/manager/audit/scap/create-tailoring-file.tsx:107
 #: ../html/src/manager/audit/scap/list-scap-content.tsx:127
 #: ../html/src/manager/audit/scap/list-scap-policies.tsx:134
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:179
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:198
 #: ../html/src/manager/content-management/list-projects/list-projects.tsx:97
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:139
 #: ../html/src/manager/content-management/shared/components/panels/environment-lifecycle/environment-form.tsx:28
 #: ../html/src/manager/content-management/shared/components/panels/properties/properties-form.tsx:21
 #: ../html/src/manager/content-management/shared/components/panels/properties/properties-view.tsx:37
-#: ../html/src/manager/images/image-view.tsx:651
+#: ../html/src/manager/images/image-view.tsx:701
 #: ../html/src/manager/minion/ansible/variables/boolean-editor.tsx:32
 #: ../html/src/manager/minion/ansible/variables/dictionary-editor.tsx:75
 #: ../html/src/manager/minion/ansible/variables/list-editor.tsx:36
@@ -335,7 +335,7 @@ msgstr "認証 #{identifier} は {date} {time} に実行されます"
 #: ../html/src/manager/content-management/list-filters/templates/live-patching.tsx:117
 #: ../html/src/manager/maintenance/details/schedule-details.tsx:213
 #: ../html/src/manager/minion/packages/package-states.tsx:223
-#: ../html/src/manager/systems/all-list.tsx:93
+#: ../html/src/manager/systems/all-list.tsx:94
 #: ../html/src/manager/systems/list-filter.tsx:43
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:78
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:770
@@ -367,7 +367,8 @@ msgstr "最終変更"
 #: ../html/src/manager/audit/subscription-matching/subscription-matching-pins.tsx:151
 #: ../html/src/manager/content-management/shared/components/panels/environment-lifecycle/environment-view.tsx:57
 #: ../html/src/manager/images/image-view-runtime.tsx:138
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:166
+#: ../html/src/manager/images/image-view.tsx:729
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:165
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:780
 #: ../html/src/manager/systems/virtual-list.tsx:93
 msgid "Status"
@@ -386,12 +387,12 @@ msgstr "認証時間"
 #: ../html/src/manager/audit/scap/list-scap-policies.tsx:168
 #: ../html/src/manager/audit/scap/list-tailoring-files.tsx:133
 #: ../html/src/manager/audit/scap/scap-policy-details.tsx:269
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:208
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:227
 #: ../html/src/manager/images/image-profiles.tsx:191
 #: ../html/src/manager/images/image-stores.tsx:193
-#: ../html/src/manager/images/image-view.tsx:692
-#: ../html/src/manager/maintenance/list/calendar-list.tsx:69
-#: ../html/src/manager/maintenance/list/schedule-list.tsx:49
+#: ../html/src/manager/images/image-view.tsx:742
+#: ../html/src/manager/maintenance/list/calendar-list.tsx:65
+#: ../html/src/manager/maintenance/list/schedule-list.tsx:47
 #: ../html/src/manager/recurring/recurring-actions-list.tsx:200
 #: ../html/src/manager/salt/keys/key-management.tsx:196
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-list.tsx:71
@@ -404,12 +405,12 @@ msgstr "アクション"
 #: ../html/src/manager/admin/setup/products/products-scc-dialog.tsx:199
 #: ../html/src/manager/audit/scap/list-scap-policies.tsx:93
 #: ../html/src/manager/images/image-view-patches.tsx:87
-#: ../html/src/manager/images/image-view.tsx:698
-#: ../html/src/manager/maintenance/list/calendar-list.tsx:74
-#: ../html/src/manager/maintenance/list/schedule-list.tsx:54
+#: ../html/src/manager/images/image-view.tsx:748
+#: ../html/src/manager/maintenance/list/calendar-list.tsx:70
+#: ../html/src/manager/maintenance/list/schedule-list.tsx:52
 #: ../html/src/manager/recurring/recurring-actions-list.tsx:205
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:387
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:164
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:386
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:163
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-list.tsx:77
 msgid "Details"
 msgstr "詳細"
@@ -442,7 +443,7 @@ msgid "Attested on"
 msgstr "認証日"
 
 #: ../html/src/components/coco-attestation/CoCoReport.tsx:118
-#: ../html/src/manager/images/image-view.tsx:798
+#: ../html/src/manager/images/image-view.tsx:840
 #: ../html/src/manager/maintenance/details/schedule-details.tsx:53
 msgid "Overview"
 msgstr "概要"
@@ -541,7 +542,7 @@ msgstr "スケジュールの選択"
 #: ../html/src/components/large-text-attachment.tsx:195
 #: ../html/src/components/panels/CreatorPanel.tsx:122
 #: ../html/src/manager/admin/password-policy/password-policy.tsx:120
-#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:194
+#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:218
 #: ../html/src/manager/minion/ansible/edit-ansible-path.tsx:15
 #: ../html/src/manager/minion/ansible/edit-ansible-vars-modal.tsx:98
 #: ../html/src/manager/minion/ansible/new-ansible-path.tsx:33
@@ -562,7 +563,7 @@ msgstr "変更のリセット"
 msgid "N/A"
 msgstr "該当なし"
 
-#: ../html/src/components/combobox.tsx:97
+#: ../html/src/components/combobox.tsx:98
 msgid "Create {label}"
 msgstr "{label} の作成"
 
@@ -609,7 +610,7 @@ msgstr "選択した{name}に対して{action}してよろしいですか？ ({c
 #: ../html/src/manager/admin/access-control/access-group-tab-container.tsx:48
 #: ../html/src/manager/admin/setup/proxy/proxy.tsx:56
 #: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:62
-#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:181
+#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:205
 #: ../html/src/manager/content-management/shared/components/panels/build/build.tsx:127
 #: ../html/src/manager/content-management/shared/components/panels/promote/promote.tsx:106
 #: ../html/src/manager/images/image-view-overview.tsx:731
@@ -639,21 +640,21 @@ msgstr "取り消し"
 #: ../html/src/manager/audit/scap/list-scap-content.tsx:99
 #: ../html/src/manager/audit/scap/list-scap-policies.tsx:105
 #: ../html/src/manager/audit/scap/list-tailoring-files.tsx:92
-#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:162
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:154
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:229
+#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:181
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:155
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:243
 #: ../html/src/manager/content-management/project/project.tsx:106
 #: ../html/src/manager/images/image-profiles.tsx:136
 #: ../html/src/manager/images/image-profiles.tsx:211
 #: ../html/src/manager/images/image-stores.tsx:136
 #: ../html/src/manager/images/image-stores.tsx:205
-#: ../html/src/manager/images/image-view.tsx:356
-#: ../html/src/manager/images/image-view.tsx:366
-#: ../html/src/manager/images/image-view.tsx:707
+#: ../html/src/manager/images/image-view.tsx:355
+#: ../html/src/manager/images/image-view.tsx:365
+#: ../html/src/manager/images/image-view.tsx:757
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:43
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:46
-#: ../html/src/manager/maintenance/list/calendar-list.tsx:92
-#: ../html/src/manager/maintenance/list/schedule-list.tsx:72
+#: ../html/src/manager/maintenance/list/calendar-list.tsx:88
+#: ../html/src/manager/maintenance/list/schedule-list.tsx:70
 #: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:314
 #: ../html/src/manager/minion/ansible/ansible-var-yaml-editor.tsx:333
 #: ../html/src/manager/minion/ansible/edit-ansible-path.tsx:22
@@ -712,8 +713,8 @@ msgstr "チェックボックス"
 #: ../html/src/manager/images/image-store-edit.tsx:180
 #: ../html/src/manager/login/susemanager/login.tsx:99
 #: ../html/src/manager/login/uyuni/login.tsx:97
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:427
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:550
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:425
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:548
 msgid "Password"
 msgstr "パスワード"
 
@@ -900,8 +901,8 @@ msgstr "コピー"
 
 #: ../html/src/components/hub/AddTokenButton.tsx:226
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:176
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:102
 #: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:103
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:104
 msgid "Close"
 msgstr "閉じる"
 
@@ -932,7 +933,7 @@ msgid "Sync"
 msgstr "同期"
 
 #: ../html/src/components/hub/ChannelSelectorTable.tsx:134
-#: ../html/src/components/states-picker.tsx:463
+#: ../html/src/components/states-picker.tsx:501
 msgid "Channel Name"
 msgstr "チャンネル名"
 
@@ -940,7 +941,7 @@ msgstr "チャンネル名"
 #: ../html/src/components/table/nested-data.example.tsx:62
 #: ../html/src/manager/admin/setup/products/products.tsx:605
 #: ../html/src/manager/admin/setup/products/products.tsx:997
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:169
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:171
 #: ../html/src/manager/images/image-view-packages.tsx:50
 #: ../html/src/manager/minion/ptf/ptf-column-definition.tsx:22
 msgid "Architecture"
@@ -1044,7 +1045,7 @@ msgid "There are no ISSv1 slaves to migrate."
 msgstr "移行するISSv1スレーブはありません。"
 
 #: ../html/src/components/hub/MigrateSlavesForm.tsx:209
-#: ../html/src/components/states-picker.tsx:375
+#: ../html/src/components/states-picker.tsx:408
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:28
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:30
 #: ../html/src/manager/maintenance/edit/maintenance-windows-edit.tsx:52
@@ -1098,8 +1099,8 @@ msgstr "定義されていません"
 #: ../html/src/manager/images/image-stores.tsx:199
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:35
 #: ../html/src/manager/maintenance/details/maintenance-windows-details.tsx:38
-#: ../html/src/manager/maintenance/list/calendar-list.tsx:83
-#: ../html/src/manager/maintenance/list/schedule-list.tsx:63
+#: ../html/src/manager/maintenance/list/calendar-list.tsx:79
+#: ../html/src/manager/maintenance/list/schedule-list.tsx:61
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:242
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:245
 #: ../html/src/manager/recurring/recurring-actions-list.tsx:213
@@ -1261,7 +1262,7 @@ msgstr "登録"
 #: ../html/src/manager/images/image-store-edit.tsx:201
 #: ../html/src/manager/minion/proxy/proxy-config.tsx:442
 #: ../html/src/manager/proxy/container-config.tsx:384
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:418
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:416
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-edit.tsx:178
 msgid "Clear fields"
 msgstr "項目の消去"
@@ -1448,8 +1449,8 @@ msgstr "次の変更を加えようとしています:"
 
 #: ../html/src/components/hub/SyncOrgsToPeripheralChannels.tsx:302
 #: ../html/src/components/package/PackageListActionScheduler.tsx:182
-#: ../html/src/components/states-picker.tsx:377
-#: ../html/src/components/states-picker.tsx:574
+#: ../html/src/components/states-picker.tsx:410
+#: ../html/src/components/states-picker.tsx:612
 #: ../html/src/manager/admin/setup/products/products.tsx:1111
 #: ../html/src/manager/appstreams/changes-confirm-appstreams.tsx:66
 #: ../html/src/manager/maintenance/edit/calendar-edit.tsx:198
@@ -1503,7 +1504,7 @@ msgstr "有効"
 #: ../html/src/manager/systems/coco/ssm-schedule.tsx:120
 #: ../html/src/manager/systems/coco/ssm-settings.tsx:66
 #: ../html/src/manager/systems/list-filter.tsx:38
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:127
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:126
 msgid "Yes"
 msgstr "はい"
 
@@ -1513,7 +1514,7 @@ msgstr "はい"
 #: ../html/src/manager/systems/coco/ssm-schedule.tsx:120
 #: ../html/src/manager/systems/coco/ssm-settings.tsx:66
 #: ../html/src/manager/systems/list-filter.tsx:39
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:127
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:126
 msgid "No"
 msgstr "いいえ"
 
@@ -1522,7 +1523,7 @@ msgid "Expired"
 msgstr "期限切れ"
 
 #: ../html/src/components/hub/TokenTable.tsx:97
-#: ../html/src/manager/images/image-view.tsx:683
+#: ../html/src/manager/images/image-view.tsx:733
 msgid "Last Modified"
 msgstr "最終変更"
 
@@ -1684,8 +1685,6 @@ msgid "Both values need to be positive integers"
 msgstr "両方の値は正の整数である必要があります"
 
 #: ../html/src/components/input/select/ClearIndicator.tsx:17
-#: ../html/src/components/table/SelectedRowDetails.tsx:37
-#: ../html/src/components/table/SelectedRowDetails.tsx:60
 #: ../html/src/manager/admin/setup/products/products.tsx:343
 msgid "Clear"
 msgstr "消去"
@@ -1776,11 +1775,11 @@ msgstr "パッケージ名でフィルタ"
 
 #: ../html/src/components/package/PackageListActionScheduler.tsx:216
 #: ../html/src/components/package/PackageListActionScheduler.tsx:248
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:156
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:165
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:175
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:270
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:312
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:158
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:167
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:177
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:273
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:315
 #: ../html/src/manager/images/image-view-packages.tsx:49
 #: ../html/src/manager/minion/packages/package-states.tsx:342
 msgid "Package Name"
@@ -1846,31 +1845,31 @@ msgstr "毎時:"
 msgid "The action will be executed every hour at the specified minute"
 msgstr "動作は 1 時間に 1 回、指定された分に実行されます"
 
-#: ../html/src/components/picker/recurring-event-picker.tsx:381
+#: ../html/src/components/picker/recurring-event-picker.tsx:382
 msgid "Daily:"
 msgstr "毎日:"
 
-#: ../html/src/components/picker/recurring-event-picker.tsx:405
+#: ../html/src/components/picker/recurring-event-picker.tsx:406
 msgid "Weekly:"
 msgstr "毎週:"
 
-#: ../html/src/components/picker/recurring-event-picker.tsx:439
+#: ../html/src/components/picker/recurring-event-picker.tsx:440
 msgid "Monthly:"
 msgstr "毎月:"
 
-#: ../html/src/components/picker/recurring-event-picker.tsx:464
+#: ../html/src/components/picker/recurring-event-picker.tsx:465
 msgid "Days are limited to 28 to have a recurring schedule available for all the months"
 msgstr "日は必ず毎月実行できるよう、最大でも 28 までの範囲で指定します"
 
-#: ../html/src/components/picker/recurring-event-picker.tsx:479
+#: ../html/src/components/picker/recurring-event-picker.tsx:481
 msgid "Custom Quartz format:"
 msgstr "独自のクォーツ書式:"
 
-#: ../html/src/components/picker/recurring-event-picker.tsx:489
+#: ../html/src/components/picker/recurring-event-picker.tsx:491
 msgid "e.g. \"0 15 2 ? * 7\""
 msgstr "例: \"0 15 2 ? * 7\""
 
-#: ../html/src/components/picker/recurring-event-picker.tsx:508
+#: ../html/src/components/picker/recurring-event-picker.tsx:510
 msgid "Select a Schedule"
 msgstr "スケジュールの選択:"
 
@@ -1879,7 +1878,7 @@ msgid "Policy assignment has been saved."
 msgstr "ポリシーの割り当てが保存されました。"
 
 #: ../html/src/components/policies-picker.tsx:94
-#: ../html/src/components/states-picker.tsx:176
+#: ../html/src/components/states-picker.tsx:197
 msgid "An error occurred on save."
 msgstr "保存時にエラーが発生しました。"
 
@@ -1892,7 +1891,7 @@ msgid "Search in SCAP policies"
 msgstr "SCAPポリシーを検索"
 
 #: ../html/src/components/policies-picker.tsx:165
-#: ../html/src/components/states-picker.tsx:432
+#: ../html/src/components/states-picker.tsx:470
 #: ../html/src/components/table/SearchField.tsx:66
 #: ../html/src/manager/header/search/search.tsx:80
 #: ../html/src/manager/header/search/search.tsx:89
@@ -1902,17 +1901,17 @@ msgid "Search"
 msgstr "検索"
 
 #: ../html/src/components/policies-picker.tsx:175
-#: ../html/src/manager/recurring/recurring-actions-details.tsx:318
+#: ../html/src/manager/recurring/recurring-actions-details.tsx:320
 msgid "Policy Name"
 msgstr "ポリシー名"
 
 #: ../html/src/components/policies-picker.tsx:176
-#: ../html/src/manager/recurring/recurring-actions-details.tsx:322
+#: ../html/src/manager/recurring/recurring-actions-details.tsx:324
 msgid "Data Stream"
 msgstr "データストリーム"
 
 #: ../html/src/components/policies-picker.tsx:177
-#: ../html/src/components/states-picker.tsx:465
+#: ../html/src/components/states-picker.tsx:503
 #: ../html/src/manager/admin/access-control/access-group-details.tsx:120
 #: ../html/src/manager/admin/access-control/access-group-list.tsx:111
 #: ../html/src/manager/admin/access-control/access-group-permissions.tsx:373
@@ -1933,12 +1932,12 @@ msgstr "データストリーム"
 #: ../html/src/manager/content-management/shared/components/panels/properties/properties-form.tsx:34
 #: ../html/src/manager/content-management/shared/components/panels/properties/properties-view.tsx:45
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:301
-#: ../html/src/manager/recurring/recurring-actions-details.tsx:327
+#: ../html/src/manager/recurring/recurring-actions-details.tsx:329
 msgid "Description"
 msgstr "説明"
 
 #: ../html/src/components/policies-picker.tsx:178
-#: ../html/src/components/states-picker.tsx:466
+#: ../html/src/components/states-picker.tsx:504
 msgid "Assign"
 msgstr "割り当て"
 
@@ -2087,7 +2086,7 @@ msgid "Normal Configuration Channel"
 msgstr "通常設定チャンネル"
 
 #: ../html/src/components/ranking-table.tsx:44
-#: ../html/src/components/table/TableDataHandler.tsx:436
+#: ../html/src/components/table/TableDataHandler.tsx:470
 msgid "There are no entries to show."
 msgstr "表示すべき項目がありません。"
 
@@ -2099,101 +2098,101 @@ msgstr "設定チャンネル: {name}"
 msgid "Edit Configuration Channel"
 msgstr "設定チャンネルの編集"
 
-#: ../html/src/components/states-picker.tsx:96
+#: ../html/src/components/states-picker.tsx:109
 msgid "There are unsaved changes. Do you want to proceed?"
 msgstr "保存されていない変更があります。続行してもよろしいですか？"
 
-#: ../html/src/components/states-picker.tsx:112
+#: ../html/src/components/states-picker.tsx:125
 msgid "State configuration must not be empty"
 msgstr "状態設定を空にすることはできません"
 
-#: ../html/src/components/states-picker.tsx:126
+#: ../html/src/components/states-picker.tsx:139
 msgid "Reboot state will be put last."
 msgstr "再起動状態は最後に置かれます。"
 
-#: ../html/src/components/states-picker.tsx:135
+#: ../html/src/components/states-picker.tsx:148
 msgid "'Reboot system' and 'Reboot system if needed' states cannot be used together."
 msgstr "「システムの再起動」と「必要に応じてシステムを再起動」の状態は一緒に使用できません。"
 
-#: ../html/src/components/states-picker.tsx:158
+#: ../html/src/components/states-picker.tsx:175
 msgid "State assignments have been saved."
 msgstr "状態の割り当てが保存されました。"
 
-#: ../html/src/components/states-picker.tsx:316
+#: ../html/src/components/states-picker.tsx:341
 msgid "No states assigned. Use search to find and assign states."
 msgstr "状態が割り当てられていません。検索機能を利用して状態の検索と割り当てを行なってください。"
 
-#: ../html/src/components/states-picker.tsx:385
+#: ../html/src/components/states-picker.tsx:418
 #: ../html/src/manager/maintenance/details/schedule-details.tsx:184
 #: ../html/src/manager/maintenance/details/schedule-details.tsx:193
 msgid "Save Changes"
 msgstr "変更点の保存"
 
-#: ../html/src/components/states-picker.tsx:400
+#: ../html/src/components/states-picker.tsx:438
 msgid "Reorder"
 msgstr "並べ替え"
 
-#: ../html/src/components/states-picker.tsx:426
+#: ../html/src/components/states-picker.tsx:464
 msgid "Search in states"
 msgstr "状態の検索"
 
-#: ../html/src/components/states-picker.tsx:426
+#: ../html/src/components/states-picker.tsx:464
 msgid "Search in configuration channels"
 msgstr "設定チャンネル内での検索"
 
-#: ../html/src/components/states-picker.tsx:442
+#: ../html/src/components/states-picker.tsx:480
 msgid "Edit State Ranks"
 msgstr "状態ランクの編集"
 
-#: ../html/src/components/states-picker.tsx:442
+#: ../html/src/components/states-picker.tsx:480
 msgid "Edit Channel Ranks"
 msgstr "チャンネルランクの編集"
 
-#: ../html/src/components/states-picker.tsx:446
+#: ../html/src/components/states-picker.tsx:484
 msgid "Edit the ranking of the states by dragging them. They are listed in order from highest to lowest rank. In other words, the bottom ones will be applied first."
 msgstr "状態のランキングをドラッグして編集してください。状態は順位の高い状態から順に表示されています。つまり、最下位の状態が最初に適用されます。"
 
-#: ../html/src/components/states-picker.tsx:449
+#: ../html/src/components/states-picker.tsx:487
 msgid "Edit the ranking of the configuration channels by dragging them. They are listed in order from highest to lowest rank. Files from a particular channel will override files with the same filepath and name from channels below it. In other words, the bottom ones will be applied first."
 msgstr "設定チャンネルのランキングをドラッグして編集してください。設定チャンネルは順位の高いチャンネルから順に表示されています。特定のチャンネルからのファイルはそれより下にあるチャンネルの同じファイルパスと同じ名前を持つファイルを上書きします。つまり、最下位のチャンネルが最初に適用されます。"
 
-#: ../html/src/components/states-picker.tsx:455
+#: ../html/src/components/states-picker.tsx:493
 msgid "There are no states assigned."
 msgstr "状態が何も割り当てられていません。"
 
-#: ../html/src/components/states-picker.tsx:463
+#: ../html/src/components/states-picker.tsx:501
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:284
 msgid "State Name"
 msgstr "状態名"
 
-#: ../html/src/components/states-picker.tsx:464
+#: ../html/src/components/states-picker.tsx:502
 #: ../html/src/manager/recurring/recurring-actions-details.tsx:297
 msgid "State Label"
 msgstr "状態ラベル"
 
-#: ../html/src/components/states-picker.tsx:464
+#: ../html/src/components/states-picker.tsx:502
 #: ../html/src/components/table/nested-data.example.tsx:56
 msgid "Channel Label"
 msgstr "チャンネルラベル"
 
-#: ../html/src/components/states-picker.tsx:527
+#: ../html/src/components/states-picker.tsx:565
 msgid "Select the systems to schedule for immediate state execution and confirm."
 msgstr "即時の状態の実行をスケジュールするシステムを選択し、確認します。"
 
-#: ../html/src/components/states-picker.tsx:538
+#: ../html/src/components/states-picker.tsx:576
 msgid "This table is empty"
 msgstr "このテーブルは空です"
 
-#: ../html/src/components/states-picker.tsx:545
-#: ../html/src/components/states-picker.tsx:586
+#: ../html/src/components/states-picker.tsx:583
+#: ../html/src/components/states-picker.tsx:624
 msgid "System Name"
 msgstr "システム名"
 
-#: ../html/src/components/states-picker.tsx:565
+#: ../html/src/components/states-picker.tsx:603
 msgid "Execute States"
 msgstr "状態の実行"
 
-#: ../html/src/components/states-picker.tsx:570
+#: ../html/src/components/states-picker.tsx:608
 msgid "Select Sytems"
 msgstr "システムの選択"
 
@@ -2218,7 +2217,7 @@ msgid "Non-Virtual System"
 msgstr "非仮想システム"
 
 #: ../html/src/components/systems.tsx:44
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:619
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:617
 #: ../html/src/manager/systems/list-filter.tsx:6
 #: ../html/src/manager/systems/list-filter.tsx:22
 msgid "Proxy"
@@ -2230,7 +2229,7 @@ msgid "Peripheral Server"
 msgstr "周辺機器サーバ"
 
 #: ../html/src/components/systems.tsx:102
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:197
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:199
 msgid "Security Advisory"
 msgstr "セキュリティアドバイザリ"
 
@@ -2264,7 +2263,7 @@ msgid "not equal to"
 msgstr "等しくない"
 
 #: ../html/src/components/table/NumericSearchField.tsx:62
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:142
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:144
 msgid "Matcher"
 msgstr "マッチャー"
 
@@ -2282,6 +2281,12 @@ msgstr "フィルタの選択"
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:229
 msgid "All"
 msgstr "すべて"
+
+#: ../html/src/components/table/SelectedRowDetails.tsx:37
+#: ../html/src/components/table/SelectedRowDetails.tsx:60
+#: ../html/src/manager/maintenance/ssm/schedule-picker.tsx:80
+msgid "Clear All"
+msgstr "全てを消去"
 
 #: ../html/src/components/table/nested-data.example.tsx:45
 msgid "Channel name"
@@ -2854,7 +2859,7 @@ msgstr "任意の値でフィルタ"
 #: ../html/src/manager/admin/list-payg/list-payg.tsx:68
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-form.tsx:52
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-view.tsx:13
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:486
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:484
 msgid "Host"
 msgstr "ホスト"
 
@@ -2971,26 +2976,26 @@ msgstr "SSH接続を編集する際には、必要なすべての資格情報を
 
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-form.tsx:60
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-view.tsx:17
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:499
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:497
 msgid "SSH Port"
 msgstr "SSHポート"
 
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-form.tsx:71
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-view.tsx:21
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:515
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:513
 msgid "User"
 msgstr "ユーザ"
 
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-form.tsx:80
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-view.tsx:31
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:444
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:562
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:442
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:560
 msgid "SSH Private Key"
 msgstr "SSH機密鍵"
 
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-form.tsx:102
 #: ../html/src/manager/admin/payg-shared/sshData/payg-ssh-data-view.tsx:37
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:456
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:454
 msgid "SSH Private Key Passphrase"
 msgstr "SSH 機密鍵のパスフレーズ"
 
@@ -3017,7 +3022,7 @@ msgstr "SUSE カスタマーセンターから製品カタログを更新"
 #: ../html/src/manager/admin/setup/products/products-scc-dialog.tsx:185
 #: ../html/src/manager/images/image-profiles.tsx:141
 #: ../html/src/manager/images/image-stores.tsx:141
-#: ../html/src/manager/images/image-view.tsx:380
+#: ../html/src/manager/images/image-view.tsx:379
 #: ../html/src/manager/notifications/notifications-list.tsx:108
 msgid "Refresh"
 msgstr "更新"
@@ -3349,7 +3354,7 @@ msgid "Updating the selection of AppStream modules has been <link>scheduled</lin
 msgstr "AppStreamモジュールの選択の更新が <link>スケジュールされました</link>。"
 
 #: ../html/src/manager/appstreams/appstreams.tsx:118
-#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:137
+#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:125
 #: ../html/src/manager/systems/activation-key/activation-keys-appstreams.tsx:74
 #: ../html/src/manager/systems/appstreams/ssm-appstreams-configure-list.tsx:92
 #: ../html/src/manager/systems/appstreams/ssm-appstreams-configure.tsx:129
@@ -3778,7 +3783,6 @@ msgstr "成功"
 #: ../html/src/manager/audit/scap/scap-policy-details.tsx:235
 #: ../html/src/manager/content-management/shared/components/panels/environment-lifecycle/environment-view.tsx:32
 #: ../html/src/manager/images/image-view-overview.tsx:87
-#: ../html/src/manager/images/image-view.tsx:514
 msgid "Failed"
 msgstr "失敗"
 
@@ -4129,215 +4133,224 @@ msgstr "モジュール名"
 msgid "Updating the filter..."
 msgstr "フィルタを更新しています..."
 
-#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:87
+#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:101
 msgid "Check the required fields below"
 msgstr "下記の必要な項目にチェックを入れてください"
 
-#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:96
+#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:110
 msgid "Filter updated successfully"
 msgstr "フィルタを更新しました"
 
-#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:111
+#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:125
 msgid "Filter created successfully"
 msgstr "フィルタを作成しました"
 
-#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:122
+#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:136
 msgid "Filter Details"
 msgstr "フィルタの詳細"
 
-#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:122
+#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:136
 msgid "Create a new filter"
 msgstr "新しいフィルタの作成"
 
-#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:168
+#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:185
+#, fuzzy
+#| msgid "This access token cannot be deleted. It is currently used by peripheral {fqdn}"
+msgid "This filter cannot be deleted because it is currently in use by one or more projects"
+msgstr "このアクセストークンは削除できません。現在、周辺機器 {fqdn} によって使用されています"
+
+#: ../html/src/manager/content-management/list-filters/filter-edit.tsx:192
 msgid "Filter deleted successfully"
 msgstr "フィルタを削除しました"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:76
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:78
 msgid "Bear in mind that all the associated projects need to be rebuilt after a filter update"
 msgstr "フィルタを更新した場合、その後に関連する全てのプロジェクトを再構築する必要があることに注意してください"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:84
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:91
+#, fuzzy
+#| msgid "Use a manual filter"
+msgid "Manual Filter"
+msgstr "手動フィルタを使用する"
+
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:96
+#, fuzzy
+#| msgid "Use a template"
+msgid "Use Template"
+msgstr "テンプレートを使用する"
+
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:108
 msgid "Filter Name"
 msgstr "フィルタ名"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:94
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:118
 msgid "Prefix"
 msgstr "プレフィックス"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:97
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:121
 msgid "The prefix will be prepended to the name of every individual filter created by the template"
 msgstr "プレフィックスは、テンプレートによって作成されたすべての個々のフィルタの名前の前に付加されます"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:111
-msgid "Use a template"
-msgstr "テンプレートを使用する"
-
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:118
-msgid "Use a manual filter"
-msgstr "手動フィルタを使用する"
-
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:129
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:131
 msgid "Filter Type"
 msgstr "フィルタタイプ"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:166
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:176
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:168
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:178
 msgid "Epoch"
 msgstr "エポック"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:167
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:177
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:169
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:179
 #: ../html/src/manager/content-management/shared/components/panels/build/build.tsx:104
 #: ../html/src/manager/content-management/shared/components/panels/environment-lifecycle/environment-view.tsx:47
 #: ../html/src/manager/content-management/shared/components/panels/promote/promote.tsx:79
 #: ../html/src/manager/content-management/shared/components/panels/properties/properties.utils.ts:4
 #: ../html/src/manager/images/image-build.tsx:391
-#: ../html/src/manager/images/image-view.tsx:652
+#: ../html/src/manager/images/image-view.tsx:702
 #: ../html/src/manager/systems/details/mgr-server-info.tsx:87
 msgid "Version"
 msgstr "バージョン"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:168
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:178
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:170
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:180
 msgid "Release"
 msgstr "リリース"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:185
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:187
 msgid "Advisory name"
 msgstr "アドバイザリ名"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:198
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:200
 msgid "Bug Fix Advisory"
 msgstr "バグ修正アドバイザリ"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:199
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:201
 msgid "Product Enhancement Advisory"
 msgstr "製品の機能強化アドバイザリ"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:201
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:203
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:175
 msgid "Advisory Type"
 msgstr "アドバイザリタイプ"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:215
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:217
 msgid "The stored issue date is in an invalid format. Please select a valid date and save the filter."
 msgstr "保存された発行日は無効な形式です。有効な日付を選択してフィルタを保存してください。"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:224
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:226
 msgid "Issued"
 msgstr "発行済み"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:235
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:237
 #: ../html/src/manager/content-management/shared/components/panels/build/build.tsx:69
 #: ../html/src/manager/content-management/shared/components/panels/build/build.tsx:133
 #: ../html/src/manager/images/image-build.tsx:423
 #: ../html/src/manager/images/image-profiles.tsx:199
 #: ../html/src/manager/images/image-view-overview.tsx:630
 #: ../html/src/manager/images/image-view-overview.tsx:739
-#: ../html/src/manager/images/image-view.tsx:679
 msgid "Build"
 msgstr "ビルド"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:245
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:247
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:181
 #: ../html/src/manager/images/image-view-patches.tsx:95
 msgid "Synopsis"
 msgstr "概要"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:257
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:259
 msgid "Reboot Required"
 msgstr "要再起動"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:258
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:260
 msgid "Package Manager Restart Required"
 msgstr "要パッケージマネージャの再起動"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:261
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:263
 msgid "Advisory Keywords"
 msgstr "アドバイザリキーワード"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:280
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:283
 msgid "Package Provides Name"
 msgstr "名前を指定するパッケージ"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:290
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:293
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:157
 msgid "Provides Name"
 msgstr "名前を指定する"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:302
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:305
 #: ../html/src/manager/content-management/shared/business/filters.enum.ts:235
 msgid "Number"
 msgstr "番号"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:324
-#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:159
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:327
+#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:140
 msgid "Deny"
 msgstr "拒否"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:325
-#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:179
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:328
+#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:153
 msgid "Allow"
 msgstr "許可"
 
-#: ../html/src/manager/content-management/list-filters/filter-form.tsx:327
+#: ../html/src/manager/content-management/list-filters/filter-form.tsx:330
 msgid "Rule"
 msgstr "ルール"
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:77
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:78
 msgid "Filter has been deleted."
 msgstr "フィルタを削除しました。"
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:93
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:94
 msgid "Some of the selected filters are used in projects and can not be deleted."
 msgstr "選択したフィルタのうちのいくつかがプロジェクト内で使用されているため、削除できません。"
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:102
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:103
 msgid "Filter have been deleted."
 msgstr "フィルタを削除しました。"
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:137
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:138
 msgid "Create Filter"
 msgstr "フィルタの作成"
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:149
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:150
 msgid "Select unused"
 msgstr "使用されていないものを選択"
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:161
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:180
 msgid "Content Lifecycle Filters"
 msgstr "コンテンツライフサイクルのフィルタ"
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:170
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:189
 msgid "Filter by name or project"
 msgstr "名前またはプロジェクトでフィルタ"
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:184
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:203
 msgid "Projects in use"
 msgstr "使用しているプロジェクト"
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:217
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:235
 msgid "Edit Filter"
 msgstr "フィルタの編集"
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:242
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:256
 msgid "Delete Filter"
 msgstr "フィルタの削除"
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:245
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:259
 msgid "Are you sure you want to delete the filter"
 msgstr "フィルタを削除してよろしいですか"
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:254
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:268
 msgid "Delete Selected Filter(s)"
 msgstr "選択したフィルタの削除"
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:258
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:272
 msgid "Are you sure you want to delete the selected filter?"
 msgstr "選択したフィルタを削除してよろしいですか?"
 
-#: ../html/src/manager/content-management/list-filters/list-filters.tsx:259
+#: ../html/src/manager/content-management/list-filters/list-filters.tsx:273
 msgid "Are you sure you want to delete selected filters? ({count} filters selected)"
 msgstr "選択したフィルタを削除してよろしいですか? ({count}個のフィルタが選択されています)"
 
@@ -4659,7 +4672,7 @@ msgid "Waiting for repositories data to be generated"
 msgstr "リポジトリデータが生成されるのを待機しています"
 
 #: ../html/src/manager/content-management/shared/components/panels/environment-lifecycle/environment-view.tsx:31
-#: ../html/src/manager/images/image-view.tsx:512
+#: ../html/src/manager/images/image-view.tsx:541
 msgid "Built"
 msgstr "構築済み"
 
@@ -4685,30 +4698,32 @@ msgid "Create New Filter"
 msgstr "新しいフィルタの作成"
 
 #: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:32
-msgid "Edit Filter {name}"
+#, fuzzy
+#| msgid "Edit Filter {name}"
+msgid "Edit {name}"
 msgstr "フィルタ{name}の編集"
 
-#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:91
+#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:79
 msgid "Filters"
 msgstr "フィルタ"
 
-#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:92
+#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:80
 msgid "Attach/Detach Filters"
 msgstr "フィルタの割り当て／取り外し"
 
-#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:109
+#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:97
 msgid "Filter edited successfully"
 msgstr "フィルタを編集しました"
 
-#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:137
+#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:125
 msgid "enabled module streams"
 msgstr "有効化されたモジュールストリーム"
 
-#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:159
+#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:140
 msgid "filter out"
 msgstr "除外"
 
-#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:180
+#: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:154
 msgid "select from the full source even if you have excluded them before with deny"
 msgstr "deny で既に除外している場合でも、完全なソースから選択します"
 
@@ -4832,7 +4847,7 @@ msgstr "推奨を含める"
 #: ../html/src/manager/content-management/shared/components/panels/sources/sources.tsx:36
 #: ../html/src/manager/images/image-stores.tsx:184
 #: ../html/src/manager/images/image-view-patches.tsx:79
-#: ../html/src/manager/images/image-view.tsx:650
+#: ../html/src/manager/images/image-view.tsx:700
 #: ../html/src/manager/maintenance/edit/schedule-edit.tsx:105
 #: ../html/src/manager/notifications/notifications-list.tsx:139
 #: ../html/src/manager/state/highstate-summary.tsx:76
@@ -4843,15 +4858,15 @@ msgstr "タイプ"
 msgid "has unsynchronized patches"
 msgstr "同期されていないパッチがあります"
 
-#: ../html/src/manager/content-management/shared/components/panels/sources/sources.tsx:105
+#: ../html/src/manager/content-management/shared/components/panels/sources/sources.tsx:104
 msgid "Sources"
 msgstr "ソース"
 
-#: ../html/src/manager/content-management/shared/components/panels/sources/sources.tsx:123
+#: ../html/src/manager/content-management/shared/components/panels/sources/sources.tsx:122
 msgid "Sources edited successfully"
 msgstr "ソースを編集しました"
 
-#: ../html/src/manager/content-management/shared/components/panels/sources/sources.tsx:145
+#: ../html/src/manager/content-management/shared/components/panels/sources/sources.tsx:144
 #: ../html/src/manager/images/image-build.tsx:312
 msgid "Software Channels"
 msgstr "ソフトウェアチャンネル"
@@ -4908,17 +4923,17 @@ msgid "Formula saved. Apply the <link>Highstate</link> for the changes to take e
 msgstr "formulaを保存しました。<link>highstate</link>を適用して変更を有効にしてください。"
 
 #: ../html/src/manager/header/search/search.tsx:14
-#: ../html/src/manager/images/image-view.tsx:675
-#: ../html/src/manager/images/image-view.tsx:800
-#: ../html/src/manager/systems/all-list.tsx:123
+#: ../html/src/manager/images/image-view.tsx:725
+#: ../html/src/manager/images/image-view.tsx:842
+#: ../html/src/manager/systems/all-list.tsx:124
 #: ../html/src/manager/systems/list-filter.tsx:47
 msgid "Packages"
 msgstr "パッケージ"
 
 #: ../html/src/manager/header/search/search.tsx:18
-#: ../html/src/manager/images/image-view.tsx:662
-#: ../html/src/manager/images/image-view.tsx:799
-#: ../html/src/manager/systems/all-list.tsx:110
+#: ../html/src/manager/images/image-view.tsx:712
+#: ../html/src/manager/images/image-view.tsx:841
+#: ../html/src/manager/systems/all-list.tsx:111
 #: ../html/src/manager/systems/list-filter.tsx:46
 msgid "Patches"
 msgstr "パッチ"
@@ -4989,7 +5004,7 @@ msgstr "パス"
 #: ../html/src/manager/images/image-build.tsx:299
 #: ../html/src/manager/images/image-import.tsx:230
 #: ../html/src/manager/images/image-profile-edit.tsx:398
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:584
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:582
 msgid "Activation Key"
 msgstr "アクティベーションキー"
 
@@ -5044,7 +5059,7 @@ msgid "Image version is required."
 msgstr "イメージバージョンを指定する必要があります。"
 
 #: ../html/src/manager/images/image-import.tsx:306
-#: ../html/src/manager/images/image-view.tsx:375
+#: ../html/src/manager/images/image-view.tsx:374
 msgid "Import"
 msgstr "取り込み"
 
@@ -5209,7 +5224,7 @@ msgid "Are you sure you want to delete selected stores? ({count} stores selected
 msgstr "選択したストアを削除してよろしいですか？ ({count}個のストアが選択されています)"
 
 #: ../html/src/manager/images/image-view-buildlog.tsx:5
-#: ../html/src/manager/images/image-view.tsx:801
+#: ../html/src/manager/images/image-view.tsx:843
 msgid "Build Log"
 msgstr "構築ログ"
 
@@ -5218,7 +5233,7 @@ msgid "Build log is not available."
 msgstr "構築ログは利用できません。"
 
 #: ../html/src/manager/images/image-view-overview.tsx:51
-#: ../html/src/manager/images/image-view.tsx:508
+#: ../html/src/manager/images/image-view.tsx:537
 msgid "Queued"
 msgstr "キュー済み"
 
@@ -5245,14 +5260,14 @@ msgstr "成功"
 #: ../html/src/manager/images/image-view-overview.tsx:518
 #: ../html/src/manager/images/image-view-runtime.tsx:74
 #: ../html/src/manager/images/image-view-runtime.tsx:114
-#: ../html/src/manager/images/image-view.tsx:487
-#: ../html/src/manager/images/image-view.tsx:536
+#: ../html/src/manager/images/image-view.tsx:486
+#: ../html/src/manager/images/image-view.tsx:574
 msgid "No information"
 msgstr "情報無し"
 
 #: ../html/src/manager/images/image-view-overview.tsx:111
 #: ../html/src/manager/images/image-view-overview.tsx:112
-#: ../html/src/manager/images/image-view.tsx:506
+#: ../html/src/manager/images/image-view.tsx:534
 msgid "Built externally"
 msgstr "外部で構築済み"
 
@@ -5261,37 +5276,37 @@ msgid "Picked Up"
 msgstr "ピックアップ済み"
 
 #: ../html/src/manager/images/image-view-overview.tsx:192
-#: ../html/src/manager/images/image-view.tsx:562
+#: ../html/src/manager/images/image-view.tsx:606
 msgid "Cluster"
 msgstr "クラスタ"
 
 #: ../html/src/manager/images/image-view-overview.tsx:193
-#: ../html/src/manager/images/image-view.tsx:563
-#: ../html/src/manager/images/image-view.tsx:615
+#: ../html/src/manager/images/image-view.tsx:607
+#: ../html/src/manager/images/image-view.tsx:665
 msgid "Instances"
 msgstr "インスタンス"
 
 #: ../html/src/manager/images/image-view-overview.tsx:203
 #: ../html/src/manager/images/image-view-overview.tsx:240
-#: ../html/src/manager/images/image-view.tsx:524
-#: ../html/src/manager/images/image-view.tsx:573
+#: ../html/src/manager/images/image-view.tsx:559
+#: ../html/src/manager/images/image-view.tsx:621
 msgid "Waiting for update ..."
 msgstr "更新を待っています..."
 
 #: ../html/src/manager/images/image-view-overview.tsx:220
-#: ../html/src/manager/images/image-view.tsx:590
+#: ../html/src/manager/images/image-view.tsx:640
 msgid "View cluster summary"
 msgstr "クラスタ概要の表示"
 
 #: ../html/src/manager/images/image-view-overview.tsx:251
 #: ../html/src/manager/images/image-view-overview.tsx:253
-#: ../html/src/manager/images/image-view.tsx:532
+#: ../html/src/manager/images/image-view.tsx:570
 msgid "All instances are consistent with {productName}"
 msgstr "全てのインスタンスが {productName} と同期できています"
 
 #: ../html/src/manager/images/image-view-overview.tsx:266
 #: ../html/src/manager/images/image-view-overview.tsx:267
-#: ../html/src/manager/images/image-view.tsx:538
+#: ../html/src/manager/images/image-view.tsx:580
 msgid "Outdated instances found"
 msgstr "古いインスタンスが見つかりました"
 
@@ -5304,32 +5319,32 @@ msgid "Edit store"
 msgstr "ストアの編集"
 
 #: ../html/src/manager/images/image-view-overview.tsx:469
-#: ../html/src/manager/images/image-view.tsx:759
+#: ../html/src/manager/images/image-view.tsx:801
 msgid "Instance Details for \"{name}\""
 msgstr "\"{name}\"に対するインスタンスの詳細"
 
 #: ../html/src/manager/images/image-view-overview.tsx:524
 #: ../html/src/manager/images/image-view-overview.tsx:525
-#: ../html/src/manager/images/image-view.tsx:489
+#: ../html/src/manager/images/image-view.tsx:492
 #: ../html/src/manager/systems/list-filter.tsx:28
 msgid "Critical updates available"
 msgstr "重大な更新があります"
 
 #: ../html/src/manager/images/image-view-overview.tsx:531
 #: ../html/src/manager/images/image-view-overview.tsx:532
-#: ../html/src/manager/images/image-view.tsx:492
+#: ../html/src/manager/images/image-view.tsx:500
 msgid "Non-critical updates available"
 msgstr "重大ではない更新があります"
 
 #: ../html/src/manager/images/image-view-overview.tsx:538
 #: ../html/src/manager/images/image-view-overview.tsx:539
-#: ../html/src/manager/images/image-view.tsx:495
+#: ../html/src/manager/images/image-view.tsx:508
 msgid "Package updates available"
 msgstr "パッケージの更新があります"
 
 #: ../html/src/manager/images/image-view-overview.tsx:545
 #: ../html/src/manager/images/image-view-overview.tsx:546
-#: ../html/src/manager/images/image-view.tsx:497
+#: ../html/src/manager/images/image-view.tsx:516
 msgid "Image is up to date"
 msgstr "イメージは最新の状態です"
 
@@ -5367,13 +5382,13 @@ msgid "Custom Image Information"
 msgstr "カスタムイメージの情報"
 
 #: ../html/src/manager/images/image-view-overview.tsx:684
-#: ../html/src/manager/images/image-view.tsx:367
-#: ../html/src/manager/images/image-view.tsx:729
+#: ../html/src/manager/images/image-view.tsx:366
+#: ../html/src/manager/images/image-view.tsx:771
 msgid "Delete Image"
 msgstr "イメージの削除"
 
 #: ../html/src/manager/images/image-view-overview.tsx:687
-#: ../html/src/manager/images/image-view.tsx:732
+#: ../html/src/manager/images/image-view.tsx:774
 msgid "Are you sure you want to delete image"
 msgstr "イメージを削除してよろしいですか"
 
@@ -5475,67 +5490,79 @@ msgstr "ポッド"
 msgid "Namespace"
 msgstr "ネームスペース"
 
-#: ../html/src/manager/images/image-view.tsx:314
+#: ../html/src/manager/images/image-view.tsx:313
 msgid "Deleted successfully."
 msgstr "削除を行ないました。"
 
-#: ../html/src/manager/images/image-view.tsx:326
+#: ../html/src/manager/images/image-view.tsx:325
 msgid "Image inspect has been scheduled."
 msgstr "イメージの検査をスケジュールしました。"
 
-#: ../html/src/manager/images/image-view.tsx:342
+#: ../html/src/manager/images/image-view.tsx:341
 msgid "Image build has been scheduled."
 msgstr "イメージの構築をスケジュールしました。"
 
-#: ../html/src/manager/images/image-view.tsx:357
+#: ../html/src/manager/images/image-view.tsx:356
 msgid "Delete selected"
 msgstr "削除を選択しました"
 
-#: ../html/src/manager/images/image-view.tsx:390
+#: ../html/src/manager/images/image-view.tsx:389
 msgid "Images"
 msgstr "イメージ"
 
-#: ../html/src/manager/images/image-view.tsx:510
+#: ../html/src/manager/images/image-view.tsx:530
+#, fuzzy
+#| msgid "sync failed"
+msgid "Inspect failed"
+msgstr "同期が失敗しました"
+
+#: ../html/src/manager/images/image-view.tsx:539
 msgid "Building"
 msgstr "構築しています"
 
-#: ../html/src/manager/images/image-view.tsx:516
+#: ../html/src/manager/images/image-view.tsx:544
+#, fuzzy
+#| msgid " failed"
+msgid "Build failed"
+msgstr " 失敗"
+
+#: ../html/src/manager/images/image-view.tsx:547
 msgid "Unknown"
 msgstr "不明"
 
-#: ../html/src/manager/images/image-view.tsx:610
-#: ../html/src/manager/images/image-view.tsx:802
+#: ../html/src/manager/images/image-view.tsx:660
+#: ../html/src/manager/images/image-view.tsx:844
 msgid "Runtime"
 msgstr "実行時間"
 
-#: ../html/src/manager/images/image-view.tsx:631
+#: ../html/src/manager/images/image-view.tsx:681
 msgid "Show obsolete"
 msgstr "非推奨の表示"
 
-#: ../html/src/manager/images/image-view.tsx:655
+#: ../html/src/manager/images/image-view.tsx:705
 msgid "Revision"
 msgstr "リビジョン"
 
-#: ../html/src/manager/images/image-view.tsx:657
+#: ../html/src/manager/images/image-view.tsx:707
 msgid "(obsolete)"
 msgstr "(非推奨)"
 
-#: ../html/src/manager/images/image-view.tsx:659
-#: ../html/src/manager/systems/all-list.tsx:99
+#: ../html/src/manager/images/image-view.tsx:709
+#: ../html/src/manager/systems/all-list.tsx:100
 #: ../html/src/manager/systems/list-filter.tsx:45
 #: ../html/src/manager/systems/virtual-list.tsx:99
 msgid "Updates"
 msgstr "更新"
 
-#: ../html/src/manager/images/image-view.tsx:745
+#: ../html/src/manager/images/image-view.tsx:787
 msgid "Delete Selected Image(s)"
 msgstr "選択したイメージの削除"
 
-#: ../html/src/manager/images/image-view.tsx:749
+#: ../html/src/manager/images/image-view.tsx:791
 msgid "Are you sure you want to delete the selected image?"
 msgstr "選択したイメージを削除してよろしいですか？"
 
-#: ../html/src/manager/images/image-view.tsx:750
+#: ../html/src/manager/images/image-view.tsx:792
 msgid "Are you sure you want to delete selected images? ({count} images selected)"
 msgstr "選択したイメージを削除してよろしいですか? ({count}個のイメージが選択されています)"
 
@@ -5657,14 +5684,14 @@ msgid "Day"
 msgstr "日"
 
 #: ../html/src/manager/maintenance/details/calendar-details.tsx:40
-#: ../html/src/manager/maintenance/list/calendar-list.tsx:104
+#: ../html/src/manager/maintenance/list/calendar-list.tsx:100
 msgid "Delete maintenance calendar"
 msgstr "メンテナンスカレンダーの削除"
 
 #: ../html/src/manager/maintenance/details/calendar-details.tsx:43
 #: ../html/src/manager/maintenance/details/schedule-details.tsx:45
-#: ../html/src/manager/maintenance/list/calendar-list.tsx:107
-#: ../html/src/manager/maintenance/list/schedule-list.tsx:87
+#: ../html/src/manager/maintenance/list/calendar-list.tsx:103
+#: ../html/src/manager/maintenance/list/schedule-list.tsx:85
 #: ../html/src/manager/recurring/recurring-actions-list.tsx:236
 #: ../html/src/manager/systems/virtualhostmanager/virtualhostmanager-list.tsx:107
 msgid "Are you sure you want to delete the selected item?"
@@ -5677,7 +5704,7 @@ msgstr "この処理により、割り当てられた全てのシステムから
 
 #: ../html/src/manager/maintenance/details/calendar-details.tsx:45
 #: ../html/src/manager/maintenance/edit/calendar-edit.tsx:192
-#: ../html/src/manager/maintenance/list/calendar-list.tsx:109
+#: ../html/src/manager/maintenance/list/calendar-list.tsx:105
 msgid "Cancel affected actions?"
 msgstr "影響する処理をキャンセルしますか？"
 
@@ -5701,7 +5728,7 @@ msgid "Calendar Details"
 msgstr "カレンダーの詳細"
 
 #: ../html/src/manager/maintenance/details/schedule-details.tsx:42
-#: ../html/src/manager/maintenance/list/schedule-list.tsx:84
+#: ../html/src/manager/maintenance/list/schedule-list.tsx:82
 msgid "Delete maintenance schedule"
 msgstr "メンテナンススケジュールの削除"
 
@@ -5819,7 +5846,7 @@ msgstr "カレンダーの追加"
 msgid "No calendars created. Use Create to add a calendar."
 msgstr "カレンダーが作成されていません。作成を押してカレンダーを追加してください。"
 
-#: ../html/src/manager/maintenance/list/calendar-list.tsx:108
+#: ../html/src/manager/maintenance/list/calendar-list.tsx:104
 msgid "This will unassign all schedules from this calendar."
 msgstr "このカレンダーから全てのスケジュールの割り当てを解除します。"
 
@@ -5852,7 +5879,7 @@ msgstr "以下は現在のユーザに対する、有効なメンテナンスカ
 msgid "No schedules created. Use Create to add a schedule."
 msgstr "スケジュールが作成されていません。作成を押してスケジュールを追加してください。"
 
-#: ../html/src/manager/maintenance/list/schedule-list.tsx:88
+#: ../html/src/manager/maintenance/list/schedule-list.tsx:86
 msgid "This will remove the schedule from all the systems assigned to it."
 msgstr "割り当てられている全てのシステムからスケジュールを削除します。"
 
@@ -5875,10 +5902,6 @@ msgstr "メンテナンススケジュールを消去しました"
 #: ../html/src/manager/maintenance/ssm/schedule-picker.tsx:41
 msgid "Maintenance schedule has been assigned"
 msgstr "メンテナンススケジュールを割り当てました"
-
-#: ../html/src/manager/maintenance/ssm/schedule-picker.tsx:80
-msgid "Clear All"
-msgstr "全てを消去"
 
 #: ../html/src/manager/maintenance/ssm/schedule-picker.tsx:81
 msgid "fa-times"
@@ -6318,7 +6341,7 @@ msgstr "プロキシSSHポート"
 
 #: ../html/src/manager/minion/proxy/proxy-config.tsx:167
 #: ../html/src/manager/proxy/container-config.tsx:219
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:510
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:508
 msgid "Port range: 1 - 65535"
 msgstr "ポート範囲: 1 - 65535"
 
@@ -6611,7 +6634,7 @@ msgid "All Messages"
 msgstr "全てのメッセージ"
 
 #: ../html/src/manager/notifications/notifications-list.tsx:223
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:149
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:148
 msgid "show details"
 msgstr "詳細の表示"
 
@@ -6898,11 +6921,11 @@ msgstr "{name}の状態設定"
 msgid "Order"
 msgstr "順序"
 
-#: ../html/src/manager/recurring/recurring-actions-details.tsx:310
+#: ../html/src/manager/recurring/recurring-actions-details.tsx:312
 msgid "SCAP Policy for {name}"
 msgstr "{name}のSCAPポリシー"
 
-#: ../html/src/manager/recurring/recurring-actions-details.tsx:332
+#: ../html/src/manager/recurring/recurring-actions-details.tsx:335
 msgid "No description"
 msgstr "説明なし"
 
@@ -7267,40 +7290,40 @@ msgstr "アクティベーションキーの更新中にエラーが発生しま
 msgid "Activation key has been modified."
 msgstr "アクティベーションキーが変更されました。"
 
-#: ../html/src/manager/systems/all-list.tsx:58
+#: ../html/src/manager/systems/all-list.tsx:59
 msgid " Systems "
 msgstr " システム "
 
-#: ../html/src/manager/systems/all-list.tsx:72
+#: ../html/src/manager/systems/all-list.tsx:73
 msgid "Add system"
 msgstr "システムの追加"
 
-#: ../html/src/manager/systems/all-list.tsx:87
+#: ../html/src/manager/systems/all-list.tsx:88
 msgid "No Systems."
 msgstr "システムはありません。"
 
-#: ../html/src/manager/systems/all-list.tsx:137
+#: ../html/src/manager/systems/all-list.tsx:138
 #: ../html/src/manager/systems/list-filter.tsx:48
 msgid "Extra Packages"
 msgstr "追加パッケージ"
 
-#: ../html/src/manager/systems/all-list.tsx:151
+#: ../html/src/manager/systems/all-list.tsx:152
 #: ../html/src/manager/systems/list-filter.tsx:49
 msgid "Config Diffs"
 msgstr "設定の差分"
 
-#: ../html/src/manager/systems/all-list.tsx:166
+#: ../html/src/manager/systems/all-list.tsx:167
 msgid "Last Checked In"
 msgstr "最終チェックイン"
 
-#: ../html/src/manager/systems/all-list.tsx:172
+#: ../html/src/manager/systems/all-list.tsx:173
 #: ../html/src/manager/systems/list-filter.tsx:50
 #: ../html/src/manager/systems/ssm/ssm-subscribe-channels.tsx:145
 #: ../html/src/manager/systems/subscribe-channels/subscribe-channels.tsx:590
 msgid "Base Channel"
 msgstr "ベースチャンネル"
 
-#: ../html/src/manager/systems/all-list.tsx:183
+#: ../html/src/manager/systems/all-list.tsx:184
 #: ../html/src/manager/systems/list-filter.tsx:53
 msgid "System Type"
 msgstr "システムタイプ"
@@ -7341,114 +7364,114 @@ msgstr "変更しない"
 msgid "Enable "
 msgstr "有効にする "
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:41
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:40
 msgid "Error Details"
 msgstr "エラーの詳細"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:51
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:50
 msgid "Standard Output:"
 msgstr "標準出力:"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:67
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:66
 msgid "Standard Error:"
 msgstr "標準エラー:"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:83
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:82
 msgid "Result:"
 msgstr "結果:"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:340
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:339
 msgid "Request interrupted or invalid response received from the server. Please check if your minion was bootstrapped correctly."
 msgstr "リクエストが中断されたか、もしくはサーバから不正な応答を受け取りました。お使いの minion が正しくブートストラップされているかどうかをご確認ください。"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:368
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:367
 msgid "Bootstrap process initiated. Your system should be visible at the following location shortly: <link>systems</link>. If any issues arise, you'll receive an error notification. In case you're working with a transactional system, please perform a system reboot to complete the registration process."
 msgstr "ブートストラッププロセスが開始されました。システムはすぐに次の場所に表示されます: <link>システム</link>。問題が発生した場合、エラー通知が届きます。トランザクションシステムで作業している場合は、システムの再起動を実行して、登録プロセスを完了してください。"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:388
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:387
 msgid "Show additional details about this error"
 msgstr "このエラーの詳細を表示する"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:397
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:395
 msgid "Unable to bootstrap host. The following errors have happened:"
 msgstr "ホストをブートストラップできません。 次のエラーが発生しました。"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:400
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:398
 msgid "Your system is bootstrapping: waiting for a response.."
 msgstr "システムをブートストラップしています: 応答を待っています.."
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:402
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:400
 msgid "Loading SSH Private Key.."
 msgstr "SSH 機密鍵を読み込んでいます.."
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:410
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:408
 #: ../html/src/manager/systems/list-filter.tsx:14
 msgid "Bootstrap"
 msgstr "ブートストラップ"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:434
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:432
 msgid "e.g., ••••••••••••"
 msgstr "例: ••••••••••••"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:450
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:448
 msgid "The file will be stored in a temporary file on the server and will be deleted after the bootstrapping procedure"
 msgstr "ファイルはサーバ内の一時ファイルとして保存されています。ブートストラップ処理が完了すると削除されます"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:463
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:461
 msgid "Leave empty for no passphrase"
 msgstr "パスフレーズが無い場合は何も入力しないでください"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:475
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:473
 msgid "Bootstrap Minions"
 msgstr "minion のブートストラップ"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:478
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:476
 msgid "You can add systems to be managed by providing SSH credentials only. {productName} will prepare the system remotely and will perform the registration."
 msgstr "SSHの資格情報のみを提供することで、管理対象のシステムを追加することができます。 {productName}はシステムを遠隔から準備し、登録処理を実施します。"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:492
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:490
 msgid "e.g., host.domain.com"
 msgstr "例: host.domain.com"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:529
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:527
 msgid "The user will have an effect only during the bootstrap process. Further connections will be made by the user specified in rhn.conf. The default user for the key 'ssh_push_sudo_user' is 'root'. This user is set after {productName}'s SSH key is deployed during the bootstrap procedure."
 msgstr "ユーザはブートストラップ処理の際にのみ有効化されます。それ以降の接続に対しては、 rhn.conf 内で指定したユーザで行ないます。また、 'ssh_push_sudo_user'の鍵に対する既定のユーザは'root'です。このユーザは{productName}のSSHキーを配置したあと、ブートストラップ処理の際に設定されます。"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:538
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:536
 msgid "Authentication Method"
 msgstr "認証メソッド"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:575
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:573
 msgid "Ansible control node"
 msgstr "Ansible 制御ノード"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:593
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:623
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:591
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:621
 #: ../html/src/manager/systems/proxy.tsx:124
 msgid "None"
 msgstr "なし"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:606
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:604
 msgid "Reactivation Key"
 msgstr "再アクティベーションキー"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:612
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:610
 msgid "Leave empty when no reactivation is wanted"
 msgstr "再アクティベーションが不要な場合は空のままにする"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:641
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:639
 msgid "The hostname of the proxy is not fully qualified. This may cause problems when accessing the channels."
 msgstr "プロキシのホスト名が完全修飾型ではありません。チャンネルへのアクセス時に問題を引き起こす可能性があります。"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:658
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:656
 msgid "Disable SSH strict host key checking during bootstrap process"
 msgstr "ブートストラッププロセス中にSSH厳密ホストキーの確認を無効にする"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:674
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:672
 msgid "Manage system completely via SSH (will not install an agent)"
 msgstr "SSH 経由でシステムを完全に管理する(エージェントをインストールしない)"
 
-#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:690
+#: ../html/src/manager/systems/bootstrap/bootstrap-minions.tsx:688
 msgid "Are you sure you want to close this page while bootstrapping is in progress ?"
 msgstr "ブートストラップ中にこのページを閉じてもよろしいですか?"
 
@@ -7633,39 +7656,39 @@ msgstr "製品移行 - スケジュール"
 msgid "Unknown base product"
 msgstr "不明なベース製品"
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:119
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:118
 msgid "Show product details"
 msgstr "製品詳細の表示"
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:135
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:134
 msgid "The products installed on this system can be migrated"
 msgstr "このシステムにインストールされている製品は移行できます"
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:138
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:137
 msgid "The products installed on this system cannot be migrated"
 msgstr "このシステムにインストールされている製品は移行できません"
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:144
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:143
 msgid "The products installed on this system can be migrated."
 msgstr "このシステムにインストールされている製品は移行できます。"
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:163
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:162
 msgid "Base Product"
 msgstr "ベース製品"
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:165
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:164
 msgid "Can be migrated?"
 msgstr "移行できますか?"
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:221
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:220
 msgid "Product details for {system}"
 msgstr "{system} の製品詳細"
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:225
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:224
 msgid "These are the products currently installed on {system}:"
 msgstr "{system} に現在インストールされている製品は次のとおりです:"
 
-#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:236
+#: ../html/src/manager/systems/product-migration/ssm-product-migration.tsx:235
 msgid "The systems currently selected cannot be migrated in batch."
 msgstr "現在選択されているシステムは一括移行できません。"
 
