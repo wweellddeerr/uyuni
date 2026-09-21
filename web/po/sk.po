@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-18 10:25+0200\n"
-"PO-Revision-Date: 2026-08-22 18:07+0000\n"
+"PO-Revision-Date: 2026-09-21 19:05+0000\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <https://l10n.opensuse.org/projects/uyuni/web-5-2/sk/>\n"
 "Language: sk\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 2026.8.1\n"
+"X-Generator: Weblate 2026.9.1\n"
 
 #: ../html/javascript/spacewalk-essentials.js:416
 msgid "remaining"
@@ -4148,10 +4148,8 @@ msgid "Create a new filter"
 msgstr "Vytvoriť nový filter"
 
 #: ../html/src/manager/content-management/list-filters/filter-edit.tsx:185
-#, fuzzy
-#| msgid "This access token cannot be deleted. It is currently used by peripheral {fqdn}"
 msgid "This filter cannot be deleted because it is currently in use by one or more projects"
-msgstr "Tento prístupový token sa nemôže vymazať. V súčasnosti ho používa periféria {fqdn}"
+msgstr "Tento filter sa nemôže vymazať, pretože ho v súčasnosti používa jeden alebo viacero projektov"
 
 #: ../html/src/manager/content-management/list-filters/filter-edit.tsx:192
 msgid "Filter deleted successfully"
@@ -4162,14 +4160,10 @@ msgid "Bear in mind that all the associated projects need to be rebuilt after a 
 msgstr "Majte na pamäti, že všetky pridružené projekty musia byť po aktualizácii filtra znovu zostavené"
 
 #: ../html/src/manager/content-management/list-filters/filter-form.tsx:91
-#, fuzzy
-#| msgid "Use a manual filter"
 msgid "Manual Filter"
-msgstr "Použiť ručný filter"
+msgstr "Ručný filter"
 
 #: ../html/src/manager/content-management/list-filters/filter-form.tsx:96
-#, fuzzy
-#| msgid "Use a template"
 msgid "Use Template"
 msgstr "Použiť šablónu"
 
@@ -4692,10 +4686,8 @@ msgid "Create New Filter"
 msgstr "Vytvoriť nový filter"
 
 #: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:32
-#, fuzzy
-#| msgid "Edit Filter {name}"
 msgid "Edit {name}"
-msgstr "Upraviť filter {name}"
+msgstr "Upraviť {name}"
 
 #: ../html/src/manager/content-management/shared/components/panels/filters-project/filters-project.tsx:79
 msgid "Filters"
@@ -5499,20 +5491,16 @@ msgid "Images"
 msgstr "Obrazy"
 
 #: ../html/src/manager/images/image-view.tsx:530
-#, fuzzy
-#| msgid "sync failed"
 msgid "Inspect failed"
-msgstr "synchronizácia zlyhala"
+msgstr "Kontrola zlyhala"
 
 #: ../html/src/manager/images/image-view.tsx:539
 msgid "Building"
 msgstr "Zostavovanie"
 
 #: ../html/src/manager/images/image-view.tsx:544
-#, fuzzy
-#| msgid " failed"
 msgid "Build failed"
-msgstr " neúspešné"
+msgstr "Zostavenie zlyhalo"
 
 #: ../html/src/manager/images/image-view.tsx:547
 msgid "Unknown"
