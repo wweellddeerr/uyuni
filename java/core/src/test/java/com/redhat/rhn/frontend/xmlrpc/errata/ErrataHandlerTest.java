@@ -926,7 +926,7 @@ public class ErrataHandlerTest extends BaseHandlerTestCase {
         Channel channel = ChannelFactoryTest.createBaseChannel(admin);
         String channelLabel = channel.getLabel();
         channel.setOrg(admin.getOrg());
-        e.getPackages().forEach(p -> channel.getPackages().add(p));
+        e.getPackages().forEach(channel::addPackage);
         ChannelFactory.save(channel);
 
         TestUtils.flushAndClearSession();
