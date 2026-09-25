@@ -3570,14 +3570,6 @@ budete okamžite odhlásení a &lt;b&gt;nebudete sa môcť znova prihlásiť&lt;
           <context context-type="sourcefile">/rhn/errata/AllErrata</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="erratalist.jsp.oval" xml:space="preserve">
-        <source>OVAL</source>
-        <target state="translated">OVAL</target>
-        <context-group name="ctx">
-          <context context-type="sourcefile">/rhn/errata/RelevantErrata</context>
-          <context context-type="sourcefile">/rhn/errata/AllErrata</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="erratalist.jsp.systems" xml:space="preserve">
         <source>Systems</source>
         <target state="translated">Systémy</target>

@@ -3539,14 +3539,6 @@ drücken und &lt;b&gt;können sich nicht wieder einloggen&lt;/b&gt;.</target>
         </context-group>
         <target>Typ</target>
       </trans-unit>
-      <trans-unit id="erratalist.jsp.oval" xml:space="preserve">
-        <source>OVAL</source>
-        <context-group name="ctx">
-          <context context-type="sourcefile">/rhn/errata/RelevantErrata</context>
-          <context context-type="sourcefile">/rhn/errata/AllErrata</context>
-        </context-group>
-        <target>OVAL</target>
-      </trans-unit>
       <trans-unit id="erratalist.jsp.systems" xml:space="preserve">
         <source>Systems</source>
         <context-group name="ctx">
