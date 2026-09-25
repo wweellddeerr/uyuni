@@ -3536,14 +3536,6 @@ abaixo e &lt;b&gt;não poderá mais se autenticar&lt;/b&gt;.</target>
         </context-group>
         <target>Tipo</target>
       </trans-unit>
-      <trans-unit id="erratalist.jsp.oval" xml:space="preserve">
-        <source>OVAL</source>
-        <context-group name="ctx">
-          <context context-type="sourcefile">/rhn/errata/RelevantErrata</context>
-          <context context-type="sourcefile">/rhn/errata/AllErrata</context>
-        </context-group>
-        <target>OVAL</target>
-      </trans-unit>
       <trans-unit id="erratalist.jsp.systems" xml:space="preserve">
         <source>Systems</source>
         <context-group name="ctx">

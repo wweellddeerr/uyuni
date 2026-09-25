@@ -3541,14 +3541,6 @@ inmediatamente y usted &lt;b&gt;no podrá iniciar una sesión nuevamente&lt;/b&g
         </context-group>
         <target>Tipo</target>
       </trans-unit>
-      <trans-unit id="erratalist.jsp.oval" xml:space="preserve">
-        <source>OVAL</source>
-        <context-group name="ctx">
-          <context context-type="sourcefile">/rhn/errata/RelevantErrata</context>
-          <context context-type="sourcefile">/rhn/errata/AllErrata</context>
-        </context-group>
-        <target>OVAL</target>
-      </trans-unit>
       <trans-unit id="erratalist.jsp.systems" xml:space="preserve">
         <source>Systems</source>
         <context-group name="ctx">
