@@ -64,6 +64,10 @@ $auth_registry = ENV.fetch('AUTH_REGISTRY', nil) if ENV['AUTH_REGISTRY']
 $current_user = 'admin'
 $current_password = 'admin'
 $use_salt_bundle = ENV.fetch('USE_SALT_BUNDLE', true)
+$is_external_cluster = ENV.fetch('IS_EXTERNAL_CLUSTER', false) if ENV['IS_EXTERNAL_CLUSTER']
+$create_spacewalk_pv = ENV.fetch('CREATE_VAR_SPACEWALK_PV', true) if ENV['CREATE_VAR_SPACEWALK_PV']
+$create_pgsql_pv = ENV.fetch('CREATE_VAR_PGSQL_PV', true) if ENV['CREATE_VAR_PGSQL_PV']
+$default_local_storage_class = ENV.fetch('LOCAL_PATH_DEFAULT_CLASS', true) if ENV['LOCAL_PATH_DEFAULT_CLASS']
 
 # maximal wait before giving up
 # the tests return much before that delay in case of success
@@ -85,7 +89,7 @@ LONG_SCENARIO_HARD_LIMIT = ENV.fetch('LONG_SCENARIO_HARD_LIMIT', '9000').to_i
 IMMEDIATE_WAIT = ENV['IMMEDIATE_WAIT'] ? ENV['IMMEDIATE_WAIT'].to_i : 1
 $is_cloud_provider = ENV['PROVIDER'].include? 'aws'
 $is_gh_validation = ENV['PROVIDER'].include? 'podman'
-$is_containerized_server = %w[k3s podman].include? ENV.fetch('CONTAINER_RUNTIME', '')
+$is_containerized_server = %w[k3s podman rke2].include? ENV.fetch('CONTAINER_RUNTIME', '')
 $is_rke2 = ENV.fetch('CONTAINER_RUNTIME', '').include? 'rke2'
 $is_transactional_server = transactional_system?('server', runs_in_container: false)
 $is_using_build_image = ENV.fetch('IS_USING_BUILD_IMAGE', false)
@@ -153,7 +157,8 @@ $stdout.puts "Capybara APP Host: #{Capybara.app_host}:#{Capybara.server_port}"
 World(Minitest::Assertions)
 
 # Initialize the API client
-$api_test = new_api_client unless ENV.key?('UYUNI_NOT_INSTALLED') && ENV['UYUNI_NOT_INSTALLED'] == 'true'
+$api_test = new_api_client unless uyuni_not_installed?
+
 # Init CodeCoverage Handler
 $code_coverage = CodeCoverage.new if $code_coverage_mode
 
@@ -296,7 +301,9 @@ After('@install_mlm_on_rke2') do |scenario|
   next unless scenario.passed?
 
   bashrc_file = '/root/.bashrc'
-  get_target('localhost').run("sed -i 's/export UYUNI_NOT_INSTALLED=true/export UYUNI_NOT_INSTALLED=false/g' #{bashrc_file}")
+  localhost = get_target('localhost')
+  localhost.run("sed -i '/^export UYUNI_NOT_INSTALLED=/d' #{bashrc_file}")
+  localhost.run("echo 'export UYUNI_NOT_INSTALLED=false' >> #{bashrc_file}")
 end
 
 # get the Cobbler log output when it fails
@@ -424,6 +431,26 @@ Before('not @no_user_creation') do |scenario|
     step %(I create a user with name "#{$feature_filename}" and password "linux")
     add_context('user_created', true)
   end
+end
+
+Before('@skip_if_external_cluster') do
+  skip_this_scenario if $is_external_cluster
+end
+
+Before('@is_external_cluster') do
+  skip_this_scenario unless $is_external_cluster
+end
+
+Before('@create_spacewalk_pv') do
+  skip_this_scenario unless $create_spacewalk_pv
+end
+
+Before('@create_pgsql_pv') do
+  skip_this_scenario unless $create_pgsql_pv
+end
+
+Before('@default_local_path_class') do
+  skip_this_scenario unless $default_local_storage_class
 end
 
 # do some tests only if the corresponding node exists
@@ -959,6 +986,10 @@ end
 # do test only if we have a containerized server
 Before('@containerized_server') do
   skip_this_scenario unless $is_containerized_server
+end
+
+Before('@skip_if_rke2') do
+  skip_this_scenario if $is_rke2
 end
 
 Before('@rke2') do

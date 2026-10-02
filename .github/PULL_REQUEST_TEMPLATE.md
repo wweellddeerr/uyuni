@@ -6,10 +6,6 @@ SPDX-License-Identifier: Apache-2.0
 
   ## IMPORTANT 📌
 
-ONLY the following changes are accepted in the `Manager-4.3` branch:
-- Bugfixes for L3 that were specifically reported for 4.3
-- Security fixes that we must release for 4.3
-
 ONLY the following changes are accepted in the `Manager-5.1` branch:
 - Bugfixes for L3 that do not require big refactors (if they come as backport from 5.2)
 - Bugfixes for special priorities that do not require big refactors (if they come as backport from 5.2)
@@ -82,6 +78,7 @@ If you need to re-run a test, please mark the related checkbox, it will be unche
 - [ ] Re-run test "java_pgsql_tests"
 - [ ] Re-run test "ruby_rubocop"
 - [ ] Re-run test "schema_migration_test_pgsql"
+- [ ] Re-run test "reportdb_schema_migration_test_pgsql"
 - [ ] Re-run test "susemanager_unittests"
 - [ ] Re-run test "frontend_checks"
 - [ ] Re-run test "spacecmd_unittests"

@@ -12973,7 +12973,7 @@ SOFTWARE.
 
 --------------------------------------------------------------------------------
 
-Package: immutable@4.3.7
+Package: immutable@4.3.9
 License text:
 
 MIT License
@@ -21317,7 +21317,7 @@ IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 --------------------------------------------------------------------------------
 
-Package: yaml@1.10.2
+Package: yaml@1.10.3
 License text:
 
 Copyright 2018 Eemeli Aro <eemeli@gmail.com>
