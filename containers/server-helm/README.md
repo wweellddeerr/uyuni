@@ -149,6 +149,18 @@ Here is a list of the ports to map:
 | TCP      | 8002  | search       | 8002         | Only if installed with `exposeJavaDebug = true`  |
 | TCP      | 8003  | tomcat       | 8003         | Only if installed with `exposeJavaDebug = true`  |
 
+#### Exposing the report database
+
+Exposing the report database externally requires configuring the `reportdb` service as a `NodePort` or `LoadBalancer` (via the `services.reportdb` value).
+
+Be aware of a critical security behavior: external database connections require SSL, whereas internal cluster connections do not.
+However, Traefik ingress TCP routes mask client IPs, causing PostgreSQL to view external traffic as internal.
+
+If you expose the database using a Traefik ingress TCP route and endpoint, you risk allowing clients to establish unencrypted, insecure connections.
+
+The IP range to use for the plain text connections on the database can be configured using the `db.podsCIDR` value.
+Also consider using a `NetworkPolicy` to limit the access to the database to the application namespace and the known external IPs.
+
 #### Exposing TFTP
 
 Exposing the `tftp` service has to be done differently due to the way TFTP protocol is working.
@@ -411,10 +423,11 @@ semodule -i /root/systemdcontainerpolicy.pp
 | `saline.affinity` | object | `{}` | Advanced scheduling rules. |
 | `saline.tolerations` | list | `[]` | Node taint tolerations. |
 | `saline.nodeName` | string | `nil` | Specific node assignment. |
-| `db` | object | `{"affinity":{},"enable":true,"image":null,"internal":{"host":null,"name":null,"port":5432},"nodeName":null,"nodeSelector":{},"report":{"host":null,"name":null,"port":5432},"tag":null,"tolerations":[]}` | PostgreSQL database configuration |
+| `db` | object | `{"affinity":{},"enable":true,"image":null,"internal":{"host":null,"name":null,"port":5432},"nodeName":null,"nodeSelector":{},"podsCIDR":"10.42.0.0/16","report":{"host":null,"name":null,"port":5432},"tag":null,"tolerations":[]}` | PostgreSQL database configuration |
 | `db.image` | string | `nil` | Image for the database container, overwriting the one computed with the `repository` value |
 | `db.tag` | string | `nil` | Image tag for the database container, overwriting the global one |
 | `db.enable` | bool | `true` | Deploys the internal dababase if set to true. Setting to false is not supported yet. |
+| `db.podsCIDR` | string | `"10.42.0.0/16"` | Network IP range to allow plain text connections from, usually the cluster pods CIDR. The default has been adjusted with rke2's pods CIDR default. |
 | `db.internal` | object | `{"host":null,"name":null,"port":5432}` | Configuration of the internal database connection |
 | `db.internal.host` | string | `nil` | FQDN or IP where to find the internal database (unused for now) |
 | `db.internal.port` | int | `5432` | Port where to find the internal database (unused for now) |

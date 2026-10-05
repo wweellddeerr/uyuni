@@ -132,6 +132,18 @@ Here is a list of the ports to map:
 | TCP      | 8003  | tomcat       | 8003         | Only if installed with `exposeJavaDebug = true`  |
 
 
+#### Exposing the report database
+
+Exposing the report database externally requires configuring the `reportdb` service as a `NodePort` or `LoadBalancer` (via the `services.reportdb` value).
+
+Be aware of a critical security behavior: external database connections require SSL, whereas internal cluster connections do not.
+However, Traefik ingress TCP routes mask client IPs, causing PostgreSQL to view external traffic as internal.
+
+If you expose the database using a Traefik ingress TCP route and endpoint, you risk allowing clients to establish unencrypted, insecure connections.
+
+The IP range to use for the plain text connections on the database can be configured using the `db.podsCIDR` value.
+Also consider using a `NetworkPolicy` to limit the access to the database to the application namespace and the known external IPs.
+
 #### Exposing TFTP
 
 Exposing the `tftp` service has to be done differently due to the way TFTP protocol is working.
@@ -166,6 +178,7 @@ The list of services supporting this is:
     {{- end }}
   {{- end }}
 {{- end }}
+
 
 ### Ingress vs Gateway API
 
