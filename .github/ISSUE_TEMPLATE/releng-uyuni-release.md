@@ -41,7 +41,7 @@ Add more tasks if needed.
     - [ ] ensure that QE is able to test the new client
     - [ ] ensure to update the needed Master/Stable OBS projects with release targets and needed repos
     - [ ] On the PR for the website, don't forget to list the new client tools in the stable and devel pages listing the repos that the community can consume.
-- [ ] Check all the [tests](https://ci.suse.de/view/Manager/view/Uyuni/): everything should be green, in particular the acceptance testsuite or otherwise submission must be approved by QA.
+- [ ] Check all the [tests](https://ci.suse.de/view/Manager/view/Uyuni/): everything should be green, in particular the acceptance testsuite ([Podman](https://jenkins.mgr.suse.de/job/uyuni-master-dev-acceptance-tests-podman/) and [RKE2](https://jenkins.mgr.suse.de/job/uyuni-master-dev-acceptance-tests-RKE2/)) or otherwise submission must be approved by QA.
 - [ ] Ask the Doc Squad:
   - [ ] a PR to https://src.opensuse.org/uyuni/uyuni-docs_en on branch uyuni-main
   - [ ] a PR for the main documention and ReportDB documentation at the [documentation repository, gh-pages branch](https://github.com/uyuni-project/uyuni-docs/tree/gh-pages)
