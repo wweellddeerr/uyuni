@@ -53,10 +53,11 @@ assignees: ''
   - It's recommended to add a pipeline report about the number of failures in each pipeline with icons green, red to show if they pass in secondary and arrows to show the trend of failures since the day before in the #discuss-multi-linux-manager-ci-development channel in slack.
 
 - **Links to the test suites**:
-  - [Head Podman](https://ci.suse.de/view/Manager/view/Manager-Head/job/manager-Head-dev-acceptance-tests-podman/)
-  - [Head RKE2](https://ci.suse.de/view/Manager/view/Manager-Head/job/manager-Head-dev-acceptance-tests-RKE2/)
-  - [5.2](https://jenkins.mgr.suse.de/job/manager-5.2-dev-acceptance-tests/)
-  - [5.1](https://ci.suse.de/view/Manager/view/Manager-5.1/job/manager-5.1-dev-acceptance-tests/)
-  - [Uyuni](https://ci.suse.de/view/Manager/view/Uyuni/job/uyuni-master-dev-acceptance-tests-podman/)
-  - [Uyuni RKE2](https://ci.suse.de/view/Manager/view/Uyuni/job/uyuni-master-dev-acceptance-tests-RKE2/)
+  - [Head Podman](https://jenkins.mgr.suse.de/job/manager-Head-dev-acceptance-tests-podman/)
+  - [Head RKE2](https://jenkins.mgr.suse.de/job/manager-Head-dev-acceptance-tests-RKE2/)
+  - [Uyuni](https://jenkins.mgr.suse.de/job/uyuni-master-dev-acceptance-tests-podman/)
+  - [Uyuni RKE2](https://jenkins.mgr.suse.de/job/uyuni-master-dev-acceptance-tests-RKE2/)
+  - [5.2 Podman](https://jenkins.mgr.suse.de/job/manager-5.2-dev-acceptance-tests-podman/)
+  - [5.2 RKE2](https://jenkins.mgr.suse.de/job/manager-5.2-dev-acceptance-tests-RKE2/)
+  - [5.1](https://jenkins.mgr.suse.de/job/manager-5.1-dev-acceptance-tests/)
   - [Github acceptance tests on master](https://github.com/uyuni-project/uyuni/actions/workflows/acceptance_tests_scheduler.yml)

@@ -109,7 +109,8 @@ Team Lead to handle the following tasks:
   - [ ] Remove leaver entries for DHCP from the [galaxy/infrastructure repository](https://gitlab.suse.de/galaxy/infrastructure/-/tree/master/srv/salt/dhcpd-server)
   - [ ] Remove the leaver's [personal pipeline](https://github.com/SUSE/susemanager-ci/tree/master/jenkins_pipelines/environments/personal) from susemanager-ci
   - [ ] Remove leaver entries from [`terracumber_config/tf_files/personal/environment.tfvars`](https://github.com/SUSE/susemanager-ci/blob/master/terracumber_config/tf_files/personal/environment.tfvars) in susemanager-ci. This frees their MACs and their additional network for reuse
-  - [ ] Rename the leaver's `<leaver>-personal-pipeline` job on [ci.suse.de](https://ci.suse.de/view/Manager/view/Manager-qe/) to `DELETEME-<leaver>-personal-pipeline`. Deleting the pipeline file does not delete the job. Nobody in the team has `Job/Delete`, but the `DELETEME-` prefix hides the job from the views and the ci.suse.de admins delete it later
+  - [ ] Remove the leaver's `<leaver>-personal-pipeline` job (and `<leaver>-personal-bv`, if any) from `jobs-prg.json` in the [jenkins-container repository](https://gitlab.suse.de/galaxy/jenkins-container): `python3 scripts/manage-jobs.py remove <leaver>-personal-pipeline`, then `python3 scripts/manage-jobs.py validate`
+  - [ ] Delete the same job(s) in [Jenkins](https://jenkins.mgr.suse.de/): open the job, then `Delete Pipeline`. Removing the entry from `jobs-prg.json` does not delete the existing job
   - [ ] Remove the leaver's libvirt pool `<leaver>_disks` and its directory on their private hypervisor, plus any leftover domains and networks
   - [ ] Remove from [galaxy-qa](https://mailman.suse.de/mailman/admin/galaxy-qa/members/remove) mailing list
   - [ ] Remove from [Multi-Linux Manager QE Team](https://github.com/orgs/SUSE/teams/multi-linux-manager-qe/members) on GitHub

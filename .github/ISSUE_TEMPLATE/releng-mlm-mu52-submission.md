@@ -59,13 +59,13 @@ Add more tasks if needed.
   - [ ] remember that relengs submit the bundle to the 5.2 client tools while the classic salt submission is handled by the Ion squad, and that for SLE 16 and SL Micro 6.2, the client tools are now managed via the new Git workflow, therefore bundles need to be submitted using git PRs.
   - [ ] Add all the IDs (and notes, if any), to the JIRA ticket, and ping the Maintenance Team at [#discuss-susemamanager-maintenance](https://app.slack.com/client/T02863RC2AC/C02DEF2U0E5)
 - [ ] Quick review changelogs with `tito-wrapper`, and request changes if needed
-- [ ] Check all the relevant [5.2 CI tests for the 5.2 version](https://ci.suse.de/view/Manager/view/Manager-5.2/): everything should be green, or otherwise submission must be approved by the RRTG
+- [ ] Check all the relevant [5.2 CI tests for the 5.2 version](https://jenkins.mgr.suse.de/view/By%20Version/view/Manager%205.2/): everything should be green, or otherwise submission must be approved by the RRTG
 
 # TODO during the submission window
 
 Add more tasks if needed (for example, asking Maintenace to change the channel definitions).
 
-- [ ] Check all the relevant [5.2 CI tests for the 5.2 version](https://ci.suse.de/view/Manager/view/Manager-5.2/): everything should be green, in particular the [acceptance testsuite](https://jenkins.mgr.suse.de/job/manager-5.2-dev-acceptance-tests/) or otherwise submission must be approved by the RRTG
+- [ ] Check all the relevant [5.2 CI tests for the 5.2 version](https://jenkins.mgr.suse.de/view/By%20Version/view/Manager%205.2/): everything should be green, in particular the acceptance testsuite ([Podman](https://jenkins.mgr.suse.de/job/manager-5.2-dev-acceptance-tests-podman/) and [RKE2](https://jenkins.mgr.suse.de/job/manager-5.2-dev-acceptance-tests-RKE2/)) or otherwise submission must be approved by the RRTG
 - [ ] Tag everything with `tito tag`. Do **NOT** tag if the version has not been already bumped in `web/conf/rhn_web.conf` (`web.version.uyuni`), as requested in one of the previous points.
 - [ ] Check that the Jenkins synchronization jobs ([manager-5.2-releng-2obs](https://ci.suse.de/view/Manager/view/Manager-5.2/job/manager-5.2-releng-2obs/) and [manager-5.2-uyunitools-2obs](https://ci.suse.de/view/Manager/view/Manager-5.2/job/manager-5.2-uyunitools-2obs/)) successfully mirrored the GitHub changes to the internal Gitea server (src.suse.de). In the new workflow, these jobs no longer create Submit Requests in OBS; instead, they automatically push code commits directly to the relevant Gitea repository (SUSE_Multi-Linux_Manager-packages)
 - [ ] Prepare the submissions:
