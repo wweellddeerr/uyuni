@@ -87,13 +87,13 @@ Add more tasks if needed.
 - [ ] Confirm that the SR for the documentation is merged, and translators warned
 - [ ] Merge the PR for the translations with the option `Merge pull request`
 - [ ] Quick review changelogs with `tito-wrapper`, and request changes if needed
-- [ ] Check all the relevant [5.1 CI tests for the 5.1 version](https://ci.suse.de/view/Manager/view/Manager-5.1/): everything should be green, or otherwise submission must be approved by the RRTG
+- [ ] Check all the relevant [5.1 CI tests for the 5.1 version](https://jenkins.mgr.suse.de/view/By%20Version/view/Manager%205.1/): everything should be green, or otherwise submission must be approved by the RRTG
 
 # TODO during the submission window
 
 Add more tasks if needed (for example, asking Maintenace to change the channel definitions).
 
-- [ ] Check all the relevant [5.1 CI tests for the 5.1 version](https://ci.suse.de/view/Manager/view/Manager-5.1/): everything should be green, or otherwise submission must be approved by the RRTG
+- [ ] Check all the relevant [5.1 CI tests for the 5.1 version](https://jenkins.mgr.suse.de/view/By%20Version/view/Manager%205.1/): everything should be green, in particular the [acceptance testsuite](https://jenkins.mgr.suse.de/job/manager-5.1-dev-acceptance-tests/) or otherwise submission must be approved by the RRTG
 - [ ] Tag everything with `tito tag`. Do **NOT** tag if the version has not been already bumped in `web/conf/rhn_web.conf` (`web.version.uyuni`), as requested in one of the previous points.
 - [ ] Check that the job [manager-5.1-releng-2obs](https://ci.suse.de/view/Manager/view/Manager-5.1/job/manager-5.1-releng-2obs/) and [manager-5.1-uyunitools-2obs](https://ci.suse.de/view/Manager/view/Manager-5.1/job/manager-5.1-uyunitools-2obs/) have packaged and submitted the changes from `Manager-5.1` branch into the relevant https://build.suse.de/project/subprojects/Devel:Galaxy:Manager:5.1 project.
 - [ ] Prepare the submissions with `mu-massive-task` or `patch-creator`. For any new packages that will be added to the codestreams, fetch the groups what will maintain them (one per package) and document this at the release card.

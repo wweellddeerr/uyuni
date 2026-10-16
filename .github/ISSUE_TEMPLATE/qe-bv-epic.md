@@ -25,8 +25,13 @@ assignees: ''
 ---
 
 - Jenkins pipeline:
+  - _Delete the line of the version you are not testing_
   - Full:
+    - [5.2](https://jenkins.mgr.suse.de/job/manager-5.2-sles-qe-build-validation/)
+    - [5.1](https://jenkins.mgr.suse.de/job/manager-5.1-sles-qe-build-validation/)
   - Mini:
+    - [5.2](https://jenkins.mgr.suse.de/job/manager-5.2-micro-qe-mini-build-validation/)
+    - [5.1](https://jenkins.mgr.suse.de/job/manager-5.1-micro-qe-mini-build-validation/)
 - Server URL:
   - Full:
   - Mini:
