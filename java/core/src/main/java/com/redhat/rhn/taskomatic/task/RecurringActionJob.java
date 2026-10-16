@@ -104,7 +104,9 @@ public class RecurringActionJob extends RhnJavaJob {
                         Optional.of(Map.of("rec_id", action.getId().toString())),
                         context.getFireTime(),
                         Optional.of(stateType.isTestMode()),
-                        true);
+                        true,
+                        false,
+                        stateType.isUseTransactionalUpdate());
                 ActionFactory.save(a);
                 new TaskomaticApi().scheduleActionExecution(a);
             }

@@ -318,6 +318,8 @@ public class RecurringActionController {
         }
         else if (RecurringActionType.ActionType.CUSTOMSTATE.equals(action.getActionType())) {
             dto.setTest(((RecurringState) action.getRecurringActionType()).isTestMode());
+            dto.setUseTransactionalUpdate(
+                    ((RecurringState) action.getRecurringActionType()).isUseTransactionalUpdate());
             dto.setStates(StateConfigJson.listOrderedStates(
                     ((RecurringState) action.getRecurringActionType()).getStateConfig()));
         }
@@ -482,7 +484,9 @@ public class RecurringActionController {
                     Optional.empty(),
                     new Date(),
                     Optional.of(json.getDetails().isTest()),
-                    true);
+                    true,
+                    false,
+                    json.getDetails().isUseTransactionalUpdate());
             ActionFactory.save(a);
             taskomaticApi.scheduleActionExecution(a);
         }
@@ -588,6 +592,7 @@ public class RecurringActionController {
         }
         else if (action.getRecurringActionType() instanceof RecurringState stateType) {
             stateType.setTestMode(details.isTest());
+            stateType.setUseTransactionalUpdate(details.isUseTransactionalUpdate());
             if (json.getRecurringActionId() == null ||
                     (json.getRecurringActionId() != null && details.getStates() != null)) {
                 Set<RecurringStateConfig> newConfig = getStateConfigFromJson(details.getStates(), action.getCreator());

@@ -482,7 +482,12 @@ public class StatesAPI {
                         checkUserHasPermissionsOnServer(server, user);
                         return ActionManager.scheduleApplyStates(user,
                                 Arrays.asList(json.getTargetId()), json.getStates(),
-                                MinionActionUtils.getScheduleDate(json));
+                                Optional.empty(),
+                                MinionActionUtils.getScheduleDate(json),
+                                Optional.empty(),
+                                false,
+                                false,
+                                json.isUseTransactionalUpdate());
                     },
                     (groupId) -> {
                         ServerGroup group = getEntityIfExists(
@@ -502,7 +507,12 @@ public class StatesAPI {
 
                         return ActionManager.scheduleApplyStates(user,
                                 minionServerIds, states,
-                                MinionActionUtils.getScheduleDate(json));
+                                Optional.empty(),
+                                MinionActionUtils.getScheduleDate(json),
+                                Optional.empty(),
+                                false,
+                                false,
+                                json.isUseTransactionalUpdate());
 
                     },
                     (orgId) -> {
@@ -515,7 +525,12 @@ public class StatesAPI {
 
                         return ActionManager.scheduleApplyStates(user,
                                 minionServerIds, json.getStates(),
-                                MinionActionUtils.getScheduleDate(json));
+                                Optional.empty(),
+                                MinionActionUtils.getScheduleDate(json),
+                                Optional.empty(),
+                                false,
+                                false,
+                                json.isUseTransactionalUpdate());
                     }
             );
 
