@@ -12241,13 +12241,13 @@ To amend this situation, please add SCC credentials &lt;a href="/rhn/admin/setup
         <source>The host key document is not a valid PEM certificate.</source>
         <target state="final">ホストキードキュメントが有効なPEM証明書ではありません。</target>
       </trans-unit>
-    <trans-unit id="system.entitle.added.peripheral_server" xml:space="preserve">
+      <trans-unit id="system.entitle.added.peripheral_server" xml:space="preserve" approved="yes">
         <source>&lt;strong&gt;Peripheral server&lt;/strong&gt; type has been applied.</source>
         <context-group name="ctx">
           <context context-type="sourcefile">/rhn/systems/details/Overview.do</context>
         </context-group>
-      <target state="new"/>
-  </trans-unit>
-      </body>
+        <target state="final">&lt;strong&gt;周辺機器サーバ&lt;/strong&gt; タイプが適用されました。</target>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
