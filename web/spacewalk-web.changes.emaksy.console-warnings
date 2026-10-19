@@ -1,1 +1,1 @@
-- Fix frontend console warnings in products, tables and SSM.
+- Fix missing React key warnings in table search panels.
