@@ -165,9 +165,9 @@
     </target>
 
     <target name="clean-ivy" description="Cleans up all ivy related files">
-        <delete dir="${basedir}/buildconf/ivy/repository/suse" />
+        <delete dir="${basedir}/buildconf/ivy/repository/manager-52" />
         <delete dir="${basedir}/.obs-to-maven-cache" />
-        <delete dir="${user.home}/.ivy2/cache/suse" />
+        <delete dir="${user.home}/.ivy2/cache/manager-52" />
     </target>
 
     <target name="maybe-clean" unless="build.incremental.compile">
@@ -463,9 +463,6 @@
                 <fileset dir="/usr/share/java/junit5/">
                     <include name="**/junit-platform-*.jar"/>
                     <include name="**/junit-jupiter-*.jar"/>
-                </fileset>
-                <fileset dir="/usr/share/java/open-test-reporting/">
-                    <include name="**/*.jar"/>
                 </fileset>
             </classpath>
 
