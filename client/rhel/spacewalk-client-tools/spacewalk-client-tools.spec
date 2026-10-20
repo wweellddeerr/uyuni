@@ -288,7 +288,8 @@ rm -rf %{buildroot}%{_sysconfdir}/security/console.apps
 %py_compile -O %{buildroot}/%{python_sitelib}
 %endif
 %if 0%{?build_py3}
-%py3_compile -O %{buildroot}/%{python3_sitelib}
+python3 -m compileall -q -d %{python3_sitelib} %{buildroot}/%{python3_sitelib}
+python3 -O -m compileall -q -d %{python3_sitelib} %{buildroot}/%{python3_sitelib}
 %endif
 %endif
 
