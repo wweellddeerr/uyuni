@@ -245,7 +245,8 @@ sed -i 's/#LOGROTATE-3.8#//' %{buildroot}%{_sysconfdir}/logrotate.d/spacewalk-ba
 sed -i 's/@HTTPD_GROUP@/%{apache_group}/' %{buildroot}%{_sysconfdir}/logrotate.d/spacewalk-backend-*
 sed -i 's/@HTTPD_USER@/%{apache_user}/' %{buildroot}%{_sysconfdir}/logrotate.d/spacewalk-backend-*
 
-%py3_compile -O %{buildroot}/%{python3rhnroot}
+python3 -m compileall -q -d %{python3rhnroot} %{buildroot}/%{python3rhnroot}
+python3 -O -m compileall -q -d %{python3rhnroot} %{buildroot}/%{python3rhnroot}
 %fdupes %{buildroot}/%{python3rhnroot}
 
 install -m 755 satellite_tools/mgr-update-pkg-extra-tags %{buildroot}%{_prefix}/lib/susemanager/bin/
