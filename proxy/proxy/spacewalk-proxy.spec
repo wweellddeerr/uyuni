@@ -133,7 +133,8 @@ rm -rf %{buildroot}%{_sysconfdir}/httpd
 touch %{buildroot}/%{httpdconf}/cobbler-proxy.conf
 
 pushd %{buildroot}
-%py3_compile -O %{buildroot}
+python3 -m compileall -q -d / %{buildroot}
+python3 -O -m compileall -q -d / %{buildroot}
 popd
 
 mkdir -p %{buildroot}/%{_bindir}/
