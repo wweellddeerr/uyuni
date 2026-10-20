@@ -86,7 +86,7 @@ public class AlignSoftwareTargetAction implements MessageAction {
             if (e instanceof AlignSoftwareTargetException exc) {
                 SoftwareEnvironmentTarget target = exc.getTarget();
                 if (target == null) {
-                    LOG.error("Error aligning target: target does not exist", e);
+                    LOG.error("Error aligning target: target entity was not available", e);
                     return;
                 }
 
