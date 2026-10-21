@@ -108,7 +108,8 @@ ln -s rhn-ssl-tool %{buildroot}%{_bindir}/mgr-ssl-tool
 ln -s rhn-sudo-ssl-tool %{buildroot}%{_bindir}/mgr-sudo-ssl-tool
 
 %if 0%{?suse_version}
-%py3_compile -O %{buildroot}/%{python3_sitelib}
+python3 -m compileall -q -d %{python3_sitelib} %{buildroot}/%{python3_sitelib}
+python3 -O -m compileall -q -d %{python3_sitelib} %{buildroot}/%{python3_sitelib}
 %endif
 
 %files

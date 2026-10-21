@@ -76,7 +76,8 @@ make install PREFIX=%{buildroot} ROOT=%{python3_sitelib} \
     MANDIR=%{_mandir}
 pushd %{buildroot}
 %if 0%{?suse_version}
-%py3_compile -O %{buildroot}%{python3_sitelib}
+python3 -m compileall -q -d %{python3_sitelib} %{buildroot}%{python3_sitelib}
+python3 -O -m compileall -q -d %{python3_sitelib} %{buildroot}%{python3_sitelib}
 %fdupes %{buildroot}%{python3_sitelib}
 %else
 %py_byte_compile %{__python3} %{buildroot}%{python3_sitelib}

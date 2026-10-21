@@ -72,6 +72,7 @@ Group:          Development/Languages/Python
 Requires:       python
 %if 0%{?suse_version}
 BuildRequires:  python-devel
+BuildRequires:  python-rpm-macros
 %else
 BuildRequires:  python2-devel
 %endif
@@ -89,7 +90,11 @@ Python 2 libraries required by both Uyuni server and client tools.
 Summary:        Uyuni server and client tools libraries for python3
 Group:          Development/Languages/Python
 BuildRequires:  python3-devel
+%if 0%{?suse_version}
+BuildRequires:  %{python_prefix}-rpm-macros
+%else
 BuildRequires:  python3-rpm-macros
+%endif
 Conflicts:      %{name} < 1.7.0
 %if 0%{?suse_version}
 Requires:       python3-base
@@ -140,7 +145,8 @@ install -d %{buildroot}%{python2root}/common
 %fdupes %{buildroot}/%{python2root}
 %endif
 %if 0%{?build_py3}
-%py3_compile -O %{buildroot}/%{python3root}
+python3 -m compileall -q -d %{python3root} %{buildroot}/%{python3root}
+python3 -O -m compileall -q -d %{python3root} %{buildroot}/%{python3root}
 %fdupes %{buildroot}/%{python3root}
 %endif
 %endif

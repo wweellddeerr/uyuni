@@ -1,0 +1,1 @@
+- Add missing python-rpm-macros BuildRequires for SUSE builds
