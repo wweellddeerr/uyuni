@@ -21,6 +21,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import com.redhat.rhn.domain.action.ActionFactory;
+import com.redhat.rhn.domain.action.salt.ApplyStatesAction;
 import com.redhat.rhn.domain.org.OrgFactory;
 import com.redhat.rhn.domain.recurringactions.RecurringAction;
 import com.redhat.rhn.domain.recurringactions.RecurringActionFactory;
@@ -43,6 +45,7 @@ import com.google.gson.GsonBuilder;
 
 import org.jmock.Expectations;
 import org.jmock.imposters.ByteBuddyClassImposteriser;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -85,11 +88,18 @@ public class RecurringActionControllerTest extends BaseControllerTestCase {
         // mocking
         taskomaticMock = context().mock(TaskomaticApi.class);
         RecurringActionManager.setTaskomaticApi(taskomaticMock);
+        RecurringActionController.setTaskomaticApi(taskomaticMock);
 
         context().checking(new Expectations() { {
             allowing(taskomaticMock).scheduleRecurringAction(with(any(RecurringAction.class)), with(any(User.class)));
             allowing(taskomaticMock).unscheduleRecurringAction(with(any(RecurringAction.class)), with(any(User.class)));
+            allowing(taskomaticMock).scheduleActionExecution(with(any(ApplyStatesAction.class)));
         } });
+    }
+
+    @AfterEach
+    public void tearDown() {
+        RecurringActionController.setTaskomaticApi(new TaskomaticApi());
     }
 
     @Test
@@ -218,6 +228,40 @@ public class RecurringActionControllerTest extends BaseControllerTestCase {
         catch (HaltException e) {
             assertEquals(400, e.statusCode());
         }
+    }
+
+    @Test
+    public void testExecuteCustomSetsActionDescription() throws UnsupportedEncodingException {
+        String actionJsonString = "{" +
+                "'scheduleName': 'My Recurring Schedule'," +
+                "'memberIds': [" + minionServer.getId() + "]," +
+                "'details': {" +
+                    "'states': [" +
+                        "{ 'type': 'internal_state', 'name': 'channels', 'position': 0 }" +
+                    "]," +
+                    "'type': 'hourly'," +
+                    "'test': false," +
+                    "'cronTimes': " +
+                    "  {'minute': '0'," +
+                    "   'hour': '0'," +
+                    "   'dayOfWeek': '0'," +
+                    "   'dayOfMonth': '0'" +
+                    "  }" +
+                "  }" +
+                "}";
+        var request = getPostRequestWithCsrfAndBody("/manager/api/recurringactions/custom/execute",
+                actionJsonString);
+
+        RecurringActionController.executeCustom(request, response, user);
+
+        var action = ActionFactory.listActionsForServer(user, minionServer).stream()
+                .filter(ApplyStatesAction.class::isInstance)
+                .map(ApplyStatesAction.class::cast)
+                .max((first, second) -> first.getId().compareTo(second.getId()))
+                .orElseThrow();
+
+        assertEquals(List.of("channels"), action.getDetails().getMods());
+        assertEquals("Recurring Action: My Recurring Schedule", action.getActionDescription());
     }
 
     @Test

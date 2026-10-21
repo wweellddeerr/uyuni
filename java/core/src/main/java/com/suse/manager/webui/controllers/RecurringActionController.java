@@ -47,6 +47,7 @@ import com.redhat.rhn.domain.recurringactions.type.RecurringPlaybook;
 import com.redhat.rhn.domain.recurringactions.type.RecurringScapPolicy;
 import com.redhat.rhn.domain.recurringactions.type.RecurringState;
 import com.redhat.rhn.domain.user.User;
+import com.redhat.rhn.frontend.context.Context;
 import com.redhat.rhn.frontend.listview.PageControl;
 import com.redhat.rhn.manager.action.ActionManager;
 import com.redhat.rhn.manager.configuration.ConfigurationManager;
@@ -101,8 +102,18 @@ public class RecurringActionController {
 
     private static final Logger LOG = LogManager.getLogger(RecurringActionController.class);
     private static final Gson GSON = new GsonBuilder().create();
+    private static TaskomaticApi taskomaticApi = new TaskomaticApi();
 
     private RecurringActionController() { }
+
+    /**
+     * Set taskomatic API instance.
+     *
+     * @param taskomaticApiIn taskomatic API instance
+     */
+    public static void setTaskomaticApi(TaskomaticApi taskomaticApiIn) {
+        taskomaticApi = taskomaticApiIn;
+    }
 
     /**
      * Invoked from Router. Initialize routes for Systems Views.
@@ -462,6 +473,9 @@ public class RecurringActionController {
                 .map(RecurringStateConfig::getStateName)
                 .collect(Collectors.toList());
 
+        if (json.getScheduleName() != null && !json.getScheduleName().isBlank()) {
+            Context.getCurrentContext().setActionDescription("Recurring Action: " + json.getScheduleName());
+        }
         try {
             Action a = ActionManager.scheduleApplyStates(user,
                     minionIds, mods,
@@ -470,7 +484,7 @@ public class RecurringActionController {
                     Optional.of(json.getDetails().isTest()),
                     true);
             ActionFactory.save(a);
-            new TaskomaticApi().scheduleActionExecution(a);
+            taskomaticApi.scheduleActionExecution(a);
         }
         catch (TaskomaticApiException e) {
             LOG.error("Rolling back transaction because of Taskomatic exception", e);
@@ -481,6 +495,9 @@ public class RecurringActionController {
         catch (NotInMaintenanceModeException e) {
             String errMsg = LocalizationService.getInstance().getMessage("recurring_action.not_in_maint_mode");
             Spark.halt(HttpStatus.SC_BAD_REQUEST, GSON.toJson(ResultJson.error(errMsg)));
+        }
+        finally {
+            Context.getCurrentContext().setActionDescription(null);
         }
         return success(response);
     }
